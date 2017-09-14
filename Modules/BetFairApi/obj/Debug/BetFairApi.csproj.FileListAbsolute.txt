@@ -1,0 +1,15 @@
+C:\Projects\Livescanner\Bookmakers\BetFairApi\obj\Debug\BetFairApi.csprojResolveAssemblyReference.cache
+C:\Projects\Livescanner\Bookmakers\BetFairApi\obj\Debug\BetFairApi.dll
+C:\Projects\Livescanner\Bookmakers\BetFairApi\obj\Debug\BetFairApi.pdb
+C:\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll.config
+C:\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll
+C:\Bars.EAS\src\Bars.EAS\modules\BetFairApi.pdb
+C:\Projects\LocalScanner\BetFairApi\obj\Debug\BetFairApi.csprojResolveAssemblyReference.cache
+C:\Projects\LocalScanner\BetFairApi\obj\Debug\BetFairApi.dll
+C:\Projects\LocalScanner\BetFairApi\obj\Debug\BetFairApi.pdb
+C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll.config
+C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll
+C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.pdb
+C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csprojResolveAssemblyReference.cache
+C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.dll
+C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.pdb

@@ -1,0 +1,4 @@
+C:\Projects\LocalScanner\LigaStavok\bin\Debug\LigaStavok.dll
+C:\Projects\LocalScanner\LigaStavok\bin\Debug\LigaStavok.pdb
+C:\Projects\LocalScanner\LigaStavok\obj\Debug\LigaStavok.dll
+C:\Projects\LocalScanner\LigaStavok\obj\Debug\LigaStavok.pdb

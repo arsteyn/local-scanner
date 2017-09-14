@@ -1,0 +1,13 @@
+LocalScannerSelfHosted.exe
+Domain.dll
+Bars.EAS.Core.dll
+Bars.EAS.Utils.dll
+BM.Core.dll
+Bookmaker.dll
+ECM7.Common.dll
+log4net.dll
+Newtonsoft.Json.dll
+SimMetrics.dll
+System.Net.Http.Formatting.dll
+System.Web.Http.dll
+System.Web.Http.SelfHost.dll
