@@ -23,12 +23,12 @@ namespace Scanner.Helper
             {
                 var pr = new WebProxy(t.Split(':')[0], int.Parse(t.Split(':')[1]));
 
-                var cred = File.ReadAllText(HostingEnvironment.ApplicationPhysicalPath + "Proxy/credentials.txt");
+                //var cred = File.ReadAllText(HostingEnvironment.ApplicationPhysicalPath + "Proxy/credentials.txt");
 
                 var networkCredential = new NetworkCredential
                 {
-                    UserName = cred.Split(':')[0],
-                    Password = cred.Split(':')[1]
+                    UserName = t.Split(':')[2],
+                    Password = t.Split(':')[3]
                 };
 
                 pr.Credentials = networkCredential;

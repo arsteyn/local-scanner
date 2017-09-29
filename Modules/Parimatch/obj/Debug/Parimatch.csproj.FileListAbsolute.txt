@@ -41,3 +41,5 @@ C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Razor.x
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.dll
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.pdb
+C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\NLog.xml

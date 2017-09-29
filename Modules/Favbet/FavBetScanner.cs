@@ -23,7 +23,7 @@ namespace Favbet
 
         public override string Name => "Favbet";
 
-        public override string Host => "http://favbet.com/";
+        public override string Host => "https://www.favbet.com/";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -158,42 +158,46 @@ namespace Favbet
         {
             var listToDelete = new List<WebProxy>();
 
-            Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 4 }, host =>
-             {
-                 lock (Lock)
-                 {
-                     CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>
-                     {
-                         try
-                         {
-                             var cc = new CookieContainer();
+            foreach (var host in ProxyList)
+            {
+                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>
+                {
+                    try
+                    {
+                        var cc = new CookieContainer();
 
-                             Console.WriteLine($"Favbet check address {host.Address}");
+                        Console.WriteLine($"Favbet check address {host.Address}");
 
-                             cc.Add(PassCloudFlare(host));
+                        cc.Add(PassCloudFlare(host));
 
-                             using (var wc = new Extensions.WebClientEx(host, cc))
-                             {
-                                 wc.Headers["User-Agent"] = ExWebClient.DefaultUserAgent;
+                        using (var wc = new Extensions.WebClientEx(host, cc))
+                        {
+                            wc.Headers["User-Agent"] = ExWebClient.DefaultUserAgent;
 
-                                 wc.DownloadString($"{Host}live/markets/");
-                             }
+                            wc.DownloadString($"{Host}live/markets/");
+                        }
 
-                             return cc;
-                         }
-                         catch (Exception e)
-                         {
-                             listToDelete.Add(host);
-                             Console.WriteLine($"Favbet delete address {host.Address}");
-                         }
+                        return cc;
+                    }
+                    catch (Exception e)
+                    {
+                        listToDelete.Add(host);
+                        Console.WriteLine($"Favbet delete address {host.Address} listToDelete {listToDelete.Count}");
+                    }
 
-                         return null;
-                     }));
-                 }
-             });
+                    return null;
+                }));
+            }
+
 
             //проверяем работу хоста
-            Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 4 }, host => CookieDictionary[host].GetData());
+            //Parallel.ForEach(ProxyList, host => CookieDictionary[host].GetData());
+
+
+            var tasks = ProxyList.AsParallel().Select(host => Task.Factory.StartNew(state => CookieDictionary[host].GetData(), host)).ToArray();
+            Task.WaitAll(tasks.ToArray());
+
+
 
             foreach (var host in listToDelete)
             {

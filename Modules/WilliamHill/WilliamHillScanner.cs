@@ -54,7 +54,8 @@ namespace WilliamHill
                 var converter = new WilliamHillLineConverter();
 
                 var lines = new List<LineDTO>();
-                { };
+
+
 
                 var tasks = urls.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
                     Task.Factory.StartNew(
@@ -74,7 +75,7 @@ namespace WilliamHill
                                 }
                                 catch (Exception e)
                                 {
-                                    //Log.Info("WH Parse event exception " + e.InnerException);
+                                    Log.Info("WH Parse event exception " + e.InnerException);
                                     //Console.WriteLine("WH Parse event exception " + e.InnerException);
                                 }
                             }
@@ -118,12 +119,15 @@ namespace WilliamHill
                     Console.WriteLine($"WH check address {host.Address}");
                     using (var webClient = new Extensions.WebClientEx(host))
                     {
-                        XDocument.Parse(webClient.DownloadString(Host + "bir_xml?action=miniApp"));
+                        var t = webClient.DownloadString(Host + "bir_xml?action=miniApp");
+
+                        XDocument.Parse(t);
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     hostsToDelete.Add(host);
+                    Log.Info($"Wh delete address {host.Address} {host.Credentials.GetCredential(host.Address, "").UserName}  listToDelete {hostsToDelete.Count}");
                 }
             });
 

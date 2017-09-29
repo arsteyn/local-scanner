@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using NLog;
+using NLog.Fluent;
 
 namespace Scanner
 {
@@ -139,10 +141,13 @@ namespace Scanner
 
     public static class ConsoleExt
     {
+        static Logger Log => LogManager.GetCurrentClassLogger();
+
         public static void ConsoleWrite(string Name, int proxyCount, int linesCount, string lastDuration)
         {
             var value = $"|{Name,13}| P {proxyCount,5} | Lines {linesCount,10} | Time {lastDuration,10}";
             Console.WriteLine(value);
+            Log.Info(value);
         }
     }
 

@@ -41,3 +41,5 @@ C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.WebPages.Razor.xm
 C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.dll
 C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.pdb
+C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\NLog.xml

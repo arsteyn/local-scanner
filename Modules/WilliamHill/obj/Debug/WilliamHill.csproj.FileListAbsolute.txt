@@ -36,3 +36,5 @@ C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.Razor
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.dll
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.pdb
+C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\NLog.xml

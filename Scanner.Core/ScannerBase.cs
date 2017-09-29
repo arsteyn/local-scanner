@@ -32,6 +32,7 @@ namespace Scanner
             }
         }
 
+
         protected DateTime LastUpdated { get; set; }
 
         protected TimeSpan LastUpdatedDiff { get; set; }

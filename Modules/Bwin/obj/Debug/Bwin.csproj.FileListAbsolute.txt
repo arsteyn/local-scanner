@@ -21,3 +21,5 @@ C:\Projects\Localscanner\Modules\Bwin\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Projects\Localscanner\Modules\Bwin\obj\Debug\Bwin.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Bwin\obj\Debug\Bwin.dll
 C:\Projects\Localscanner\Modules\Bwin\obj\Debug\Bwin.pdb
+C:\Projects\Localscanner\Modules\Bwin\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\Bwin\bin\Debug\NLog.xml

@@ -49,3 +49,5 @@ C:\Projects\Localscanner\Modules\Favbet\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.dll
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.pdb
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\NLog.xml

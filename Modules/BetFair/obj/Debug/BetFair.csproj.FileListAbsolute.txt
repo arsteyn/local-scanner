@@ -52,3 +52,5 @@ C:\Projects\Localscanner\Modules\BetFair\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\Localscanner\Modules\BetFair\obj\Debug\BetFair.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\BetFair\obj\Debug\BetFair.dll
 C:\Projects\Localscanner\Modules\BetFair\obj\Debug\BetFair.pdb
+C:\Projects\Localscanner\Modules\BetFair\bin\Debug\NLog.dll
+C:\Projects\Localscanner\Modules\BetFair\bin\Debug\NLog.xml
