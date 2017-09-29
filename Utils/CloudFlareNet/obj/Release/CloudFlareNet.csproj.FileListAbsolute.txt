@@ -1,7 +1,0 @@
-C:\Projects\Livescanner\CloudFlareNet\obj\Release\CloudFlareNet.csprojResolveAssemblyReference.cache
-C:\Projects\Livescanner\CloudFlareNet\bin\Release\CloudFlareNet.dll.config
-C:\Projects\Livescanner\CloudFlareNet\bin\Release\CloudFlareNet.dll
-C:\Projects\Livescanner\CloudFlareNet\bin\Release\CloudFlareNet.pdb
-C:\Projects\Livescanner\CloudFlareNet\bin\Release\eXtremeNet.dll
-C:\Projects\Livescanner\CloudFlareNet\obj\Release\CloudFlareNet.dll
-C:\Projects\Livescanner\CloudFlareNet\obj\Release\CloudFlareNet.pdb
