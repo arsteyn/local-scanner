@@ -78,6 +78,11 @@ namespace Favbet
 
                     tasks.AddRange(tournament.Games.AsParallel().WithDegreeOfParallelism(4).Select(gameId =>
                         Task.Factory.StartNew(state => ParseGame(gameId, tournament), gameId)));
+
+                    //foreach (var game in tournament.Games)
+                    //{
+                    //    ParseGame(game, tournament);
+                    //}
                 }
 
                 try

@@ -60,7 +60,7 @@ namespace Favbet
         public static Dictionary<string, string> PeriodMap = new Dictionary<string, string>
         {
             { "full time", "" },
-            { "match (with et)", "ET"},
+            { "match (with et)", "with et"},
             { "1st half", "1st half" },
             { "2nd half", "2nd half" },
             { "1-st half", "1st half" },

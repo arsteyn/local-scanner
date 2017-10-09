@@ -19,19 +19,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 15:43:46</publishTime>
     </File>
     <File Include="bin/BetFair.dll">
-      <publishTime>10/07/2017 14:14:40</publishTime>
+      <publishTime>09/10/2017 14:44:35</publishTime>
     </File>
     <File Include="bin/BetFair.pdb">
-      <publishTime>10/07/2017 14:14:40</publishTime>
+      <publishTime>09/10/2017 14:44:35</publishTime>
     </File>
     <File Include="bin/Betfair/Config/LiveApp.p12">
       <publishTime>11/12/2016 12:20:25</publishTime>
     </File>
     <File Include="bin/BetFairApi.dll">
-      <publishTime>10/07/2017 14:14:40</publishTime>
+      <publishTime>09/10/2017 12:27:24</publishTime>
     </File>
     <File Include="bin/BetFairApi.pdb">
-      <publishTime>10/07/2017 14:14:40</publishTime>
+      <publishTime>09/10/2017 12:27:24</publishTime>
     </File>
     <File Include="bin/BM.Core.dll">
       <publishTime>06/12/2017 15:35:37</publishTime>
@@ -70,10 +70,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 12:41:12</publishTime>
     </File>
     <File Include="bin/Favbet.dll">
-      <publishTime>10/07/2017 14:15:20</publishTime>
+      <publishTime>10/09/2017 16:31:24</publishTime>
     </File>
     <File Include="bin/Favbet.pdb">
-      <publishTime>10/07/2017 14:15:20</publishTime>
+      <publishTime>10/09/2017 16:31:24</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>07/14/2016 11:01:16</publishTime>
@@ -82,10 +82,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/14/2016 11:01:16</publishTime>
     </File>
     <File Include="bin/Leonbets.dll">
-      <publishTime>10/07/2017 14:14:41</publishTime>
+      <publishTime>09/10/2017 14:44:35</publishTime>
     </File>
     <File Include="bin/Leonbets.pdb">
-      <publishTime>10/07/2017 14:14:41</publishTime>
+      <publishTime>09/10/2017 14:44:35</publishTime>
     </File>
     <File Include="bin/LocalScanner.WebHost.dll">
       <publishTime>12/26/2016 16:43:09</publishTime>
@@ -148,10 +148,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2017 13:44:15</publishTime>
     </File>
     <File Include="bin/Scanner.Webhost.dll">
-      <publishTime>10/07/2017 14:15:21</publishTime>
+      <publishTime>10/09/2017 16:31:25</publishTime>
     </File>
     <File Include="bin/Scanner.Webhost.pdb">
-      <publishTime>10/07/2017 14:15:21</publishTime>
+      <publishTime>10/09/2017 16:31:25</publishTime>
     </File>
     <File Include="bin/SimMetrics.dll">
       <publishTime>03/29/2015 07:24:14</publishTime>
