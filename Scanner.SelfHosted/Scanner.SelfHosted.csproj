@@ -143,9 +143,9 @@
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\WilliamHill\WilliamHill.csproj">
-      <Project>{ce145ac9-9ee8-42f4-9457-118b82925d4b}</Project>
-      <Name>WilliamHill</Name>
+    <ProjectReference Include="..\Modules\Favbet\Favbet.csproj">
+      <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
+      <Name>Favbet</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>

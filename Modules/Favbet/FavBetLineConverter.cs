@@ -21,8 +21,8 @@ namespace Favbet
         public static Dictionary<string, string> MapRuls = new Dictionary<string, string>
         {
             // {Искомая_строка_1@Искомая_строка_2@ ... @Искомая_строка_n@Регулярка_для_обработки}, {ставки}.
-            {@"money line", "1|X|2"},
-            {@"match winner@draw no bet@2-way odds@set winner", "W1|W2"},
+            {@"match winner@money line", "1|X|2"},
+            {@"draw no bet@2-way odds@set winner", "W1|W2"},
             {@"double chance", "1X|12|X2"},
             {@"handicap", "HANDICAP1|PARAM|HANDICAP2"},
             {@"over/under", "TOTALOVER|PARAM|TOTALUNDER"},

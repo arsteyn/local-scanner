@@ -15,12 +15,12 @@ namespace Favbet
     {
         public static Game GetFullGame(int id, WebProxy proxy, CookieContainer cont, string host)
         {
-            using (var wc = new Extensions.WebClientEx(proxy, cont))
+            using (var wc = new Extensions.WebClientEx(proxy, cont) { Headers = {["User-Agent"] = ExWebClient.DefaultUserAgent } })
             {
-                wc.Headers["User-Agent"] = ExWebClient.DefaultUserAgent;
-
                 var eventUri = new Uri(host + "live/markets/event/");
+
                 var json = wc.DownloadString($"{eventUri}{id}/");
+
                 var game = JsonConvert.DeserializeObject<Game>(json);
 
                 return game?.Sport == null ? null : game;
@@ -60,7 +60,7 @@ namespace Favbet
         public static Dictionary<string, string> PeriodMap = new Dictionary<string, string>
         {
             { "full time", "" },
-            { "match (with et)", ""},
+            { "match (with et)", "ET"},
             { "1st half", "1st half" },
             { "2nd half", "2nd half" },
             { "1-st half", "1st half" },

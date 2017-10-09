@@ -73,24 +73,8 @@ namespace Favbet
                 foreach (var tournament in sports.SelectMany(sport => sport.Tournaments))
                 {
                     //убираем чемпионаты 
-                    if (
-                        tournament.TournamentName.ContainsIgnoreCase("statistics")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("crossbar")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("goalpost")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("fouls")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("corners")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("offsides")
-                        ||
-                        tournament.TournamentName.ContainsIgnoreCase("shot")
-                    )
-
+                    if (tournament.TournamentName.ContainsIgnoreCase("statistics", "crossbar", "goalpost", "fouls", "corners", "offsides", "shot"))
                         continue;
-
 
                     tasks.AddRange(tournament.Games.AsParallel().WithDegreeOfParallelism(4).Select(gameId =>
                         Task.Factory.StartNew(state => ParseGame(gameId, tournament), gameId)));
@@ -108,9 +92,7 @@ namespace Favbet
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                Log.Info($"Favbet Lines {lines.Count} Time {new DateTime(LastUpdatedDiff.Ticks):mm:ss}");
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count,
-                    new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 return lines.ToArray();
 
@@ -149,7 +131,7 @@ namespace Favbet
             }
             catch (Exception e)
             {
-                Log.Info("FB Parse event exception " + e.InnerException);
+                Log.Info("FB Parse event exception " + e.Message);
             }
         }
 
@@ -196,8 +178,6 @@ namespace Favbet
 
             var tasks = ProxyList.AsParallel().Select(host => Task.Factory.StartNew(state => CookieDictionary[host].GetData(), host)).ToArray();
             Task.WaitAll(tasks.ToArray());
-
-
 
             foreach (var host in listToDelete)
             {

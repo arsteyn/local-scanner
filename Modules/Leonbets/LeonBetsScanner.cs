@@ -78,7 +78,6 @@ namespace Leonbets
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                Log.Info($"Leonbets Lines {lines.Count} Time { new DateTime(LastUpdatedDiff.Ticks):mm:ss} Proxy {ProxyList.Count}");
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 return lines.ToArray();

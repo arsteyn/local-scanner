@@ -45,8 +45,7 @@ namespace BetFair
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                Log.Info($"Betfair Lines { lines.Count} Time { new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss")}");
-                Console.WriteLine($"Betfair Lines { lines.Count} Time { new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss")}");
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 return lines.ToArray();
             }
