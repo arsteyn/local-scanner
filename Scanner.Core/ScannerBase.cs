@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using BM.DTO;
 using NLog;
 using Scanner.Helper;
@@ -19,6 +21,8 @@ namespace Scanner
             ProxyList = ProxyHelper.GetHostList();
 
             CheckDict();
+
+            WriteLiveProxy();
 
             while (true)
             {
@@ -55,6 +59,21 @@ namespace Scanner
         protected virtual string Domain => new Uri(Host).Host;
 
         protected abstract LineDTO[] GetLiveLines();
+
+        protected virtual void WriteLiveProxy()
+        {
+
+            var path = HostingEnvironment.ApplicationPhysicalPath + $"CheckedProxy/{Name}.txt";
+
+            using (var outputFile = new StreamWriter(path, false))
+            {
+                foreach (var proxy in ProxyList)
+                    outputFile.WriteLine($"{proxy.Address.Host}");
+
+            }
+        }
+
+
 
         protected virtual void CheckDict()
         {
