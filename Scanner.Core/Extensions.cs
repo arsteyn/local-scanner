@@ -149,6 +149,12 @@ namespace Scanner
             Console.WriteLine(value);
             Log.Info(value);
         }
+
+        public static void ConsoleWriteError(string value)
+        {
+            Console.WriteLine(value);
+            Log.Info(value);
+        }
     }
 
 }

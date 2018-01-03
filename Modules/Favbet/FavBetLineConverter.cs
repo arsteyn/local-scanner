@@ -242,7 +242,7 @@ namespace Favbet
                             }
                         }
 
-                        copy.LineData = new StoreBet { OutcomeId = odds.Id.ToInt(), EventId = copy.LineObject.ToInt() };
+                        copy.LineData = new StoreBet { OutcomeId = odds.Id.ToLong(), EventId = copy.LineObject.ToLong(), MarketId = bet.MarketId.ToLong()};
 
                         copy.UpdateName();
                         groupLines.Add(copy);

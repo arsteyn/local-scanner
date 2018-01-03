@@ -68,7 +68,10 @@ namespace Scanner
             using (var outputFile = new StreamWriter(path, false))
             {
                 foreach (var proxy in ProxyList)
-                    outputFile.WriteLine($"{proxy.Address.Host}");
+                {
+                        outputFile.WriteLine($"{proxy.Address.Host}");
+                }
+
 
             }
         }

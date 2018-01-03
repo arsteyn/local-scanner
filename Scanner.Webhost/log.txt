@@ -5982,3 +5982,954 @@
 2017-10-11 19:17:35.1119|INFO|Scanner.ConsoleExt||       Favbet| P     3 | Lines       5586 | Time      00:09
 2017-10-11 19:17:35.9662|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines        181 | Time      00:01
 2017-10-11 19:17:37.9183|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines        195 | Time      00:01
+2017-10-18 14:24:29.3923|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:24:29.3923|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:24:29.4590|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:24:29.4590|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:24:29.9263|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:24:29.9438|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:24:30.5325|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 14:24:30.5325|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:24:31.6293|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:24:33.1269|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:24:33.7996|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 14:24:33.7996|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:24:34.2153|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 14:24:34.2153|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:24:35.0969|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:24:35.6740|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 14:24:35.6740|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:24:35.9854|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:24:36.5983|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:24:37.1859|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 6
+2017-10-18 14:24:37.1859|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:24:37.1859|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:24:37.6252|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 7
+2017-10-18 14:24:37.6252|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:24:37.8423|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 8
+2017-10-18 14:24:37.8423|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:24:38.1581|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 9
+2017-10-18 14:24:38.1581|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:24:38.5187|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:24:38.7835|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 10
+2017-10-18 14:24:38.7835|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:24:39.0357|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 11
+2017-10-18 14:24:39.0402|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:24:39.3280|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 12
+2017-10-18 14:24:39.3280|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:24:39.5333|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 13
+2017-10-18 14:24:39.5333|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:24:39.7557|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 14
+2017-10-18 14:24:39.7577|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:24:39.8107|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:24:40.1021|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 15
+2017-10-18 14:24:40.1021|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:24:40.2701|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 16
+2017-10-18 14:24:41.0013|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 17
+2017-10-18 14:24:41.3011|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 18
+2017-10-18 14:24:49.8747|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 19
+2017-10-18 14:25:06.1001|INFO|Scanner.ConsoleExt||       Favbet| P     8 | Lines        158 | Time      25:06
+2017-10-18 14:25:39.8309|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:25:39.8309|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:25:39.8309|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:25:39.8309|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:25:40.0986|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:25:40.1497|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:25:41.0863|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:25:42.0874|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:25:43.0858|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:25:43.4807|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 2
+2017-10-18 14:25:43.4807|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:25:44.0869|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:25:45.0871|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:25:46.0868|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:25:46.2759|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 3
+2017-10-18 14:25:46.2759|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:25:46.5225|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 4
+2017-10-18 14:25:46.5225|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:25:47.0771|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 5
+2017-10-18 14:25:47.0771|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:25:47.5862|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:25:47.7307|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 6
+2017-10-18 14:25:47.7307|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:25:48.5327|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 7
+2017-10-18 14:25:48.5327|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:25:49.0908|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:25:49.5950|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 8
+2017-10-18 14:25:49.5950|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:25:49.7694|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 9
+2017-10-18 14:25:49.7694|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:25:50.6272|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:25:50.6372|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 10
+2017-10-18 14:25:50.6372|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:25:51.5868|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:25:52.2556|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 11
+2017-10-18 14:25:52.2577|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:25:52.3108|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 12
+2017-10-18 14:25:52.3108|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:25:53.0857|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:25:53.4504|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 13
+2017-10-18 14:25:53.8425|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 14
+2017-10-18 14:25:54.2529|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 15
+2017-10-18 14:25:54.2649|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 16
+2017-10-18 14:25:54.4637|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 17
+2017-10-18 14:25:55.0832|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 18
+2017-10-18 14:25:55.6978|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 19
+2017-10-18 14:25:55.9064|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 20
+2017-10-18 14:25:56.3556|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 21
+2017-10-18 14:25:57.2597|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 22
+2017-10-18 14:25:57.8197|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 23
+2017-10-18 14:25:58.1481|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 24
+2017-10-18 14:25:58.3316|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 25
+2017-10-18 14:25:58.8719|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 26
+2017-10-18 14:25:58.9387|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 27
+2017-10-18 14:28:45.3865|INFO|Scanner.ConsoleExt|Favbet check address http://185.40.152.11:65233/
+2017-10-18 14:29:13.9435|INFO|Scanner.ConsoleExt||       Favbet| P     1 | Lines       2024 | Time      29:13
+2017-10-18 14:37:31.6369|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:37:31.6369|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:37:31.6565|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:37:31.6565|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:37:33.0212|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:37:33.0533|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:37:34.5132|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:37:35.4725|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:37:36.0069|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:37:36.4080|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 2
+2017-10-18 14:37:36.4080|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:37:37.9702|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 3
+2017-10-18 14:37:37.9702|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:37:38.4457|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 4
+2017-10-18 14:37:38.4708|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:37:38.9822|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:37:39.0238|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 5
+2017-10-18 14:37:39.0238|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:37:40.6525|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:37:41.0350|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 6
+2017-10-18 14:37:41.0350|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:37:41.4601|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 7
+2017-10-18 14:37:41.4601|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:37:41.9820|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 8
+2017-10-18 14:37:41.9820|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:37:42.7140|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 9
+2017-10-18 14:37:42.7140|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:37:43.4691|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:37:44.4684|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:37:44.6669|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 10
+2017-10-18 14:37:44.6669|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:37:44.9738|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 11
+2017-10-18 14:37:44.9748|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:37:45.9692|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:37:46.1757|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 12
+2017-10-18 14:37:46.1787|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:37:47.3613|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 13
+2017-10-18 14:37:47.3613|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:37:47.6638|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 14
+2017-10-18 14:37:47.6638|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:37:47.8064|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 15
+2017-10-18 14:37:47.8064|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:37:48.3918|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 16
+2017-10-18 14:37:48.8709|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 17
+2017-10-18 14:37:49.4401|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 18
+2017-10-18 14:37:49.8056|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 19
+2017-10-18 14:37:51.0865|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 20
+2017-10-18 14:37:51.1261|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 21
+2017-10-18 14:37:51.2996|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 22
+2017-10-18 14:37:51.7298|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 23
+2017-10-18 14:37:52.6841|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 24
+2017-10-18 14:37:54.2768|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 25
+2017-10-18 14:37:54.4713|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 26
+2017-10-18 14:37:54.5174|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 27
+2017-10-18 14:38:36.1428|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:38:36.1428|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:38:36.1428|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:38:36.1479|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:38:36.4713|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:38:36.4833|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:38:37.2664|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:38:37.6248|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 14:38:37.6248|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:38:38.2589|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:38:38.9502|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 14:38:38.9502|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:38:39.2661|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 14:38:39.2661|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:38:40.2583|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:38:40.6735|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 14:38:40.6735|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:38:41.2676|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 6
+2017-10-18 14:38:41.2676|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:38:41.2676|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:38:41.8525|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 7
+2017-10-18 14:38:41.8525|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:38:42.2644|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 8
+2017-10-18 14:38:42.2644|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:38:42.3226|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 9
+2017-10-18 14:38:42.3226|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:38:42.7866|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 10
+2017-10-18 14:38:42.7876|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:38:43.2997|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 11
+2017-10-18 14:38:43.2997|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:38:43.4973|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:38:43.6757|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:38:43.8030|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 12
+2017-10-18 14:38:43.8030|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:38:44.1935|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 13
+2017-10-18 14:38:44.1935|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:38:44.2838|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 14
+2017-10-18 14:38:44.2838|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:38:44.8177|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 15
+2017-10-18 14:38:44.8187|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:38:45.1325|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 16
+2017-10-18 14:38:45.1325|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:38:45.3283|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 17
+2017-10-18 14:38:45.3283|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:38:46.3206|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 18
+2017-10-18 14:38:46.5270|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 19
+2017-10-18 14:47:06.8926|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:47:06.8926|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:47:06.8926|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:47:06.8926|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:47:07.2350|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:47:07.2541|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:47:07.9772|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 14:47:07.9772|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:47:08.9168|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:47:09.9231|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:47:10.9156|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:47:11.5102|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 14:47:11.5102|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:47:12.4169|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:47:13.3718|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 4
+2017-10-18 14:47:13.3718|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:47:13.9173|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:47:14.9244|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:47:15.5597|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 5
+2017-10-18 14:47:15.5597|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:47:16.4167|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:47:16.8694|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 14:47:16.8694|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:47:17.1688|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 7
+2017-10-18 14:47:17.1688|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:47:17.8283|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 8
+2017-10-18 14:47:17.8283|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:47:18.4102|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 9
+2017-10-18 14:47:18.4158|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:47:19.0489|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 10
+2017-10-18 14:47:19.0489|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:47:19.0980|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 11
+2017-10-18 14:47:19.1001|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:47:19.2621|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 12
+2017-10-18 14:47:19.2621|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:47:19.8377|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 13
+2017-10-18 14:47:19.8377|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:47:20.0733|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 14
+2017-10-18 14:47:20.0733|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:47:20.6754|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 15
+2017-10-18 14:47:20.6784|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:47:21.4161|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:47:22.6604|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 16
+2017-10-18 14:47:23.6562|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 17
+2017-10-18 14:47:27.3338|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 18
+2017-10-18 14:47:40.6530|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 19
+2017-10-18 14:48:14.4966|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2017-10-18 14:48:14.5713|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2017-10-18 14:48:22.8938|INFO|Scanner.ConsoleExt||       Favbet| P     8 | Lines        132 | Time      48:22
+2017-10-18 14:49:46.4758|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 14:49:46.4723|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 14:49:46.4758|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 14:49:46.4723|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 14:49:46.7801|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 14:49:46.8112|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 14:49:47.2986|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 14:49:47.2986|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 14:49:48.1905|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 14:49:49.1620|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 14:49:49.5088|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 14:49:49.5088|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 14:49:49.8634|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 14:49:49.8654|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 14:49:50.6616|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 14:49:51.6629|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 14:49:52.0963|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 14:49:52.0963|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 14:49:52.6619|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 14:49:52.7597|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 14:49:52.7597|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 14:49:53.1483|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 7
+2017-10-18 14:49:53.1483|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 14:49:53.3201|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 14:49:53.3974|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 8
+2017-10-18 14:49:53.3974|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 14:49:53.7844|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 9
+2017-10-18 14:49:53.7844|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 14:49:53.8321|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 10
+2017-10-18 14:49:53.8356|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 14:49:54.2567|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 14:49:54.2778|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 11
+2017-10-18 14:49:54.2778|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 14:49:54.3209|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 12
+2017-10-18 14:49:54.3209|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 14:49:54.8032|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 13
+2017-10-18 14:49:54.8032|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 14:49:54.8413|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 14
+2017-10-18 14:49:54.8413|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 14:49:55.4720|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 15
+2017-10-18 14:49:55.4720|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 14:49:55.5452|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 16
+2017-10-18 14:49:55.5562|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 14:49:56.6616|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 17
+2017-10-18 14:49:56.7452|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 18
+2017-10-18 14:50:59.8783|INFO|Scanner.ConsoleExt||       Favbet| P     9 | Lines        158 | Time      50:59
+2017-10-18 15:16:16.4656|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 15:16:16.4656|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 15:16:16.4656|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 15:16:16.4656|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 15:16:16.7975|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 15:16:16.8106|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 15:16:17.7351|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 15:16:18.1617|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 15:16:18.1657|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 15:16:18.7180|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 15:16:19.4877|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 15:16:19.4917|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 15:16:19.9239|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 15:16:19.9239|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 15:16:20.7203|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 15:16:21.2515|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 15:16:21.2515|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 15:16:22.2186|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 15:16:23.2218|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 15:16:23.9697|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 6
+2017-10-18 15:16:23.9697|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 15:16:24.7340|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 15:16:24.9198|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 7
+2017-10-18 15:16:24.9198|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 15:16:25.2998|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 8
+2017-10-18 15:16:25.2998|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 15:16:25.3324|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 15:16:25.3324|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 15:16:25.3657|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 10
+2017-10-18 15:16:25.3657|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 15:16:25.4711|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 11
+2017-10-18 15:16:25.4711|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 15:16:25.6869|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 12
+2017-10-18 15:16:25.6869|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 15:16:25.8058|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 13
+2017-10-18 15:16:25.8058|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 15:16:25.8989|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 14
+2017-10-18 15:16:25.8989|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 15:16:25.8989|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 15
+2017-10-18 15:16:25.8989|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 15:16:26.2445|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 16
+2017-10-18 15:16:26.2445|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 15:16:26.3639|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 17
+2017-10-18 15:16:26.3639|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 15:16:26.6807|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 18
+2017-10-18 15:16:27.4584|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 19
+2017-10-18 15:16:27.5006|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 20
+2017-10-18 15:16:30.0091|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 21
+2017-10-18 15:16:31.7351|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 22
+2017-10-18 15:16:32.7617|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 23
+2017-10-18 15:16:34.6771|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 24
+2017-10-18 15:16:37.5134|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 25
+2017-10-18 15:16:43.7271|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 26
+2017-10-18 15:16:50.1630|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 27
+2017-10-18 15:21:05.7419|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 15:21:05.7419|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 15:21:05.7419|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 15:21:05.7569|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 15:21:06.0176|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 15:21:06.0597|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 15:21:06.6372|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 15:21:06.6653|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 15:21:10.5910|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 15:21:11.5874|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 15:21:12.1284|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 15:21:12.1284|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 15:21:12.7406|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 15:21:12.7406|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 15:21:13.5325|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 5
+2017-10-18 15:21:13.5325|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 15:21:14.0869|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 15:21:14.4689|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 6
+2017-10-18 15:21:14.4759|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 15:21:15.0882|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 15:21:15.5214|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 7
+2017-10-18 15:21:15.5249|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 15:21:15.9054|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 8
+2017-10-18 15:21:15.9054|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 15:21:16.4765|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 15:21:16.4765|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 15:21:16.6094|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 10
+2017-10-18 15:21:16.6094|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 15:21:17.0279|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 11
+2017-10-18 15:21:17.0279|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 15:21:17.0735|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 12
+2017-10-18 15:21:17.0735|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 15:21:17.3027|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 13
+2017-10-18 15:21:17.3052|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 15:21:17.5177|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 14
+2017-10-18 15:21:17.5177|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 15:21:17.8512|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 15
+2017-10-18 15:21:17.8512|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 15:21:18.2931|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 16
+2017-10-18 15:21:18.2931|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 15:21:18.4766|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 17
+2017-10-18 15:21:18.4766|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 15:21:18.7879|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 18
+2017-10-18 15:21:18.7879|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 15:21:19.1249|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 19
+2017-10-18 15:21:19.1249|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 15:21:20.0487|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 20
+2017-10-18 15:21:20.5801|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 21
+2017-10-18 15:21:20.6027|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 22
+2017-10-18 15:21:22.8746|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 23
+2017-10-18 15:21:23.5631|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 24
+2017-10-18 15:21:29.6965|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 25
+2017-10-18 15:21:31.4595|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 26
+2017-10-18 15:21:32.8925|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 27
+2017-10-18 15:23:09.4590|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 15:23:09.4751|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 15:23:09.4590|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 15:23:09.4590|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 15:23:09.7443|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 15:23:09.7578|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 15:23:10.1799|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 15:23:10.1799|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 15:23:12.6080|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 15:23:13.5965|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 15:23:14.0248|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 15:23:14.0248|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 15:23:14.4449|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 15:23:14.4449|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 15:23:15.0996|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 15:23:15.5327|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 15:23:15.5327|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 15:23:16.0978|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 15:23:16.4853|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 6
+2017-10-18 15:23:16.4853|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 15:23:16.5455|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 7
+2017-10-18 15:23:16.5455|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 15:23:16.6819|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 8
+2017-10-18 15:23:16.6819|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 15:23:17.0880|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 15:23:17.0880|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 15:23:17.1326|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 10
+2017-10-18 15:23:17.1326|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 15:23:17.6500|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 11
+2017-10-18 15:23:17.6500|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 15:23:18.1058|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 12
+2017-10-18 15:23:18.1058|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 15:23:18.6980|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 13
+2017-10-18 15:23:18.6980|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 15:23:19.5969|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 15:23:19.8393|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 14
+2017-10-18 15:23:19.8393|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 15:23:20.3908|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 15
+2017-10-18 15:23:20.3908|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 15:23:20.4061|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 16
+2017-10-18 15:23:20.4061|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 15:23:20.9148|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 17
+2017-10-18 15:23:20.9148|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 15:23:20.9309|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 18
+2017-10-18 15:23:20.9309|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 15:23:21.9565|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 19
+2017-10-18 15:23:22.1390|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 20
+2017-10-18 15:23:22.1521|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 21
+2017-10-18 15:23:23.7299|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 22
+2017-10-18 15:23:24.6173|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 23
+2017-10-18 15:23:25.2225|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 24
+2017-10-18 15:23:27.3837|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 25
+2017-10-18 15:23:30.9557|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 26
+2017-10-18 15:23:32.8511|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 27
+2017-10-18 15:24:18.6109|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 15:24:18.6179|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 15:24:18.6179|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 15:24:18.6179|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 15:24:18.8751|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 15:24:18.8876|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 15:24:19.3393|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 15:24:19.3393|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 15:24:19.8741|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 15:24:20.8597|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 15:24:21.2297|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 15:24:21.2297|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 15:24:21.6469|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 15:24:21.6469|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 15:24:22.4243|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 15:24:22.8219|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 15:24:22.8219|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 15:24:23.3697|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 15:24:23.9003|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 6
+2017-10-18 15:24:23.9003|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 15:24:24.3858|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 7
+2017-10-18 15:24:24.3858|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 15:24:24.8229|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 8
+2017-10-18 15:24:24.8229|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 15:24:25.3439|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 9
+2017-10-18 15:24:25.3439|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 15:24:25.8589|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 15:24:25.8880|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 10
+2017-10-18 15:24:25.8880|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 15:24:26.3905|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 11
+2017-10-18 15:24:26.3905|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 15:24:26.8181|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 15:24:26.8522|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 15:24:26.9916|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 12
+2017-10-18 15:24:26.9916|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 15:24:27.3245|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 13
+2017-10-18 15:24:27.3245|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 15:24:27.3984|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 14
+2017-10-18 15:24:27.3984|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 15:24:28.0982|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 15
+2017-10-18 15:24:28.1012|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 15:24:28.1213|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 16
+2017-10-18 15:24:28.1323|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 15:24:29.3159|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 17
+2017-10-18 15:24:29.3394|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 18
+2017-10-18 15:24:32.0918|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 19
+2017-10-18 15:41:25.8906|INFO|Scanner.ConsoleExt||       Favbet| P     8 | Lines        144 | Time      41:25
+2017-10-18 15:43:45.0178|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 15:43:45.0319|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 15:43:45.0319|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 15:43:45.0319|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 15:43:45.3016|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 15:43:45.3196|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 15:43:45.9938|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 15:43:45.9938|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 15:43:46.7655|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 15:43:47.7650|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 15:43:48.3125|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 15:43:48.3125|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 15:43:48.7293|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 15:43:48.7293|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 15:43:49.2666|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 15:43:49.8718|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 15:43:49.8718|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 15:43:50.5241|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 15:43:50.5241|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 15:43:51.2650|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 15:43:51.5759|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 7
+2017-10-18 15:43:51.5759|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 15:43:51.7398|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 8
+2017-10-18 15:43:51.7409|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 15:43:52.0231|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 15:43:52.5064|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 15:43:52.5064|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 15:43:52.5655|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 10
+2017-10-18 15:43:52.5655|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 15:43:53.3353|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 11
+2017-10-18 15:43:53.3353|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 15:43:53.3353|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 15:43:54.0457|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 12
+2017-10-18 15:43:54.0457|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 15:43:54.4250|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 15:43:54.8487|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 13
+2017-10-18 15:43:54.8507|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 15:43:54.8768|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 14
+2017-10-18 15:43:54.8768|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 15:43:55.3363|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 15
+2017-10-18 15:43:55.3363|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 15:43:55.8519|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 16
+2017-10-18 15:43:55.8690|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 15:43:56.0334|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 17
+2017-10-18 15:43:56.3643|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 18
+2017-10-18 15:43:57.1105|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 19
+2017-10-18 15:43:58.9782|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 20
+2017-10-18 15:44:03.7698|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 21
+2017-10-18 15:44:55.5930|INFO|Scanner.ConsoleExt||       Favbet| P     6 | Lines        148 | Time      44:55
+2017-10-18 16:43:42.1506|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 16:43:42.1506|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 16:43:42.1657|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 16:43:42.1506|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 16:43:42.4865|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 16:43:42.4996|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 16:43:42.9343|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 16:43:42.9343|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 16:43:43.8990|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 16:43:45.3959|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 16:43:45.8965|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 16:43:45.8965|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 16:43:46.2973|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 16:43:46.2973|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 16:43:46.9796|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 16:43:47.6158|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 16:43:47.6158|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 16:43:48.2976|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 16:43:48.2976|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 16:43:48.9260|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 16:43:49.5487|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 7
+2017-10-18 16:45:24.3259|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 16:45:24.4106|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 16:45:24.4623|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 8
+2017-10-18 16:45:24.4623|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 9
+2017-10-18 16:45:24.4793|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 16:45:24.4793|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 10
+2017-10-18 16:45:24.4793|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 16:45:24.4954|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 16:45:24.8079|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 11
+2017-10-18 16:45:24.8079|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 16:45:24.8490|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 12
+2017-10-18 16:45:24.8520|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 16:45:24.9322|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 13
+2017-10-18 16:45:24.9322|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 16:45:24.9503|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 16:45:25.1348|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 14
+2017-10-18 16:45:25.1348|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 16:45:25.3494|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 15
+2017-10-18 16:45:25.3534|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 16:45:25.3805|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 16
+2017-10-18 16:45:25.3845|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 16:45:25.4386|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 17
+2017-10-18 16:45:25.4386|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 16:45:25.4857|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 18
+2017-10-18 16:45:28.0616|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 19
+2017-10-18 16:45:28.1043|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 20
+2017-10-18 16:45:28.1043|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 21
+2017-10-18 16:45:28.1343|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 22
+2017-10-18 16:45:28.7578|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 23
+2017-10-18 16:45:30.4146|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 24
+2017-10-18 16:53:06.7997|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 16:53:06.8057|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 16:53:06.8057|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 16:53:06.8057|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 16:53:07.7557|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 16:53:07.7568|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 1
+2017-10-18 16:53:07.8184|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 16:53:09.2166|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 16:53:09.3157|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 2
+2017-10-18 16:53:09.3157|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 16:53:09.8040|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 16:53:09.8040|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 16:53:10.2664|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 16:53:10.2664|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 16:53:11.2178|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 16:53:11.9586|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 16:53:11.9601|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 16:53:12.7172|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 16:53:13.7170|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 16:53:14.3623|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 6
+2017-10-18 16:53:14.3623|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 16:53:14.3798|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 7
+2017-10-18 16:53:14.3808|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 16:53:15.1917|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 8
+2017-10-18 16:53:15.1917|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 16:53:15.2869|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 16:53:15.2879|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 16:53:15.7478|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 10
+2017-10-18 16:53:15.7478|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 16:53:16.0286|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 11
+2017-10-18 16:53:16.0286|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 16:53:16.5943|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 12
+2017-10-18 16:53:16.5943|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 16:53:17.2166|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 16:53:17.4322|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 13
+2017-10-18 16:53:17.4322|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 16:53:17.9570|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 14
+2017-10-18 16:53:17.9590|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 16:53:18.4343|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 15
+2017-10-18 16:53:18.4343|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 16:53:19.2178|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 16:53:19.3592|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 16
+2017-10-18 16:53:19.3592|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 16:53:20.6933|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 17
+2017-10-18 16:53:21.1480|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 18
+2017-10-18 16:53:21.4479|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 19
+2017-10-18 16:53:23.9516|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 20
+2017-10-18 16:53:24.6645|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 21
+2017-10-18 16:53:32.3919|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 22
+2017-10-18 16:53:34.7843|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 23
+2017-10-18 16:53:37.0448|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 24
+2017-10-18 16:53:42.1788|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 25
+2017-10-18 16:53:47.6817|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 26
+2017-10-18 16:53:53.1001|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 27
+2017-10-18 16:55:31.3773|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 16:55:31.3773|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 16:55:31.3833|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 16:55:31.3833|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 16:55:31.7002|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 16:55:31.7152|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 16:55:32.1254|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 16:55:32.1254|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 16:55:33.3682|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 16:55:34.3685|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 16:55:34.8230|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 16:55:34.8230|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 16:55:35.3675|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 16:55:35.3675|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 16:55:36.3693|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 16:55:36.7145|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 16:55:36.7145|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 16:55:37.3014|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 16:55:37.3044|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 16:55:37.8841|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 16:55:38.5791|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 7
+2017-10-18 16:55:38.5941|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 16:55:39.1276|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 8
+2017-10-18 16:55:39.1276|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 16:55:39.5648|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 16:55:39.5648|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 16:55:39.7784|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 16:55:40.1132|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 10
+2017-10-18 16:55:40.1132|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 16:55:40.4341|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 11
+2017-10-18 16:55:40.4341|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 16:55:40.5434|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 12
+2017-10-18 16:55:40.5434|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 16:55:40.6036|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 13
+2017-10-18 16:55:40.6036|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 16:55:40.9012|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 16:55:40.9688|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 14
+2017-10-18 16:55:40.9688|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 16:55:41.0999|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 15
+2017-10-18 16:55:41.0999|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 16:55:41.4997|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 16
+2017-10-18 16:55:41.4997|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 16:55:41.5338|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 17
+2017-10-18 16:55:41.5338|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 16:55:42.6943|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 18
+2017-10-18 16:55:42.7355|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 19
+2017-10-18 16:55:46.4554|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 20
+2017-10-18 16:55:47.0026|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 21
+2017-10-18 17:00:46.5783|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 17:00:46.5783|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 17:00:46.5783|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 17:00:46.5783|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 17:00:46.8625|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 17:00:46.8846|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 17:00:47.3037|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 17:00:47.3037|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 17:00:48.7896|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 17:00:49.7901|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 17:00:50.1782|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 17:00:50.1782|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 17:00:50.6642|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 17:00:50.6642|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 17:00:51.2892|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 17:00:51.6966|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 17:00:51.6966|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 17:00:52.2082|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 17:00:52.2102|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 17:00:52.7912|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 17:00:53.2499|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 7
+2017-10-18 17:00:53.2499|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 17:00:53.7886|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 17:00:53.8688|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 17:00:53.9425|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 8
+2017-10-18 17:00:53.9495|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 17:00:54.2063|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 9
+2017-10-18 17:00:54.2063|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 17:00:54.2931|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 10
+2017-10-18 17:00:54.2931|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 17:00:54.3982|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 17:00:54.4393|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 11
+2017-10-18 17:00:54.4393|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 17:00:54.7780|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 12
+2017-10-18 17:00:54.7780|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 17:00:55.2890|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 17:00:55.3051|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 13
+2017-10-18 17:00:55.3051|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 17:00:55.7272|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 14
+2017-10-18 17:00:55.7272|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 17:00:55.8225|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 15
+2017-10-18 17:00:55.8225|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 17:00:56.0406|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 16
+2017-10-18 17:00:56.4652|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 17
+2017-10-18 17:00:56.9232|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 18
+2017-10-18 17:00:57.0208|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 19
+2017-10-18 17:01:01.3988|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 20
+2017-10-18 17:03:39.6780|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 17:03:39.6780|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 17:03:39.6780|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 17:03:39.6780|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 17:03:40.0139|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 17:03:40.0435|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 17:03:40.3283|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 17:03:40.3283|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 17:03:44.3747|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 17:03:45.3748|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 17:03:45.7810|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 17:03:45.7810|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 17:03:46.0055|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 17:03:46.1850|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 17:03:46.1850|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 17:03:46.3224|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 17:03:46.6933|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 17:03:46.6963|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 17:03:47.1716|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 6
+2017-10-18 17:03:47.1716|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 17:03:48.3748|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 17:03:48.7745|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 7
+2017-10-18 17:03:48.7745|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 17:03:49.2609|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 8
+2017-10-18 17:03:49.2609|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 17:03:49.7783|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 9
+2017-10-18 17:03:49.7783|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 17:03:50.1882|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 10
+2017-10-18 17:03:50.1882|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 17:03:50.2203|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 17:03:50.5900|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 11
+2017-10-18 17:03:50.5900|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 17:03:50.6991|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 17:03:51.0972|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 12
+2017-10-18 17:03:51.1013|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 17:03:51.1905|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 17:03:51.2075|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 13
+2017-10-18 17:03:51.2106|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 17:03:51.5916|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 14
+2017-10-18 17:03:51.5916|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 17:03:51.6670|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 15
+2017-10-18 17:03:51.6670|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 17:03:51.7011|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 16
+2017-10-18 17:03:52.8672|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 17
+2017-10-18 17:03:52.8672|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 18
+2017-10-18 17:10:11.5024|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 17:10:11.5024|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 17:10:11.5024|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 17:10:11.5024|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 17:10:11.7661|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 17:10:11.7862|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 17:10:12.3773|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 17:10:12.3828|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 17:10:13.1846|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 17:10:14.1836|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 17:10:14.6985|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 17:10:14.6985|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 17:10:15.1336|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 17:10:15.1336|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 17:10:15.6826|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 17:10:16.2055|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 5
+2017-10-18 17:10:16.2055|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 17:10:17.1839|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 17:10:17.5303|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 6
+2017-10-18 17:10:17.5303|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 17:10:17.6473|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 7
+2017-10-18 17:10:17.6473|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 17:10:17.7145|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 8
+2017-10-18 17:10:17.7145|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 17:10:18.1256|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 9
+2017-10-18 17:10:18.1256|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 17:10:18.1767|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 10
+2017-10-18 17:10:18.1807|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 17:10:18.6809|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 11
+2017-10-18 17:10:18.6809|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 17:10:19.0908|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 12
+2017-10-18 17:10:19.0908|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 17:10:19.2056|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 13
+2017-10-18 17:10:19.2056|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 17:10:19.9051|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 14
+2017-10-18 17:10:19.9051|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 17:10:20.1087|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 15
+2017-10-18 17:10:20.1087|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 17:10:20.4005|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 16
+2017-10-18 17:10:20.4005|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 17:10:20.6377|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 17
+2017-10-18 17:10:20.6377|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 17:10:20.6828|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 18
+2017-10-18 17:10:20.6828|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 17:10:20.9546|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 19
+2017-10-18 17:10:20.9546|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 17:10:21.1477|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 20
+2017-10-18 17:10:21.4693|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 21
+2017-10-18 17:10:21.8704|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 22
+2017-10-18 17:10:22.1511|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 23
+2017-10-18 17:10:22.1942|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 24
+2017-10-18 17:10:23.7840|INFO|Scanner.ConsoleExt|Favbet delete address http://185.102.137.6:21326/ listToDelete 25
+2017-10-18 17:10:25.9647|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 26
+2017-10-18 17:10:28.2103|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.166:8000/ listToDelete 27
+2017-10-18 17:11:42.4515|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 17:11:42.4651|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 17:11:42.4515|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 17:11:42.4515|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 17:11:42.7563|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 17:11:42.7849|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 17:11:43.1539|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 17:11:43.1539|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 17:11:47.7908|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 17:11:48.6436|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 3
+2017-10-18 17:11:48.8817|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 17:11:48.9113|INFO|Scanner.ConsoleExt|Favbet delete address http://185.17.1.124:10014/ listToDelete 4
+2017-10-18 17:11:48.9168|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 17:11:49.5480|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 5
+2017-10-18 17:11:49.5936|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 17:11:50.0458|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 6
+2017-10-18 17:11:50.0749|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 17:17:30.9213|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.36.165:8000/
+2017-10-18 17:17:30.9213|INFO|Scanner.ConsoleExt|Favbet check address http://193.0.178.234:65233/
+2017-10-18 17:17:30.9213|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.32:8000/
+2017-10-18 17:17:30.9298|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.38.170:8000/
+2017-10-18 17:17:31.3108|INFO|Scanner.ConsoleExt|Favbet delete address http://193.0.178.234:65233/ listToDelete 1
+2017-10-18 17:17:31.3991|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-10-18 17:17:31.8734|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.32:8000/ listToDelete 2
+2017-10-18 17:17:31.8734|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.97:8000/
+2017-10-18 17:17:32.6470|INFO|Scanner.ConsoleExt|Favbet check address http://95.183.8.129:65233/
+2017-10-18 17:17:34.1467|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.60.3:65233/
+2017-10-18 17:17:35.1478|INFO|Scanner.ConsoleExt|Favbet check address http://62.113.216.144:65233/
+2017-10-18 17:17:35.5489|INFO|Scanner.ConsoleExt|Favbet delete address http://62.113.216.144:65233/ listToDelete 3
+2017-10-18 17:17:35.5489|INFO|Scanner.ConsoleExt|Favbet check address http://144.76.172.57:65233/
+2017-10-18 17:17:35.9517|INFO|Scanner.ConsoleExt|Favbet delete address http://144.76.172.57:65233/ listToDelete 4
+2017-10-18 17:17:35.9517|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-10-18 17:19:11.7358|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-10-18 17:19:12.0979|INFO|Scanner.ConsoleExt|Favbet delete address http://95.183.8.129:65233/ listToDelete 5
+2017-10-18 17:19:12.1019|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-10-18 17:19:12.1450|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.60.3:65233/ listToDelete 6
+2017-10-18 17:19:12.1510|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.157:8000/
+2017-10-18 17:19:12.2152|INFO|Scanner.ConsoleExt|Favbet delete address http://185.156.178.197:40113/ listToDelete 7
+2017-10-18 17:19:12.2152|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.13.38:8000/
+2017-10-18 17:19:12.5494|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.47.194:40113/ listToDelete 8
+2017-10-18 17:19:12.5544|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.13.38:8000/ listToDelete 9
+2017-10-18 17:19:12.5544|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.244:8000/
+2017-10-18 17:19:12.5544|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.14.15:8000/
+2017-10-18 17:19:12.6387|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.12.147:8000/
+2017-10-18 17:19:12.7369|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.157:8000/ listToDelete 10
+2017-10-18 17:19:12.7369|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.37:8000/
+2017-10-18 17:19:13.0488|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.12.147:8000/ listToDelete 11
+2017-10-18 17:19:13.0488|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.97:8000/
+2017-10-18 17:19:13.0608|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.14.15:8000/ listToDelete 12
+2017-10-18 17:19:13.0608|INFO|Scanner.ConsoleExt|Favbet check address http://185.157.78.115:8000/
+2017-10-18 17:19:13.2308|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.244:8000/ listToDelete 13
+2017-10-18 17:19:13.2649|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.4:8000/
+2017-10-18 17:19:13.3471|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.15.37:8000/ listToDelete 14
+2017-10-18 17:19:13.3506|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.39:8000/
+2017-10-18 17:19:13.7717|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.4:8000/ listToDelete 15
+2017-10-18 17:19:13.7717|INFO|Scanner.ConsoleExt|Favbet check address http://104.200.35.166:8000/
+2017-10-18 17:19:13.8860|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.39:8000/ listToDelete 16
+2017-10-18 17:19:13.8971|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.38.170:8000/ listToDelete 17
+2017-10-18 17:19:13.8971|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.44:8000/
+2017-10-18 17:19:13.9236|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.187.99:8000/
+2017-10-18 17:19:13.9657|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.36.165:8000/ listToDelete 18
+2017-10-18 17:19:13.9773|INFO|Scanner.ConsoleExt|Favbet delete address http://104.200.35.97:8000/ listToDelete 19
+2017-10-18 17:19:13.9773|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.180.195:8000/
+2017-10-18 17:19:14.2440|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.97:8000/ listToDelete 20
+2017-10-18 17:19:14.2711|INFO|Scanner.ConsoleExt|Favbet delete address http://185.157.78.115:8000/ listToDelete 21
+2017-10-18 17:19:14.4345|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.190.44:8000/ listToDelete 22
+2017-10-18 17:19:14.4345|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.187.99:8000/ listToDelete 23
+2017-10-18 17:19:14.5684|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.180.195:8000/ listToDelete 24
+2017-10-18 17:19:45.1493|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2017-10-18 17:19:52.2363|INFO|Scanner.ConsoleExt||       Favbet| P     3 | Lines       4940 | Time      19:52
+2017-11-08 12:58:08.0846|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-11-08 12:58:08.0846|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2017-11-08 12:58:08.0846|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2017-11-08 12:58:08.0846|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2017-11-08 13:00:13.7607|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2017-11-08 13:00:17.7953|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-11-08 14:23:32.9131|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2017-11-08 14:23:32.9131|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2017-11-08 14:23:32.9261|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2017-11-08 14:23:32.9131|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2017-11-08 14:23:34.6222|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2017-11-08 14:23:34.6758|INFO|Scanner.ConsoleExt|Favbet check address http://103.232.172.112:8000/
+2017-11-08 14:23:35.4724|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2017-11-08 14:23:37.1544|INFO|Scanner.ConsoleExt|Favbet delete address http://103.232.172.112:8000/ listToDelete 1
+2017-11-08 14:23:37.1705|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.61.44:65233/
+2017-11-08 14:23:38.5738|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2017-11-08 14:23:39.5744|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2017-11-08 14:23:39.7088|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.121:65233/
+2017-11-08 14:23:56.5143|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3028 | Time      23:56
+2017-11-08 14:24:04.2924|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       2985 | Time      00:07
+2017-11-08 14:24:10.7853|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3019 | Time      00:06
+2017-11-08 14:24:15.7500|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       2981 | Time      00:04
+2017-11-08 14:24:21.4447|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       2960 | Time      00:05
+2017-11-08 14:24:26.1600|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3052 | Time      00:04
+2017-11-08 14:24:32.5218|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3049 | Time      00:06
+2017-11-08 14:24:37.7599|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3051 | Time      00:05

@@ -2,7 +2,8 @@
 {
     public class StoreBet
     {
-        public int EventId { get; set; }
-        public int OutcomeId { get; set; }
+        public long MarketId { get; set; }
+        public long EventId { get; set; }
+        public long OutcomeId { get; set; }
     }
 }

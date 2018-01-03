@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Web.Hosting;
 
 namespace Scanner.Helper
@@ -35,6 +38,30 @@ namespace Scanner.Helper
 
             return result;
         }
- 
+
+        public static string GetDomain(string host)
+        {
+            var domain = host.RegexStringValue("(?:http[s]?[:][/]+)(?:www.*?[.])?(?<value>.*?)(?:[/]|$)");
+            return domain;
+        }
+
+        public static CookieCollection GetAllCookies(this CookieContainer container)
+        {
+            var allCookies = new CookieCollection();
+            var domainTableField = container.GetType().GetRuntimeFields().FirstOrDefault(x => x.Name == "m_domainTable");
+            var domains = (IDictionary)domainTableField.GetValue(container);
+
+            foreach (var val in domains.Values)
+            {
+                var type = val.GetType().GetRuntimeFields().First(x => x.Name == "m_list");
+                var values = (IDictionary)type.GetValue(val);
+                foreach (CookieCollection cookies in values.Values)
+                {
+                    allCookies.Add(cookies);
+                }
+            }
+            return allCookies;
+        }
+
     }
 }

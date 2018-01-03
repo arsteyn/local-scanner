@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AngleSharp.dll">
-      <publishTime>02/12/2016 14:40:34</publishTime>
+      <publishTime>12/02/2016 14:40:34</publishTime>
     </File>
     <File Include="bin/Bars.EAS.Core.dll">
       <publishTime>11/30/2016 15:43:50</publishTime>
@@ -19,19 +19,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 15:43:46</publishTime>
     </File>
     <File Include="bin/BetFair.dll">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:51</publishTime>
     </File>
     <File Include="bin/BetFair.pdb">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:51</publishTime>
     </File>
     <File Include="bin/Betfair/Config/LiveApp.p12">
       <publishTime>11/12/2016 12:20:25</publishTime>
     </File>
     <File Include="bin/BetFairApi.dll">
-      <publishTime>09/10/2017 12:27:24</publishTime>
+      <publishTime>10/18/2017 12:25:01</publishTime>
     </File>
     <File Include="bin/BetFairApi.pdb">
-      <publishTime>09/10/2017 12:27:24</publishTime>
+      <publishTime>10/18/2017 12:25:01</publishTime>
     </File>
     <File Include="bin/BM.Core.dll">
       <publishTime>06/12/2017 15:35:37</publishTime>
@@ -43,16 +43,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 15:44:05</publishTime>
     </File>
     <File Include="bin/Bwin.dll">
-      <publishTime>10/11/2017 19:02:31</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/Bwin.pdb">
-      <publishTime>10/11/2017 19:02:31</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/CloudFlareNet.dll">
-      <publishTime>10/07/2017 13:44:15</publishTime>
+      <publishTime>10/18/2017 12:08:13</publishTime>
     </File>
     <File Include="bin/CloudFlareNet.pdb">
-      <publishTime>10/07/2017 13:44:15</publishTime>
+      <publishTime>10/18/2017 12:08:13</publishTime>
     </File>
     <File Include="bin/Config/LiveApp.p12">
       <publishTime>12/24/2016 13:21:34</publishTime>
@@ -70,10 +70,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2017 12:41:12</publishTime>
     </File>
     <File Include="bin/Favbet.dll">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/Favbet.pdb">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
       <publishTime>07/14/2016 11:01:16</publishTime>
@@ -82,10 +82,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/14/2016 11:01:16</publishTime>
     </File>
     <File Include="bin/Leonbets.dll">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/Leonbets.pdb">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/LocalScanner.WebHost.dll">
       <publishTime>12/26/2016 16:43:09</publishTime>
@@ -115,16 +115,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/13/2016 23:06:14</publishTime>
     </File>
     <File Include="bin/NLog.config">
-      <publishTime>10/06/2017 16:19:43</publishTime>
+      <publishTime>06/10/2017 16:19:43</publishTime>
     </File>
     <File Include="bin/NLog.dll">
       <publishTime>08/08/2017 19:19:52</publishTime>
     </File>
     <File Include="bin/Parimatch.dll">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/Parimatch.pdb">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/ru/System.Web.Mvc.resources.dll">
       <publishTime>07/09/2013 12:34:04</publishTime>
@@ -142,16 +142,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2013 12:35:56</publishTime>
     </File>
     <File Include="bin/Scanner.dll">
-      <publishTime>10/11/2017 19:02:29</publishTime>
+      <publishTime>10/18/2017 17:21:50</publishTime>
     </File>
     <File Include="bin/Scanner.pdb">
-      <publishTime>10/11/2017 19:02:29</publishTime>
+      <publishTime>10/18/2017 17:21:50</publishTime>
     </File>
     <File Include="bin/Scanner.Webhost.dll">
-      <publishTime>10/11/2017 19:17:59</publishTime>
+      <publishTime>10/18/2017 17:21:53</publishTime>
     </File>
     <File Include="bin/Scanner.Webhost.pdb">
-      <publishTime>10/11/2017 19:17:59</publishTime>
+      <publishTime>10/18/2017 17:21:53</publishTime>
     </File>
     <File Include="bin/SimMetrics.dll">
       <publishTime>03/29/2015 07:24:14</publishTime>
@@ -190,10 +190,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2017 16:35:09</publishTime>
     </File>
     <File Include="bin/WilliamHill.dll">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/WilliamHill.pdb">
-      <publishTime>10/11/2017 19:02:30</publishTime>
+      <publishTime>10/18/2017 17:21:52</publishTime>
     </File>
     <File Include="bin/x64/lz4X64.dll">
       <publishTime>07/12/2016 16:26:54</publishTime>
@@ -202,7 +202,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/12/2016 16:26:53</publishTime>
     </File>
     <File Include="CheckedProxy/Favbet.txt">
-      <publishTime>10/11/2017 19:17:05</publishTime>
+      <publishTime>10/18/2017 17:19:23</publishTime>
     </File>
     <File Include="CheckedProxy/test.txt">
       <publishTime>10/11/2017 19:04:49</publishTime>
@@ -214,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/2017 20:01:49</publishTime>
     </File>
     <File Include="NLog.config">
-      <publishTime>10/06/2017 16:19:43</publishTime>
+      <publishTime>06/10/2017 16:19:43</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>09/23/2017 12:16:17</publishTime>
@@ -223,13 +223,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/09/2017 14:14:26</publishTime>
     </File>
     <File Include="Proxy/ip.txt">
-      <publishTime>10/11/2017 16:54:01</publishTime>
+      <publishTime>10/18/2017 14:36:46</publishTime>
     </File>
     <File Include="Storage/LiveApp.p12">
       <publishTime>01/01/2017 20:13:36</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/23/2017 12:16:48</publishTime>
+      <publishTime>10/18/2017 12:08:14</publishTime>
     </File>
     <File Include="x64/lz4X64.dll">
       <publishTime>07/12/2016 16:26:54</publishTime>

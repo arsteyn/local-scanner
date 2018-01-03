@@ -44,15 +44,7 @@ namespace Bwin
                 Score2 = @event.Scoreboard.Score.Team2.Counters.OrderByDescending(c => c.PeriodId).First().Value
             };
 
-            //try
-            //{
-
             Convert(@event);
-            //}
-            //catch (Exception e)
-            //{
-            //}
-
 
             return Lines.ToArray();
         }
@@ -292,6 +284,7 @@ namespace Bwin
             if (market.Name.ContainsIgnoreCase("2nd period")) result = "2nd period";
             if (market.Name.ContainsIgnoreCase("3rd period")) result = "3rd period";
             if (market.Name.ContainsIgnoreCase("1st half")) result = "1st half";
+            if (market.Name.ContainsIgnoreCase("half time")) result = "1st half";
             if (market.Name.ContainsIgnoreCase("2nd half")) result = "2nd half";
             if (market.Name.ContainsIgnoreCase("1st quarter")) result = "1st quarter";
             if (market.Name.ContainsIgnoreCase("2nd quarter")) result = "2nd quarter";
