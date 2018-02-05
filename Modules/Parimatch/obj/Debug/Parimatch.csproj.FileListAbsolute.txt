@@ -33,6 +33,7 @@ C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Deploym
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.dll
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\Scanner.pdb
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\NLog.xml
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.Helpers.xml
@@ -43,4 +44,3 @@ C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Razor.x
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.dll
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.pdb
-C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\Newtonsoft.Json.dll

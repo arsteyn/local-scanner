@@ -61,20 +61,18 @@ namespace CloudFlareNet
             var isCloudFlareServer = false;
 
             var headers = response.EnumerateHeaders();
-            while (!isCloudFlareServer)
+
+            while (headers.MoveNext())
             {
                 var element = headers.Current;
-                if(element.Key == "Server")
-                {
-                    if(element.Value == CloudFlareServerName)
-                    {
-                        isCloudFlareServer = true;
-                    }
-                }
 
-                headers.MoveNext();
+                if (element.Key != "Server") continue;
+
+                if (element.Value != CloudFlareServerName) continue;
+
+                isCloudFlareServer = true;
             }
-            
+
             return isServiceUnavailable && isCloudFlareServer;
         }
     }

@@ -22,7 +22,10 @@ namespace Leonbets
         public static List<LineDTO> Lines;
 
 
-        internal static readonly List<string> StopWords = new List<string> { "totals", "number", "corner" };
+        internal static readonly List<string> StopWords = new List<string>
+        {
+            "totals", "number", "corner", "card", "booking"
+        };
 
         //Convert single event
         public static LineDTO[] Convert(string response, string bookmakerName, Event @event)

@@ -22,6 +22,6 @@ C:\Projects\Localscanner\Scanner.Core\bin\Debug\System.Web.Razor.xml
 C:\Projects\Localscanner\Scanner.Core\bin\Debug\System.Web.WebPages.xml
 C:\Projects\Localscanner\Scanner.Core\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Projects\Localscanner\Scanner.Core\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Projects\Localscanner\Scanner.Core\obj\Debug\Scanner.Core.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Scanner.Core\obj\Debug\Scanner.dll
 C:\Projects\Localscanner\Scanner.Core\obj\Debug\Scanner.pdb
-C:\Projects\Localscanner\Scanner.Core\obj\Debug\Scanner.Core.csprojResolveAssemblyReference.cache
