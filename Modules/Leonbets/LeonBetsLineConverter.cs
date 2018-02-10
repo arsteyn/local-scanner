@@ -24,7 +24,7 @@ namespace Leonbets
 
         internal static readonly List<string> StopWords = new List<string>
         {
-            "totals", "number", "corner", "card", "booking"
+            "totals", "number", "corner", "card", "booking", "penal"
         };
 
         //Convert single event

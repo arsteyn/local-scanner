@@ -107,6 +107,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Livescanner\RuCaptchaClient\RuCaptchaClient.csproj">
+      <Project>{A870E524-350F-463B-9BDE-27281ED58DF3}</Project>
+      <Name>RuCaptchaClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>
       <Name>Scanner.Core</Name>

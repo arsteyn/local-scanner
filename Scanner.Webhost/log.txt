@@ -6933,3 +6933,113 @@
 2017-11-08 14:24:26.1600|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3052 | Time      00:04
 2017-11-08 14:24:32.5218|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3049 | Time      00:06
 2017-11-08 14:24:37.7599|INFO|Scanner.ConsoleExt||       Favbet| P    10 | Lines       3051 | Time      00:05
+2018-02-09 16:58:51.3149|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2018-02-09 16:58:51.3204|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2018-02-09 16:58:51.3204|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2018-02-09 16:58:51.3204|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 16:58:51.3204|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 16:58:51.8784|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.81:65233/ listToDelete 1
+2018-02-09 16:58:51.8995|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.121:65233/
+2018-02-09 16:58:51.9967|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.121:65233/ listToDelete 2
+2018-02-09 16:58:51.9967|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2018-02-09 16:58:52.3519|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 16:58:53.0262|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2018-02-09 16:58:53.3747|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 16:58:53.5793|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2018-02-09 16:58:53.7914|INFO|Scanner.ConsoleExt|Favbet check address http://103.232.172.112:8000/
+2018-02-09 16:58:53.9177|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.61.44:65233/
+2018-02-09 16:58:53.9869|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 16:58:54.1059|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.61.44:65233/ listToDelete 3
+2018-02-09 16:58:56.4103|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start  
+2018-02-09 16:59:01.5096|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result ERROR_WRONG_CAPTCHA_ID
+2018-02-09 16:59:01.5287|INFO|Scanner.ConsoleExt|Favbet delete address http://103.232.172.112:8000/ listToDelete 4
+2018-02-09 16:59:04.8845|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh2ZXeLpFI9tj4e2Ge8--K8VXkbdMvGG4AIxY6DGqXyFH4hoeWZj1ABxUCUEW0t01eERbt3twSxmW-xcHnAfhgNyVV1ytUaDzEAp_FLWcxI3b5XSOQ8TqhwPC4J2GSt0yNbxHzU-46NH-J3QRC941EVorJzgk3rzXA5_ZKBKi4glS0-SMwQA1BOFTQLk_4IJr1lFNeRTQ9SqpfB0E8sAAl2X692lYHsvLqUCt0D7BGshmKpSvsiCYV3xRTf8BAQNbLtjmzPWCoJ_rJBsfOIn5BTrE5-RQTDK9if5F5v7MbsPTpjisPAh-D5LjjQ7ELrw9vTxMgs2pEZrHgCPT1p0oHbq9JEFcw
+2018-02-09 16:59:21.4580|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3pSao38H5B12dcAEC8oFozGxrD8Tsd2Lkd341GvWuCF7IVFGGrrVeeiC7UpID7XxicBDQjhIDynTlh_zw74ZWOdVW1gJ02-rZVJJkOIg_ZJ1IwJbvYCCLPm2BgWlXHd7g8ewFxIGlqMM78gEdUyruRj54jZP4FANC1Dn4M1k140CNlEId8G42kTC0exPPHUUtWZl2Dy8Z524aLvh0B-equpWyD8Y-Jq1lZ5l9VB5D44nwiE_DSE8QEt1F6tBQHzUb69B2OOFlxTKgDOxXJi810VpPpRXYL74rUXqakGLoBsW9qh2T_vVErVbKggWuLzkHZ0YrDfzcS2h_gX68XnjGMPr5fYTV7rluYVgeFsD_ZSiPrTjjXpak-R5sE9fFue221baK1qrCHfyIwZXW3PuzItC1HDd5q19OGFwYBn22HSF3_RuZYsN0MQR7vNeWnYRDirMZd
+2018-02-09 16:59:32.0814|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh2xTNRN7F8i0X072tP2oEf9GvVwyA_86JZahbIyGN82QlMvo1qR6Z2qTvu1WpOYL9Q5iQy8JhvjQG6wPEEvW14wcBPaJD1XTOe5NNShcWuczRCVN3velskQ8vWgcEbCUAidTSP7LLhlP-JKMQHfKu0nYCfDEXO8qolif8h8Rfbc9OvfZAvyhiKCEOPrwR1eNfMQ0u-vA7kkErlgxG9TrdGUGoR1RV8szBklC0IksT4q-yfveMhOo75PSu_Lkw7eUSaw3b38lTESobjSobc3x3BYHCY0btDE3DHAVDZ0h3SGt14TEnZ771IosKR8Zx68-bgLDtyyTif4NfddFNAaR0TmGzhTfREuEsJqkUmJOZQibqZo_TeG_kzJfK8q-2VgWZqJWtBE
+2018-02-09 17:02:42.9607|INFO|Scanner.ConsoleExt||       Favbet| P     7 | Lines        103 | Time      02:42
+2018-02-09 17:05:53.8448|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:05:54.2664|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:05:57.5446|INFO|Scanner.ConsoleExt||       Favbet| P     7 | Lines        104 | Time      03:08
+2018-02-09 17:08:09.1852|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2018-02-09 17:08:09.1852|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2018-02-09 17:08:09.1852|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 17:08:09.1987|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2018-02-09 17:08:09.6218|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.81:65233/ listToDelete 1
+2018-02-09 17:08:09.6564|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.121:65233/
+2018-02-09 17:08:09.7602|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.121:65233/ listToDelete 2
+2018-02-09 17:08:09.7602|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2018-02-09 17:08:10.0104|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:08:10.9360|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 17:08:11.7405|INFO|Scanner.ConsoleExt|Favbet check address http://103.232.172.112:8000/
+2018-02-09 17:08:12.4358|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.61.44:65233/
+2018-02-09 17:08:12.5983|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.61.44:65233/ listToDelete 3
+2018-02-09 17:08:12.6013|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2018-02-09 17:08:12.8622|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2018-02-09 17:08:12.9072|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:08:13.1569|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:08:14.5496|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start  
+2018-02-09 17:08:19.6464|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result ERROR_WRONG_CAPTCHA_ID
+2018-02-09 17:08:19.6704|INFO|Scanner.ConsoleExt|Favbet delete address http://103.232.172.112:8000/ listToDelete 4
+2018-02-09 17:08:30.4231|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3Z0OZOXfsr6RyNg2iaJXE-jgS4UIB6dvLFkAfnK0J_UfpDb5Yu2TMDbk2DUZFmiZbtC8y8fwAKyxJdHTcPKQ8LgltDZdXzQruYN34Yw4_BP48ecMfyvOLpPBcjK8D-jjde8hevlnyybyjcGg5xFZJRRZEdFFsUINBZAHgJgjEI73zW6NlqFqFT_ZEc076dg1vKJgqWvDbOcYJz1rvNHCEYHwjjfhTIYwZSuQgFobBFM7GzvgcB_y8aVXIl7K3cZBNStigSP9i1yQVCw54MiFvvxyd6RTBhEse-GgvOVEDRvC5UjlT6T0IwB4I3EBiigcVtmw72n7JNdBe0xCMUCunN302WPw
+2018-02-09 17:08:33.3475|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh0Q5mwBk9HrhADQSP778-WDjrL8GcYRMd8GejQ6uM_SgDLcMLmdwPDlPTYcx-YAwOAwbnS990CKvO9BLxcAo0x-sWdTgrQj1A6K-MzvGgmi-L4NdVGG7ylIjLwGs275eQOAee_Hq-JZ8hfql8JsuXvEasDZkALIKiyhIQ_rWA40pYRFtFm9r4x7HvlLa3Z5Biu_5gpMwF2YvskVbL_YtexHq5qsCuEwHZOkpkvivItbl2l7oywVArCutU4C7gC_Z_oqDhmcMpyaFgn2oAmUA_3utCf9Gk1TyPhaM3BeV1tEc2-Qv1ICv0jnxelBCADhXK3BVBEZHrsQEfZCiNs-OcI64MHkrWQVBQFg8fSqsnBiBT3rfa3BTG-PpBEQ9UXeENLuRhIZ9N-L2nZr41K4ztTGLwgBP8iSm6nK4RpZzZu6qSZtdvt7kdCs-rHKsRb9BTIKDXwE4GxAig4fCZfFiCZUaq1bTUUcjkLHyJrt2GXuo-DQMJfNcVGMTQ6jdWG-gTI9En0d
+2018-02-09 17:08:58.4881|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3sJ_P2gmRTliqtUehrZ6eM3G_FX_kV15dHGd900KSWFdKETH-yBIRG0bwYXD_SYbkli8aTX_T4PY5lEJvkp_7VQeLYEnWal8QRJxUEh4yL-DlzPE4scqZfVIUNGQQFrHip3iriL_8s1I1tYNiu732CpmtTgRXS1ak9hp8VALgxZUQEy-IsrPzIh_onT6OvPEDI-ocrmX68gQLANUwQMdYHwBsWvqFgujuwFORGGfjGSFUacni3_oIT2lu4fdGKejuPFiE-r-GHyS-CW_2Dw-ij4VM-L3qAJ2YkWoCzO6dlGYbSVRH5kvp9B-9ozQPMDloLHzIhd9kxwQprTyza91sH5CTzcKyaLYVzI0PqO4GiLqCIUYmpbapkYCE3LApiwvc1HuwrsGKElO_pwLvt0O-4XTN6PszecapKTZhlGpC7zbj0W3SMO0KP1ZMHFMXDDhfdQHCn8YEUNSbV82DZ-ejgqBZVzmLKNNrXfJ-gJ7-S1fW8VEw
+2018-02-09 17:14:46.9268|INFO|Scanner.ConsoleExt||       Favbet| P     7 | Lines        110 | Time      14:46
+2018-02-09 17:42:11.7768|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2018-02-09 17:42:11.7999|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 17:42:11.8089|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2018-02-09 17:42:11.8089|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2018-02-09 17:42:12.5349|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.81:65233/ listToDelete 1
+2018-02-09 17:42:12.5669|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.121:65233/
+2018-02-09 17:42:12.6296|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.121:65233/ listToDelete 2
+2018-02-09 17:42:12.6346|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2018-02-09 17:42:12.9224|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:42:14.4769|INFO|Scanner.ConsoleExt|Favbet check address http://103.232.172.112:8000/
+2018-02-09 17:42:14.4979|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 17:42:14.4979|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2018-02-09 17:42:14.7759|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:42:15.5781|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.61.44:65233/
+2018-02-09 17:42:15.7410|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.61.44:65233/ listToDelete 3
+2018-02-09 17:42:15.7410|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2018-02-09 17:42:15.9776|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 17:42:17.6656|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start  
+2018-02-09 17:42:22.8897|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result ERROR_WRONG_CAPTCHA_ID
+2018-02-09 17:42:22.9128|INFO|Scanner.ConsoleExt|Favbet delete address http://103.232.172.112:8000/ listToDelete 4
+2018-02-09 17:42:37.5147|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh1Q4bleZlPB_j80UMPlDxaUx-rnBn2WscWbQvPOtMOEm_rVL5iqM64MmxeebfJf2_JnktceaYE19k5KFOXt1M5VpqBx2YRTq0bLZxfBAie7l8b55QFc2MObFJ7Itfq8tNToQwHg6G_PwqaebzahvPeydAm752A0avKymiVBM_ZmRDIj7w2MdYM3CHfDJUDN2KhtYRU5hqvDS8HKPursmSZgtjncxxDES1wXLafhhSF_vlVsMYn3chfA5OhXcpHx13Zhsea1NCf7pC95uaVseOv4gjzh7J5m4_Q9sCpwHItEPFes30HfmT38GjSmDEcizqA_3IGZ
+2018-02-09 17:42:50.8269|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3or0cwGgyWo8wX6v0XRt43Vd-htpq0Kdh6vp33rjR2qxmKA9ppjlm1udcMmub5J1XbR6DXjT49mAUm7VKcUgeyPJ6LniPvCH-Cyxw4BXMFilhjxHMQgGThtXlCNK4xrS9YGNVqcM-D8Kz8EqA1HPtXBGPAQBqug8F-w9MYhKIq7VT0iVxxihgFDDfuGYrlD4_KmoYEs5MBgZJdAPFvNcNdNljhrXMqzSk3djEKmoVC89rkgd3yY35qEuhynZ6zyR6D0HU4dWCzNCiwbVe7UVJXWsp4153vy15S3XDcgOiOosq288UFXm98-smgITwSnvkf7wvn8yxVcjXGcA75dB9nU7XUrVDmAjNHSkhSL8E3mSzj_UtTskGwdw8Cmm1nqzLNeL_uMKcBfiHSFlCd5D3jOCbGhBQQRasLWDPBITT_1Oytn8vaIpflm_jqvSP1oOAOSwRAtbLZTPTWekcg9mlf_kkKiSbfR_cBZp-s2jk_ZaRDrNQ
+2018-02-09 17:44:51.0181|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3geGn2QNeLDnwN_rz8M98I2CNarS4tz-KdIOqKgSSVoFS5-HEiP5spUF3MFmA7_mJHR6bo3zQ05So4qLvApER7Pi3kWLL4N2WIdGyLF7DbWDI2YoiKz8dK3k-TFUvYwJjtdxAfmcoQPyi1OsC6FQ1daISZvRZhtCHxtbUf73e81ojpsfYOV22QYHxFvi1o9DnU3qruypmwzpwPcRNhy6uGZOisbsbRzqCNzqV-12KeeZdb258jaK6qMicEi_x38jKDN_jtW8ESdkICqN5EnUbOI3rOuKTAErBdwrfAZ2JVdgIozGCwjxobQnSk_9n0zc9bMsH2fCTmNxMTTCaz-PIAj7cKF9sCVp4T4H699N5AW8yqGl9dO_LW0pxWm0rksfXuZu7UPIFeJw0rVf5YWJ5pTYkx_C12THD_1-aA9tnxCJRDwhia_YHzwuu6PocF0-aseF80Uc3ORjaO0TED4ZEd00LCjlAXbhqAkBJUD6O-JWvqdKU
+2018-02-09 17:45:40.0945|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:40.3071|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:40.4852|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:46.4143|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:46.4845|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:47.1192|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:47.1804|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:48.5961|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 17:45:48.7621|INFO|Scanner.ConsoleExt||       Favbet| P     7 | Lines         88 | Time      45:48
+2018-02-09 19:32:55.7571|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.81:65233/
+2018-02-09 19:32:55.7571|INFO|Scanner.ConsoleExt|Favbet check address http://185.156.178.197:40113/
+2018-02-09 19:32:55.7571|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 19:32:55.7571|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.15.5:8000/
+2018-02-09 19:32:55.7571|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.190.30:8000/
+2018-02-09 19:32:56.6480|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.81:65233/ listToDelete 1
+2018-02-09 19:32:56.7412|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.46.121:65233/
+2018-02-09 19:32:56.8199|INFO|Scanner.ConsoleExt|Favbet delete address http://46.17.46.121:65233/ listToDelete 2
+2018-02-09 19:32:56.8199|INFO|Scanner.ConsoleExt|Favbet check address http://46.17.47.194:40113/
+2018-02-09 19:32:57.2812|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 19:32:58.1059|INFO|Scanner.ConsoleExt|Favbet check address http://185.102.137.6:21326/
+2018-02-09 19:32:58.1174|INFO|Scanner.ConsoleExt|Favbet check address http://103.232.172.112:8000/
+2018-02-09 19:32:58.3666|INFO|Scanner.ConsoleExt|Favbet check address http://185.17.1.124:10014/
+2018-02-09 19:32:58.7270|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 19:33:00.8637|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start  
+2018-02-09 19:33:02.8029|INFO|Scanner.ConsoleExt|Favbet check address http://91.230.61.44:65233/
+2018-02-09 19:33:03.0540|INFO|Scanner.ConsoleExt|Favbet delete address http://91.230.61.44:65233/ listToDelete 3
+2018-02-09 19:33:05.3355|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Start 6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0 
+2018-02-09 19:33:05.9723|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result ERROR_WRONG_CAPTCHA_ID
+2018-02-09 19:33:05.9984|INFO|Scanner.ConsoleExt|Favbet delete address http://103.232.172.112:8000/ listToDelete 4
+2018-02-09 19:33:14.5718|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3Or3dUbXP5zMOFIp1-trih-Ue6fI6SFEfsftCdLXdrTAQXVZktGW8ZNOQTbWkMROiyHOM96-g5oVAdWJORF1yXKDF6xZ1q4FoLGIYO-lUgr8IkNhAdY2f61TpKHKid2hR3fTM4_tpDVeqYnTaBM0TXNGO8RE_p4_WXRLdYkNNTB5f5F2tArdFnMiA9R60keFRjsKESA4MbXHR9D1cgpt0QgycNTE8CUJeXH8OAMlqqtEx-ZeWWIneA1jGb_NNK_0GiGxfYgwT6_SnaryAwvebfNus0FPtN8DK_VMfkZ-g0E0CgJXpFrY9bQkIFJMzAkMdk8tw0ZXgc3jVroguz-PQXaEgUk7E5-uWzknE5SdTRTQPYp4L67O31Of8o73dqdrEN3A_dQNEUi9Bd4JyOkRgdbH5kpDVrQD9T-5bDmx_uBMTNXQHW6buPJ4QrnjQBjIM7kqQiI8U6jaBvYL29bgnrVDzcrcdOkty7cmyFYfCLmTgZl2A
+2018-02-09 19:33:14.9535|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh03dBzyeMNinHGWhI_bpBNxrK5RLwRE6hDB1MUXEkLzh5AN2ItFkBW2KvUmuAifttizysAgAu0jRvGIgSrP637ogIv2Jwhw6JQDMIf3ZwWgUyWonkF1TZugAyc8uu52RGNNvcTD5ErAoskG893upGaAsk0LJcrNH0SCUxxH09RCZWOgFGGzKwW9mhne3x67C0Si6NU0LtFGIe2nlq1UR6vokQVqPVxJof3oo3j6CeypUMIIzNH2SULZm_DR9WQypICYv6GqNacxM-JOpuqj1lmZwaF8IDFvqX5EnvVProJ2q3EojzXV2fGhNnVY4c_vMSKNu2_5mpEuD4GtsGvoiHDQJyEzQkuhwX_6c_Gmg8endCJ8HAvinYn33w5usVKjRbFq-vitffkJJ5X3eTzyLlmVFkZuG8jVSKwM0jMoawLVQz7upqL-vlglDHIdRupYbUCAr08-Bj8WkNjsD5so4ThOj452_w
+2018-02-09 19:33:45.0702|INFO|Scanner.ScannerBase|FavBet RECAPTCHA Result 03AA7ASh3oS9teHZSzFjXr_K9KwKOGCUhCHtOduP30g22oUpIWgNHEBYmV864lf_U-LkIBuiNcZIInomqlBxZs7Zb0IA9eI0MVU6i8R6GtKL2YYKTKFOyUG4C-38t1CieP581A8TU8FXQ-jzRmDozt-K4lX-9ZF-QQ_MFewnrPG0JeCIZgeVIKw7lGUMO_SzWUnkdZteqh_EULndHtRnX2k-pNMLS5tgK8LE-iz3BliPGIM2TeJ9M5vvQOMwi6bGJ410IWDWoI6gIoWLNnJQF26YPXyNnCjqkwbTAcXDPQF7Z9KzLKSIMKzMrj2cYtme79cWV5dlbrMJL9ahObvJVZNiZATiDg-7SuGw
+2018-02-09 19:34:20.8477|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 19:34:21.9360|INFO|Scanner.ScannerBase|FB Parse event exception Запрос был прерван: Запрос отменен.
+2018-02-09 19:34:21.9706|INFO|Scanner.ScannerBase|FB Parse event exception Исключение во время запроса WebClient.
+2018-02-09 19:34:27.4328|INFO|Scanner.ConsoleExt||       Favbet| P     7 | Lines       3110 | Time      34:27

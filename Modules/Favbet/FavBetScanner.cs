@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
+using BM.Entities;
 using BM.Web;
 using Extreme.Net;
 using Favbet.Models.Line;
+using mevoronin.RuCaptchaNETClient;
 using Newtonsoft.Json;
 using Scanner;
 using Scanner.Helper;
@@ -24,6 +28,7 @@ namespace Favbet
 
         //public override string Host => "https://www.favbet.com/";
         public override string Host => "https://info.favbet.biz/";
+        public  string DomainForCookie => ".favbet.biz";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -183,15 +188,68 @@ namespace Favbet
 
             var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/bets/", ExWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
 
-            if (cookies != null && cookies.Any())
-                foreach (var cookie in cookies)
-                    cookieCollection.Add(new Cookie(cookie.Key, cookie.Value, "/", Domain));
+            if (cookies != null && cookies.Any()) { 
+                foreach (var cookie in cookies) { 
+                    cookieCollection.Add(new Cookie(cookie.Key, cookie.Value, "/", DomainForCookie));
+                }
+            }
+            else
+                //ReCaptcha
+                cookieCollection = CloudflareRecaptcha(proxy);
 
-            cookieCollection.Add(new Cookie("LANG", "en") { Domain = Domain });
+            cookieCollection.Add(new Cookie("LANG", "en") { Domain = DomainForCookie });
 
             return cookieCollection;
 
             #endregion
+        }
+
+        private CookieCollection CloudflareRecaptcha(WebProxy proxy)
+        {
+            var cookieCollection = new CookieCollection();
+
+            string responseText;
+
+
+            using (var webClient = new GetWebClient(proxy, cookieCollection))
+            {
+                try
+                {
+                    responseText = webClient.DownloadString(Host + "en/live/");
+                    cookieCollection.Add(webClient.CookieCollection);
+                }
+                catch (WebException ex)
+                {
+                    var response = (HttpWebResponse)ex.Response;
+
+                    var encoding = Encoding.ASCII;
+                    using (var reader = new StreamReader(response.GetResponseStream(), encoding)) responseText = reader.ReadToEnd();
+
+                    cookieCollection.Add(response.Cookies);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(responseText) && responseText.ContainsIgnoreCase("sport")) return cookieCollection;
+
+            var ray = Regex.Match(responseText, "data-ray=\"(.+?)\"").Groups[1].Value;
+            var sitekey = Regex.Match(responseText, "data-sitekey=\"(.+?)\"").Groups[1].Value;
+            var stoken = Regex.Match(responseText, "data-stoken=\"(.+?)\"").Groups[1].Value;
+
+            Log.Info($"FavBet RECAPTCHA Start {sitekey} {stoken}");
+
+            var captchaResponse = RuCaptchaHelper.GetCaptchaResult(sitekey, stoken, Host, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Address.Host, proxy.Credentials.GetCredential(proxy.Address, "").Password, proxy.Address.Port);
+
+            Log.Info($"FavBet RECAPTCHA Result {captchaResponse}");
+
+            if (captchaResponse.Contains("ERROR")) throw new Exception("Error on ReCaptcha resolve");
+
+            using (var webClient = new GetWebClient(proxy, cookieCollection))
+            {
+                webClient.DownloadData($"{Host}cdn-cgi/l/chk_captcha?id={ray}&g-recaptcha-response={captchaResponse}");
+                cookieCollection.Add(webClient.CookieCollection);
+            }
+
+            return cookieCollection;
         }
     }
 }

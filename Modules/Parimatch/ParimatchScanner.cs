@@ -13,7 +13,8 @@ namespace Parimatch
     public class ParimatchScanner : ScannerBase
     {
         public override string Name => "Parimatch";
-        public override string Host => "https://www.parimatch.com/";
+        //public override string Host => "https://www.parimatch.com/";
+        public override string Host => "https://www.pm-101.info//";
 
         CachedArray<TempData> _cachedArray;
         CachedArray<TempData> CachedArray => _cachedArray ?? (_cachedArray = new CachedArray<TempData>(1000 * 60 * 20, UpdateUrls));

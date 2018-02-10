@@ -51,3 +51,9 @@ C:\Projects\Localscanner\Modules\Favbet\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.dll
 C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.pdb
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\Scanner.dll.config
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\CloudFlareNet.dll.config
+C:\Projects\Localscanner\Modules\Favbet\obj\Debug\Favbet.csproj.CoreCompileInputs.cache
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\RuCaptchaClient.dll
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\RuCaptchaClient.pdb
+C:\Projects\Localscanner\Modules\Favbet\bin\Debug\log4net.xml

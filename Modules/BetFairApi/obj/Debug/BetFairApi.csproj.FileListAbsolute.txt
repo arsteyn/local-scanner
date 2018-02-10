@@ -13,3 +13,4 @@ C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.pdb
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csprojResolveAssemblyReference.cache
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.dll
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.pdb
+C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csproj.CoreCompileInputs.cache

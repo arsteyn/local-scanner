@@ -6,7 +6,7 @@ namespace CloudFlareNet
 {
     public class CloudFlareNet
     {
-        private const string CloudFlareServerName = "cloudflare-nginx";
+        private const string CloudFlareServerName = "cloudflare";
         private const string IdCookieName         = "__cfduid";
         private const string ClearanceCookieName  = "cf_clearance";
 
