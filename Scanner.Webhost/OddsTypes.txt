@@ -1,0 +1,218 @@
+0 - Total
+0 - Handicap
+2 - Which team has kick off?
+4 - Who wins the rest of the match?
+10 - 1X2
+11 - Which player will win the set?
+13 - Next goal (current score 0:0)
+13 - Next goal (current score 4:2)
+13 - Next goal (current score 1:1)
+13 - Next goal (current score 1:0)
+13 - Next goal (current score 0:1)
+13 - Next goal (current score 2:0)
+13 - Next goal (current score 2:1)
+13 - Next goal (current score 0:2)
+13 - Next goal (current score 3:0)
+13 - Next goal (current score 0:3)
+13 - Next goal (current score 4:0)
+16 - Draw No Bet
+17 - Who wins the period?
+18 - Final Result (in sets: best of 3)
+20 - Halftime: Who wins the rest?
+21 - Halftime: Total
+22 - Halftime: 3way
+26 - Correct score
+27 - Double chance (1X:12:X2)
+28 - Goals home team
+29 - Correct score first half flex
+30 - Both Teams to Score
+31 - Odd/Even
+32 - Goals away team
+33 - Asian total
+34 - Asian Handicap
+35 - Asian total first half
+36 - Asian handicap first half
+37 - 1X2 (inc. РћРў)
+38 - Asian handicap (inc. РћРў)
+39 - Total for whole match, including overtime
+40 - Odd/Even for whole match including overtime
+41 - Draw No Bet for first period
+42 - Who wins the rest of the first period?
+43 - Total for first period
+44 - Asian handicap for first period
+45 - Odd/Even for first period
+46 - Draw no Bet for second period
+47 - Total for second period
+48 - Asian handicap for second period
+49 - Draw No Bet for third period
+50 - Total for third period
+51 - Asian handicap for third period
+52 - Draw no Bet for fourth period
+53 - Total for fourth period
+54 - Asian handicap for fourth period
+55 - Who wins the rest of the second period?
+58 - Odd/Even for second period
+59 - Odd/Even for third period
+60 - Odd/Even for fourth period
+61 - Draw No Bet first half
+62 - Odd/Even for first half
+63 - Will there be overtime?
+64 - Who scores 40th point, including overtime?
+64 - Who scores 110th point, including overtime?
+64 - Who scores 45th point, including overtime?
+64 - Who scores 50th point, including overtime?
+64 - Who scores 60th point, including overtime?
+64 - Who scores 15th point, including overtime?
+64 - Who scores 65th point, including overtime?
+64 - Who scores 20th point, including overtime?
+64 - Who scores 115th point, including overtime?
+64 - Who scores 25th point, including overtime?
+64 - Who scores 70th point, including overtime?
+64 - Who scores 75th point, including overtime?
+64 - Who scores 30th point, including overtime?
+64 - Who scores 80th point, including overtime?
+64 - Who scores 35th point, including overtime?
+64 - Who scores 120th point, including overtime?
+64 - Who scores 85th point, including overtime?
+64 - Who scores 125th point, including overtime?
+64 - Who scores 130th point, including overtime?
+64 - Who scores 135th point, including overtime?
+64 - Who scores 55th point, including overtime?
+64 - Who scores 140th point, including overtime?
+64 - Who scores 145th point, including overtime?
+64 - Who scores 150th point, including overtime?
+64 - Who scores 90th point, including overtime?
+64 - Who scores 155th point, including overtime?
+64 - Who scores 95th point, including overtime?
+64 - Who scores 160th point, including overtime?
+64 - Who scores 100th point, including overtime?
+64 - Who scores 165th point, including overtime?
+64 - Who scores 105th point, including overtime?
+64 - Who scores 170th point, including overtime?
+89 - Who wins game 4 of set 1?
+89 - Who wins game 7 of set 1?
+89 - Who wins game 8 of set 1?
+89 - Who wins game 6 of set 1?
+89 - Who wins game 5 of set 1?
+89 - Who wins game 2 of set 1?
+89 - Who wins game 3 of set 1?
+89 - Who wins game 9 of set 1?
+89 - Who wins game 10 of set 1?
+89 - Who wins game 12 of set 1?
+90 - Who wins game 12 of set 2?
+90 - Who wins game 7 of set 2?
+90 - Who wins game 8 of set 2?
+90 - Who wins game 9 of set 2?
+90 - Who wins game 2 of set 2?
+90 - Who wins game 10 of set 2?
+90 - Who wins game 3 of set 2?
+90 - Who wins game 4 of set 2?
+90 - Who wins game 5 of set 2?
+90 - Who wins game 6 of set 2?
+91 - Who wins game 5 of set 3?
+91 - Who wins game 7 of set 3?
+91 - Who wins game 2 of set 3?
+91 - Who wins game 3 of set 3?
+91 - Who wins game 4 of set 3?
+91 - Who wins game 6 of set 3?
+91 - Who wins game 8 of set 3?
+91 - Who wins game 9 of set 3?
+96 - Outcome of game 4 set 1
+96 - Outcome of game 7 set 1
+96 - Outcome of game 8 set 1
+96 - Outcome of game 6 set 1
+96 - Outcome of game 5 set 1
+96 - Outcome of game 2 set 1
+96 - Outcome of game 3 set 1
+96 - Outcome of game 9 set 1
+96 - Outcome of game 10 set 1
+96 - Outcome of game 12 set 1
+97 - Outcome of game 12 set 2
+97 - Outcome of game 7 set 2
+97 - Outcome of game 8 set 2
+97 - Outcome of game 9 set 2
+97 - Outcome of game 2 set 2
+97 - Outcome of game 10 set 2
+97 - Outcome of game 3 set 2
+97 - Outcome of game 4 set 2
+97 - Outcome of game 5 set 2
+97 - Outcome of game 6 set 2
+98 - Outcome of game 5 set 3
+98 - Outcome of game 7 set 3
+98 - Outcome of game 2 set 3
+98 - Outcome of game 3 set 3
+98 - Outcome of game 4 set 3
+98 - Outcome of game 6 set 3
+98 - Outcome of game 8 set 3
+98 - Outcome of game 9 set 3
+101 - Handicap for first half
+102 - 1X2
+107 - Halftime: Next goal
+119 - Highest Scoring Half
+142 - Total hometeam
+143 - Total awayteam
+144 - 1st Half: Goals hometeam
+145 - 1st Half: Goals awayteam
+259 - Which Team to Score?
+285 - 2nd Half: 3way
+287 - 2nd Half - Double chance (1X - 12 - X2)
+289 - 2nd Half - Draw No Bet
+291 - 2nd Half - Handicap
+295 - 2nd Half: Total
+303 - 2nd Half - Both teams to score
+325 - Halftime: Double chance (1X:12:X2)
+484 - Correct Score Snooker
+486 - Who will win the frame?
+974 - Odd/Even
+1034 - Both teams to score
+1036 - Clean sheet home team
+1038 - Clean sheet away team
+1040 - Matchbet and both teams to score
+1072 - Away team to win all periods
+1074 - Home team win either period
+1076 - Away team win either period
+1086 - Highest scoring period
+1088 - Highest scoring period home team
+1090 - Highest scoring period away team
+1118 - Correct score Ice Hockey
+1212 - 5th frame - Player with highest break
+1212 - 6th frame - Player with highest break
+1212 - 2nd frame - Player with highest break
+1216 - 5th frame - Will there be a foul
+1216 - 6th frame - Will there be a foul
+1216 - 2nd frame - Will there be a foul
+1218 - 5th frame - Any player with a break 50+
+1218 - 6th frame - Any player with a break 50+
+1218 - 2nd frame - Any player with a break 50+
+1220 - 5th frame - Player 1 with a break 50+
+1220 - 6th frame - Player 1 with a break 50+
+1220 - 2nd frame - Player 1 with a break 50+
+1222 - 5th frame - Player 2 with a break 50+
+1222 - 6th frame - Player 2 with a break 50+
+1222 - 2nd frame - Player 2 with a break 50+
+1224 - 5th frame - Any player with a break 100+
+1224 - 6th frame - Any player with a break 100+
+1224 - 2nd frame - Any player with a break 100+
+1226 - 5th frame - Player 1 with a break 100+
+1226 - 6th frame - Player 1 with a break 100+
+1226 - 2nd frame - Player 1 with a break 100+
+1228 - 5th frame - Player 2 with a break 100+
+1228 - 6th frame - Player 2 with a break 100+
+1232 - 5th frame - Total points 99.5
+1232 - 6th frame - Total points 99.5
+1232 - 2nd frame - Total points 99.5
+1234 - 5th frame - Asian Point handicap 6.5
+1234 - 5th frame - Asian Point handicap 14.5
+1234 - 6th frame - Asian Point handicap 6.5
+1234 - 6th frame - Asian Point handicap 14.5
+1234 - 2nd frame - Asian Point handicap -42.5
+1234 - 2nd frame - Asian Point handicap -47.5
+1234 - 2nd frame - Asian Point handicap -43.5
+1236 - Match will go to a deciding frame
+1244 - Race to 3 frames
+1368 - 2nd Half - Asian handicap, including overtime
+1370 - 2nd Half - Total, including overtime
+1519 - 2nd Half - Matchbet and both teams to score
+1525 - Double chance (1X - 12 - X2) and both teams to score
+1527 - 1st Half - Both teams to score
+1539 - 1st Half - Matchbet and both teams to score

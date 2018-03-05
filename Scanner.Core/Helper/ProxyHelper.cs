@@ -39,6 +39,31 @@ namespace Scanner.Helper
             return result;
         }
 
+
+        public static void UpdateLeonEvents(string line)
+        {
+            var path = HostingEnvironment.ApplicationPhysicalPath + "OddsTypes.txt";
+
+            var text = File.ReadAllText(path);
+
+            if (text.Contains(line)) return;
+
+            using (var w = File.AppendText(path))
+            {
+                w.WriteLine(line);
+            }
+
+            var contents = File.ReadAllLines(path);
+
+
+            var orderedScores = contents.OrderBy(x => int.Parse(x.Split(' ')[0]));
+
+            File.WriteAllLines(path, orderedScores);
+        }
+
+
+
+
         public static string GetDomain(string host)
         {
             var domain = host.RegexStringValue("(?:http[s]?[:][/]+)(?:www.*?[.])?(?<value>.*?)(?:[/]|$)");

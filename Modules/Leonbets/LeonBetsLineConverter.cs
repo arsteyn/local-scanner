@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 using Bars.EAS.Utils.Extension;
 using BM;
@@ -11,6 +13,7 @@ using JsonClasses;
 using Leonbets.JsonClasses;
 using Newtonsoft.Json;
 using Scanner;
+using Scanner.Helper;
 
 namespace Leonbets
 {
@@ -147,6 +150,8 @@ namespace Leonbets
 
         private static string GetCoeffKind(string sportKind, Runner runner, Odd odd)
         {
+            ProxyHelper.UpdateLeonEvents((odd.oddsType ?? 0) + " - " + odd.name);
+
             if (sportKind == "Basketball")
             {
                 if (odd.name == "Odd/Even" || odd.name == "1X2") return string.Empty;
