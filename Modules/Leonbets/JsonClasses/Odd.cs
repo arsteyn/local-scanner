@@ -3,17 +3,15 @@ using JsonClasses;
 
 namespace Leonbets.JsonClasses
 {
-
-
-    public class Odd
+    public class Market
     {
         public string id { get; set; }
 
-        public int? oddsType { get; set; }
+        public bool open { get; set; }
 
         public string name { get; set; }
 
-        public string specialOddsValue { get; set; }
+        public string family { get; set; }
 
         public List<Runner> runners { get; set; }
     }

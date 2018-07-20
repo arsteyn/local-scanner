@@ -1,218 +1,894 @@
-0 - Total
-0 - Handicap
-2 - Which team has kick off?
-4 - Who wins the rest of the match?
-10 - 1X2
-11 - Which player will win the set?
-13 - Next goal (current score 0:0)
-13 - Next goal (current score 4:2)
-13 - Next goal (current score 1:1)
-13 - Next goal (current score 1:0)
-13 - Next goal (current score 0:1)
-13 - Next goal (current score 2:0)
-13 - Next goal (current score 2:1)
-13 - Next goal (current score 0:2)
-13 - Next goal (current score 3:0)
-13 - Next goal (current score 0:3)
-13 - Next goal (current score 4:0)
-16 - Draw No Bet
-17 - Who wins the period?
-18 - Final Result (in sets: best of 3)
-20 - Halftime: Who wins the rest?
-21 - Halftime: Total
-22 - Halftime: 3way
-26 - Correct score
-27 - Double chance (1X:12:X2)
-28 - Goals home team
-29 - Correct score first half flex
-30 - Both Teams to Score
-31 - Odd/Even
-32 - Goals away team
-33 - Asian total
-34 - Asian Handicap
-35 - Asian total first half
-36 - Asian handicap first half
-37 - 1X2 (inc. РћРў)
-38 - Asian handicap (inc. РћРў)
-39 - Total for whole match, including overtime
-40 - Odd/Even for whole match including overtime
-41 - Draw No Bet for first period
-42 - Who wins the rest of the first period?
-43 - Total for first period
-44 - Asian handicap for first period
-45 - Odd/Even for first period
-46 - Draw no Bet for second period
-47 - Total for second period
-48 - Asian handicap for second period
-49 - Draw No Bet for third period
-50 - Total for third period
-51 - Asian handicap for third period
-52 - Draw no Bet for fourth period
-53 - Total for fourth period
-54 - Asian handicap for fourth period
-55 - Who wins the rest of the second period?
-58 - Odd/Even for second period
-59 - Odd/Even for third period
-60 - Odd/Even for fourth period
-61 - Draw No Bet first half
-62 - Odd/Even for first half
-63 - Will there be overtime?
-64 - Who scores 40th point, including overtime?
-64 - Who scores 110th point, including overtime?
-64 - Who scores 45th point, including overtime?
-64 - Who scores 50th point, including overtime?
-64 - Who scores 60th point, including overtime?
-64 - Who scores 15th point, including overtime?
-64 - Who scores 65th point, including overtime?
-64 - Who scores 20th point, including overtime?
-64 - Who scores 115th point, including overtime?
-64 - Who scores 25th point, including overtime?
-64 - Who scores 70th point, including overtime?
-64 - Who scores 75th point, including overtime?
-64 - Who scores 30th point, including overtime?
-64 - Who scores 80th point, including overtime?
-64 - Who scores 35th point, including overtime?
-64 - Who scores 120th point, including overtime?
-64 - Who scores 85th point, including overtime?
-64 - Who scores 125th point, including overtime?
-64 - Who scores 130th point, including overtime?
-64 - Who scores 135th point, including overtime?
-64 - Who scores 55th point, including overtime?
-64 - Who scores 140th point, including overtime?
-64 - Who scores 145th point, including overtime?
-64 - Who scores 150th point, including overtime?
-64 - Who scores 90th point, including overtime?
-64 - Who scores 155th point, including overtime?
-64 - Who scores 95th point, including overtime?
-64 - Who scores 160th point, including overtime?
-64 - Who scores 100th point, including overtime?
-64 - Who scores 165th point, including overtime?
-64 - Who scores 105th point, including overtime?
-64 - Who scores 170th point, including overtime?
-89 - Who wins game 4 of set 1?
-89 - Who wins game 7 of set 1?
-89 - Who wins game 8 of set 1?
-89 - Who wins game 6 of set 1?
-89 - Who wins game 5 of set 1?
-89 - Who wins game 2 of set 1?
-89 - Who wins game 3 of set 1?
-89 - Who wins game 9 of set 1?
-89 - Who wins game 10 of set 1?
-89 - Who wins game 12 of set 1?
-90 - Who wins game 12 of set 2?
-90 - Who wins game 7 of set 2?
-90 - Who wins game 8 of set 2?
-90 - Who wins game 9 of set 2?
-90 - Who wins game 2 of set 2?
-90 - Who wins game 10 of set 2?
-90 - Who wins game 3 of set 2?
-90 - Who wins game 4 of set 2?
-90 - Who wins game 5 of set 2?
-90 - Who wins game 6 of set 2?
-91 - Who wins game 5 of set 3?
-91 - Who wins game 7 of set 3?
-91 - Who wins game 2 of set 3?
-91 - Who wins game 3 of set 3?
-91 - Who wins game 4 of set 3?
-91 - Who wins game 6 of set 3?
-91 - Who wins game 8 of set 3?
-91 - Who wins game 9 of set 3?
-96 - Outcome of game 4 set 1
-96 - Outcome of game 7 set 1
-96 - Outcome of game 8 set 1
-96 - Outcome of game 6 set 1
-96 - Outcome of game 5 set 1
-96 - Outcome of game 2 set 1
-96 - Outcome of game 3 set 1
-96 - Outcome of game 9 set 1
-96 - Outcome of game 10 set 1
-96 - Outcome of game 12 set 1
-97 - Outcome of game 12 set 2
-97 - Outcome of game 7 set 2
-97 - Outcome of game 8 set 2
-97 - Outcome of game 9 set 2
-97 - Outcome of game 2 set 2
-97 - Outcome of game 10 set 2
-97 - Outcome of game 3 set 2
-97 - Outcome of game 4 set 2
-97 - Outcome of game 5 set 2
-97 - Outcome of game 6 set 2
-98 - Outcome of game 5 set 3
-98 - Outcome of game 7 set 3
-98 - Outcome of game 2 set 3
-98 - Outcome of game 3 set 3
-98 - Outcome of game 4 set 3
-98 - Outcome of game 6 set 3
-98 - Outcome of game 8 set 3
-98 - Outcome of game 9 set 3
-101 - Handicap for first half
-102 - 1X2
-107 - Halftime: Next goal
-119 - Highest Scoring Half
-142 - Total hometeam
-143 - Total awayteam
-144 - 1st Half: Goals hometeam
-145 - 1st Half: Goals awayteam
-259 - Which Team to Score?
-285 - 2nd Half: 3way
-287 - 2nd Half - Double chance (1X - 12 - X2)
-289 - 2nd Half - Draw No Bet
-291 - 2nd Half - Handicap
-295 - 2nd Half: Total
-303 - 2nd Half - Both teams to score
-325 - Halftime: Double chance (1X:12:X2)
-484 - Correct Score Snooker
-486 - Who will win the frame?
-974 - Odd/Even
-1034 - Both teams to score
-1036 - Clean sheet home team
-1038 - Clean sheet away team
-1040 - Matchbet and both teams to score
-1072 - Away team to win all periods
-1074 - Home team win either period
-1076 - Away team win either period
-1086 - Highest scoring period
-1088 - Highest scoring period home team
-1090 - Highest scoring period away team
-1118 - Correct score Ice Hockey
-1212 - 5th frame - Player with highest break
-1212 - 6th frame - Player with highest break
-1212 - 2nd frame - Player with highest break
-1216 - 5th frame - Will there be a foul
-1216 - 6th frame - Will there be a foul
-1216 - 2nd frame - Will there be a foul
-1218 - 5th frame - Any player with a break 50+
-1218 - 6th frame - Any player with a break 50+
-1218 - 2nd frame - Any player with a break 50+
-1220 - 5th frame - Player 1 with a break 50+
-1220 - 6th frame - Player 1 with a break 50+
-1220 - 2nd frame - Player 1 with a break 50+
-1222 - 5th frame - Player 2 with a break 50+
-1222 - 6th frame - Player 2 with a break 50+
-1222 - 2nd frame - Player 2 with a break 50+
-1224 - 5th frame - Any player with a break 100+
-1224 - 6th frame - Any player with a break 100+
-1224 - 2nd frame - Any player with a break 100+
-1226 - 5th frame - Player 1 with a break 100+
-1226 - 6th frame - Player 1 with a break 100+
-1226 - 2nd frame - Player 1 with a break 100+
-1228 - 5th frame - Player 2 with a break 100+
-1228 - 6th frame - Player 2 with a break 100+
-1232 - 5th frame - Total points 99.5
-1232 - 6th frame - Total points 99.5
-1232 - 2nd frame - Total points 99.5
-1234 - 5th frame - Asian Point handicap 6.5
-1234 - 5th frame - Asian Point handicap 14.5
-1234 - 6th frame - Asian Point handicap 6.5
-1234 - 6th frame - Asian Point handicap 14.5
-1234 - 2nd frame - Asian Point handicap -42.5
-1234 - 2nd frame - Asian Point handicap -47.5
-1234 - 2nd frame - Asian Point handicap -43.5
-1236 - Match will go to a deciding frame
-1244 - Race to 3 frames
-1368 - 2nd Half - Asian handicap, including overtime
-1370 - 2nd Half - Total, including overtime
-1519 - 2nd Half - Matchbet and both teams to score
-1525 - Double chance (1X - 12 - X2) and both teams to score
-1527 - 1st Half - Both teams to score
-1539 - 1st Half - Matchbet and both teams to score
+1st Half - Both teams to score
+1st Half - Matchbet and both teams to score
+1st Half: Goals awayteam
+1st Half: Goals hometeam
+1st Map - 3way
+1st Map - Asian Round Handicap 10.5, including overtime
+1st Map - Asian Round Handicap -10.5, including overtime
+1st Map - Asian Round Handicap 11.5, including overtime
+1st Map - Asian Round Handicap -11.5, including overtime
+1st Map - Asian Round Handicap 12.5, including overtime
+1st Map - Asian Round Handicap -12.5, including overtime
+1st Map - Asian Round Handicap 13.5, including overtime
+1st Map - Asian Round Handicap 14.5, including overtime
+1st Map - Asian Round Handicap 2.5, including overtime
+1st Map - Asian Round Handicap -2.5, including overtime
+1st Map - Asian Round Handicap 3.5, including overtime
+1st Map - Asian Round Handicap -3.5, including overtime
+1st Map - Asian Round Handicap 4.5, including overtime
+1st Map - Asian Round Handicap -4.5, including overtime
+1st Map - Asian Round Handicap 5.5, including overtime
+1st Map - Asian Round Handicap -5.5, including overtime
+1st Map - Asian Round Handicap 6.5, including overtime
+1st Map - Asian Round Handicap -6.5, including overtime
+1st Map - Asian Round Handicap 7.5, including overtime
+1st Map - Asian Round Handicap -7.5, including overtime
+1st Map - Asian Round Handicap 8.5, including overtime
+1st Map - Asian Round Handicap -8.5, including overtime
+1st Map - Asian Round Handicap 9.5, including overtime
+1st Map - Asian Round Handicap -9.5, including overtime
+1st Map - First Baron
+1st Map - First Dragon
+1st Map - First Inhibitor
+1st Map - First Tower
+1st Map - Odd/Even Rounds, including overtime
+1st Map - Total Headshots 47.5, including overtime
+1st Map - Total Headshots 48.5, including overtime
+1st Map - Total Headshots 50.5, including overtime
+1st Map - Total Headshots 51.5, including overtime
+1st Map - Total Headshots 52.5, including overtime
+1st Map - Total Headshots 53.5, including overtime
+1st Map - Total Headshots 54.5, including overtime
+1st Map - Total Headshots 55.5, including overtime
+1st Map - Total Headshots 56.5, including overtime
+1st Map - Total Headshots 57.5, including overtime
+1st Map - Total Headshots 58.5, including overtime
+1st Map - Total Headshots 59.5, including overtime
+1st Map - Total Headshots 60.5, including overtime
+1st Map - Total Headshots 61.5, including overtime
+1st Map - Total Headshots 62.5, including overtime
+1st Map - Total Headshots 63.5, including overtime
+1st Map - Total Headshots 64.5, including overtime
+1st Map - Total Headshots 65.5, including overtime
+1st Map - Total Headshots 66.5, including overtime
+1st Map - Total Headshots 67.5, including overtime
+1st Map - Total Headshots 68.5, including overtime
+1st Map - Total Headshots 69.5, including overtime
+1st Map - Total Headshots 70.5, including overtime
+1st Map - Total Headshots 71.5, including overtime
+1st Map - Total Headshots 72.5, including overtime
+1st Map - Total Headshots 73.5, including overtime
+1st Map - Total Headshots 74.5, including overtime
+1st Map - Total Headshots 75.5, including overtime
+1st Map - Total Headshots 76.5, including overtime
+1st Map - Total Headshots 77.5, including overtime
+1st Map - Total Headshots 78.5, including overtime
+1st Map - Total Headshots 79.5, including overtime
+1st Map - Total Headshots 80.5, including overtime
+1st Map - Total Headshots 81.5, including overtime
+1st Map - Total Headshots 82.5, including overtime
+1st Map - Total Headshots 83.5, including overtime
+1st Map - Total Headshots 84.5, including overtime
+1st Map - Total Headshots 85.5, including overtime
+1st Map - Total Headshots 86.5, including overtime
+1st Map - Total Headshots 87.5, including overtime
+1st Map - Total Headshots 88.5, including overtime
+1st Map - Total Headshots 89.5, including overtime
+1st Map - Total Headshots 90.5, including overtime
+1st Map - Total Headshots 91.5, including overtime
+1st Map - Total Headshots 92.5, including overtime
+1st Map - Total Headshots 93.5, including overtime
+1st Map - Total Headshots 94.5, including overtime
+1st Map - Total Headshots 95.5, including overtime
+1st Map - Total Headshots 96.5, including overtime
+1st Map - Total Rounds 17.5, including overtime
+1st Map - Total Rounds 18.5, including overtime
+1st Map - Total Rounds 19.5, including overtime
+1st Map - Total Rounds 20.5, including overtime
+1st Map - Total Rounds 21.5, including overtime
+1st Map - Total Rounds 22.5, including overtime
+1st Map - Total Rounds 23.5, including overtime
+1st Map - Total Rounds 24.5, including overtime
+1st Map - Total Rounds 25.5, including overtime
+1st Map - Total Rounds 26.5, including overtime
+1st Map - Total Rounds 27.5, including overtime
+1st Map - Total Rounds 28.5, including overtime
+1st Map - Total Rounds 29.5, including overtime
+1st Map - Which team will score more kills
+1st Map - Which team will win
+1st Map - Which team will win, including overtime
+1st Map - Which team wins race to 10 rounds
+1st Map - Which team wins race to 11 rounds
+1st Map - Which team wins race to 12 rounds
+1st Map - Which team wins race to 13 rounds
+1st Map - Which team wins race to 14 rounds
+1st Map - Which team wins race to 15 rounds
+1st Map - Which team wins race to 16 rounds
+1st Map - Which team wins race to 17 rounds
+1st Map - Which team wins race to 18 rounds
+1st Map - Which team wins race to 3 rounds
+1st Map - Which team wins race to 4 rounds
+1st Map - Which team wins race to 5 rounds
+1st Map - Which team wins race to 6 rounds
+1st Map - Which team wins race to 7 rounds
+1st Map - Which team wins race to 8 rounds
+1st Map - Which team wins race to 9 rounds
+1st Map - Will there be an ace, including overtime
+1st Map - Will there be overtime
+1st Map 10th Round - Bomb defused
+1st Map 10th Round - Bomb planted
+1st Map 10th Round - First Blood
+1st Map 10th Round - Total Kills 6.5
+1st Map 10th Round - Total Kills 7.5
+1st Map 10th Round - Total Kills awayteam 1.5
+1st Map 10th Round - Total Kills awayteam 2.5
+1st Map 10th Round - Total Kills awayteam 3.5
+1st Map 10th Round - Total Kills awayteam 4.5
+1st Map 10th Round - Total Kills hometeam 1.5
+1st Map 10th Round - Total Kills hometeam 2.5
+1st Map 10th Round - Total Kills hometeam 3.5
+1st Map 10th Round - Total Kills hometeam 4.5
+1st Map 11th Round - Bomb defused
+1st Map 11th Round - Bomb planted
+1st Map 11th Round - First Blood
+1st Map 11th Round - Total Kills 5.5
+1st Map 11th Round - Total Kills 6.5
+1st Map 11th Round - Total Kills 7.5
+1st Map 11th Round - Total Kills awayteam 0.5
+1st Map 11th Round - Total Kills awayteam 1.5
+1st Map 11th Round - Total Kills awayteam 2.5
+1st Map 11th Round - Total Kills awayteam 3.5
+1st Map 11th Round - Total Kills awayteam 4.5
+1st Map 11th Round - Total Kills hometeam 0.5
+1st Map 11th Round - Total Kills hometeam 1.5
+1st Map 11th Round - Total Kills hometeam 2.5
+1st Map 11th Round - Total Kills hometeam 3.5
+1st Map 11th Round - Total Kills hometeam 4.5
+1st Map 12th Round - Bomb defused
+1st Map 12th Round - Bomb planted
+1st Map 12th Round - First Blood
+1st Map 12th Round - Total Kills 5.5
+1st Map 12th Round - Total Kills 6.5
+1st Map 12th Round - Total Kills 7.5
+1st Map 12th Round - Total Kills awayteam 2.5
+1st Map 12th Round - Total Kills awayteam 3.5
+1st Map 12th Round - Total Kills awayteam 4.5
+1st Map 12th Round - Total Kills hometeam 0.5
+1st Map 12th Round - Total Kills hometeam 2.5
+1st Map 12th Round - Total Kills hometeam 3.5
+1st Map 12th Round - Total Kills hometeam 4.5
+1st Map 13th Round - Bomb defused
+1st Map 13th Round - Bomb planted
+1st Map 13th Round - First Blood
+1st Map 13th Round - Total Kills 5.5
+1st Map 13th Round - Total Kills 6.5
+1st Map 13th Round - Total Kills 7.5
+1st Map 13th Round - Total Kills awayteam 0.5
+1st Map 13th Round - Total Kills awayteam 2.5
+1st Map 13th Round - Total Kills awayteam 3.5
+1st Map 13th Round - Total Kills awayteam 4.5
+1st Map 13th Round - Total Kills hometeam 0.5
+1st Map 13th Round - Total Kills hometeam 1.5
+1st Map 13th Round - Total Kills hometeam 2.5
+1st Map 13th Round - Total Kills hometeam 3.5
+1st Map 13th Round - Total Kills hometeam 4.5
+1st Map 14th Round - Bomb defused
+1st Map 14th Round - Bomb planted
+1st Map 14th Round - First Blood
+1st Map 14th Round - Total Kills 6.5
+1st Map 14th Round - Total Kills 7.5
+1st Map 14th Round - Total Kills awayteam 2.5
+1st Map 14th Round - Total Kills awayteam 3.5
+1st Map 14th Round - Total Kills awayteam 4.5
+1st Map 14th Round - Total Kills hometeam 1.5
+1st Map 14th Round - Total Kills hometeam 2.5
+1st Map 14th Round - Total Kills hometeam 3.5
+1st Map 14th Round - Total Kills hometeam 4.5
+1st Map 15th Round - Bomb defused
+1st Map 15th Round - Bomb planted
+1st Map 15th Round - First Blood
+1st Map 15th Round - Total Kills 6.5
+1st Map 15th Round - Total Kills 7.5
+1st Map 15th Round - Total Kills awayteam 1.5
+1st Map 15th Round - Total Kills awayteam 2.5
+1st Map 15th Round - Total Kills awayteam 3.5
+1st Map 15th Round - Total Kills awayteam 4.5
+1st Map 15th Round - Total Kills hometeam 2.5
+1st Map 15th Round - Total Kills hometeam 3.5
+1st Map 15th Round - Total Kills hometeam 4.5
+1st Map 16th Round - Bomb defused
+1st Map 16th Round - Bomb planted
+1st Map 16th Round - First Blood
+1st Map 16th Round - Total Kills 7.5
+1st Map 16th Round - Total Kills awayteam 3.5
+1st Map 16th Round - Total Kills awayteam 4.5
+1st Map 16th Round - Total Kills hometeam 3.5
+1st Map 16th Round - Total Kills hometeam 4.5
+1st Map 17th Round - Bomb defused
+1st Map 17th Round - Bomb planted
+1st Map 17th Round - First Blood
+1st Map 17th Round - Total Kills 6.5
+1st Map 17th Round - Total Kills 7.5
+1st Map 17th Round - Total Kills awayteam 1.5
+1st Map 17th Round - Total Kills awayteam 2.5
+1st Map 17th Round - Total Kills awayteam 3.5
+1st Map 17th Round - Total Kills awayteam 4.5
+1st Map 17th Round - Total Kills hometeam 1.5
+1st Map 17th Round - Total Kills hometeam 2.5
+1st Map 17th Round - Total Kills hometeam 3.5
+1st Map 17th Round - Total Kills hometeam 4.5
+1st Map 18th Round - Bomb defused
+1st Map 18th Round - Bomb planted
+1st Map 18th Round - First Blood
+1st Map 18th Round - Total Kills 5.5
+1st Map 18th Round - Total Kills 6.5
+1st Map 18th Round - Total Kills 7.5
+1st Map 18th Round - Total Kills awayteam 1.5
+1st Map 18th Round - Total Kills awayteam 2.5
+1st Map 18th Round - Total Kills awayteam 3.5
+1st Map 18th Round - Total Kills awayteam 4.5
+1st Map 18th Round - Total Kills hometeam 1.5
+1st Map 18th Round - Total Kills hometeam 2.5
+1st Map 18th Round - Total Kills hometeam 3.5
+1st Map 18th Round - Total Kills hometeam 4.5
+1st Map 19th Round - Bomb defused
+1st Map 19th Round - Bomb planted
+1st Map 19th Round - First Blood
+1st Map 19th Round - Total Kills 6.5
+1st Map 19th Round - Total Kills 7.5
+1st Map 19th Round - Total Kills awayteam 2.5
+1st Map 19th Round - Total Kills awayteam 3.5
+1st Map 19th Round - Total Kills awayteam 4.5
+1st Map 19th Round - Total Kills hometeam 2.5
+1st Map 19th Round - Total Kills hometeam 3.5
+1st Map 19th Round - Total Kills hometeam 4.5
+1st Map 1st Half - Which team will win
+1st Map 20th Round - Bomb defused
+1st Map 20th Round - Bomb planted
+1st Map 20th Round - First Blood
+1st Map 20th Round - Total Kills 5.5
+1st Map 20th Round - Total Kills 6.5
+1st Map 20th Round - Total Kills 7.5
+1st Map 20th Round - Total Kills awayteam 0.5
+1st Map 20th Round - Total Kills awayteam 1.5
+1st Map 20th Round - Total Kills awayteam 2.5
+1st Map 20th Round - Total Kills awayteam 3.5
+1st Map 20th Round - Total Kills awayteam 4.5
+1st Map 20th Round - Total Kills hometeam 1.5
+1st Map 20th Round - Total Kills hometeam 2.5
+1st Map 20th Round - Total Kills hometeam 3.5
+1st Map 20th Round - Total Kills hometeam 4.5
+1st Map 21st Round - Bomb defused
+1st Map 21st Round - Bomb planted
+1st Map 21st Round - First Blood
+1st Map 21st Round - Total Kills 6.5
+1st Map 21st Round - Total Kills 7.5
+1st Map 21st Round - Total Kills awayteam 1.5
+1st Map 21st Round - Total Kills awayteam 2.5
+1st Map 21st Round - Total Kills awayteam 3.5
+1st Map 21st Round - Total Kills awayteam 4.5
+1st Map 21st Round - Total Kills hometeam 1.5
+1st Map 21st Round - Total Kills hometeam 2.5
+1st Map 21st Round - Total Kills hometeam 3.5
+1st Map 21st Round - Total Kills hometeam 4.5
+1st Map 22nd Round - Bomb defused
+1st Map 22nd Round - Bomb planted
+1st Map 22nd Round - First Blood
+1st Map 22nd Round - Total Kills 5.5
+1st Map 22nd Round - Total Kills 6.5
+1st Map 22nd Round - Total Kills 7.5
+1st Map 22nd Round - Total Kills awayteam 0.5
+1st Map 22nd Round - Total Kills awayteam 1.5
+1st Map 22nd Round - Total Kills awayteam 2.5
+1st Map 22nd Round - Total Kills awayteam 3.5
+1st Map 22nd Round - Total Kills awayteam 4.5
+1st Map 22nd Round - Total Kills hometeam 0.5
+1st Map 22nd Round - Total Kills hometeam 1.5
+1st Map 22nd Round - Total Kills hometeam 2.5
+1st Map 22nd Round - Total Kills hometeam 3.5
+1st Map 22nd Round - Total Kills hometeam 4.5
+1st Map 23rd Round - Bomb defused
+1st Map 23rd Round - Bomb planted
+1st Map 23rd Round - First Blood
+1st Map 23rd Round - Total Kills 5.5
+1st Map 23rd Round - Total Kills 6.5
+1st Map 23rd Round - Total Kills 7.5
+1st Map 23rd Round - Total Kills awayteam 0.5
+1st Map 23rd Round - Total Kills awayteam 2.5
+1st Map 23rd Round - Total Kills awayteam 3.5
+1st Map 23rd Round - Total Kills awayteam 4.5
+1st Map 23rd Round - Total Kills hometeam 3.5
+1st Map 23rd Round - Total Kills hometeam 4.5
+1st Map 24th Round - Bomb defused
+1st Map 24th Round - Bomb planted
+1st Map 24th Round - First Blood
+1st Map 24th Round - Total Kills 6.5
+1st Map 24th Round - Total Kills 7.5
+1st Map 24th Round - Total Kills awayteam 2.5
+1st Map 24th Round - Total Kills awayteam 3.5
+1st Map 24th Round - Total Kills awayteam 4.5
+1st Map 24th Round - Total Kills hometeam 2.5
+1st Map 24th Round - Total Kills hometeam 3.5
+1st Map 24th Round - Total Kills hometeam 4.5
+1st Map 25th Round - Bomb defused
+1st Map 25th Round - Bomb planted
+1st Map 25th Round - First Blood
+1st Map 25th Round - Total Kills 6.5
+1st Map 25th Round - Total Kills 7.5
+1st Map 25th Round - Total Kills awayteam 3.5
+1st Map 25th Round - Total Kills awayteam 4.5
+1st Map 25th Round - Total Kills hometeam 1.5
+1st Map 25th Round - Total Kills hometeam 2.5
+1st Map 25th Round - Total Kills hometeam 3.5
+1st Map 25th Round - Total Kills hometeam 4.5
+1st Map 26th Round - Bomb defused
+1st Map 26th Round - Bomb planted
+1st Map 26th Round - Total Kills 6.5
+1st Map 26th Round - Total Kills awayteam 3.5
+1st Map 26th Round - Total Kills awayteam 4.5
+1st Map 26th Round - Total Kills hometeam 2.5
+1st Map 26th Round - Total Kills hometeam 3.5
+1st Map 26th Round - Total Kills hometeam 4.5
+1st Map 31st Round - First Blood
+1st Map 34th Round - First Blood
+1st Map 3rd Round - Bomb defused
+1st Map 3rd Round - Bomb planted
+1st Map 3rd Round - First Blood
+1st Map 3rd Round - Total Kills 6.5
+1st Map 3rd Round - Total Kills 7.5
+1st Map 3rd Round - Total Kills awayteam 1.5
+1st Map 3rd Round - Total Kills awayteam 3.5
+1st Map 3rd Round - Total Kills awayteam 4.5
+1st Map 3rd Round - Total Kills hometeam 1.5
+1st Map 3rd Round - Total Kills hometeam 2.5
+1st Map 3rd Round - Total Kills hometeam 3.5
+1st Map 3rd Round - Total Kills hometeam 4.5
+1st Map 4th Round - Bomb defused
+1st Map 4th Round - Bomb planted
+1st Map 4th Round - First Blood
+1st Map 4th Round - Total Kills 5.5
+1st Map 4th Round - Total Kills 6.5
+1st Map 4th Round - Total Kills 7.5
+1st Map 4th Round - Total Kills awayteam 2.5
+1st Map 4th Round - Total Kills awayteam 3.5
+1st Map 4th Round - Total Kills awayteam 4.5
+1st Map 4th Round - Total Kills hometeam 1.5
+1st Map 4th Round - Total Kills hometeam 2.5
+1st Map 4th Round - Total Kills hometeam 3.5
+1st Map 4th Round - Total Kills hometeam 4.5
+1st Map 5th Round - Bomb defused
+1st Map 5th Round - Bomb planted
+1st Map 5th Round - First Blood
+1st Map 5th Round - Total Kills 5.5
+1st Map 5th Round - Total Kills 6.5
+1st Map 5th Round - Total Kills 7.5
+1st Map 5th Round - Total Kills awayteam 0.5
+1st Map 5th Round - Total Kills awayteam 2.5
+1st Map 5th Round - Total Kills awayteam 3.5
+1st Map 5th Round - Total Kills awayteam 4.5
+1st Map 5th Round - Total Kills hometeam 1.5
+1st Map 5th Round - Total Kills hometeam 2.5
+1st Map 5th Round - Total Kills hometeam 3.5
+1st Map 5th Round - Total Kills hometeam 4.5
+1st Map 6th Round - Bomb defused
+1st Map 6th Round - Bomb planted
+1st Map 6th Round - First Blood
+1st Map 6th Round - Total Kills 6.5
+1st Map 6th Round - Total Kills 7.5
+1st Map 6th Round - Total Kills awayteam 1.5
+1st Map 6th Round - Total Kills awayteam 2.5
+1st Map 6th Round - Total Kills awayteam 3.5
+1st Map 6th Round - Total Kills awayteam 4.5
+1st Map 6th Round - Total Kills hometeam 2.5
+1st Map 6th Round - Total Kills hometeam 3.5
+1st Map 6th Round - Total Kills hometeam 4.5
+1st Map 7th Round - Bomb defused
+1st Map 7th Round - Bomb planted
+1st Map 7th Round - First Blood
+1st Map 7th Round - Total Kills 5.5
+1st Map 7th Round - Total Kills 6.5
+1st Map 7th Round - Total Kills 7.5
+1st Map 7th Round - Total Kills awayteam 1.5
+1st Map 7th Round - Total Kills awayteam 2.5
+1st Map 7th Round - Total Kills awayteam 3.5
+1st Map 7th Round - Total Kills awayteam 4.5
+1st Map 7th Round - Total Kills hometeam 0.5
+1st Map 7th Round - Total Kills hometeam 1.5
+1st Map 7th Round - Total Kills hometeam 2.5
+1st Map 7th Round - Total Kills hometeam 3.5
+1st Map 7th Round - Total Kills hometeam 4.5
+1st Map 8th Round - Bomb defused
+1st Map 8th Round - Bomb planted
+1st Map 8th Round - First Blood
+1st Map 8th Round - Total Kills 5.5
+1st Map 8th Round - Total Kills 6.5
+1st Map 8th Round - Total Kills 7.5
+1st Map 8th Round - Total Kills awayteam 1.5
+1st Map 8th Round - Total Kills awayteam 2.5
+1st Map 8th Round - Total Kills awayteam 3.5
+1st Map 8th Round - Total Kills awayteam 4.5
+1st Map 8th Round - Total Kills hometeam 0.5
+1st Map 8th Round - Total Kills hometeam 1.5
+1st Map 8th Round - Total Kills hometeam 2.5
+1st Map 8th Round - Total Kills hometeam 3.5
+1st Map 8th Round - Total Kills hometeam 4.5
+1st Map 9th Round - Bomb defused
+1st Map 9th Round - Bomb planted
+1st Map 9th Round - First Blood
+1st Map 9th Round - Total Kills 5.5
+1st Map 9th Round - Total Kills 6.5
+1st Map 9th Round - Total Kills 7.5
+1st Map 9th Round - Total Kills awayteam 0.5
+1st Map 9th Round - Total Kills awayteam 1.5
+1st Map 9th Round - Total Kills awayteam 2.5
+1st Map 9th Round - Total Kills awayteam 3.5
+1st Map 9th Round - Total Kills awayteam 4.5
+1st Map 9th Round - Total Kills hometeam 0.5
+1st Map 9th Round - Total Kills hometeam 1.5
+1st Map 9th Round - Total Kills hometeam 2.5
+1st Map 9th Round - Total Kills hometeam 3.5
+1st Map 9th Round - Total Kills hometeam 4.5
+1X2
+1X2 (inc. РћРў)
+2nd Half - Asian handicap, including overtime
+2nd Half - Both teams to score
+2nd Half - Double chance (1X - 12 - X2)
+2nd Half - Draw No Bet
+2nd Half - Draw no Bet, including overtime
+2nd Half - Handicap
+2nd Half - Matchbet and both teams to score
+2nd Half - Odd/Even, including overtime
+2nd Half - Total, including overtime
+2nd Half: 3way
+2nd Half: Total
+2nd Map - 3way
+2nd Map - Asian Round Handicap 4.5, including overtime
+2nd Map - First Baron
+2nd Map - First Dragon
+2nd Map - First Inhibitor
+2nd Map - First Tower
+2nd Map - Which team will score more kills
+2nd Map - Which team will win
+2nd Map - Which team will win, including overtime
+2nd Map - Will there be overtime
+3rd Map - 3way
+3rd Map - Asian Round Handicap 3.5, including overtime
+3rd Map - First Baron
+3rd Map - First Dragon
+3rd Map - First Inhibitor
+3rd Map - First Tower
+3rd Map - Which team will score more kills
+3rd Map - Which team will win
+3rd Map - Which team will win, including overtime
+3rd Map - Will there be overtime
+3way for first period
+3way for fourth period
+3way for second period
+3way for third period
+6th frame - Any player with a break 100+
+6th frame - Any player with a break 50+
+6th frame - Asian Point handicap -25.5
+6th frame - Player with highest break
+6th frame - Total points 99.5
+6th frame - Will there be a foul
+7th frame - Any player with a break 100+
+7th frame - Any player with a break 50+
+7th frame - Asian Point handicap -25.5
+7th frame - Player with highest break
+7th frame - Total points 99.5
+7th frame - Will there be a foul
+Anytime Goal scorer
+Asian Handicap
+Asian handicap (inc. РћРў)
+Asian handicap after 5 innings
+Asian handicap first half
+Asian handicap for 1st inning
+Asian handicap for 2nd inning
+Asian handicap for 3rd inning
+Asian handicap for 4th inning
+Asian handicap for 5th inning
+Asian handicap for 6th inning
+Asian handicap for 7th inning
+Asian handicap for 8th inning
+Asian handicap for 9th inning
+Asian handicap for fifth period
+Asian handicap for first period
+Asian handicap for fourth period
+Asian handicap for innings 1-3
+Asian handicap for innings 4-6
+Asian handicap for innings 7-9
+Asian handicap for second period
+Asian handicap for third period
+Asian Map Handicap
+Asian total
+Asian total after 5 innings
+Asian total awayteam after 5 innings
+Asian total awayteam for the whole match, including overtime
+Asian total first half
+Asian total for the whole match, including overtime
+Asian total hometeam after 5 innings
+Asian total hometeam for the whole match, including overtime
+Awayteam to score for 1st inning
+Awayteam to score for 2nd inning
+Awayteam to score for 3rd inning
+Awayteam to score for 4th inning
+Awayteam to score for 5th inning
+Awayteam to score for 6th inning
+Awayteam to score for 7th inning
+Awayteam to score for 8th inning
+Awayteam to score for 9th inning
+Both Teams to Score
+Both teams to score for 1st inning
+Both teams to score for 2nd inning
+Both teams to score for 3rd inning
+Both teams to score for 4th inning
+Both teams to score for 5th inning
+Both teams to score for 6th inning
+Both teams to score for 7th inning
+Both teams to score for 8th inning
+Both teams to score for 9th inning
+Correct Map Score
+Correct score
+Correct score first half flex
+Double chance (1X - 12 - X2) and both teams to score
+Double chance (1X:12:X2)
+Draw No Bet
+Draw No Bet first half
+Draw No Bet for first period
+Draw no Bet for fourth period
+Draw no Bet for second period
+Draw No Bet for third period
+Final Result (in sets: best of 3)
+Final Result (in sets: best of 5)
+Goals away team
+Goals home team
+Halftime: 3way
+Halftime: Double chance (1X:12:X2)
+Halftime: Next goal
+Halftime: Total
+Halftime: Who wins the rest?
+Handicap
+Handicap for first half
+Highest Scoring Half
+Hometeam to score for 1st inning
+Hometeam to score for 2nd inning
+Hometeam to score for 3rd inning
+Hometeam to score for 4th inning
+Hometeam to score for 5th inning
+Hometeam to score for 6th inning
+Hometeam to score for 7th inning
+Hometeam to score for 8th inning
+Hometeam to score for 9th inning
+How many sets will exceed score limit
+Map Handicap
+Matchbet and both teams to score
+Matchbet and total including overtime
+Next goal (current score 0:0)
+Next goal (current score 0:1)
+Next goal (current score 0:2)
+Next goal (current score 0:3)
+Next goal (current score 0:4)
+Next goal (current score 0:5)
+Next goal (current score 1:0)
+Next goal (current score 1:1)
+Next goal (current score 1:2)
+Next goal (current score 1:3)
+Next goal (current score 1:4)
+Next goal (current score 1:5)
+Next goal (current score 1:6)
+Next goal (current score 2:0)
+Next goal (current score 2:1)
+Next goal (current score 2:2)
+Next goal (current score 2:3)
+Next goal (current score 2:4)
+Next goal (current score 3:0)
+Next goal (current score 3:1)
+Next goal (current score 3:2)
+Next goal (current score 3:3)
+Next goal (current score 3:4)
+Next goal (current score 4:0)
+Next goal (current score 4:1)
+Next goal (current score 4:2)
+Next goal (current score 4:3)
+Next goal (current score 5:0)
+Next goal (current score 5:1)
+Next goal (current score 5:2)
+Next goal (current score 5:3)
+Next goal (current score 5:4)
+Next goal (current score 5:5)
+Next goal (current score 6:0)
+Next goal (current score 6:5)
+Next goal (current score 7:0)
+Next goal (current score 8:0)
+Next goal (current score 8:1)
+Next Goal scorer
+Odd/Even
+Odd/Even for fifth period
+Odd/Even for first half
+Odd/Even for first period
+Odd/Even for fourth period
+Odd/Even for innings 1-3
+Odd/Even for innings 4-6
+Odd/Even for innings 7-9
+Odd/Even for second period
+Odd/Even for third period
+Odd/Even for whole match including overtime
+Sending off?
+Total
+Total 0.5 in 10 minutes interval 1-10
+Total 0.5 in 10 minutes interval 11-20
+Total 0.5 in 10 minutes interval 21-30
+Total 0.5 in 10 minutes interval 31-40
+Total 0.5 in 10 minutes interval 41-50
+Total 0.5 in 10 minutes interval 51-60
+Total 0.5 in 10 minutes interval 61-70
+Total 0.5 in 10 minutes interval 71-80
+Total 0.5 runs for innings 1-3
+Total 0.5 runs for innings 4-6
+Total 0.5 runs for innings 7-9
+Total 1.5 runs for innings 1-3
+Total 1.5 runs for innings 4-6
+Total 1.5 runs for innings 7-9
+Total 10.5 runs for innings 4-6
+Total 10.5 runs for innings 7-9
+Total 11.5 runs for innings 4-6
+Total 11.5 runs for innings 7-9
+Total 12.5 runs for innings 4-6
+Total 12.5 runs for innings 7-9
+Total 13.5 runs for innings 4-6
+Total 14.5 runs for innings 4-6
+Total 15.5 runs for innings 4-6
+Total 16.5 runs for innings 4-6
+Total 2.5 runs for innings 1-3
+Total 2.5 runs for innings 4-6
+Total 2.5 runs for innings 7-9
+Total 3.5 runs for innings 1-3
+Total 3.5 runs for innings 4-6
+Total 3.5 runs for innings 7-9
+Total 4.5 runs for innings 1-3
+Total 4.5 runs for innings 4-6
+Total 4.5 runs for innings 7-9
+Total 5.5 runs for innings 1-3
+Total 5.5 runs for innings 4-6
+Total 5.5 runs for innings 7-9
+Total 6.5 runs for innings 1-3
+Total 6.5 runs for innings 4-6
+Total 6.5 runs for innings 7-9
+Total 7.5 runs for innings 1-3
+Total 7.5 runs for innings 4-6
+Total 7.5 runs for innings 7-9
+Total 8.5 runs for innings 1-3
+Total 8.5 runs for innings 4-6
+Total 8.5 runs for innings 7-9
+Total 9.5 runs for innings 1-3
+Total 9.5 runs for innings 4-6
+Total 9.5 runs for innings 7-9
+Total after 5 innings
+Total awayteam
+Total awayteam 0.5 runs for innings 1-3
+Total awayteam 0.5 runs for innings 4-6
+Total awayteam 0.5 runs for innings 7-9
+Total awayteam 1.5 runs for innings 1-3
+Total awayteam 1.5 runs for innings 4-6
+Total awayteam 1.5 runs for innings 7-9
+Total awayteam 10.5 runs for innings 7-9
+Total awayteam 11.5 runs for innings 7-9
+Total awayteam 2.5 runs for innings 1-3
+Total awayteam 2.5 runs for innings 4-6
+Total awayteam 2.5 runs for innings 7-9
+Total awayteam 3.5 runs for innings 1-3
+Total awayteam 3.5 runs for innings 4-6
+Total awayteam 3.5 runs for innings 7-9
+Total awayteam 4.5 runs for innings 1-3
+Total awayteam 4.5 runs for innings 4-6
+Total awayteam 4.5 runs for innings 7-9
+Total awayteam 5.5 runs for innings 4-6
+Total awayteam 5.5 runs for innings 7-9
+Total awayteam 6.5 runs for innings 4-6
+Total awayteam 6.5 runs for innings 7-9
+Total awayteam 7.5 runs for innings 7-9
+Total awayteam 8.5 runs for innings 7-9
+Total awayteam 9.5 runs for innings 7-9
+Total awayteam after 5 innings
+Total awayteam for 1st inning
+Total awayteam for 2nd inning
+Total awayteam for 3rd inning
+Total awayteam for 4th inning
+Total awayteam for 5th inning
+Total awayteam for 6th inning
+Total awayteam for 7th inning
+Total awayteam for 8th inning
+Total awayteam for 9th inning
+Total awayteam including overtime
+Total for eighth period
+Total for fifth period
+Total for first period
+Total for fourth period
+Total for second period
+Total for seventh period
+Total for sixth period
+Total for third period
+Total for whole match, including overtime
+Total hometeam
+Total hometeam 0.5 runs for innings 1-3
+Total hometeam 0.5 runs for innings 4-6
+Total hometeam 0.5 runs for innings 7-9
+Total hometeam 1.5 runs for innings 1-3
+Total hometeam 1.5 runs for innings 4-6
+Total hometeam 1.5 runs for innings 7-9
+Total hometeam 10.5 runs for innings 4-6
+Total hometeam 11.5 runs for innings 4-6
+Total hometeam 2.5 runs for innings 1-3
+Total hometeam 2.5 runs for innings 4-6
+Total hometeam 2.5 runs for innings 7-9
+Total hometeam 3.5 runs for innings 1-3
+Total hometeam 3.5 runs for innings 4-6
+Total hometeam 3.5 runs for innings 7-9
+Total hometeam 4.5 runs for innings 1-3
+Total hometeam 4.5 runs for innings 4-6
+Total hometeam 4.5 runs for innings 7-9
+Total hometeam 5.5 runs for innings 4-6
+Total hometeam 5.5 runs for innings 7-9
+Total hometeam 6.5 runs for innings 4-6
+Total hometeam 6.5 runs for innings 7-9
+Total hometeam 7.5 runs for innings 4-6
+Total hometeam 8.5 runs for innings 4-6
+Total hometeam 9.5 runs for innings 4-6
+Total hometeam after 5 innings
+Total hometeam for 1st inning
+Total hometeam for 2nd inning
+Total hometeam for 3rd inning
+Total hometeam for 4th inning
+Total hometeam for 5th inning
+Total hometeam for 6th inning
+Total hometeam for 7th inning
+Total hometeam for 8th inning
+Total hometeam for 9th inning
+Total hometeam including overtime
+Total Maps
+When will next goal be scored in 10 minutes interval
+Which team will lead after 5 innings
+Which team will win the set?
+Which team wins race to 10 points
+Which team wins race to 10 points, fifth set?
+Which team wins race to 10 points, first period?
+Which team wins race to 10 points, first set?
+Which team wins race to 10 points, fourth period?
+Which team wins race to 10 points, second period?
+Which team wins race to 10 points, second set?
+Which team wins race to 10 points, third period?
+Which team wins race to 10 points, third set?
+Which team wins race to 15 points
+Which team wins race to 15 points, fifth set?
+Which team wins race to 15 points, first set?
+Which team wins race to 15 points, second set?
+Which team wins race to 15 points, third set?
+Which team wins race to 20 points
+Which team wins race to 20 points, first period?
+Which team wins race to 20 points, first set?
+Which team wins race to 20 points, fourth period?
+Which team wins race to 20 points, second period?
+Which team wins race to 20 points, second set?
+Which team wins race to 20 points, third period?
+Which team wins race to 20 points, third set?
+Which team wins race to 25 points
+Which team wins race to 3 points
+Which team wins race to 3 points, first set?
+Which team wins race to 5 points
+Which team wins race to 5 points, fifth set?
+Which team wins race to 5 points, first set?
+Which team wins race to 5 points, second set?
+Which team wins race to 5 points, third set?
+Which team wins race to 7 points
+Who advances to next round?
+Who scores 1 point?
+Who scores 10 point?
+Who scores 100th point, including overtime?
+Who scores 105th point, including overtime?
+Who scores 10th point first set
+Who scores 10th point second set
+Who scores 10th point third set
+Who scores 10th point, including overtime?
+Who scores 11 point?
+Who scores 110th point, including overtime?
+Who scores 115th point, including overtime?
+Who scores 12 point?
+Who scores 120th point, including overtime?
+Who scores 125th point, including overtime?
+Who scores 13 point?
+Who scores 130th point, including overtime?
+Who scores 135th point, including overtime?
+Who scores 14 point?
+Who scores 140th point, including overtime?
+Who scores 145th point, including overtime?
+Who scores 15 point?
+Who scores 150th point, including overtime?
+Who scores 155th point, including overtime?
+Who scores 15th point first set
+Who scores 15th point second set
+Who scores 15th point third set
+Who scores 15th point, including overtime?
+Who scores 16 point?
+Who scores 160th point, including overtime?
+Who scores 165th point, including overtime?
+Who scores 17 point?
+Who scores 170th point, including overtime?
+Who scores 175th point, including overtime?
+Who scores 18 point?
+Who scores 180th point, including overtime?
+Who scores 185th point, including overtime?
+Who scores 19 point?
+Who scores 190th point, including overtime?
+Who scores 195th point, including overtime?
+Who scores 2 point?
+Who scores 20 point?
+Who scores 200th point, including overtime?
+Who scores 205th point, including overtime?
+Who scores 20th point first set
+Who scores 20th point second set
+Who scores 20th point third set
+Who scores 20th point, including overtime?
+Who scores 210th point, including overtime?
+Who scores 215th point, including overtime?
+Who scores 220th point, including overtime?
+Who scores 25th point first set
+Who scores 25th point second set
+Who scores 25th point third set
+Who scores 25th point, including overtime?
+Who scores 3 point?
+Who scores 30th point first set
+Who scores 30th point second set
+Who scores 30th point third set
+Who scores 30th point, including overtime?
+Who scores 35th point first set
+Who scores 35th point second set
+Who scores 35th point third set
+Who scores 35th point, including overtime?
+Who scores 4 point?
+Who scores 40th point first set
+Who scores 40th point second set
+Who scores 40th point third set
+Who scores 40th point, including overtime?
+Who scores 45th point, including overtime?
+Who scores 5 point?
+Who scores 50th point, including overtime?
+Who scores 55th point, including overtime?
+Who scores 5th point first set
+Who scores 5th point second set
+Who scores 5th point third set
+Who scores 5th point, including overtime?
+Who scores 6 point?
+Who scores 60th point, including overtime?
+Who scores 65th point, including overtime?
+Who scores 7 point?
+Who scores 70th point, including overtime?
+Who scores 75th point, including overtime?
+Who scores 8 point?
+Who scores 80th point, including overtime?
+Who scores 85th point, including overtime?
+Who scores 9 point?
+Who scores 90th point, including overtime?
+Who scores 95th point, including overtime?
+Who scores most goals in 10 minutes interval 1-10
+Who scores most goals in 10 minutes interval 11-20
+Who scores most goals in 10 minutes interval 21-30
+Who scores most goals in 10 minutes interval 31-40
+Who scores most goals in 10 minutes interval 41-50
+Who scores most goals in 10 minutes interval 51-60
+Who scores most goals in 10 minutes interval 61-70
+Who scores most goals in 10 minutes interval 71-80
+Who scores most runs for innings 1-3
+Who scores most runs for innings 4-6
+Who scores most runs for innings 7-9
+Who scores the 1st goal in 10 minutes interval 1-10
+Who scores the 1st goal in 10 minutes interval 11-20
+Who scores the 1st goal in 10 minutes interval 21-30
+Who scores the 1st goal in 10 minutes interval 31-40
+Who scores the 1st goal in 10 minutes interval 41-50
+Who scores the 1st goal in 10 minutes interval 51-60
+Who scores the 1st goal in 10 minutes interval 61-70
+Who scores the 1st goal in 10 minutes interval 71-80
+Who wins the period?
+Who wins the rest of the match, including overtime?
+Who wins the rest of the match?
+Will there be overtime?

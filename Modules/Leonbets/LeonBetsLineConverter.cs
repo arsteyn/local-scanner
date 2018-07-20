@@ -20,10 +20,9 @@ namespace Leonbets
     public class LeonBetsLineConverter
     {
         private static readonly Regex TeamRegex = new Regex("^(?<home>.*?) - (?<away>.*?)$");
-        private static readonly Regex ScoreRegex = new Regex("^(?<homeScore>.*?) : (?<awayScore>.*?)$");
+        private static readonly Regex ScoreRegex = new Regex("^(?<homeScore>.*?):(?<awayScore>.*?)$");
 
         public static List<LineDTO> Lines;
-
 
         internal static readonly List<string> StopWords = new List<string>
         {
@@ -31,14 +30,11 @@ namespace Leonbets
         };
 
         //Convert single event
-        public static LineDTO[] Convert(string response, string bookmakerName, Event @event)
+        public static LineDTO[] Convert(Event @event, string bookmakerName)
         {
             Lines = new List<LineDTO>();
-
-            var odds = JsonConvert.DeserializeObject<List<Odd>>(response);
-
             var teamMatch = TeamRegex.Match(@event.name);
-            var teamScore = ScoreRegex.Match(@event.score);
+            var teamScore = ScoreRegex.Match(@event.liveStatus.score);
 
             var lineTemplate = new LineDTO
             {
@@ -47,28 +43,39 @@ namespace Leonbets
                 BookmakerName = bookmakerName,
                 Score1 = System.Convert.ToInt32(teamScore.Groups["homeScore"].Value),
                 Score2 = System.Convert.ToInt32(teamScore.Groups["awayScore"].Value),
-                SportKind = Helper.ConvertSport(@event.sName),
-                EventDate = TimeExt.FromUnixTime(@event.kickoffDate)
+                SportKind = Helper.ConvertSport(@event.league.sport.name),
+                EventDate = TimeExt.FromUnixTime(@event.kickoff)
             };
 
-            foreach (var odd in odds)
+            foreach (var market in @event.markets)
             {
                 //исключаем угловые
-                if (StopWords.Any(s => odd.name.ContainsIgnoreCase(s))) continue;
+                if (StopWords.Any(s => market.name.ContainsIgnoreCase(s))) continue;
 
-                foreach (var runner in odd.runners)
+                foreach (var runner in market.runners)
                 {
-                    Convert(@event, odd, runner, lineTemplate, response);
+                    try
+                    {
+
+                  
+
+                    Convert(@event, market, runner, lineTemplate);
+
+                    }
+                    catch (Exception e)
+                    {
+                       
+                    }
                 }
             }
             return Lines.ToArray();
         }
 
-        private static void Convert(Event @event, Odd odd, Runner runner, LineDTO lineTemplate, string resp)
+        private static void Convert(Event @event, Market market, Runner runner, LineDTO lineTemplate)
         {
             var line = lineTemplate.Clone();
 
-            var kind = GetCoeffKind(line.SportKind, runner, odd);
+            var kind = GetCoeffKind(line.SportKind, runner, market);
 
             if (string.IsNullOrEmpty(kind)) return;
 
@@ -76,31 +83,32 @@ namespace Leonbets
 
             decimal coeffValue;
 
-            decimal.TryParse(runner.oddValue, NumberStyles.Any, CultureInfo.InvariantCulture, out coeffValue);
+            decimal.TryParse(runner.price, NumberStyles.Any, CultureInfo.InvariantCulture, out coeffValue);
 
             line.CoeffValue = coeffValue;
 
             //в runner.name приходит значение иногда с минусом иногда с плюсом
-            //if (runner.name.Contains("(") && runner.name.Contains(")"))
-            if (!string.IsNullOrWhiteSpace(odd.specialOddsValue))
-            {
-                decimal coeffParam;
-                //decimal.TryParse(runner.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
-                decimal.TryParse(odd.specialOddsValue.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
-                line.CoeffParam = coeffParam;
+            if (runner.name.Contains("(") && runner.name.Contains(")")) { 
+                //if (!string.IsNullOrWhiteSpace(market.specialOddsValue))
+                //{
+                    decimal coeffParam;
+                    decimal.TryParse(runner.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
+                    //decimal.TryParse(market.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
+                    line.CoeffParam = coeffParam;
 
-                if (line.CoeffKind == "HANDICAP2")
-                    line.CoeffParam = line.CoeffParam * (-1);
+                    if (line.CoeffKind == "HANDICAP2")
+                        line.CoeffParam = line.CoeffParam * (-1);
+                //}
             }
 
-            line.CoeffType = GetCoeffType(line.SportKind, odd);
+            line.CoeffType = GetCoeffType(line.SportKind, market);
 
             line.LineData = new
             {
-                matchId = @event.Id,
+                eventId = @event.Id,
                 odd = coeffValue,
-                oddsTypeId = odd.id,
-                outcome = runner.aid,
+                marketId = market.id,
+                runnerId = runner.id,
             };
 
             //line.LineObject = odd.specialOddsValue;
@@ -108,21 +116,21 @@ namespace Leonbets
             AddLine(line);
         }
 
-        private static string GetCoeffType(string sportKind, Odd odd)
+        private static string GetCoeffType(string sportKind, Market market)
         {
             var coeffType = string.Empty;
 
-            if (odd.name.ContainsIgnoreCase("first half") || odd.name.ContainsIgnoreCase("halftime"))
+            if (market.name.ContainsIgnoreCase("first half") || market.name.ContainsIgnoreCase("halftime"))
             {
                 return "1st half";
             }
 
-            if (odd.name.ContainsIgnoreCase("2nd half") || odd.name.ContainsIgnoreCase("second half"))
+            if (market.name.ContainsIgnoreCase("2nd half") || market.name.ContainsIgnoreCase("second half"))
             {
                 return "2nd half";
             }
 
-            if (!odd.name.Contains("period")) return coeffType;
+            if (!market.name.Contains("period")) return coeffType;
 
             string periodType;
 
@@ -141,67 +149,68 @@ namespace Leonbets
 
             string period;
 
-            Helper.ReplaceCoeffTypes(odd.name, out period);
+            Helper.ReplaceCoeffTypes(market.name, out period);
 
             coeffType = $"{period} {periodType}";
 
             return coeffType;
         }
 
-        private static string GetCoeffKind(string sportKind, Runner runner, Odd odd)
+        private static string GetCoeffKind(string sportKind, Runner runner, Market market)
         {
-            ProxyHelper.UpdateLeonEvents((odd.oddsType ?? 0) + " - " + odd.name);
+            ProxyHelper.UpdateLeonEvents(market.name);
 
             if (sportKind == "Basketball")
             {
-                if (odd.name == "Odd/Even" || odd.name == "1X2") return string.Empty;
-                if (odd.name.StartsWith("Asian", StringComparison.OrdinalIgnoreCase)) return string.Empty;
-                if (odd.name == "Total") return string.Empty;
+                if (market.name == "Odd/Even" || market.name == "1X2") return string.Empty;
+                if (market.name.StartsWith("Asian", StringComparison.OrdinalIgnoreCase)) return string.Empty;
+                if (market.name == "Total") return string.Empty;
             }
 
-            if (odd.name.StartsWithIgnoreCase("1X2")
+            if (market.name.StartsWithIgnoreCase("1X2")
                 ||
-                odd.name.StartsWithIgnoreCase("Halftime: 3way")
+                market.name.StartsWithIgnoreCase("Halftime: 3way")
                 ||
-                odd.name.StartsWithIgnoreCase("2nd Half: 3way")
+                market.name.StartsWithIgnoreCase("2nd Half: 3way")
                 ||
-                odd.name.StartsWithIgnoreCase("Double chance (1X:12:X2)")
+                market.name.StartsWithIgnoreCase("Double chance (1X:12:X2)")
                 ||
-                odd.name.StartsWithIgnoreCase("Odd/Even")
+                market.name.StartsWithIgnoreCase("Odd/Even")
                 )
             {
-                return runner.aid.ToUpper();
+                return runner.name.ToUpper();
             }
-            //142 - Total hometeam 
-            if (odd.oddsType == 142)
+           
+            if (market.name.EqualsIgnoreCase("Total hometeam"))
             {
-                if (runner.aid.StartsWithIgnoreCase("u")) return "ITOTALUNDER1";
-                if (runner.aid.StartsWithIgnoreCase("o")) return "ITOTALOVER1";
+                if (runner.name.StartsWithIgnoreCase("under")) return "ITOTALUNDER1";
+                if (runner.name.StartsWithIgnoreCase("over")) return "ITOTALOVER1";
             }
-            //143 - Total awayteam 
-            else if (odd.oddsType == 143)
-            {
-                if (runner.aid.StartsWithIgnoreCase("u")) return "ITOTALUNDER2";
-                if (runner.aid.StartsWithIgnoreCase("o")) return "ITOTALOVER2";
-            }
-            else if (odd.name.StartsWithIgnoreCase("Asian"))
-            {
-                if (odd.name.ContainsIgnoreCase("handicap")) return "HANDICAP" + runner.aid;
 
-                if (odd.name.ContainsIgnoreCase("total"))
+            else if (market.name.EqualsIgnoreCase("Total awayteam"))
+            {
+                if (runner.name.StartsWithIgnoreCase("under")) return "ITOTALUNDER2";
+                if (runner.name.StartsWithIgnoreCase("over")) return "ITOTALOVER2";
+            }
+
+            else if (market.name.StartsWithIgnoreCase("Asian"))
+            {
+                if (market.name.ContainsIgnoreCase("handicap")) return "HANDICAP" + runner.name[0];
+
+                if (market.name.ContainsIgnoreCase("total"))
                 {
-                    if (runner.aid.StartsWithIgnoreCase("u")) return "TOTALUNDER";
-                    if (runner.aid.StartsWithIgnoreCase("o")) return "TOTALOVER";
+                    if (runner.name.StartsWithIgnoreCase("under")) return "TOTALUNDER";
+                    if (runner.name.StartsWithIgnoreCase("over")) return "TOTALOVER";
                 }
             }
-            else if (odd.name.StartsWithIgnoreCase("Draw no bet"))
+            else if (market.name.StartsWithIgnoreCase("Draw no bet"))
             {
-                return "W" + runner.aid;
+                return "W" + runner.name[0];
             }
-            else if ((odd.name.StartsWithIgnoreCase("Total")))
+            else if ((market.name.Contains("Total")))
             {
-                if (runner.aid.StartsWithIgnoreCase("u")) return "TOTALUNDER";
-                if (runner.aid.StartsWithIgnoreCase("o")) return "TOTALOVER";
+                if (runner.name.StartsWithIgnoreCase("under")) return "TOTALUNDER";
+                if (runner.name.StartsWithIgnoreCase("over")) return "TOTALOVER";
             }
 
             return string.Empty;

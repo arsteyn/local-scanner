@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BM.Core;
 using BM.DTO;
+using BM.Web;
 using Leonbets.JsonClasses;
 using Newtonsoft.Json;
 using Scanner;
@@ -18,9 +20,11 @@ namespace Leonbets
 
         public override string Name => "Leonbets";
 
-        public override string Host => "http://leonbets.net/";
+        public override string Host => "https://www.leonbets.net/";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
+
+        public static Regex eventsListRegex = new Regex(@"initialEvents: (?<type>{.+})");
 
         protected override LineDTO[] GetLiveLines()
         {
@@ -39,42 +43,80 @@ namespace Leonbets
 
                 using (var webClient = new Extensions.WebClientEx(randHost, CookieDictionary[randHost].GetData()))
                 {
-                    var d = webClient.DownloadString(Host + "rest/sportsbook/event/listWithMarkets?onlyFavorites=false");
-                    data = JsonConvert.DeserializeObject<EventsList>(d);
+                    var d = webClient.DownloadString(Host + "bet-on-live-matches");
+
+                    var f = eventsListRegex.Match(d).Groups["type"].Value;
+
+                    data = JsonConvert.DeserializeObject<EventsList>(f);
                 }
 
-                var tasks = data.events.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
-                    Task.Factory.StartNew(
-                        state =>
+                var actualEvents = data.events.Where(e => e.open).ToList();
+
+                //var tasks = actualEvents.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
+                //    Task.Factory.StartNew(
+                //        state =>
+                //        {
+                //            var proxy = hostList.PickRandom();
+                //            using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
+                //            {
+                //                try
+                //                {
+                //                    var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+
+                //                    @event = JsonConvert.DeserializeObject<Event>(json);
+
+                //                    var r = LeonBetsLineConverter.Convert(@event, Name);
+
+                //                    lock (Lock)
+                //                    {
+                //                        lines.AddRange(r);
+                //                    }
+                //                }
+                //                catch (Exception e)
+                //                {
+                //                    Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
+                //                }
+                //            }
+                //        }, @event)).ToArray();
+
+
+                foreach (var @event in actualEvents)
+                {
+                    var proxy = hostList.PickRandom();
+
+                    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
+                    {
+
+                        try
                         {
-                            var proxy = hostList.PickRandom();
-                            using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
+                            var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+
+                            var @event2 = JsonConvert.DeserializeObject<Event>(json);
+
+                             var r = LeonBetsLineConverter.Convert(@event2, Name);
+
+                            lock (Lock)
                             {
-                                try
-                                {
-                                    var json = webClient.DownloadString(string.Format("{1}rest/sportsbook/markets/{0}", @event.Id, Host));
-                                    var r = LeonBetsLineConverter.Convert(json, Name, @event);
-
-                                    lock (Lock)
-                                    {
-                                        lines.AddRange(r);
-                                    }
-                                }
-                                catch (Exception e)
-                                {
-                                    Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
-                                }
+                                lines.AddRange(r);
                             }
-                        }, @event)).ToArray();
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
+                        }
+                    }
 
-                try
-                {
-                    Task.WaitAll(tasks.ToArray(), 10000);
                 }
-                catch
-                {
-                    Log.Info("LeonBets Task wait all exception, line count " + lines.Count);
-                }
+
+
+                //try
+                //{
+                //    Task.WaitAll(tasks.ToArray(), 10000);
+                //}
+                //catch
+                //{
+                //    Log.Info("LeonBets Task wait all exception, line count " + lines.Count);
+                //}
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
@@ -96,14 +138,22 @@ namespace Leonbets
 
             Parallel.ForEach(ProxyList, host =>
             {
+
+
+                //foreach (var host in ProxyList)
+                //{
+
+
+
+
                 CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 12, () =>
                     {
                         try
                         {
                             CookieContainer cc;
-                            using (var webClient = new Extensions.WebClientEx(host, new CookieContainer()))
+                            using (var webClient = new GetWebClient(host))
                             {
-                                var res = webClient.DownloadString($"{Host}rest/sportsbook/event/listWithMarkets?onlyFavorites=false");
+                                var res = webClient.DownloadString($"{Host}");
 
                                 var i = res.IndexOf("setCookie('", StringComparison.Ordinal);
                                 var s = res.Substring(i, 75);
@@ -119,22 +169,29 @@ namespace Leonbets
 
                             using (var webClient = new Extensions.WebClientEx(host, cc))
                             {
-                                webClient.DownloadString(Host + "/rest/sportsbook/event/listWithMarkets?onlyFavorites=false");
+                                webClient.DownloadString(Host);
                             }
 
                             return cc;
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
                             listToDelete.Add(host);
                         }
 
                         return null;
                     }));
+            //}
+
             });
 
             //проверяем работу хоста
             Parallel.ForEach(ProxyList, host => CookieDictionary[host].GetData());
+
+            //foreach (var webProxy in ProxyList)
+            //{
+            //    CookieDictionary[webProxy].GetData();
+            //}
 
             foreach (var host in listToDelete)
             {

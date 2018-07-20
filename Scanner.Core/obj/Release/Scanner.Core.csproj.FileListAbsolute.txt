@@ -16,3 +16,5 @@ C:\Projects\LocalScanner\Scanner.Core\bin\Release\NLog.xml
 C:\Projects\LocalScanner\Scanner.Core\obj\Release\Scanner.Core.csprojResolveAssemblyReference.cache
 C:\Projects\LocalScanner\Scanner.Core\obj\Release\Scanner.dll
 C:\Projects\LocalScanner\Scanner.Core\obj\Release\Scanner.pdb
+C:\Projects\Localscanner\Scanner.Core\obj\Release\Scanner.Core.csprojAssemblyReference.cache
+C:\Projects\Localscanner\Scanner.Core\obj\Release\Scanner.Core.csproj.CoreCompileInputs.cache

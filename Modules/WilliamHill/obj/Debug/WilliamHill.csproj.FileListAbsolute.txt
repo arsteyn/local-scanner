@@ -37,6 +37,8 @@ C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.Razor.xml
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.xml
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.csprojAssemblyReference.cache
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.csproj.CoreCompileInputs.cache
+C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.csproj.CopyComplete
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.dll
 C:\Projects\Localscanner\Modules\WilliamHill\obj\Debug\WilliamHill.pdb

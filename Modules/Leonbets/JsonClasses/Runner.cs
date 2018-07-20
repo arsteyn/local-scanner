@@ -4,10 +4,10 @@
     {
         public string id { get; set; }
 
-        public string oddValue { get; set; }
-
         public string name { get; set; }
 
-        public string aid { get; set; }
+        public string price { get; set; }
+
+        public bool open { get; set; }
     }
 }

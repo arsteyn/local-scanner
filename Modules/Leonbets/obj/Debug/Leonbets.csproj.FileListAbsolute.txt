@@ -22,6 +22,7 @@ C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Leonbets.dll.config
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Leonbets.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Leonbets.pdb
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\BM.Core.dll
+C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\BM.Web.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\NLog.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Scanner.dll
@@ -34,14 +35,15 @@ C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.Mvc.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\log4net.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\ECM7.Common.dll
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Scanner.pdb
+C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Scanner.dll.config
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\NLog.xml
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.Helpers.xml
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.Razor.xml
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.WebPages.xml
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csprojResolveAssemblyReference.cache
+C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csprojAssemblyReference.cache
+C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csproj.CoreCompileInputs.cache
+C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csproj.CopyComplete
 C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.dll
 C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.pdb
-C:\Projects\Localscanner\Modules\Leonbets\bin\Debug\Scanner.dll.config
-C:\Projects\Localscanner\Modules\Leonbets\obj\Debug\Leonbets.csproj.CoreCompileInputs.cache

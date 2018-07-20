@@ -44,19 +44,18 @@ namespace Scanner.Helper
         {
             var path = HostingEnvironment.ApplicationPhysicalPath + "OddsTypes.txt";
 
-            var text = File.ReadAllText(path);
+            var contents = File.ReadAllLines(path);
 
-            if (text.Contains(line)) return;
+            if (contents.Any(l=> l == line)) return;
 
             using (var w = File.AppendText(path))
             {
                 w.WriteLine(line);
             }
 
-            var contents = File.ReadAllLines(path);
+            var contents2 = File.ReadAllLines(path);
 
-
-            var orderedScores = contents.OrderBy(x => int.Parse(x.Split(' ')[0]));
+            var orderedScores = contents2.OrderBy(x => x);
 
             File.WriteAllLines(path, orderedScores);
         }

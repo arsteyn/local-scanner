@@ -45,8 +45,8 @@ namespace Scanner
 
         public virtual LineDTO[] ActualLines
         {
-            get { return LastUpdated.AddSeconds(30) > DateTime.Now ? _actualLines : new LineDTO[] { }; }
-            set { _actualLines = value; }
+            get => LastUpdated.AddSeconds(30) > DateTime.Now ? _actualLines : new LineDTO[] { };
+            set => _actualLines = value;
         }
 
         protected virtual Logger Log => LogManager.GetCurrentClassLogger();
@@ -75,8 +75,6 @@ namespace Scanner
 
             }
         }
-
-
 
         protected virtual void CheckDict()
         {

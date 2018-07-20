@@ -27,8 +27,8 @@ namespace Favbet
         public override string Name => "Favbet";
 
         //public override string Host => "https://www.favbet.com/";
-        public override string Host => "https://info.favbet.biz/";
-        public  string DomainForCookie => ".favbet.biz";
+        public override string Host => "https://favbet.ro/";
+        public string DomainForCookie => ".favbet.ro";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -42,9 +42,10 @@ namespace Favbet
             try
             {
                 string response;
+
                 using (var wc = new Extensions.WebClientEx(randomProxy, CookieDictionary[randomProxy].GetData()))
                 {
-                    wc.Headers["User-Agent"] = ExWebClient.DefaultUserAgent;
+                    wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
                     response = wc.DownloadString($"{Host}live/markets/");
                 }
@@ -59,13 +60,9 @@ namespace Favbet
                     if (tournament.TournamentName.ContainsIgnoreCase("statistics", "crossbar", "goalpost", "fouls", "corners", "offsides", "shot"))
                         continue;
 
-                    tasks.AddRange(tournament.Games.AsParallel().WithDegreeOfParallelism(4).Select(gameId =>
-                        Task.Factory.StartNew(state => ParseGame(gameId, tournament, lines), gameId)));
-
-                    //foreach (var game in tournament.Games)
-                    //{
-                    //    ParseGame(game, tournament, lines);
-                    //}
+                    tasks.AddRange(tournament.Games.AsParallel()/*.WithDegreeOfParallelism(4)*/
+                        .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+                        .Select(gameId => Task.Factory.StartNew(state => ParseGame(gameId, tournament, lines), gameId)));
                 }
 
                 try
@@ -141,7 +138,7 @@ namespace Favbet
 
                         using (var wc = new Extensions.WebClientEx(host, cc))
                         {
-                            wc.Headers["User-Agent"] = ExWebClient.DefaultUserAgent;
+                            wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
                             wc.DownloadString(Host + "en/live/");
 
@@ -186,18 +183,20 @@ namespace Favbet
 
             #region Cloudflare wait 5 sec
 
-            var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/bets/", ExWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
+            var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/bets/", GetWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
 
-            if (cookies != null && cookies.Any()) { 
-                foreach (var cookie in cookies) { 
+            if (cookies != null && cookies.Any())
+            {
+                foreach (var cookie in cookies)
+                {
                     cookieCollection.Add(new Cookie(cookie.Key, cookie.Value, "/", DomainForCookie));
                 }
             }
             else
                 //ReCaptcha
-                cookieCollection = CloudflareRecaptcha(proxy);
+                //cookieCollection = CloudflareRecaptcha(proxy);
 
-            cookieCollection.Add(new Cookie("LANG", "en") { Domain = DomainForCookie });
+                cookieCollection.Add(new Cookie("LANG", "en") { Domain = DomainForCookie });
 
             return cookieCollection;
 

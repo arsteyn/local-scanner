@@ -99,8 +99,9 @@ C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Net.Http.Formatting
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.Owin.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\eXtremeNet.dll
-C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\CloudFlareNet.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\BM.Web.dll
+C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\CloudFlareNet.dll
+C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\RuCaptchaClient.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\Favbet.pdb
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\Favbet.dll.config
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\Scanner.pdb
@@ -117,7 +118,9 @@ C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.xml
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.Owin.xml
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\CloudFlareNet.pdb
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\CloudFlareNet.dll.config
-C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.csprojResolveAssemblyReference.cache
+C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\RuCaptchaClient.pdb
+C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.csprojAssemblyReference.cache
 C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.csproj.CoreCompileInputs.cache
+C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.csproj.CopyComplete
 C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.exe
 C:\Projects\Localscanner\Scanner.SelfHosted\obj\Debug\Scanner.SelfHosted.pdb

@@ -15,7 +15,7 @@ namespace Favbet
     {
         public static Game GetFullGame(int id, WebProxy proxy, CookieContainer cont, string host)
         {
-            using (var wc = new Extensions.WebClientEx(proxy, cont) { Headers = {["User-Agent"] = ExWebClient.DefaultUserAgent } })
+            using (var wc = new Extensions.WebClientEx(proxy, cont) { Headers = {["User-Agent"] = GetWebClient.DefaultUserAgent } })
             {
                 var eventUri = new Uri(host + "live/markets/event/");
 

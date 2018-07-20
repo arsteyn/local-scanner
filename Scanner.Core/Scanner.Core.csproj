@@ -33,7 +33,8 @@
     <Reference Include="BM.Core">
       <HintPath>..\packages\Core\BM.Core.dll</HintPath>
     </Reference>
-    <Reference Include="BM.Web">
+    <Reference Include="BM.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Core\BM.Web.dll</HintPath>
     </Reference>
     <Reference Include="Bookmaker">
