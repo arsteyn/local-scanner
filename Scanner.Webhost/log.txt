@@ -6442,3 +6442,93 @@
 2018-07-20 19:20:40.9442|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.12.245:8000/ listToDelete 4
 2018-07-20 19:20:41.1021|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.201.254.156:8000/ listToDelete 5
 2018-07-20 19:20:41.3337|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.99.99.201:8000/ listToDelete 6
+2018-07-20 19:20:54.2898|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.230.61.44:65233/ listToDelete 7
+2018-07-20 19:20:56.4847|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.81:65233/ listToDelete 8
+2018-07-20 19:21:20.3613|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        445 | Time      21:20
+2018-07-20 19:21:33.6685|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        490 | Time      00:13
+2018-07-20 19:21:56.4752|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        177 | Time      00:22
+2018-07-23 11:21:31.0800|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.179.114.32:8000/ listToDelete 1
+2018-07-23 11:21:31.2405|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.12.245:8000/ listToDelete 2
+2018-07-23 11:21:32.7209|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.121:65233/ listToDelete 3
+2018-07-23 11:21:33.2568|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.194.15.86:8000/ listToDelete 4
+2018-07-23 11:21:33.7772|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.201.254.156:8000/ listToDelete 5
+2018-07-23 11:21:34.0129|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.99.99.201:8000/ listToDelete 6
+2018-07-23 11:21:40.0996|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.230.61.44:65233/ listToDelete 7
+2018-07-23 11:21:54.4956|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.81:65233/ listToDelete 8
+2018-07-23 11:22:02.5787|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      22:02
+2018-07-23 11:22:05.6316|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:03
+2018-07-23 11:22:08.4444|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:02
+2018-07-23 11:22:09.5712|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:10.4463|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:00
+2018-07-23 11:22:11.8270|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:14.9003|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:03
+2018-07-23 11:22:16.2787|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:18.1495|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:19.4035|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:20.4729|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:21.9865|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:23.3248|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:24.8658|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:26.5661|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:29.0646|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:02
+2018-07-23 11:22:30.8751|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:32.5793|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:37.3115|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:04
+2018-07-23 11:22:39.2925|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:40.7243|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:42.0432|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:22:43.5090|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:01
+2018-07-23 11:23:49.6877|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          0 | Time      01:06
+2018-07-23 11:23:55.6726|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      01:12
+2018-07-23 11:24:24.3093|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42
+2018-07-23 11:24:26.5485|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:20
+2018-07-23 11:24:31.6125|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:02
+2018-07-23 11:24:39.6525|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines          2 | Time      00:03
+2018-07-23 14:52:08.7170|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.121:65233/ listToDelete 1
+2018-07-23 14:52:08.7170|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.179.114.32:8000/ listToDelete 2
+2018-07-23 14:52:10.0582|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.194.15.86:8000/ listToDelete 3
+2018-07-23 14:52:10.5700|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.201.254.156:8000/ listToDelete 4
+2018-07-23 14:52:10.8423|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.99.99.201:8000/ listToDelete 5
+2018-07-23 14:52:11.1636|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.12.245:8000/ listToDelete 6
+2018-07-23 14:52:15.4471|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.230.61.44:65233/ listToDelete 7
+2018-07-23 14:52:37.3883|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.81:65233/ listToDelete 8
+2018-07-23 14:52:42.4603|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines         48 | Time      52:42
+2018-07-23 17:33:59.6069|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.179.114.32:8000/ listToDelete 2
+2018-07-23 17:33:59.6069|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.121:65233/ listToDelete 1
+2018-07-23 17:34:00.3674|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.194.15.86:8000/ listToDelete 3
+2018-07-23 17:34:00.7705|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.201.254.156:8000/ listToDelete 4
+2018-07-23 17:34:01.0818|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.99.99.201:8000/ listToDelete 5
+2018-07-23 17:34:01.1445|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.12.245:8000/ listToDelete 6
+2018-07-23 17:34:05.2615|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.230.61.44:65233/ listToDelete 7
+2018-07-23 17:34:05.9070|INFO|Scanner.ConsoleExt|Dafabet delete address http://46.17.46.81:65233/ listToDelete 8
+2018-07-23 17:34:16.9328|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      34:16
+2018-07-23 17:34:20.4657|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      00:03
+2018-07-23 17:34:23.4641|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      00:02
+2018-07-23 17:34:26.4577|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      00:02
+2018-07-23 17:34:30.0654|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      00:03
+2018-07-23 17:34:33.8990|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      00:03
+2018-07-23 17:42:07.3910|INFO|Scanner.ScannerBase|Dafabet Parse match exception 38Ссылка на объект не указывает на экземпляр объекта.
+2018-07-23 17:42:07.4301|INFO|Scanner.ConsoleExt||      Dafabet| P    13 | Lines        104 | Time      07:33
+2018-07-23 17:42:09.1703|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42
+2018-07-23 17:42:10.9063|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42
+2018-07-23 17:42:12.9579|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42
+2018-07-23 17:42:15.0091|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42
+2018-07-23 17:42:19.6584|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   в System.Net.WebClient.DownloadString(Uri address)
+   в System.Net.WebClient.DownloadString(String address)
+   в Dafabet.DafabetScanner.GetLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 42

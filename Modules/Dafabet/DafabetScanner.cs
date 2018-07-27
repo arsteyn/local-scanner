@@ -57,21 +57,29 @@ namespace Dafabet
                     .WithExecutionMode(ParallelExecutionMode.ForceParallelism).Select(match =>
                     Task.Factory.StartNew(state =>
                     {
-                        var leagueUrl = $"{Host.Replace("www", "prices")}EuroSite/match_data.ashx?Game=0&Scope=Match&SportType={match.Key}&FixtureType=l&Id={match.Value}";
-
-                        var random = ProxyList.PickRandom();
-
-                        using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
+                        try
                         {
-                            cl.Headers["Referer"] = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx";
+                            var leagueUrl = $"{Host.Replace("www", "prices")}EuroSite/match_data.ashx?Game=0&Scope=Match&SportType={match.Key}&FixtureType=l&Id={match.Value}";
 
-                            var response = cl.DownloadString(leagueUrl);
+                            var random = ProxyList.PickRandom();
 
-                            var converter = new DafabetConverter();
+                            using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
+                            {
+                                cl.Headers["Referer"] = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx";
 
-                            var l = converter.Convert(response, Name);
+                                var response = cl.DownloadString(leagueUrl);
 
-                            lock (Lock) lines.AddRange(l);
+                                var converter = new DafabetConverter();
+
+                                var l = converter.Convert(response, Name);
+
+                                lock (Lock) lines.AddRange(l);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Info("Dafabet Parse match exception " + e.Message.Length + e.InnerException.Message);
+                            Console.WriteLine("Dafabet Task wait all exception, line count " + lines.Count);
                         }
 
                     }, match)));
