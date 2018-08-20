@@ -98,12 +98,12 @@ namespace BetFairApi
         /// <returns></returns>
         public IList<MarketCatalogue> ListMarketCatalogue(MarketFilter filter, IList<MarketProjection> marketProjection, MarketSort? sort, int maxResults)
         {
-            filter.IfNull(x => { throw new ArgumentException("filter"); });
+            filter.IfNull(x => throw new ArgumentException("filter"));
 
             var request = new JsonRequest
             {
                 Id = 1,
-                Method = string.Format("{0}/{1}/listMarketCatalogue", SERVICE, VERSION),
+                Method = $"{SERVICE}/{VERSION}/listMarketCatalogue",
                 Params = new { filter, marketProjection, sort, maxResults }
             };
 

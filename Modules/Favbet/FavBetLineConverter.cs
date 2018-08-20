@@ -242,6 +242,7 @@ namespace Favbet
                             }
                         }
 
+                        //TODO: MarketId null у HeadMarket убрать
                         copy.LineData = new StoreBet { OutcomeId = odds.Id.ToLong(), EventId = copy.LineObject.ToLong(), MarketId = bet.MarketId.ToLong()};
 
                         copy.UpdateName();
