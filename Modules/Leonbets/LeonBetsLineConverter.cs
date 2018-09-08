@@ -12,6 +12,7 @@ using BM.DTO;
 using JsonClasses;
 using Leonbets.JsonClasses;
 using Newtonsoft.Json;
+using NLog;
 using Scanner;
 using Scanner.Helper;
 
@@ -19,6 +20,8 @@ namespace Leonbets
 {
     public class LeonBetsLineConverter
     {
+        protected static Logger Log => LogManager.GetCurrentClassLogger();
+
         private static readonly Regex TeamRegex = new Regex("^(?<home>.*?) - (?<away>.*?)$");
         private static readonly Regex ScoreRegex = new Regex("^(?<homeScore>.*?):(?<awayScore>.*?)$");
 
@@ -34,7 +37,8 @@ namespace Leonbets
         {
             Lines = new List<LineDTO>();
             var teamMatch = TeamRegex.Match(@event.name);
-            var teamScore = ScoreRegex.Match(@event.liveStatus.score);
+            var teamScore = ScoreRegex.Match(@event.liveStatus.score.Replace("*", ""));
+
 
             var lineTemplate = new LineDTO
             {
@@ -56,15 +60,11 @@ namespace Leonbets
                 {
                     try
                     {
-
-                  
-
-                    Convert(@event, market, runner, lineTemplate);
-
+                        Convert(@event, market, runner, lineTemplate);
                     }
                     catch (Exception e)
                     {
-                       
+                        Log.Info("LeonBets error" + e.Message + " " + e.StackTrace + (e.InnerException != null ? e.InnerException.Message : ""));
                     }
                 }
             }
@@ -88,17 +88,10 @@ namespace Leonbets
             line.CoeffValue = coeffValue;
 
             //в runner.name приходит значение иногда с минусом иногда с плюсом
-            if (runner.name.Contains("(") && runner.name.Contains(")")) { 
-                //if (!string.IsNullOrWhiteSpace(market.specialOddsValue))
-                //{
-                    decimal coeffParam;
-                    decimal.TryParse(runner.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
-                    //decimal.TryParse(market.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out coeffParam);
-                    line.CoeffParam = coeffParam;
-
-                    if (line.CoeffKind == "HANDICAP2")
-                        line.CoeffParam = line.CoeffParam * (-1);
-                //}
+            if (runner.name.Contains("(") && runner.name.Contains(")"))
+            {
+                decimal.TryParse(runner.name.Split('(', ')')[1], NumberStyles.Any, CultureInfo.InvariantCulture, out var coeffParam);
+                line.CoeffParam = coeffParam;
             }
 
             line.CoeffType = GetCoeffType(line.SportKind, market);
@@ -118,47 +111,56 @@ namespace Leonbets
 
         private static string GetCoeffType(string sportKind, Market market)
         {
-            var coeffType = string.Empty;
+            var typeResult = string.Empty;
 
-            if (market.name.ContainsIgnoreCase("first half") || market.name.ContainsIgnoreCase("halftime"))
+            var marketNameLower = market.name.ToLower();
+
+            if (market.name.Contains("period"))
             {
-                return "1st half";
+
+                string periodType;
+
+                switch (sportKind)
+                {
+                    case "BASKETBALL":
+                        periodType = "quarter";
+                        break;
+                    case "VOLLEYBALL":
+                        periodType = "set";
+                        break;
+                    default:
+                        periodType = "period";
+                        break;
+                }
+
+                Helper.ReplaceCoeffTypes(market.name, out var period);
+
+                var coeffType = $"{period} {periodType}";
+
+                return coeffType;
             }
 
-            if (market.name.ContainsIgnoreCase("2nd half") || market.name.ContainsIgnoreCase("second half"))
+            if (marketNameLower.ContainsOneOf("1st half", "first half", "halftime"))
             {
-                return "2nd half";
+                typeResult += "1st half";
             }
 
-            if (!market.name.Contains("period")) return coeffType;
-
-            string periodType;
-
-            switch (sportKind)
+            if (marketNameLower.ContainsOneOf("2nd half", "second half"))
             {
-                case "BASKETBALL":
-                    periodType = "quarter";
-                    break;
-                case "VOLLEYBALL":
-                    periodType = "set";
-                    break;
-                default:
-                    periodType = "period";
-                    break;
+                typeResult += "2nd half";
             }
 
-            string period;
+            if (marketNameLower.ContainsOneOf("overtime", "inc."))
+            {
+                typeResult += "inc. OT";
+            }
 
-            Helper.ReplaceCoeffTypes(market.name, out period);
-
-            coeffType = $"{period} {periodType}";
-
-            return coeffType;
+            return typeResult;
         }
 
         private static string GetCoeffKind(string sportKind, Runner runner, Market market)
         {
-            ProxyHelper.UpdateLeonEvents(market.name);
+            //ProxyHelper.UpdateLeonEvents(sportKind + " | " + market.name + " | " + runner.name);
 
             if (sportKind == "Basketball")
             {
@@ -167,47 +169,100 @@ namespace Leonbets
                 if (market.name == "Total") return string.Empty;
             }
 
-            if (market.name.StartsWithIgnoreCase("1X2")
-                ||
-                market.name.StartsWithIgnoreCase("Halftime: 3way")
-                ||
-                market.name.StartsWithIgnoreCase("2nd Half: 3way")
-                ||
-                market.name.StartsWithIgnoreCase("Double chance (1X:12:X2)")
-                ||
-                market.name.StartsWithIgnoreCase("Odd/Even")
+            if (
+                   market.name.EqualsIgnoreCase("1X2")
+                || market.name.EqualsIgnoreCase("Halftime: 3way")
+                || market.name.EqualsIgnoreCase("3way for first period")
+                || market.name.EqualsIgnoreCase("3way for fourth period")
+                || market.name.EqualsIgnoreCase("3way for second period")
+                || market.name.EqualsIgnoreCase("3way for third period")
+                || market.name.EqualsIgnoreCase("2nd Half: 3way")
+                || market.name.EqualsIgnoreCase("Double chance (1X:12:X2)")
+                || market.name.EqualsIgnoreCase("Halftime: Double chance (1X:12:X2)")
+                || market.name.EqualsIgnoreCase("2nd Half - Double chance (1X - 12 - X2)")
+                || market.name.EqualsIgnoreCase("Odd/Even")
+                || market.name.EqualsIgnoreCase("Odd/Even for first period")
+                || market.name.EqualsIgnoreCase("Odd/Even for second period")
+                || market.name.EqualsIgnoreCase("Odd/Even for third period")
+                || market.name.EqualsIgnoreCase("Odd/Even for fourth period")
+                || market.name.EqualsIgnoreCase("Odd/Even for fifth period")
+                || market.name.EqualsIgnoreCase("Odd/Even for whole match including overtime")
+                || market.name.EqualsIgnoreCase("Odd/Even for first half")
+                || market.name.EqualsIgnoreCase("2nd Half - Odd/Even, including overtime")
                 )
             {
                 return runner.name.ToUpper();
             }
-           
-            if (market.name.EqualsIgnoreCase("Total hometeam"))
+
+            if (
+                   market.name.EqualsIgnoreCase("Total hometeam")
+                || market.name.EqualsIgnoreCase("Asian total hometeam")
+                || market.name.EqualsIgnoreCase("Asian total hometeam for the whole match, including overtime")
+                )
             {
                 if (runner.name.StartsWithIgnoreCase("under")) return "ITOTALUNDER1";
                 if (runner.name.StartsWithIgnoreCase("over")) return "ITOTALOVER1";
             }
 
-            else if (market.name.EqualsIgnoreCase("Total awayteam"))
+            else if (
+                   market.name.EqualsIgnoreCase("Total awayteam")
+                || market.name.EqualsIgnoreCase("Total awayteam including overtime")
+                || market.name.EqualsIgnoreCase("Asian total awayteam")
+                || market.name.EqualsIgnoreCase("Asian total awayteam for the whole match, including overtime")
+                )
             {
                 if (runner.name.StartsWithIgnoreCase("under")) return "ITOTALUNDER2";
                 if (runner.name.StartsWithIgnoreCase("over")) return "ITOTALOVER2";
             }
 
-            else if (market.name.StartsWithIgnoreCase("Asian"))
+            else if (
+                   market.name.EqualsIgnoreCase("2nd Half - Asian handicap, including overtime")
+                || market.name.EqualsIgnoreCase("Asian handicap (inc. РћРў)")
+                || market.name.EqualsIgnoreCase("Asian Handicap")
+                || market.name.EqualsIgnoreCase("Asian handicap first half")
+                || market.name.EqualsIgnoreCase("Asian handicap for fifth period")
+                || market.name.EqualsIgnoreCase("Asian handicap for second period")
+                || market.name.EqualsIgnoreCase("Asian handicap for third period")
+                || market.name.EqualsIgnoreCase("Asian handicap for fourth period")
+                )
             {
-                if (market.name.ContainsIgnoreCase("handicap")) return "HANDICAP" + runner.name[0];
-
-                if (market.name.ContainsIgnoreCase("total"))
-                {
-                    if (runner.name.StartsWithIgnoreCase("under")) return "TOTALUNDER";
-                    if (runner.name.StartsWithIgnoreCase("over")) return "TOTALOVER";
-                }
+                return "HANDICAP" + runner.name[0];
             }
-            else if (market.name.StartsWithIgnoreCase("Draw no bet"))
+
+            else if (
+                   market.name.EqualsIgnoreCase("Draw No Bet")
+                || market.name.EqualsIgnoreCase("Draw No Bet first half")
+                || market.name.EqualsIgnoreCase("Draw No Bet for first period")
+                || market.name.EqualsIgnoreCase("Draw no Bet for fourth period")
+                || market.name.EqualsIgnoreCase("Draw no Bet for second period")
+                || market.name.EqualsIgnoreCase("Draw No Bet for third period")
+                || market.name.EqualsIgnoreCase("2nd Half - Draw No Bet")
+                || market.name.EqualsIgnoreCase("2nd Half - Draw no Bet, including overtime")
+                )
             {
                 return "W" + runner.name[0];
             }
-            else if ((market.name.Contains("Total")))
+            else if (
+
+
+                   market.name.EqualsIgnoreCase("Total")
+                || market.name.EqualsIgnoreCase("Total for whole match, including overtime")
+                || market.name.EqualsIgnoreCase("Halftime: Total")
+                || market.name.EqualsIgnoreCase("2nd Half: Total")
+                || market.name.EqualsIgnoreCase("2nd Half - Total, including overtime")
+                || market.name.EqualsIgnoreCase("Total for first period")
+                || market.name.EqualsIgnoreCase("Total for second period")
+                || market.name.EqualsIgnoreCase("Total for third period")
+                || market.name.EqualsIgnoreCase("Total for fourth period")
+                || market.name.EqualsIgnoreCase("Total for fifth period")
+                || market.name.EqualsIgnoreCase("Total for sixth period")
+                || market.name.EqualsIgnoreCase("Total for seventh period")
+                || market.name.EqualsIgnoreCase("Total for eighth period")
+                || market.name.EqualsIgnoreCase("Asian total")
+                || market.name.EqualsIgnoreCase("Asian total first half")
+                || market.name.EqualsIgnoreCase("Asian total for the whole match, including overtime")
+                )
+
             {
                 if (runner.name.StartsWithIgnoreCase("under")) return "TOTALUNDER";
                 if (runner.name.StartsWithIgnoreCase("over")) return "TOTALOVER";

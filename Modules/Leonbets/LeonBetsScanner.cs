@@ -31,6 +31,7 @@ namespace Leonbets
             try
             {
                 var st = new Stopwatch();
+
                 st.Start();
 
                 var hostList = CookieDictionary.Select(c => c.Key).ToList();
@@ -52,71 +53,73 @@ namespace Leonbets
 
                 var actualEvents = data.events.Where(e => e.open).ToList();
 
-                //var tasks = actualEvents.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
-                //    Task.Factory.StartNew(
-                //        state =>
-                //        {
-                //            var proxy = hostList.PickRandom();
-                //            using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
-                //            {
-                //                try
-                //                {
-                //                    var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
-
-                //                    @event = JsonConvert.DeserializeObject<Event>(json);
-
-                //                    var r = LeonBetsLineConverter.Convert(@event, Name);
-
-                //                    lock (Lock)
-                //                    {
-                //                        lines.AddRange(r);
-                //                    }
-                //                }
-                //                catch (Exception e)
-                //                {
-                //                    Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
-                //                }
-                //            }
-                //        }, @event)).ToArray();
-
-
-                foreach (var @event in actualEvents)
-                {
-                    var proxy = hostList.PickRandom();
-
-                    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
-                    {
-
-                        try
+                var tasks = actualEvents.AsParallel().Select(@event =>
+                    Task.Factory.StartNew(
+                        state =>
                         {
-                            var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
-
-                            var @event2 = JsonConvert.DeserializeObject<Event>(json);
-
-                             var r = LeonBetsLineConverter.Convert(@event2, Name);
-
-                            lock (Lock)
+                            var proxy = hostList.PickRandom();
+                            using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
                             {
-                                lines.AddRange(r);
+                                var json = string.Empty;
+                                try
+                                {
+                                    json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+
+                                    @event = JsonConvert.DeserializeObject<Event>(json);
+
+                                    var r = LeonBetsLineConverter.Convert(@event, Name);
+
+                                    lock (Lock)
+                                    {
+                                        lines.AddRange(r);
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Log.Info("LeonBets error" + e.Message + e.StackTrace + proxy.Address);
+                                    Log.Info("LeonBets error" + json);
+                                }
                             }
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
-                        }
-                    }
+                        }, @event)).ToArray();
 
+
+                //foreach (var @event in actualEvents)
+                //{
+                //    var proxy = hostList.PickRandom();
+
+                //    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
+                //    {
+
+                //        try
+                //        {
+                //            var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+
+                //            var @event2 = JsonConvert.DeserializeObject<Event>(json);
+
+                //             var r = LeonBetsLineConverter.Convert(@event2, Name);
+
+                //            lock (Lock)
+                //            {
+                //                lines.AddRange(r);
+                //            }
+                //        }
+                //        catch (Exception e)
+                //        {
+                //            Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
+                //        }
+                //    }
+
+                //}
+
+
+                try
+                {
+                    Task.WaitAll(tasks.ToArray(), 10000);
                 }
-
-
-                //try
-                //{
-                //    Task.WaitAll(tasks.ToArray(), 10000);
-                //}
-                //catch
-                //{
-                //    Log.Info("LeonBets Task wait all exception, line count " + lines.Count);
-                //}
+                catch
+                {
+                    Log.Info("LeonBets Task wait all exception, line count " + lines.Count);
+                }
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
@@ -136,17 +139,13 @@ namespace Leonbets
         {
             var listToDelete = new List<WebProxy>();
 
-            Parallel.ForEach(ProxyList, host =>
+            //Parallel.ForEach(ProxyList, host =>
+            //{
+
+
+            foreach (var host in ProxyList)
             {
-
-
-                //foreach (var host in ProxyList)
-                //{
-
-
-
-
-                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 12, () =>
+                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 6, () =>
                     {
                         try
                         {
@@ -181,9 +180,9 @@ namespace Leonbets
 
                         return null;
                     }));
-            //}
+            }
 
-            });
+            //});
 
             //проверяем работу хоста
             Parallel.ForEach(ProxyList, host => CookieDictionary[host].GetData());

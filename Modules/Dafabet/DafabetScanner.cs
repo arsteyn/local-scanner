@@ -76,9 +76,12 @@ namespace Dafabet
                                 lock (Lock) lines.AddRange(l);
                             }
                         }
+                        catch (WebException e)
+                        {
+                        }
                         catch (Exception e)
                         {
-                            Log.Info("Dafabet Parse match exception " + e.Message.Length + e.InnerException.Message);
+                            Log.Info("Dafabet Parse match exception " + e.Message.Length + e.InnerException.Message +e.StackTrace);
                             Console.WriteLine("Dafabet Task wait all exception, line count " + lines.Count);
                         }
 

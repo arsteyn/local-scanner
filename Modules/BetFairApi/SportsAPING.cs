@@ -23,9 +23,11 @@ namespace BetFairApi
 
         public const string URL = "https://api.betfair.com/exchange/betting/json-rpc/v1";
 
+        static readonly object Lock = new object();
+
         public static string BuildUrl(string method)
         {
-            return string.Format("{0}/{1}/{2}", SERVICE, VERSION, method);
+            return $"{SERVICE}/{VERSION}/{method}";
         }
 
         public static readonly string LIST_EVENT_TYPES = BuildUrl("listEventTypes");
@@ -147,7 +149,11 @@ namespace BetFairApi
                             Params = new { marketIds = marketIdsSplit, priceProjection, orderProjection, matchProjection, currencyCode }
                         };
 
-                        result.AddRange(Invoke<IList<MarketBook>>(request));
+
+                        lock (Lock)
+                        {
+                            result.AddRange(Invoke<IList<MarketBook>>(request));
+                        }
 
                     }, marketIdsSplit)));
 
