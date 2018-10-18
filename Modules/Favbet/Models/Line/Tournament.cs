@@ -12,6 +12,6 @@ namespace Favbet.Models.Line
         public string TournamentName { get; set; }
 
         [JsonProperty(PropertyName = "events")]
-        public List<Game> Games { get; set; } 
+        public List<Market> Games { get; set; } 
     }
 }

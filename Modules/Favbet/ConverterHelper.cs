@@ -1,60 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Net;
-using System.Text.RegularExpressions;
 using BM.Web;
 using Favbet.Models.Line;
 using Newtonsoft.Json;
-using Scanner;
+using Scanner.Helper;
 
 namespace Favbet
 {
     public class ConverterHelper
     {
-        public static Game GetFullGame(int id, WebProxy proxy, CookieContainer cont, string host)
+        public static List<Market> GetMarketsByEvent(long id, WebProxy proxy, CookieContainer cont, string host)
         {
-            using (var wc = new Extensions.WebClientEx(proxy, cont) { Headers = {["User-Agent"] = GetWebClient.DefaultUserAgent } })
+            using (var wc = new PostWebClient(proxy, cont.GetAllCookies()))
             {
-                var eventUri = new Uri(host + "live/markets/event/");
+                var query = $"{{\"jsonrpc\":\"2.0\",\"method\":\"frontend/market/get\",\"id\":{new Random().Next(100, 9999)},\"params\":{{\"by\":{{\"lang\":\"en\",\"service_id\":1,\"event_id\":{id}}}}}}}";
 
-                var json = wc.DownloadString($"{eventUri}{id}/");
+                var response = wc.UploadString($"{host}frontend_api2/", query);
 
-                var game = JsonConvert.DeserializeObject<Game>(json);
+                var t = JsonConvert.DeserializeObject<FrontendApiResponseWrapper<Market>>(response);
 
-                return game?.Sport == null ? null : game;
+                //foreach (var market in t.Result)
+                //{
+                //    foreach (var outcome in market.outcomes)
+                //    {
+                //        ProxyHelper.UpdateFavbetEvents(market.market_name + " | " + market.result_type_name + " | " + outcome.outcome_name + " | " +outcome.outcome_param);
+                //    }
+                //}
+
+                return t.Result;
             }
-        }
-
-        public static bool HasParam(string value)
-        {
-            return value.Contains("HANDICAP") ||
-                   value.Contains("TOTAL") ||
-                   value.Contains("PARAM");
-        }
-
-        public static bool IsDemandMark(Dictionary<string, string> map, string name,
-            out string coeffKindsSplit)
-        {
-            coeffKindsSplit = string.Empty;
-
-            foreach (var rule in map)
-            {
-                var keyWords = rule.Key.Split('@');
-                if (!keyWords.Any(name.Contains)) continue;
-                coeffKindsSplit = rule.Value;
-                return true;
-            }
-            return false;
-        }
-
-        public static double ExtractCoeffParam(string name)
-        {
-            string value = Regex.Match(name,
-                                @"(?<match>(\+|\-)?(?:\d*(\.|\,))?\d+)",
-                                RegexOptions.RightToLeft).Value.Replace(",", ".");
-            return double.Parse(value, CultureInfo.InvariantCulture);
         }
 
         public static Dictionary<string, string> PeriodMap = new Dictionary<string, string>
@@ -131,25 +107,11 @@ namespace Favbet
             return true;
         }
 
-        public static string GetPeriodFromGroupName(string groupName)
-        {
-            groupName = groupName.ToLower();
-
-            foreach (var map in PeriodMap.Where(map => groupName.Contains(map.Key)))
-            {
-                return map.Value;
-            }
-
-            return string.Empty;
-        }
-
         public static string GetGameType(string header)
         {
-            if (string.IsNullOrEmpty(header))
-                return string.Empty;
+            if (string.IsNullOrEmpty(header)) return string.Empty;
 
-            var localHeader = header.ToLower();
-            var gameType = GameTypes.SingleOrDefault(t => localHeader.Contains(t));
+            var gameType = GameTypes.SingleOrDefault(t => header.ToLower().Contains(t));
 
             return gameType ?? string.Empty;
         }

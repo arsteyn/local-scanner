@@ -10,6 +10,7 @@ using BM.Web;
 using Dafabet.Models;
 using Newtonsoft.Json;
 using Scanner;
+using Scanner.Helper;
 
 namespace Dafabet
 {
@@ -32,8 +33,11 @@ namespace Dafabet
             try
             {
                 var matchList = new List<KeyValuePair<string, long>>();
+                var cookies = CookieDictionary[randomProxy].GetData();
 
-                using (var client = new Extensions.WebClientEx(randomProxy, CookieDictionary[randomProxy].GetData()))
+                var d = cookies.GetAllCookies();
+
+                using (var client = new Extensions.WebClientEx(randomProxy, cookies))
                 {
                     client.Headers["Referer"] = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx";
 
@@ -127,7 +131,10 @@ namespace Dafabet
                         //Get PHP Sessid
                         using (var client = new GetWebClient(host, cookies))
                         {
-                            client.DownloadString($"{Host}/eu/sports/");
+                            var res = client.DownloadString($"{Host}/eu/sports/");
+
+                            if (client.CookieCollection.Count == 0) throw new Exception();
+
                             cookies.Add(client.CookieCollection);
                         }
 
@@ -143,12 +150,23 @@ namespace Dafabet
                             cookies.Add(client.CookieCollection);
                         }
 
+                        using (var client = new GetWebClient(host, cookies))
+                        {
+                            var u = $"{Host.Replace("www", "prices")}NewIndex?lang=en_eu&iseuro=1&webskintype=1&act=hdpou&otype=1";
+
+                            client.Headers["Referer"] = $"{Host}eu/sports/";
+
+                            client.DownloadData(u);
+
+                            cookies.Add(client.CookieCollection);
+                        }
+
                         ////Validate ASP.Net sessionId for prices (используется в получении линий)
                         using (var client = new GetWebClient(host, cookies))
                         {
-                            var u = $"{Host.Replace("www", "prices")}index.aspx?lang=en_eu&iseuro=1";
+                            var u = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx?lang=en_eu&iseuro=1";
 
-                            client.Headers["Referer"] = $"{Host}eu/sports/";
+                            client.Headers["Referer"] = $"{Host.Replace("www", "prices")}NewIndex?lang=en_eu&iseuro=1&webskintype=1&act=hdpou&otype=1";
 
                             client.DownloadData(u);
 
@@ -182,7 +200,7 @@ namespace Dafabet
 
             var tasks = ProxyList.AsParallel().Select(host => Task.Factory.StartNew(state => CookieDictionary[host].GetData(), host)).ToArray();
 
-            Task.WaitAll(tasks.ToArray());
+            Task.WaitAll(tasks);
 
             foreach (var host in listToDelete)
             {

@@ -1,7 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Bars.EAS.Utils;
 using Bars.EAS.Utils.Extension;
@@ -10,258 +10,179 @@ using BM.Core;
 using BM.DTO;
 using Favbet.Models;
 using Favbet.Models.Line;
+using Newtonsoft.Json;
+using NLog;
 
 namespace Favbet
 {
     public class FavBetConverter
     {
+        protected Logger Log => LogManager.GetCurrentClassLogger();
+
         public readonly Regex TeamRegex = new Regex(@"^(?<home>.*?) - (?<away>.*?)$");
         public readonly Regex ScoreRegex = new Regex(@"(?<score1>\d+):(?<score2>\d+)(?:.*?[(].*?(?<pscore1>\d+):(?<pscore2>\d+)[)])?(?: \d+')?");
 
         public static Dictionary<string, string> MapRuls = new Dictionary<string, string>
-        {
-            // {Искомая_строка_1@Искомая_строка_2@ ... @Искомая_строка_n@Регулярка_для_обработки}, {ставки}.
-            {@"match winner", "1|2"},
-            {@"1 x 2@money line", "1|X|2"},
-            {@"draw no bet@2-way odds@set winner", "W1|W2"},
-            {@"double chance", "1X|12|X2"},
-            {@"handicap", "HANDICAP1|PARAM|HANDICAP2"},
-            {@"over/under", "TOTALOVER|PARAM|TOTALUNDER"},
-            {@"team total@player total games", "ITOTALOVER|PARAM|ITOTALUNDER"},
-            {@"odd / even", "ODD|EVEN"}
-        };
+                {
+                    // {Искомая_строка_1@Искомая_строка_2@ ... @Искомая_строка_n@Регулярка_для_обработки}, {ставки}.
+                    {@"match winner", "1|2"},
+                    {@"1 x 2@money line", "1|X|2"},
+                    {@"draw no bet@2-way odds@set winner", "W1|W2"},
+                    {@"double chance", "1X|12|X2"},
+                    {@"handicap", "HANDICAP1|PARAM|HANDICAP2"},
+                    {@"over/under", "TOTALOVER|PARAM|TOTALUNDER"},
+                    {@"team total@player total games", "ITOTALOVER|PARAM|ITOTALUNDER"},
+                    {@"odd / even", "ODD|EVEN"}
+                };
 
-        readonly List<string> _stopWords = new List<string> { "cross", "goal", "shot", "offside", "corner", "foul" };
 
-        public LineDTO CreateLineWithoutEvents(Game game, string host, string name)
+        public LineDTO CreateLine(Event @event, string host, string name)
         {
             try
             {
-                var isValidGame = game != null && (string.IsNullOrEmpty(game.Status) || game.Status == "inprogress");
+                if (@event.event_status_type != "inprogress") return null;
 
-                if (!isValidGame) return null;
+                @event.sport_name = Helper.ConvertSport(@event.sport_name);
 
-                game.Sport = Helper.ConvertSport(game.Sport);
-
-                if (_stopWords.Any(st => game.Player1.Contains(st)) || _stopWords.Any(st => game.Player2.Contains(st)))
-                {
-                    return null;
-                }
+                var teamMatch = TeamRegex.Match(@event.event_name);
+                var scoreMatch = ScoreRegex.Match(@event.event_result_total);
 
                 var line = new LineDTO
                 {
                     BookmakerName = name,
-                    SportKind = game.Sport,
-                    Team1 = game.Player1,
-                    Team2 = game.Player2,
-                    Url = $"{host}en/live/#event={game.Id}",
-                    Score1 = game.ScoreTeam1,
-                    Score2 = game.ScoreTeam2,
-                    CoeffType = game.CurrentPeriod.ToLower(),
-                    Pscore1 = game.PeriodScoreTeam1,
-                    Pscore2 = game.PeriodScoreTeam2,
+                    SportKind = @event.sport_name,
+                    Team1 = teamMatch.Groups["home"].Value,
+                    Team2 = teamMatch.Groups["away"].Value,
+                    Url = $"{host}en/live/#event={@event.event_id}",
+                    Score1 = scoreMatch.Groups["score1"].Value.ToInt(),
+                    Score2 = scoreMatch.Groups["score2"].Value.ToInt(),
+                    CoeffType = @event.event_result_name.ToLower(),
+                    Pscore1 = scoreMatch.Groups["pscore1"].Value.ToIntNullable(),
+                    Pscore2 = scoreMatch.Groups["pscore1"].Value.ToIntNullable(),
                     EventDate = DateTime.Now,
-                    LineObject = game.Id.ToString()
+                    LineObject = @event.event_id.ToString()
                 };
+
+                //Добавляем возраст если играют молодежные команды
+                const string regex = @"U[1-2][0-9]";
+                var ageRegex = new Regex(regex).Match(@event.tournament_name);
+
+                if (!ageRegex.Success) return line;
+
+                var age = ageRegex.Value;
+                line.Team1 += " " + age;
+                line.Team2 += " " + age;
 
                 return line;
             }
             catch (Exception e)
             {
-                // ignored
+                Log.Info("Favbet CreateLine exception " + JsonConvert.SerializeObject(e));
             }
 
             return null;
         }
 
-        public List<LineDTO> AddEventsToLine(LineDTO tamplate, Game game, string tournamentName)
+        public List<LineDTO> GetLinesFromEvent(LineDTO template, List<Market> markets)
         {
             var localLines = new List<LineDTO>();
 
-            // Извлекаем линии-ставок из header секции.
-            if (game.HeadSectionBet != null)
+            foreach (var market in markets)
             {
-                game.HeadSectionBet.InitHeaderSection();
+                var copy = template.Clone();
 
-                var gameType = string.IsNullOrEmpty(game.GameType) ? ConverterHelper.GetGameType(game.HeadSectionBet.BetGroupName) : game.GameType;
+                var localGameType = string.Empty;
 
-                var lines = ExtractLinesFromSection(tamplate, game.HeadSectionBet.Section, game.Player1, gameType, tournamentName);
+                // Извлекаем тип игры: угловые, (желтые, красные карты), картер, и т.д.
+                if (string.IsNullOrEmpty(localGameType)) localGameType = ConverterHelper.GetGameType(market.market_name);
 
-                localLines.AddRange(lines);
-            }
-            // Извлекаем линии-ставок из дугих секций.
-            if (game.SectionBets != null)
-            {
-                localLines.AddRange(ExtractLinesFromSections(tamplate, game.SectionBets, game.Player1, game.GameType, tournamentName));
+                if (!ConverterHelper.GetPeriod(market.result_type_name, out var period)) continue;
+
+                copy.CoeffType = $"{period} {localGameType}";
+
+                if (!CheckExceptions(copy, market)) continue;
+
+                foreach (var outcome in market.outcomes)
+                {
+                    if (!outcome.outcome_visible) continue;
+
+                    var line = copy.Clone();
+
+                    // Номер команды
+
+                    if (market.market_name.ContainsIgnoreCase("match winner", "1 X 2", "Double chance", "Odd / Even"))
+                    {
+                        line.CoeffKind = outcome.outcome_short_name;
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Draw No Bet"))
+                    {
+                        line.CoeffKind = $"W{outcome.outcome_short_name}";
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Draw No Bet"))
+                    {
+                        line.CoeffKind = $"W{outcome.outcome_short_name}";
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Handicap"))
+                    {
+                        line.CoeffKind = $"HANDICAP{outcome.participant_number}";
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Over/Under"))
+                    {
+                        line.CoeffKind = $"TOTAL{outcome.outcome_name.Split(" ")[0].ToUpper()}";
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Team total"))
+                    {
+                        line.CoeffKind = $"ITOTAL{outcome.outcome_name.Split(" ")[0].ToUpper()}{outcome.participant_number}";
+                    }
+                    else if (market.market_name.ContainsIgnoreCase("Odd / Even"))
+                    {
+                        line.CoeffKind = $"ITOTAL{outcome.outcome_name.Split(" ")[0].ToUpper()}{outcome.participant_number}";
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    //Параметр 
+                    if (decimal.TryParse(outcome.outcome_param, NumberStyles.Any, CultureInfo.InvariantCulture, out var param))
+                    {
+                        line.CoeffParam = param;
+                    }
+
+                    line.CoeffValue = outcome.outcome_coef;
+
+                    line.LineData = new StoreBet { OutcomeId = outcome.outcome_id.ToLong(), EventId = market.event_id.ToLong(), MarketId = market.market_id.ToLong() };
+
+                    line.UpdateName();
+
+                    localLines.Add(line);
+                }
             }
 
             return localLines;
+
         }
 
-        private static List<LineDTO> ExtractLinesFromSections(LineDTO tample, List<Section> sections, string player, string gameType, string tournamentName)
+        public bool CheckExceptions(LineDTO line, Market market)
         {
-            var sectionsLines = new List<LineDTO>();
-            foreach (var section in sections)
-            {
-                sectionsLines.AddRange(ExtractLinesFromSection(tample, section, player, gameType, tournamentName));
-            }
-            return sectionsLines;
+            //исключаем индивидуальные тоталы в футболе
+            if (line.SportKind.ContainsAllIgnoreCase("football") && market.market_name.ContainsIgnoreCase("player"))
+                return false;
+
+            //исключаем тоталы 3way
+            if (market.market_name.ContainsIgnoreCase("3way"))
+                return false;
+
+            //исключаем гандикапы по сетам и геймам
+            if (market.market_name.ContainsAllIgnoreCase("sets handicap") || market.market_name.ContainsAllIgnoreCase("games handicap"))
+                return false;
+
+            //Только у FavBet тоталы на баскетбол на последнюю четверть считаются с учетом овертайма, в отличии от других контор
+            if (line.SportKind.ContainsAllIgnoreCase("basketball") && line.CoeffType == "4th quarter" && line.CoeffKind.Contains("TOTAL"))
+                return false;
+
+            return true;
         }
-
-        private static List<LineDTO> ExtractLinesFromSection(LineDTO tample, Section section, string player, string gameType, string tournamentName)
-        {
-            var groupLines = new List<LineDTO>();
-
-            if (section.BetsGroup == null)
-                return groupLines;
-
-            // Извлекаем тип игры: угловые, (желтые, красные карты), картер, и т.д.
-            var localGameType = gameType;
-
-            if (string.IsNullOrEmpty(localGameType))
-            {
-                localGameType = ConverterHelper.GetGameType(section.Name);
-            }
-
-            foreach (var betGroup in section.BetsGroup) // Пример: Full Time, Set 1, Set 2
-            {
-                string coeffKinds;
-                // Если ставка не востребованна, т.е попалось ненужная ставка - то:
-
-                //исключаем индивидуальные тоталы в футболе
-                if (tample.SportKind.ContainsAllIgnoreCase("football") && betGroup.Name.ContainsIgnoreCase("player"))
-                    continue;
-
-                //исключаем тоталы 3way
-                if (betGroup.Name != null && betGroup.Name.ContainsIgnoreCase("3way") && (betGroup.Name.ContainsIgnoreCase("over") || betGroup.Name.ContainsIgnoreCase("under")))
-                    continue;
-
-                if (!IsDemandMark(betGroup.Name, out coeffKinds))
-                    continue;
-                
-                //исключаем гандикапы по сетам и геймам
-                if (betGroup.Name.ContainsAllIgnoreCase("sets handicap") || betGroup.Name.ContainsAllIgnoreCase("games handicap"))
-                    continue;
-
-                // Извлекаем тип игры: угловые, (желтые, красные карты), картер, и т.д.
-                if (string.IsNullOrEmpty(localGameType))
-                {
-                    localGameType = ConverterHelper.GetGameType(betGroup.Name);
-                }
-
-                foreach (var bet in betGroup.Bets) // Тоталы, форы, и т.д
-                {
-                    if (bet.IsDisabled.Equals("yes")) // игнорировать ставки: зачеркнутые - их нельзя купить
-                        continue;
-
-                    bool hasParam = ConverterHelper.HasParam(coeffKinds);
-                    string[] coeffKindsSplit = coeffKinds.Split('|');
-
-                    // Если коффициентов ставки > ожидаемыйх
-                    if (bet.Odds.Count > coeffKindsSplit.Length)
-                        continue;
-
-                    /* Если ожидаемых коэффициентов ставки > входящих:
-                        * Например: хоккей имеет ставку  "W1|X|W2", 
-                        * в то врямя как для тенниса ставки "W1|W2".
-                        * Ставки содержащие PARAM тут не обрабатываются.
-                        */
-                    if (!coeffKinds.Contains("PARAM") &&
-                        bet.Odds.Count < coeffKindsSplit.Length)
-                    {
-                        coeffKinds = coeffKinds.Replace("|X|", "|");
-                        coeffKindsSplit = coeffKinds.Split('|');
-                    }
-
-                    // Номер команды
-                    var teamNum = string.Empty;
-                    if (coeffKinds.Contains("ITOTAL"))
-                    {
-                        var team = Regex.Match(betGroup.Name, @"(?i)total(?-i)\s*(?<match>.*)").Groups["match"].Value;
-
-                        if (team.ContainsIgnoreCase(tample.Team1))
-                            teamNum = "1";
-                        else if (team.ContainsIgnoreCase(tample.Team2))
-                            teamNum = "2";
-                        else
-                            continue;
-                    }
-
-                    var countCoeffKinds = bet.Odds.Count;
-                    for (int i = 0; i < countCoeffKinds; ++i) // игнорировать ставки: спрятанные или coef == null
-                    {
-                        var odds = bet.Odds[i];
-                        if (!odds.Value.HasValue || odds.IsHidden.Equals("no")) // игнорировать ставки: зачеркнутые, спрятанные, coef == null
-                            break;
-
-                        var copy = tample.Clone();
-
-                        // Извлекаем тип игры: угловые, (желтые, красные карты), картер, и т.д.
-                        if (string.IsNullOrEmpty(localGameType))
-                        {
-                            localGameType = ConverterHelper.GetGameType(bet.Odds[i].Name);
-                        }
-
-                        int paramIndex = coeffKindsSplit[i].Equals("PARAM") ? i + 1 : i;
-
-                        string period;
-                        //добавляем только линии с известными периодами (full time, 1st half и т.д.)
-                        if (!ConverterHelper.GetPeriod(section.Name, out period)) continue;
-
-                        var periodFromGroupName = ConverterHelper.GetPeriodFromGroupName(betGroup.Name);
-
-                        //если в названии группы есть указание периода берем его оттуда
-                        if (!string.IsNullOrEmpty(periodFromGroupName)) period = periodFromGroupName;
-
-                        //Только у FavBet тоталы на баскетбол на последнюю четверть считаются с учетом овертайма, в отличии от других контор
-                        if (copy.SportKind.ContainsAllIgnoreCase("basketball") && period == "4th quarter" && coeffKindsSplit[paramIndex].Contains("TOTAL")) continue;
-
-                        copy.CoeffType = $"{period} {localGameType}";
-
-                        copy.CoeffValue = (decimal)odds.Value;
-                        copy.CoeffKind = coeffKindsSplit[paramIndex] + teamNum;
-                        copy.Name = copy.CoeffKind;
-
-                        //Добавляем возраст если играют молодежные команды
-                        const string regex = @"U[1-2][0-9]";
-
-                        if (Regex.IsMatch(tournamentName, regex))
-                        {
-                            var age = Regex.Match(tournamentName, regex).Value;
-                            copy.Team1 += " " + age;
-                            copy.Team2 += " " + age;
-                        }
-
-                        if (hasParam)
-                        {
-                            var value = bet.Odds[1].Value;
-                            if (value != null)
-                            {
-                                var coeffParam = bet.Odds.Count == 3 ? value.Value : ConverterHelper.ExtractCoeffParam(odds.Name);
-                                copy.CoeffParam = (decimal)coeffParam;
-                            }
-                        }
-
-                        //TODO: MarketId null у HeadMarket убрать
-                        copy.LineData = new StoreBet { OutcomeId = odds.Id.ToLong(), EventId = copy.LineObject.ToLong(), MarketId = bet.MarketId.ToLong()};
-
-                        copy.UpdateName();
-                        groupLines.Add(copy);
-                    }
-                }
-            }
-
-            return groupLines;
-        }
-
-        private static bool IsDemandMark(string name, out string coeffKindsSplit)
-        {
-            if (!string.IsNullOrEmpty(name)) return ConverterHelper.IsDemandMark(MapRuls, name.ToLower(), out coeffKindsSplit);
-
-            coeffKindsSplit = string.Empty;
-            return false;
-        }
-
     }
 }
 

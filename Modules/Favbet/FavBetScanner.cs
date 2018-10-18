@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -27,10 +28,12 @@ namespace Favbet
         public override string Name => "Favbet";
 
         //public override string Host => "https://www.favbet.com/";
-        public override string Host => "https://favbet.ro/";
+        public override string Host => "https://www.favbet.ro/";
         public string DomainForCookie => ".favbet.ro";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
+
+        public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
 
 
         protected override LineDTO[] GetLiveLines()
@@ -43,27 +46,33 @@ namespace Favbet
             {
                 string response;
 
-                using (var wc = new Extensions.WebClientEx(randomProxy, CookieDictionary[randomProxy].GetData()))
-                {
-                    wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
+                var cookies = CookieDictionary[randomProxy].GetData().GetAllCookies();
 
-                    response = wc.DownloadString($"{Host}live/markets/");
+                using (var wc = new PostWebClient(randomProxy, cookies))
+                {
+                    response = wc.UploadString($"{Host}frontend_api/events/", "{\"service_id\":1,\"lang\":\"en\"}");
                 }
 
-                var sports = JsonConvert.DeserializeObject<Market>(response).Sports;
+                Log.Info("FavBet response " + response);
+
+                var events = JsonConvert.DeserializeObject<EventsShort>(response).Events;
 
                 var tasks = new List<Task>();
 
-                foreach (var tournament in sports.SelectMany(sport => sport.Tournaments))
-                {
-                    //убираем чемпионаты 
-                    if (tournament.TournamentName.ContainsIgnoreCase("statistics", "crossbar", "goalpost", "fouls", "corners", "offsides", "shot"))
-                        continue;
+                tasks.AddRange(events
+                    .AsParallel()
+                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+                    .Select(@event => Task.Factory.StartNew(state =>
+                    {
+                        //убираем запрещенные чемпионаты
+                        if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                        if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
 
-                    tasks.AddRange(tournament.Games.AsParallel()/*.WithDegreeOfParallelism(4)*/
-                        .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                        .Select(gameId => Task.Factory.StartNew(state => ParseGame(gameId, tournament, lines), gameId)));
-                }
+                        var lns = ParseEvent(@event);
+
+                        lock (Lock) lines.AddRange(lns);
+
+                    }, @event)));
 
                 try
                 {
@@ -77,10 +86,9 @@ namespace Favbet
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 return lines.ToArray();
-
             }
             catch (Exception e)
             {
@@ -90,33 +98,38 @@ namespace Favbet
             return new LineDTO[] { };
         }
 
-
-        private void ParseGame(Game gameId, Tournament tournament, List<LineDTO> lines)
+        private List<LineDTO> ParseEvent(Event @event)
         {
+            var random = ProxyList.PickRandom();
+
+            var c = CookieDictionary[random].GetData();
+
             try
             {
                 var converter = new FavBetConverter();
 
-                var random = ProxyList.PickRandom();
+                var lineTemplate = converter.CreateLine(@event, Host, Name);
 
-                var game = ConverterHelper.GetFullGame(gameId.Id, random, CookieDictionary[random].GetData(), Host);
+                if (lineTemplate == null) return new List<LineDTO>();
 
-                if (game == null) return;
+                var markets = ConverterHelper.GetMarketsByEvent(@event.event_id, random, c, Host);
 
-                game.TryInitProperties(converter.TeamRegex, converter.ScoreRegex);
+                if (markets == null) return new List<LineDTO>();
 
-                var lineGame = converter.CreateLineWithoutEvents(game, Host, Name);
+                return converter.GetLinesFromEvent(lineTemplate, markets);
 
-                if (lineGame == null) return;
-
-                var events = converter.AddEventsToLine(lineGame, game, tournament.TournamentName);
-
-                lock (Lock) lines.AddRange(events);
+            }
+            catch (WebException e)
+            {
+                Log.Info("Favbet WebException " + JsonConvert.SerializeObject(e));
+                ParseEvent(@event);
             }
             catch (Exception e)
             {
-                Log.Info("FB Parse event exception " + e.Message);
+                Log.Info("FB Parse event exception " + JsonConvert.SerializeObject(e) + JsonConvert.SerializeObject(c.GetAllCookies()));
             }
+
+            return new List<LineDTO>();
         }
 
 
@@ -140,7 +153,7 @@ namespace Favbet
                         {
                             wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
-                            wc.DownloadString(Host + "en/live/");
+                            wc.DownloadString(Host + "live/translate/set_language/en/?redirect=");
 
                             var d = wc.ResponseHeaders["Set-Cookie"];
 
@@ -156,7 +169,7 @@ namespace Favbet
 
                         return cc;
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         listToDelete.Add(host);
                         ConsoleExt.ConsoleWriteError($"Favbet delete address {host.Address} listToDelete {listToDelete.Count}");
@@ -194,9 +207,7 @@ namespace Favbet
             }
             else
                 //ReCaptcha
-                //cookieCollection = CloudflareRecaptcha(proxy);
-
-                cookieCollection.Add(new Cookie("LANG", "en") { Domain = DomainForCookie });
+                cookieCollection = CloudflareRecaptcha(proxy);
 
             return cookieCollection;
 
@@ -209,12 +220,11 @@ namespace Favbet
 
             string responseText;
 
-
             using (var webClient = new GetWebClient(proxy, cookieCollection))
             {
                 try
                 {
-                    responseText = webClient.DownloadString(Host + "en/live/");
+                    responseText = webClient.DownloadString(Host + "en/bets/");
                     cookieCollection.Add(webClient.CookieCollection);
                 }
                 catch (WebException ex)

@@ -93,13 +93,14 @@
     <Compile Include="FavBetScanner.cs" />
     <Compile Include="Models\Line\Bet.cs" />
     <Compile Include="Models\Line\BetGroup.cs" />
-    <Compile Include="Models\Line\Game.cs" />
+    <Compile Include="Models\Line\Market.cs" />
     <Compile Include="Models\Line\GameId.cs" />
     <Compile Include="Models\Line\HeaderSection.cs" />
-    <Compile Include="Models\Line\Market.cs" />
+    <Compile Include="Models\Line\EventsShort.cs" />
     <Compile Include="Models\Line\Odds.cs" />
+    <Compile Include="Models\Line\Outcome.cs" />
     <Compile Include="Models\Line\Section.cs" />
-    <Compile Include="Models\Line\Sport.cs" />
+    <Compile Include="Models\Line\Event.cs" />
     <Compile Include="Models\Line\Timer.cs" />
     <Compile Include="Models\Line\Tournament.cs" />
     <Compile Include="Models\StoreBet.cs" />
