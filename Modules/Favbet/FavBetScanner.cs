@@ -53,8 +53,6 @@ namespace Favbet
                     response = wc.UploadString($"{Host}frontend_api/events/", "{\"service_id\":1,\"lang\":\"en\"}");
                 }
 
-                Log.Info("FavBet response " + response);
-
                 var events = JsonConvert.DeserializeObject<EventsShort>(response).Events;
 
                 var tasks = new List<Task>();
