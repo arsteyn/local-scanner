@@ -24,6 +24,31 @@ namespace Dafabet
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
+        public static readonly string[] LeagueStopWords = {
+            "fantasy",
+            "corner",
+            "specific",
+            "statistics",
+            "crossbar",
+            "goalpost",
+            "fouls",
+            "offsides",
+            "shot",
+            "booking",
+            "penalty",
+            "special",
+            "goal",
+            "kick",
+            "offside",
+            "throw",
+            "over",
+            "under",
+            //penalty
+            "(PEN)",
+            //extra time
+            "(ET)"
+        };
+
         protected override LineDTO[] GetLiveLines()
         {
             var lines = new List<LineDTO>();
@@ -33,9 +58,8 @@ namespace Dafabet
             try
             {
                 var matchList = new List<KeyValuePair<string, long>>();
-                var cookies = CookieDictionary[randomProxy].GetData();
 
-                var d = cookies.GetAllCookies();
+                var cookies = CookieDictionary[randomProxy].GetData();
 
                 using (var client = new Extensions.WebClientEx(randomProxy, cookies))
                 {
@@ -43,22 +67,27 @@ namespace Dafabet
 
                     var u = $"{Host.Replace("www", "prices")}EuroSite/match_data.ashx?Scope=Sport&SportType=0&FixtureType=l";
 
-                    string response  = client.DownloadString(u);
+                    string response = client.DownloadString(u);
 
                     var t = JsonConvert.DeserializeObject<MatchDataResult>(response);
 
-                    foreach (var league in t.leagues.Where(l => !DafabetConverter.LeagueStopWords.Any(s => l.LeagueName.ContainsIgnoreCase(s))))
+                    foreach (var league in t.leagues)
                     {
+                        //убираем запрещенные чемпионаты
+                        if (league.LeagueName.ContainsIgnoreCase(LeagueStopWords.ToArray())) continue;
+
                         matchList.AddRange(league.matches.Where(m => m.IsLive).Select(m => new KeyValuePair<string, long>(league.SportName, m.MatchId)).ToList());
                     }
                 }
 
-               var tasks = new List<Task>();
+                var tasks = new List<Task>();
 
                 var matches = matchList.ToList();
 
-                tasks.AddRange(matches.AsParallel()
-                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism).Select(match =>
+                tasks.AddRange(matches
+                    .AsParallel()
+                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+                    .Select(match =>
                     Task.Factory.StartNew(state =>
                     {
                         try
@@ -82,11 +111,11 @@ namespace Dafabet
                         }
                         catch (WebException e)
                         {
+                            Log.Info("Dafabet WebException " + e.Message + e.InnerException.Message + e.StackTrace);
                         }
                         catch (Exception e)
                         {
-                            Log.Info("Dafabet Parse match exception " + e.Message.Length + e.InnerException.Message +e.StackTrace);
-                            Console.WriteLine("Dafabet Task wait all exception, line count " + lines.Count);
+                            Log.Info("Dafabet Parse match exception " + e.Message + e.InnerException.Message + e.StackTrace);
                         }
 
                     }, match)));

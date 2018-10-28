@@ -81,6 +81,25 @@ namespace Scanner.Helper
             File.WriteAllLines(path, orderedScores);
         }
 
+        public static void UpdateDafabetEvents(string line)
+        {
+            var path = HostingEnvironment.ApplicationPhysicalPath + "DafabetTypes.txt";
+
+            var contents = File.ReadAllLines(path);
+
+            if (contents.Any(l => l == line)) return;
+
+            using (var w = File.AppendText(path))
+            {
+                w.WriteLine(line);
+            }
+
+            var contents2 = File.ReadAllLines(path);
+
+            var orderedScores = contents2.OrderBy(x => x);
+
+            File.WriteAllLines(path, orderedScores);
+        }
 
         public static string GetDomain(string host)
         {

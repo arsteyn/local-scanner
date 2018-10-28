@@ -60,7 +60,8 @@ namespace Favbet
                 tasks.AddRange(events
                     .AsParallel()
                     .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(@event => Task.Factory.StartNew(state =>
+                    .Select(@event => 
+                    Task.Factory.StartNew(state =>
                     {
                         //убираем запрещенные чемпионаты
                         if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;

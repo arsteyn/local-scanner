@@ -6,36 +6,13 @@ using BM.Core;
 using BM.DTO;
 using Dafabet.Models;
 using Newtonsoft.Json;
+using Scanner.Helper;
 
 namespace Dafabet
 {
     public class DafabetConverter
     {
-        public static readonly string[] LeagueStopWords =
-        {
-            "fantasy",
-            "corner",
-            "specific",
-            "statistics",
-            "crossbar",
-            "goalpost",
-            "fouls",
-            "offsides",
-            "shot",
-            "booking",
-            "penalty",
-            "special",
-            "goal",
-            "kick",
-            "offside",
-            "throw",
-            "over",
-            "under",
-            //penalty
-            "(PEN)",
-            //extra time
-            "(ET)"
-        };
+
 
         private List<LineDTO> _lines;
 
@@ -71,6 +48,8 @@ namespace Dafabet
                             var lineTemplate3 = lineTemplate2.Clone();
 
                             var coeffKind = GetCoeffKind(oddSet.Bettype, setSel.Key, lineTemplate);
+
+                            ProxyHelper.UpdateDafabetEvents($"SportName {league.SportName} | SportType {league.SportType} | Bettype {oddSet.Bettype} | OddsId {oddSet.OddsId} | Key Point Price {setSel.Key} {setSel.Point} {setSel.Price}");
 
                             if (coeffKind.IsEmpty()) continue;
 
