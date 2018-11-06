@@ -181,9 +181,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\Dafabet\Dafabet.csproj">
-      <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
-      <Name>Dafabet</Name>
+    <ProjectReference Include="..\Modules\Bet365\Bet365.csproj">
+      <Project>{4041f8bf-e6ac-485a-84af-8443dcb8d7de}</Project>
+      <Name>Bet365</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>
