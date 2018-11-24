@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using AngleSharp.Parser.Html;
 using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
@@ -20,7 +21,7 @@ namespace Dafabet
 
         public override string Name => "Dafabet";
 
-        public override string Host => "https://www.sportdafa.net/";
+        public override string Host => "https://www.dafabet.com/";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -63,11 +64,11 @@ namespace Dafabet
 
                 using (var client = new Extensions.WebClientEx(randomProxy, cookies))
                 {
-                    client.Headers["Referer"] = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx";
+                    client.Headers["X-Requested-With"] = "XMLHttpRequest";
+                    client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                    client.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                    var u = $"{Host.Replace("www", "prices")}EuroSite/match_data.ashx?Scope=Sport&SportType=0&FixtureType=l";
-
-                    string response = client.DownloadString(u);
+                    var response = client.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard", "FixtureType=l&SportType=1&LDisplayMode=0&Scope=MainMarket&IsParlay=false");
 
                     var t = JsonConvert.DeserializeObject<MatchDataResult>(response);
 
@@ -92,15 +93,15 @@ namespace Dafabet
                     {
                         try
                         {
-                            var leagueUrl = $"{Host.Replace("www", "prices")}EuroSite/match_data.ashx?Game=0&Scope=Match&SportType={match.Key}&FixtureType=l&Id={match.Value}";
-
                             var random = ProxyList.PickRandom();
 
                             using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
                             {
-                                cl.Headers["Referer"] = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx";
+                                cl.Headers["X-Requested-With"] = "XMLHttpRequest";
+                                cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                                cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                                var response = cl.DownloadString(leagueUrl);
+                                var response = cl.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard", $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={match.Value}");
 
                                 var converter = new DafabetConverter();
 
@@ -151,67 +152,31 @@ namespace Dafabet
 
             foreach (var host in ProxyList)
             {
-                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>
+                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 10, () =>
                 {
                     try
                     {
                         var cookies = new CookieCollection();
 
-                        //Get PHP Sessid
-                        using (var client = new GetWebClient(host, cookies))
-                        {
-                            var res = client.DownloadString($"{Host}/eu/sports/");
-
-                            if (client.CookieCollection.Count == 0) throw new Exception();
-
-                            cookies.Add(client.CookieCollection);
-                        }
-
-                        ////Get ASP.Net sessionId for prices (используется в получении линий)
-                        using (var client = new GetWebClient(host, cookies))
-                        {
-                            var u = $"{Host.Replace("www", "prices")}vender.aspx?lang=en_eu&iseuro=1&webskintype=1&act=hdpou&otype=1";
-
-                            client.Headers["Referer"] = $"{Host}eu/sports/";
-
-                            client.DownloadData(u);
-
-                            cookies.Add(client.CookieCollection);
-                        }
-
-                        using (var client = new GetWebClient(host, cookies))
-                        {
-                            var u = $"{Host.Replace("www", "prices")}NewIndex?lang=en_eu&iseuro=1&webskintype=1&act=hdpou&otype=1";
-
-                            client.Headers["Referer"] = $"{Host}eu/sports/";
-
-                            client.DownloadData(u);
-
-                            cookies.Add(client.CookieCollection);
-                        }
-
-                        ////Validate ASP.Net sessionId for prices (используется в получении линий)
-                        using (var client = new GetWebClient(host, cookies))
-                        {
-                            var u = $"{Host.Replace("www", "prices")}EuroSite/Euro_index.aspx?lang=en_eu&iseuro=1";
-
-                            client.Headers["Referer"] = $"{Host.Replace("www", "prices")}NewIndex?lang=en_eu&iseuro=1&webskintype=1&act=hdpou&otype=1";
-
-                            client.DownloadData(u);
-
-                            cookies.Add(client.CookieCollection);
-                        }
-
-                        using (var client = new GetWebClient(host, cookies))
-                        {
-                            client.Headers["Upgrade-Insecure-Requests"] = $"1";
-
-                            client.DownloadString($"{Host.Replace("www", "prices")}EuroSite/Euro_Index.aspx?20110303");
-
-                            cookies.Add(client.CookieCollection);
-                        }
-
                         var result = new CookieContainer();
+
+                        using (var client = new GetWebClient(host, cookies))
+                        {
+                            client.Headers["Referer"] = $"{Host.Replace("www", "play")}NewIndex?act=hdpou&webskintype=2";
+
+                            var r = client.DownloadString($"{Host.Replace("www", "play")}onebook?act=hdpou");
+
+                            cookies.Add(client.CookieCollection);
+
+                            var parser = new HtmlParser();
+
+                            var results = parser.Parse(r);
+
+                            var verfCode = results.QuerySelector("input[name=__RequestVerificationToken]").GetAttribute("value");
+
+                            cookies.Add(new Cookie("VerfCode", verfCode, "/", new Uri(Host).Host));
+                        }
+
                         result.Add(cookies);
 
                         return result;

@@ -49,7 +49,7 @@ namespace Dafabet
 
                             var coeffKind = GetCoeffKind(oddSet.Bettype, setSel.Key, lineTemplate);
 
-                            ProxyHelper.UpdateDafabetEvents($"SportName {league.SportName} | SportType {league.SportType} | Bettype {oddSet.Bettype} | OddsId {oddSet.OddsId} | Key Point Price {setSel.Key} {setSel.Point} {setSel.Price}");
+                            //ProxyHelper.UpdateDafabetEvents($"SportName {league.SportName} | SportType {league.SportType} | Bettype {oddSet.Bettype} | OddsId {oddSet.OddsId} | Key Point Price {setSel.Key} {setSel.Point} {setSel.Price}");
 
                             if (coeffKind.IsEmpty()) continue;
 
@@ -68,7 +68,7 @@ namespace Dafabet
 
                             lineTemplate3.CoeffValue = decimal.Round(price, 2, MidpointRounding.AwayFromZero);
 
-                            lineTemplate3.LineObject = $"{oddSet.OddsId}|{setSel.Key}|{setSel.Price}";
+                            lineTemplate3.LineObject = $"{oddSet.OddsId}|{setSel.Key}|{oddSet.Bettype}|{setSel.Price}";
 
                             lineTemplate3.UpdateName();
 
@@ -110,7 +110,8 @@ namespace Dafabet
                 //1H HANDICAP
                 case 7:
 
-                    if (lineTemplate.Score1 != 0 || lineTemplate.Score2 != 0) return result;
+                    //Контора считает Handicap от текущего счета
+                    //if (lineTemplate.Score1 != 0 || lineTemplate.Score2 != 0) return result;
 
                     result = "HANDICAP";
 

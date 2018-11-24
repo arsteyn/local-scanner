@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp">
+      <HintPath>..\Parimatch\bin\Debug\AngleSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Bars.EAS.Utils">
       <HintPath>..\..\packages\Core\Bars.EAS.Utils.dll</HintPath>
     </Reference>

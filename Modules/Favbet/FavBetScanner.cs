@@ -40,10 +40,10 @@ namespace Favbet
         {
             var lines = new List<LineDTO>();
 
-            var randomProxy = ProxyList.PickRandom();
-
             try
             {
+                var randomProxy = ProxyList.PickRandom();
+
                 string response;
 
                 var cookies = CookieDictionary[randomProxy].GetData().GetAllCookies();
