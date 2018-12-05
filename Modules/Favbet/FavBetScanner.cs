@@ -27,9 +27,9 @@ namespace Favbet
 
         public override string Name => "Favbet";
 
-        //public override string Host => "https://www.favbet.com/";
-        public override string Host => "https://www.favbet.ro/";
-        public string DomainForCookie => ".favbet.ro";
+        public override string Host => "https://www.favbet.com/";
+        //public override string Host => "https://www.favbet.ro/";
+        public string DomainForCookie => ".favbet.com";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -152,7 +152,7 @@ namespace Favbet
                         {
                             wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
-                            wc.DownloadString(Host + "live/translate/set_language/en/?redirect=");
+                            wc.DownloadString(Host + "en/live/");
 
                             var d = wc.ResponseHeaders["Set-Cookie"];
 
@@ -180,6 +180,11 @@ namespace Favbet
 
             var tasks = ProxyList.AsParallel().Select(host => Task.Factory.StartNew(state => CookieDictionary[host].GetData(), host)).ToArray();
 
+            //foreach (var host in ProxyList)
+            //{
+            //    CookieDictionary[host].GetData();
+            //}
+
             Task.WaitAll(tasks.ToArray());
 
             foreach (var host in listToDelete)
@@ -195,7 +200,7 @@ namespace Favbet
 
             #region Cloudflare wait 5 sec
 
-            var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/bets/", GetWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
+            var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/live/", GetWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
 
             if (cookies != null && cookies.Any())
             {
@@ -223,7 +228,7 @@ namespace Favbet
             {
                 try
                 {
-                    responseText = webClient.DownloadString(Host + "en/bets/");
+                    responseText = webClient.DownloadString(Host + "en/live/");
                     cookieCollection.Add(webClient.CookieCollection);
                 }
                 catch (WebException ex)

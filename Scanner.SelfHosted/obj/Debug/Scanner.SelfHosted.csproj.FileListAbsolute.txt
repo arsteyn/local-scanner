@@ -98,8 +98,8 @@ C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\SimMetrics.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Net.Http.Formatting.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\System.Web.Http.Owin.dll
-C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\eXtremeNet.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\BM.Web.dll
+C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\eXtremeNet.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\CloudFlareNet.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\RuCaptchaClient.dll
 C:\Projects\Localscanner\Scanner.SelfHosted\bin\Debug\Favbet.pdb
