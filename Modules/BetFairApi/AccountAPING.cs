@@ -43,7 +43,7 @@
                 };
 
 
-                var request = wc.Post<LoginResult>("https://identitysso.betfair.com/api/certlogin", values);
+                var request = wc.Post<LoginResult>("https://identitysso-cert.betfair.com/api/certlogin", values);
 
                 if (request.LoginStatus == "SUCCESS")
                 {

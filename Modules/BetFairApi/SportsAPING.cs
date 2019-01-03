@@ -1,6 +1,7 @@
 ﻿
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace BetFairApi
 {
@@ -138,7 +139,9 @@ namespace BetFairApi
 
             var tasks = new List<Task>();
 
-            tasks.AddRange(marketIds.Split(40).AsParallel().WithDegreeOfParallelism(4).Select(marketIdsSplit =>
+            tasks.AddRange(marketIds.Split(40)
+                .AsParallel()
+                .WithExecutionMode(ParallelExecutionMode.ForceParallelism).Select(marketIdsSplit =>
                 Task.Factory.StartNew(
                     state =>
                     {
@@ -152,7 +155,14 @@ namespace BetFairApi
 
                         lock (Lock)
                         {
-                            result.AddRange(Invoke<IList<MarketBook>>(request));
+                            try
+                            {
+                                result.AddRange(Invoke<IList<MarketBook>>(request));
+                            }
+                            catch (System.Exception e)
+                            {
+                                Console.WriteLine(e.InnerException);
+                            }
                         }
 
                     }, marketIdsSplit)));
@@ -229,8 +239,9 @@ namespace BetFairApi
         {
             using (var wc = this.GetBetWebClient(this.ApiKey, this.Token))
             {
-                var response = wc.Post<JsonResponse<T>>(URL, request);
-                return response.Result;
+                var response = wc.Post(URL, request);
+                var r = JsonConvert.DeserializeObject<JsonResponse<T>>(response);
+                return r.Result;
             }
         }
 

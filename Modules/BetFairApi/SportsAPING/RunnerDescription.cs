@@ -6,11 +6,17 @@ namespace BetFairApi
 {
     public class RunnerDescription
     {
+        private string _runnerName;
+
         [JsonProperty(PropertyName = "selectionId")]
         public long SelectionId { get; set; }
 
         [JsonProperty(PropertyName = "runnerName")]
-        public string RunnerName { get; set; }
+        public string RunnerName
+        {
+            get => _runnerName.ToLower();
+            set => _runnerName = value;
+        }
 
         [JsonProperty(PropertyName = "handicap")]
         public double Handicap { get; set; }

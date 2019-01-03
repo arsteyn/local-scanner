@@ -50,17 +50,41 @@ namespace Favbet
 
                 using (var wc = new PostWebClient(randomProxy, cookies))
                 {
-                    response = wc.UploadString($"{Host}frontend_api/events/", "{\"service_id\":1,\"lang\":\"en\"}");
+                    response = wc.UploadString($"{Host}frontend_api/events_short/", "{\"service_id\":1,\"lang\":\"en\"}");
                 }
 
-                var events = JsonConvert.DeserializeObject<EventsShort>(response).Events;
+                var sportids = JsonConvert.DeserializeObject<EventsShort>(response).Events.Select(e => e.sport_id).Distinct().ToList();
+
+                var events = new List<Event>();
+
+                Parallel.ForEach(sportids, sportId =>
+                {
+                    try
+                    {
+                        var random = ProxyList.PickRandom();
+                        var cook = CookieDictionary[random].GetData().GetAllCookies();
+
+                        using (var wc = new PostWebClient(random, cook))
+                        {
+                            response = wc.UploadString($"{Host}frontend_api/events/", $"{{\"service_id\":1,\"lang\":\"en\",\"sport_id\":{sportId}}}");
+                            var e = JsonConvert.DeserializeObject<EventsShort>(response).Events;
+
+                            lock (Lock) events.AddRange(e);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Info("Get event exception");
+                    }
+                });
+
 
                 var tasks = new List<Task>();
 
                 tasks.AddRange(events
                     .AsParallel()
                     .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(@event => 
+                    .Select(@event =>
                     Task.Factory.StartNew(state =>
                     {
                         //убираем запрещенные чемпионаты

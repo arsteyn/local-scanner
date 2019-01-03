@@ -40,13 +40,13 @@ namespace BetFair
 
             var marketFilter = new MarketFilter
             {
-                EventTypeIds = new[]
-                {
-                    "1", "7524", "7522", "468328", "998917"
-                },
+                //EventTypeIds = new[]
+                //{
+                //    "1", "7524", "7522", "468328", "998917"
+                //},
                 InPlayOnly = true,
-                TextQuery = "OVER_UNDER_*",
-                MarketBettingTypes = new List<MarketBettingType> { MarketBettingType.ODDS }
+                //TextQuery = "OVER_UNDER_*",
+                MarketBettingTypes = new List<MarketBettingType> { MarketBettingType.ODDS, MarketBettingType.ASIAN_HANDICAP_DOUBLE_LINE }
             };
 
             var resultList = aping.ListMarketCatalogue(marketFilter, marketProjection, null, 999);
@@ -75,12 +75,13 @@ namespace BetFair
 
     public class GetCoeffKindParams
     {
-        public GetCoeffKindParams(Runner runner, MarketCatalogue marketCatalogue)
+        public GetCoeffKindParams(Runner runner, MarketCatalogue marketCatalogue, double? runnerHandicap)
         {
             this.Runner = runner;
             this.MarketCatalogue = marketCatalogue;
+            this.Handicap = runnerHandicap;
 
-            var teames = marketCatalogue.Event.Name.Split(new[] { " v ", " @ " }, StringSplitOptions.RemoveEmptyEntries);
+            var teames = marketCatalogue.Event.Name.ToLower().Split(new[] { " v ", " @ " }, StringSplitOptions.RemoveEmptyEntries);
 
             this.FirstTeam = teames[0];
             this.SecondTeam = teames[1];
@@ -96,6 +97,8 @@ namespace BetFair
         public string FirstTeam { get; set; }
 
         public string SecondTeam { get; set; }
+
+        public double? Handicap { get; set; }
 
         public Dictionary<string, string> Mapping = new Dictionary<string, string>
             {
@@ -113,5 +116,6 @@ namespace BetFair
         public string MarketId { get; set; }
 
         public long SelectionId { get; set; }
+        public double? Handicap { get; set; }
     }
 }
