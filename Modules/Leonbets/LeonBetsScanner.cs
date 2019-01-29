@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
 using BM.Web;
@@ -53,64 +54,46 @@ namespace Leonbets
 
                 var actualEvents = data.events.Where(e => e.open).ToList();
 
-                var tasks = actualEvents.AsParallel().Select(@event =>
-                    Task.Factory.StartNew(
+                var tasks = new List<Task>();
+
+                tasks.AddRange(actualEvents
+                    .AsParallel()
+                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+                    .Select(@event =>
+                     Task.Factory.StartNew(
                         state =>
                         {
                             var proxy = hostList.PickRandom();
-                            using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
+
+                            var retry = 0;
+                            while (retry < 3)
                             {
-                                var json = string.Empty;
                                 try
                                 {
-                                    json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
-
-                                    @event = JsonConvert.DeserializeObject<Event>(json);
-
-                                    var r = LeonBetsLineConverter.Convert(@event, Name);
-
-                                    lock (Lock)
+                                    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
                                     {
-                                        lines.AddRange(r);
+                                        var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+
+                                        @event = JsonConvert.DeserializeObject<Event>(json);
+
+                                        var r = LeonBetsLineConverter.Convert(@event, Name);
+
+                                        lock (Lock) lines.AddRange(r);
+
+                                        return;
                                     }
+                                }
+                                catch (WebException)
+                                {
+                                    retry++;
                                 }
                                 catch (Exception e)
                                 {
-                                    Log.Info("LeonBets error" + e.Message + e.StackTrace + proxy.Address);
-                                    Log.Info("LeonBets error" + json);
+                                    Log.Info("LeonBets error " + JsonConvert.SerializeObject(e));
+                                    retry = 3;
                                 }
                             }
-                        }, @event)).ToArray();
-
-
-                //foreach (var @event in actualEvents)
-                //{
-                //    var proxy = hostList.PickRandom();
-
-                //    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
-                //    {
-
-                //        try
-                //        {
-                //            var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
-
-                //            var @event2 = JsonConvert.DeserializeObject<Event>(json);
-
-                //             var r = LeonBetsLineConverter.Convert(@event2, Name);
-
-                //            lock (Lock)
-                //            {
-                //                lines.AddRange(r);
-                //            }
-                //        }
-                //        catch (Exception e)
-                //        {
-                //            Log.Info("LeonBets error" + e.Message + e.InnerException + proxy);
-                //        }
-                //    }
-
-                //}
-
+                        }, @event)));
 
                 try
                 {
@@ -168,7 +151,9 @@ namespace Leonbets
 
                             using (var webClient = new Extensions.WebClientEx(host, cc))
                             {
-                                webClient.DownloadString(Host);
+                                var f = webClient.DownloadString(Host);
+
+                                if (!f.ContainsIgnoreCase("leonbets")) throw new Exception();
                             }
 
                             return cc;

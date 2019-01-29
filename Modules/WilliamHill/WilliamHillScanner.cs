@@ -17,7 +17,7 @@ namespace WilliamHill
 
         public override string Name => "WilliamHill";
 
-        public override string Host => "http://sports.williamhill.com/";
+        public override string Host => "https://sports.williamhill.com/";
 
         private List<string> UpdateUrls()
         {
@@ -36,7 +36,7 @@ namespace WilliamHill
                       select m.Attribute("ob_id").Value;
 
             var urls = ids
-                .Select(x => string.Format("{1}/bir_xml?action=event&version=1&ev_id={0}", x, Host))
+                .Select(x => string.Format("{1}bir_xml?action=event&version=1&ev_id={0}", x, Host))
                 .ToList();
 
             return urls;
@@ -54,8 +54,6 @@ namespace WilliamHill
                 var converter = new WilliamHillLineConverter();
 
                 var lines = new List<LineDTO>();
-
-
 
                 var tasks = urls.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
                     Task.Factory.StartNew(
@@ -89,6 +87,30 @@ namespace WilliamHill
                     Console.WriteLine("WilliamHill Task wait all exception, line count " + lines.Count);
                     Log.Info("WilliamHill Task wait all exception, line count " + lines.Count);
                 }
+
+
+                //foreach (var @event in urls)
+                //{
+                //    var randHost2 = ProxyList.PickRandom();
+                //    using (var webClient = new Extensions.WebClientEx(randHost2))
+                //    {
+                //        try
+                //        {
+                //            var json = webClient.DownloadString(@event);
+                //            var r = converter.Convert(json, Name);
+                //            lock (Lock)
+                //            {
+                //                lines.AddRange(r);
+                //            }
+                //        }
+                //        catch (Exception e)
+                //        {
+                //            Log.Info("WH Parse event exception " + e.InnerException);
+                //            //Console.WriteLine("WH Parse event exception " + e.InnerException);
+                //        }
+                //    }
+                //}
+
 
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;

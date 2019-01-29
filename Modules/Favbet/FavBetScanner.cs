@@ -160,6 +160,8 @@ namespace Favbet
         {
             var listToDelete = new List<WebProxy>();
 
+            ProxyList = new List<WebProxy>(ProxyList.Take(10));
+
             foreach (var host in ProxyList)
             {
                 CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>

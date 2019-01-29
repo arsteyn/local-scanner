@@ -5,7 +5,7 @@ namespace WilliamHill.SerializableClasses
     public class BaseElement
     {
         [XmlAttribute("ob_id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [XmlAttribute("name")]
         public virtual string Name { get; set; }

@@ -8,6 +8,8 @@ namespace Dafabet.Models
 
         public int Bettype { get; set; }
 
+        public int MarketStatus { get; set; }
+
         public List<Select> sels { get; set; }
     }
 }

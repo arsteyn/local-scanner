@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -97,7 +98,7 @@ namespace WilliamHill
                             return this.XmlSerializer.Deserialize(xr) as BIR;
                         }
                     }
-                    catch
+                    catch (Exception e)
                     {
                         // ignored
                     }

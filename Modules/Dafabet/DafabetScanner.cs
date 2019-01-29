@@ -91,32 +91,40 @@ namespace Dafabet
                     .Select(match =>
                     Task.Factory.StartNew(state =>
                     {
-                        try
+                        var random = ProxyList.PickRandom();
+                        var retry = 0;
+                        while (retry < 3)
                         {
-                            var random = ProxyList.PickRandom();
-
-                            using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
+                            try
                             {
-                                cl.Headers["X-Requested-With"] = "XMLHttpRequest";
-                                cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                                cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
+                                using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
+                                {
+                                    cl.Headers["X-Requested-With"] = "XMLHttpRequest";
+                                    cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                                    cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                                var response = cl.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard", $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={match.Value}");
+                                    var response = cl.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard",
+                                        $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={match.Value}");
 
-                                var converter = new DafabetConverter();
+                                    var converter = new DafabetConverter();
 
-                                var l = converter.Convert(response, Name);
+                                    var l = converter.Convert(response, Name);
 
-                                lock (Lock) lines.AddRange(l);
+                                    lock (Lock) lines.AddRange(l);
+
+                                    return;
+                                }
                             }
-                        }
-                        catch (WebException e)
-                        {
-                            Log.Info("Dafabet WebException " + e.Message + e.InnerException.Message + e.StackTrace);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Info("Dafabet Parse match exception " + e.Message + e.InnerException.Message + e.StackTrace);
+                            catch (WebException e)
+                            {
+                                retry++;
+                                //Log.Info("Dafabet WebException " + e.Message + e.InnerException.Message + e.StackTrace);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Info("Dafabet Parse match exception " + e.Message + e.InnerException.Message + e.StackTrace);
+                                retry = 3;
+                            }
                         }
 
                     }, match)));

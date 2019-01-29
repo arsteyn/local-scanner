@@ -42,7 +42,7 @@ namespace Scanner.Helper
 
         public static void UpdateLeonEvents(string line)
         {
-            var path = HostingEnvironment.ApplicationPhysicalPath + "OddsTypes.txt";
+            var path = HostingEnvironment.ApplicationPhysicalPath + "LeonTypes.txt";
 
             var contents = File.ReadAllLines(path);
 
@@ -60,6 +60,26 @@ namespace Scanner.Helper
             File.WriteAllLines(path, orderedScores);
         }
 
+
+        public static void Update888Events(string line)
+        {
+            var path = HostingEnvironment.ApplicationPhysicalPath + "888Types.txt";
+
+            var contents = File.ReadAllLines(path);
+
+            if (contents.Any(l => l == line)) return;
+
+            using (var w = File.AppendText(path))
+            {
+                w.WriteLine(line);
+            }
+
+            var contents2 = File.ReadAllLines(path);
+
+            var orderedScores = contents2.OrderBy(x => x);
+
+            File.WriteAllLines(path, orderedScores);
+        }
 
         public static void UpdateFavbetEvents(string line)
         {

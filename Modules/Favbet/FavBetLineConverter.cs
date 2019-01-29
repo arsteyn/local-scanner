@@ -118,10 +118,6 @@ namespace Favbet
                     {
                         line.CoeffKind = $"W{outcome.outcome_short_name}";
                     }
-                    else if (market.market_name.ContainsIgnoreCase("Draw No Bet"))
-                    {
-                        line.CoeffKind = $"W{outcome.outcome_short_name}";
-                    }
                     else if (market.market_name.ContainsIgnoreCase("Handicap"))
                     {
                         line.CoeffKind = $"HANDICAP{outcome.participant_number}";

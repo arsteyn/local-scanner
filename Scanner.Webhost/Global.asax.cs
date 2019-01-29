@@ -19,6 +19,7 @@ namespace Scanner.Webhost
 
             ServicePointManager.DefaultConnectionLimit = 10000;
             ServicePointManager.Expect100Continue = false;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
             BookmakerScanners = ModuleHelper.LoadModules(Assembly.GetExecutingAssembly(), path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin"));
 

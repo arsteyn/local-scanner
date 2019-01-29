@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuCaptchaClient", "..\Lives
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dafabet", "Modules\Dafabet\Dafabet.csproj", "{770B8CF0-6710-4C8E-8F41-4BDAF982BCF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888sport", "Modules\888sport\888sport.csproj", "{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,10 @@ Global
 		{770B8CF0-6710-4C8E-8F41-4BDAF982BCF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{770B8CF0-6710-4C8E-8F41-4BDAF982BCF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{770B8CF0-6710-4C8E-8F41-4BDAF982BCF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{35E9B8FE-73F2-40E8-AFA3-56E5B86C3E5A} = {06849D9E-EB3F-4D16-83B1-E27839044321}
 		{A870E524-350F-463B-9BDE-27281ED58DF3} = {B9832E0C-485A-434E-A158-ABBFF2632A00}
 		{770B8CF0-6710-4C8E-8F41-4BDAF982BCF0} = {06849D9E-EB3F-4D16-83B1-E27839044321}
+		{A73695E2-114C-4FCF-B7CF-BF27D5A89D4F} = {06849D9E-EB3F-4D16-83B1-E27839044321}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {668FFA90-D5C4-4769-867E-89E1D23AD867}

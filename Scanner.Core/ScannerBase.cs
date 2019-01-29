@@ -36,6 +36,7 @@ namespace Scanner
             }
         }
 
+      
 
         protected DateTime LastUpdated { get; set; }
 
