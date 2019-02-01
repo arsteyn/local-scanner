@@ -20,12 +20,12 @@ namespace Leonbets
 {
     public class LeonBetsLineConverter
     {
-        protected static Logger Log => LogManager.GetCurrentClassLogger();
+        protected  Logger Log => LogManager.GetCurrentClassLogger();
 
         private static readonly Regex TeamRegex = new Regex("^(?<home>.*?) - (?<away>.*?)$");
         private static readonly Regex ScoreRegex = new Regex("^(?<homeScore>.*?):(?<awayScore>.*?)$");
 
-        public static List<LineDTO> Lines;
+        public  List<LineDTO> Lines;
 
         internal static readonly List<string> StopWords = new List<string>
         {
@@ -33,7 +33,7 @@ namespace Leonbets
         };
 
         //Convert single event
-        public static LineDTO[] Convert(Event @event, string bookmakerName)
+        public  LineDTO[] Convert(Event @event, string bookmakerName)
         {
             Lines = new List<LineDTO>();
             var teamMatch = TeamRegex.Match(@event.name);
@@ -71,7 +71,7 @@ namespace Leonbets
             return Lines.ToArray();
         }
 
-        private static void Convert(Event @event, Market market, Runner runner, LineDTO lineTemplate)
+        private void Convert(Event @event, Market market, Runner runner, LineDTO lineTemplate)
         {
             var line = lineTemplate.Clone();
 
@@ -271,7 +271,7 @@ namespace Leonbets
             return string.Empty;
         }
 
-        private static void AddLine(LineDTO lineDto)
+        private void AddLine(LineDTO lineDto)
         {
             lineDto.UpdateName();
             Lines.Add(lineDto);

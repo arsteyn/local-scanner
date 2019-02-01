@@ -20,17 +20,27 @@ namespace S888
         public static EventFull GetFullLine(long id, WebProxy proxy, string host)
         {
             EventFull e = null;
-            try
+            var retry = 0;
+            while (retry < 3)
             {
-                using (var wc = new GetWebClient(proxy))
+                try
                 {
-                    var response = wc.DownloadString($"{host}offering/v2018/888/betoffer/event/{id}.json?lang=en_GB&market=En");
-                    e = JsonConvert.DeserializeObject<EventFull>(response);
+                    using (var wc = new GetWebClient(proxy))
+                    {
+                        var response = wc.DownloadString($"{host}offering/v2018/888/betoffer/event/{id}.json?lang=en_GB&market=En");
+                        e = JsonConvert.DeserializeObject<EventFull>(response);
+                        retry = 3;
+                    }
                 }
-            }
-            catch (Exception exception)
-            {
-                Log.Info("S888 GetFullLine exception " + JsonConvert.SerializeObject(exception));
+                catch (WebException)
+                {
+                    retry++;
+                }
+                catch (Exception exception)
+                {
+                    Log.Info("S888 GetFullLine exception " + JsonConvert.SerializeObject(exception));
+                    retry = 3;
+                }
             }
 
             //foreach (var offer in e.BetOffers)

@@ -6,7 +6,9 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using BM.DTO;
+using Newtonsoft.Json;
 using Scanner;
+using static System.String;
 using Extensions = Scanner.Extensions;
 
 namespace WilliamHill
@@ -24,11 +26,30 @@ namespace WilliamHill
             var st = new Stopwatch();
             st.Start();
 
-            string s;
+            var s = Empty;
 
             var proxy = ProxyList.PickRandom();
+            var retry = 0;
 
-            using (var webClient = new Extensions.WebClientEx(proxy)) s = webClient.DownloadString($"{Host}bir_xml?action=miniApp");
+            while (retry < 3)
+            {
+                try
+                {
+                    using (var webClient = new Extensions.WebClientEx(proxy))
+                        s = webClient.DownloadString($"{Host}bir_xml?action=miniApp");
+
+                    retry = 3;
+                }
+                catch (WebException)
+                {
+                    retry++;
+                }
+                catch (Exception e)
+                {
+                    Log.Info("WilliamHill UpdateUrls error " + JsonConvert.SerializeObject(e));
+                    retry = 3;
+                }
+            }
 
             var document = XDocument.Parse(s);
 
@@ -36,7 +57,7 @@ namespace WilliamHill
                       select m.Attribute("ob_id").Value;
 
             var urls = ids
-                .Select(x => string.Format("{1}bir_xml?action=event&version=1&ev_id={0}", x, Host))
+                .Select(x => Format("{1}bir_xml?action=event&version=1&ev_id={0}", x, Host))
                 .ToList();
 
             return urls;
@@ -51,30 +72,41 @@ namespace WilliamHill
 
                 var urls = UpdateUrls();
 
-                var converter = new WilliamHillLineConverter();
-
                 var lines = new List<LineDTO>();
 
                 var tasks = urls.AsParallel().WithDegreeOfParallelism(4).Select(@event =>
                     Task.Factory.StartNew(
                         state =>
                         {
-                            var randHost2 = ProxyList.PickRandom();
-                            using (var webClient = new Extensions.WebClientEx(randHost2))
+                            var retry = 0;
+                            while (retry < 3)
                             {
+                                var proxy = ProxyList.PickRandom();
+
                                 try
                                 {
-                                    var json = webClient.DownloadString(@event);
-                                    var r = converter.Convert(json, Name);
-                                    lock (Lock)
+                                    using (var webClient = new Extensions.WebClientEx(proxy))
                                     {
-                                        lines.AddRange(r);
+                                        var json = webClient.DownloadString(@event);
+
+                                        var converter = new WilliamHillLineConverter();
+
+                                        var r = converter.Convert(json, Name);
+
+                                        lock (Lock) lines.AddRange(r);
+
+                                        return;
+
                                     }
+                                }
+                                catch (WebException)
+                                {
+                                    retry++;
                                 }
                                 catch (Exception e)
                                 {
-                                    Log.Info("WH Parse event exception " + e.InnerException);
-                                    //Console.WriteLine("WH Parse event exception " + e.InnerException);
+                                    Log.Info("WilliamHill parse error " + JsonConvert.SerializeObject(e));
+                                    retry = 3;
                                 }
                             }
                         }, @event)).ToArray();
@@ -87,30 +119,6 @@ namespace WilliamHill
                     Console.WriteLine("WilliamHill Task wait all exception, line count " + lines.Count);
                     Log.Info("WilliamHill Task wait all exception, line count " + lines.Count);
                 }
-
-
-                //foreach (var @event in urls)
-                //{
-                //    var randHost2 = ProxyList.PickRandom();
-                //    using (var webClient = new Extensions.WebClientEx(randHost2))
-                //    {
-                //        try
-                //        {
-                //            var json = webClient.DownloadString(@event);
-                //            var r = converter.Convert(json, Name);
-                //            lock (Lock)
-                //            {
-                //                lines.AddRange(r);
-                //            }
-                //        }
-                //        catch (Exception e)
-                //        {
-                //            Log.Info("WH Parse event exception " + e.InnerException);
-                //            //Console.WriteLine("WH Parse event exception " + e.InnerException);
-                //        }
-                //    }
-                //}
-
 
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;

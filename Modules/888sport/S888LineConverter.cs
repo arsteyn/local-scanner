@@ -28,7 +28,7 @@ namespace S888
                 @event.Event.sport = Helper.ConvertSport(@event.Event.sport);
 
                 if (!int.TryParse(@event.LiveData.score.home, out var s1) ||
-                    !int.TryParse(@event.LiveData.score.home, out var s2))
+                    !int.TryParse(@event.LiveData.score.away, out var s2))
                     return null;
 
 

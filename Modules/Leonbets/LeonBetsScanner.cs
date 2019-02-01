@@ -63,20 +63,23 @@ namespace Leonbets
                      Task.Factory.StartNew(
                         state =>
                         {
-                            var proxy = hostList.PickRandom();
-
                             var retry = 0;
+
                             while (retry < 3)
                             {
                                 try
                                 {
+                                    var proxy = hostList.PickRandom();
+
                                     using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
                                     {
                                         var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
 
                                         @event = JsonConvert.DeserializeObject<Event>(json);
 
-                                        var r = LeonBetsLineConverter.Convert(@event, Name);
+                                        var converter = new LeonBetsLineConverter();
+
+                                        var r = converter.Convert(@event, Name);
 
                                         lock (Lock) lines.AddRange(r);
 
