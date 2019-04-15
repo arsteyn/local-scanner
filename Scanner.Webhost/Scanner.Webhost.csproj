@@ -180,10 +180,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\888sport\888sport.csproj">
-      <Project>{a73695e2-114c-4fcf-b7cf-bf27d5a89d4f}</Project>
-      <Name>888sport</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modules\BetFair\BetFair.csproj">
       <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
       <Name>BetFair</Name>
@@ -199,10 +195,6 @@
     <ProjectReference Include="..\Modules\Leonbets\Leonbets.csproj">
       <Project>{1f77ebb0-0cfe-4bb5-9ddd-1ff6fe4f021a}</Project>
       <Name>Leonbets</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\WilliamHill\WilliamHill.csproj">
-      <Project>{ce145ac9-9ee8-42f4-9457-118b82925d4b}</Project>
-      <Name>WilliamHill</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>

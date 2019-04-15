@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
 using BM.DTO;
@@ -24,8 +25,16 @@ namespace Scanner
 
             WriteLiveProxy();
 
+
             while (true)
             {
+                if (!ProxyList.Any() && Name != "Betfair")
+                {
+                    Log.Info($"ERROR {Name} no proxy");
+                    Thread.Sleep(10000);
+                    continue;
+                }
+
                 var result = GetLiveLines();
 
                 if (result == null || !result.Any()) continue;
@@ -36,7 +45,7 @@ namespace Scanner
             }
         }
 
-      
+
 
         protected DateTime LastUpdated { get; set; }
 
@@ -70,7 +79,7 @@ namespace Scanner
             {
                 foreach (var proxy in ProxyList)
                 {
-                        outputFile.WriteLine($"{proxy.Address.Host}");
+                    outputFile.WriteLine($"{proxy.Address.Host}");
                 }
 
 

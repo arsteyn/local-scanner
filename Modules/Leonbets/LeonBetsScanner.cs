@@ -54,58 +54,52 @@ namespace Leonbets
 
                 var actualEvents = data.events.Where(e => e.open).ToList();
 
-                var tasks = new List<Task>();
+                Parallel.ForEach(actualEvents.ToList(), @event =>
+                {
+                    var task = Task.Factory.StartNew(() =>
+                    {
+                        var retry = 0;
 
-                tasks.AddRange(actualEvents
-                    .AsParallel()
-                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(@event =>
-                     Task.Factory.StartNew(
-                        state =>
+                        while (retry < 3)
                         {
-                            var retry = 0;
-
-                            while (retry < 3)
+                            try
                             {
-                                try
+                                var proxy = hostList.PickRandom();
+
+                                using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
                                 {
-                                    var proxy = hostList.PickRandom();
+                                    var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
 
-                                    using (var webClient = new Extensions.WebClientEx(proxy, CookieDictionary[proxy].GetData()))
-                                    {
-                                        var json = webClient.DownloadString(string.Format("{1}rest/betline/event/inplay?ctag=en-US&eventId={0}", @event.Id, Host));
+                                    @event = JsonConvert.DeserializeObject<Event>(json);
 
-                                        @event = JsonConvert.DeserializeObject<Event>(json);
+                                    var converter = new LeonBetsLineConverter();
 
-                                        var converter = new LeonBetsLineConverter();
+                                    var r = converter.Convert(@event, Name);
 
-                                        var r = converter.Convert(@event, Name);
+                                    lock (Lock) lines.AddRange(r);
 
-                                        lock (Lock) lines.AddRange(r);
-
-                                        return;
-                                    }
-                                }
-                                catch (WebException)
-                                {
-                                    retry++;
-                                }
-                                catch (Exception e)
-                                {
-                                    Log.Info("LeonBets error " + JsonConvert.SerializeObject(e));
-                                    retry = 3;
+                                    return;
                                 }
                             }
-                        }, @event)));
+                            catch (WebException)
+                            {
+                                retry++;
+                            }
+                            catch (JsonReaderException)
+                            {
+                                retry++;
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Info("LeonBets error " + JsonConvert.SerializeObject(e));
+                                retry = 3;
+                            }
+                        }
 
-                try
-                {
-                    Task.WaitAll(tasks.ToArray(), 10000);
-                }
-                catch
-                {
-                    Log.Info("LeonBets Task wait all exception, line count " + lines.Count);
-                }
+                    });
+
+                    if (!task.Wait(10000)) Log.Info("Leonbets Task wait exception");
+                });
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
@@ -124,10 +118,6 @@ namespace Leonbets
         protected override void CheckDict()
         {
             var listToDelete = new List<WebProxy>();
-
-            //Parallel.ForEach(ProxyList, host =>
-            //{
-
 
             foreach (var host in ProxyList)
             {
@@ -169,8 +159,6 @@ namespace Leonbets
                         return null;
                     }));
             }
-
-            //});
 
             //проверяем работу хоста
             Parallel.ForEach(ProxyList, host => CookieDictionary[host].GetData());

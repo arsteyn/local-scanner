@@ -40,10 +40,14 @@ namespace BetFair
 
             var marketFilter = new MarketFilter
             {
-                //EventTypeIds = new[]
-                //{
-                //    "1", "7524", "7522", "468328", "998917"
-                //},
+                EventTypeIds = new[]
+                {
+                    "1", //Footbal
+                    "7524" //Ice hockey
+                    //"7522",
+                    //"468328",
+                    //"998917"
+                },
                 InPlayOnly = true,
                 //TextQuery = "OVER_UNDER_*",
                 MarketBettingTypes = new List<MarketBettingType> { MarketBettingType.ODDS, MarketBettingType.ASIAN_HANDICAP_DOUBLE_LINE }

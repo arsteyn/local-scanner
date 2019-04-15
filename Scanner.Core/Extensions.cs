@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using NLog;
-using NLog.Fluent;
 
 namespace Scanner
 {
@@ -14,7 +13,7 @@ namespace Scanner
         {
             public WebClientEx(WebProxy webProxy = null, CookieContainer container = null)
             {
-                _container = container ?? new CookieContainer();
+                CookieContainer = container ?? new CookieContainer();
 
                 if (webProxy == null) return;
 
@@ -27,24 +26,18 @@ namespace Scanner
 
             public CookieCollection ResponseCookies { get; set; }
 
-            public CookieContainer CookieContainer
-            {
-                get { return _container; }
-                set { _container = value; }
-            }
-
-            private CookieContainer _container;
+            public CookieContainer CookieContainer { get; set; }
 
             protected override WebRequest GetWebRequest(Uri address)
             {
-                WebRequest r = base.GetWebRequest(address);
-                var request = r as HttpWebRequest;
+                var r = base.GetWebRequest(address);
 
-                if (request != null)
-                {
-                    request.CookieContainer = _container;
-                    request.Timeout = 5 * 1000;
-                }
+                if (!(r is HttpWebRequest request)) return r;
+
+                request.AllowAutoRedirect = true;
+
+                request.CookieContainer = CookieContainer;
+                request.Timeout = 5 * 1000;
 
                 return r;
             }
@@ -75,12 +68,9 @@ namespace Scanner
 
             private void ReadCookies(WebResponse r)
             {
-                var response = r as HttpWebResponse;
-                if (response != null)
-                {
-                    ResponseCookies = response.Cookies;
-                    _container.Add(ResponseCookies);
-                }
+                if (!(r is HttpWebResponse response)) return;
+                ResponseCookies = response.Cookies;
+                CookieContainer.Add(ResponseCookies);
             }
         }
     }

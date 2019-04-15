@@ -42,6 +42,7 @@ C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.Razor.xml
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.xml
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Projects\Localscanner\Modules\Parimatch\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.csprojAssemblyReference.cache
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.csproj.CoreCompileInputs.cache
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.csproj.CopyComplete
 C:\Projects\Localscanner\Modules\Parimatch\obj\Debug\Parimatch.dll

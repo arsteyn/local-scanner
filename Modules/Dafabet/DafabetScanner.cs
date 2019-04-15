@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -55,7 +56,9 @@ namespace Dafabet
             var lines = new List<LineDTO>();
 
             var randomProxy = ProxyList.PickRandom();
+            var st = new Stopwatch();
 
+            st.Start();
             try
             {
                 var matchList = new List<KeyValuePair<string, long>>();
@@ -81,16 +84,18 @@ namespace Dafabet
                     }
                 }
 
-                var tasks = new List<Task>();
+                Log.Info("Dafabet after OddsManager/Standard request " + st.Elapsed);
 
-                var matches = matchList.ToList();
+                st.Reset();
 
-                tasks.AddRange(matches
-                    .AsParallel()
-                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(match =>
-                    Task.Factory.StartNew(state =>
+                st.Start();
+
+
+                Parallel.ForEach(matchList.ToList(), match =>
+                {
+                    var task = Task.Factory.StartNew(() =>
                     {
+
                         var random = ProxyList.PickRandom();
                         var retry = 0;
                         while (retry < 3)
@@ -115,10 +120,9 @@ namespace Dafabet
                                     return;
                                 }
                             }
-                            catch (WebException e)
+                            catch (WebException)
                             {
                                 retry++;
-                                //Log.Info("Dafabet WebException " + e.Message + e.InnerException.Message + e.StackTrace);
                             }
                             catch (Exception e)
                             {
@@ -126,18 +130,13 @@ namespace Dafabet
                                 retry = 3;
                             }
                         }
+                    });
 
-                    }, match)));
+                    if (!task.Wait(10000)) Log.Info("Dafabet Task wait exception");
+                });
 
-                try
-                {
-                    Task.WaitAll(tasks.ToArray(), 10000);
-                }
-                catch (Exception e)
-                {
-                    Log.Info("Dafabet Task wait all exception, line count " + lines.Count);
-                    Console.WriteLine("Dafabet Task wait all exception, line count " + lines.Count);
-                }
+
+                Log.Info("Dafabet after all match requests " + st.Elapsed);
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 

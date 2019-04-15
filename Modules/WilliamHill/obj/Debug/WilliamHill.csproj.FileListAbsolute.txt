@@ -20,6 +20,7 @@ C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\WilliamHill.dll.config
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\WilliamHill.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\WilliamHill.pdb
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\NLog.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Scanner.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.Helpers.dll
@@ -28,7 +29,6 @@ C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.Deplo
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\System.Web.Mvc.dll
-C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Scanner.pdb
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\Scanner.dll.config
 C:\Projects\Localscanner\Modules\WilliamHill\bin\Debug\NLog.xml

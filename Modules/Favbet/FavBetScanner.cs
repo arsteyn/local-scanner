@@ -27,9 +27,9 @@ namespace Favbet
 
         public override string Name => "Favbet";
 
-        public override string Host => "https://www.favbet.com/";
-        //public override string Host => "https://www.favbet.ro/";
-        public string DomainForCookie => ".favbet.com";
+        //public override string Host => "https://www.favbet.com/";
+        public override string Host => "https://www.favbet.ro/";
+        public string DomainForCookie => ".favbet.ro";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
 
@@ -79,33 +79,28 @@ namespace Favbet
                 });
 
 
-                var tasks = new List<Task>();
-
-                tasks.AddRange(events
-                    .AsParallel()
-                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(@event =>
-                    Task.Factory.StartNew(state =>
+                Parallel.ForEach(events, @event =>
+                {
+                    var task = Task.Factory.StartNew(() =>
                     {
-                        //убираем запрещенные чемпионаты
-                        if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
-                        if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                        try
+                        {
+                            //убираем запрещенные чемпионаты
+                            if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                            if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
 
-                        var lns = ParseEvent(@event);
+                            var lns = ParseEvent(@event);
 
-                        lock (Lock) lines.AddRange(lns);
+                            lock (Lock) lines.AddRange(lns);
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Info($"ERROR FavBet Parse event exception {e.Message} {e.StackTrace}");
+                        }
+                    });
 
-                    }, @event)));
-
-                try
-                {
-                    Task.WaitAll(tasks.ToArray(), 10000);
-                }
-                catch (Exception e)
-                {
-                    Log.Info("FavBet Task wait all exception, line count " + lines.Count);
-                    Console.WriteLine("FavBet Task wait all exception, line count " + lines.Count);
-                }
+                    if (!task.Wait(10000)) Log.Info("FavBet Task wait exception");
+                });
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
@@ -137,10 +132,7 @@ namespace Favbet
 
                 var markets = ConverterHelper.GetMarketsByEvent(@event.event_id, random, c, Host);
 
-                if (markets == null) return new List<LineDTO>();
-
-                return converter.GetLinesFromEvent(lineTemplate, markets);
-
+                return markets == null ? new List<LineDTO>() : converter.GetLinesFromEvent(lineTemplate, markets);
             }
             catch (WebException e)
             {
@@ -160,8 +152,6 @@ namespace Favbet
         {
             var listToDelete = new List<WebProxy>();
 
-            ProxyList = new List<WebProxy>(ProxyList.Take(10));
-
             foreach (var host in ProxyList)
             {
                 CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>
@@ -176,18 +166,19 @@ namespace Favbet
 
                         using (var wc = new Extensions.WebClientEx(host, cc))
                         {
+
                             wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
                             wc.DownloadString(Host + "en/live/");
 
-                            var d = wc.ResponseHeaders["Set-Cookie"];
+                            //var d = wc.ResponseHeaders["Set-Cookie"];
 
-                            foreach (var match in d.Split(',').Select(singleCookie => Regex.Match(singleCookie, "(.+?)=(.+?);")).Where(match => match.Captures.Count != 0))
-                            {
-                                var name = match.Groups[1].ToString();
-                                var value = match.Groups[2].ToString();
-                                if (name == "PHPSESSID") cc.Add(new Cookie(name, value) { Domain = ProxyHelper.GetDomain(Host) });
-                            }
+                            //foreach (var match in d.Split(',').Select(singleCookie => Regex.Match(singleCookie, "(.+?)=(.+?);")).Where(match => match.Captures.Count != 0))
+                            //{
+                            //    var name = match.Groups[1].ToString();
+                            //    var value = match.Groups[2].ToString();
+                            //    if (name == "PHPSESSID") cc.Add(new Cookie(name, value) { Domain = ProxyHelper.GetDomain(Host) });
+                            //}
 
                             cc.Add(wc.CookieContainer.GetAllCookies());
                         }
@@ -211,7 +202,7 @@ namespace Favbet
             //    CookieDictionary[host].GetData();
             //}
 
-            Task.WaitAll(tasks.ToArray());
+            Task.WaitAll(tasks);
 
             foreach (var host in listToDelete)
             {
@@ -268,7 +259,8 @@ namespace Favbet
                 }
             }
 
-            if (!string.IsNullOrEmpty(responseText) && responseText.ContainsIgnoreCase("sport")) return cookieCollection;
+            if (!string.IsNullOrEmpty(responseText) && responseText.ContainsIgnoreCase("sport"))
+                return cookieCollection;
 
             var ray = Regex.Match(responseText, "data-ray=\"(.+?)\"").Groups[1].Value;
             var sitekey = Regex.Match(responseText, "data-sitekey=\"(.+?)\"").Groups[1].Value;

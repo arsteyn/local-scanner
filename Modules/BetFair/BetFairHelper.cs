@@ -109,7 +109,7 @@ namespace BetFair
                 var coeffType = GetCoeffType(new GetCoeffKindParams(runner, marketCatalogue, runner.Handicap));
 
                 //берем меньший кэф
-                var price = runner.ExchangePrices.AvailableToBack.OrderBy(x => x.Price).FirstOrDefault(x => x.Size > 50.0);
+                var price = runner.ExchangePrices.AvailableToBack.OrderBy(x => x.Price).FirstOrDefault(x => x.Size > 100.0);
 
                 if (price != null)
                 {
@@ -117,7 +117,7 @@ namespace BetFair
                     {
                         CoeffParam = сoeffParam,
                         CoeffKind = coeffKind,
-                        CoeffValue = (decimal) price.Price,
+                        CoeffValue = (decimal)price.Price,
                         CoeffType = coeffType
                     };
 
@@ -130,7 +130,7 @@ namespace BetFair
                         Handicap = runner.Handicap
                     });
 
-                    //line.LineData = string.Join(",", runner.ExchangePrices.AvailableToBack.Where(x => x.Size > 10.0).Select(f => (decimal)f.Price));
+                    //line.LineData = string.Join(",", runner.ExchangePrices.AvailableToLay.Where(x => x.Size > 10.0).Select(f => (decimal)f.Price));
 
                     action(line);
                     line.UpdateName();
@@ -164,14 +164,12 @@ namespace BetFair
 
             try
             {
-
-              
                 if (marketCatalogue.MarketName.EqualsIgnoreCase("draw no bet"))
                 {
                     return getCoeffKindParams.Mapping.ContainsKey(runnerDescription.RunnerName) ?
                         "W" + getCoeffKindParams.Mapping[runnerDescription.RunnerName] : null;
                 }
-                else if (marketCatalogue.MarketName.EqualsIgnoreCase("Match Odds")
+                if (marketCatalogue.MarketName.EqualsIgnoreCase("Match Odds")
                     || marketCatalogue.MarketName.EqualsIgnoreCase("Moneyline")
                     || marketCatalogue.MarketName.EqualsIgnoreCase("Double Chance")
                     || marketCatalogue.MarketName.EqualsIgnoreCase("Regular Time Match Odds"))
@@ -180,46 +178,20 @@ namespace BetFair
                         getCoeffKindParams.Mapping[runnerDescription.RunnerName] : null;
                 }
 
-                else if (marketCatalogue.MarketName.EqualsIgnoreCase("Goal Lines"))
+                if (marketCatalogue.MarketName.EqualsIgnoreCase("Goal Lines"))
                 {
                     сoeffParam = runnerDescription.Handicap.ToNullDecimal();
                     return $"TOTAL{runnerDescription.RunnerName.ToUpper()}";
                 }
-                else if (marketCatalogue.MarketName.EqualsIgnoreCase("asian handicap"))
+
+                if (marketCatalogue.MarketName.EqualsIgnoreCase("asian handicap"))
                 {
-                    //TODO: сделать нормальный код
                     сoeffParam = runnerDescription.Handicap.ToNullDecimal();
 
-                    //var key = getCoeffKindParams.Mapping.Keys.FirstOrDefault(k => k.ContainsIgnoreCase(runnerDescription.RunnerName));
+                    return getCoeffKindParams.Mapping.ContainsKey(runnerDescription.RunnerName) ? $"HANDICAP{getCoeffKindParams.Mapping[runnerDescription.RunnerName]}" : null;
 
-                    try
-                    {
-                        
-                        //if (key!=null)
-                        //{
-                        //    return $"HANDICAP{getCoeffKindParams.Mapping[runnerDescription.RunnerName]}";
-                        //}
-
-                        return $"HANDICAP{getCoeffKindParams.Mapping[runnerDescription.RunnerName]}";
-                    }
-                    catch (System.Exception e)
-                    {
-                        Console.WriteLine(e);
-                        throw;
-                    }
                 }
-                //Еропейские гандикапы. При равном завершении ставка проигрывает
-                //else if (marketCatalogue.MarketName.StartsWithIgnoreCase(getCoeffKindParams.FirstTeam) || marketCatalogue.MarketName.StartsWithIgnoreCase(getCoeffKindParams.SecondTeam))
-                //{
-                //    var match = Regex.Match(runnerDescription.RunnerName, @"(?<team>.*?) (?<value>[+|-][\d.]+)\s?");
-
-                //    if (match.Success && getCoeffKindParams.Mapping.ContainsKey(match.Groups["team"].Value))
-                //    {
-                //        сoeffParam = match.Groups["value"].Value.ToNullDecimal().Value;
-                //        return $"HANDICAP{getCoeffKindParams.Mapping[match.Groups["team"].Value]}";
-                //    }
-                //}
-                else if (marketCatalogue.MarketName.StartsWithIgnoreCase("over") || marketCatalogue.MarketName.StartsWithIgnoreCase("under") || marketCatalogue.MarketName.StartsWithIgnoreCase("First Half Goals"))
+                if (marketCatalogue.MarketName.StartsWithIgnoreCase("over") || marketCatalogue.MarketName.StartsWithIgnoreCase("under") || marketCatalogue.MarketName.StartsWithIgnoreCase("First Half Goals"))
                 {
                     var match = Regex.Match(runnerDescription.RunnerName, @"(?<type>over|under) (?<value>[+|-]?[\d.]+)\s?");
 
