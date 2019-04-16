@@ -20,7 +20,7 @@ namespace BetFair
         static CachedArray<CookieCollection> _cachedArray;
         static CachedArray<CookieCollection> CachedArray => _cachedArray ?? (_cachedArray = new CachedArray<CookieCollection>(1000 * 60 * 60, Authorize.DoAuthorize));
 
-        protected override LineDTO[] GetLiveLines()
+        protected override void UpdateLiveLines()
         {
             var lines = new List<LineDTO>();
 
@@ -47,15 +47,13 @@ namespace BetFair
 
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
-                return lines.ToArray();
+                ActualLines = lines.ToArray();
             }
             catch (Exception e)
             {
                 Log.Info("ERROR BF " + e.Message + e.StackTrace);
                 Console.WriteLine("ERROR BF " + e.Message + e.StackTrace);
             }
-
-            return new LineDTO[] { };
         }
     }
 }

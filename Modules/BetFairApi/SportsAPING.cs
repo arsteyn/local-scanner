@@ -151,18 +151,18 @@ namespace BetFairApi
                             Method = LIST_MARKET_BOOK,
                             Params = new { marketIds = marketIdsSplit, priceProjection, orderProjection, matchProjection, currencyCode }
                         };
-
-
-                        lock (Lock)
+                        try
                         {
-                            try
+                            var invokeResult = Invoke<IList<MarketBook>>(request);
+
+                            lock (Lock)
                             {
-                                result.AddRange(Invoke<IList<MarketBook>>(request));
+                                result.AddRange(invokeResult);
                             }
-                            catch (System.Exception e)
-                            {
-                                Console.WriteLine(e.InnerException);
-                            }
+                        }
+                        catch (System.Exception e)
+                        {
+                            Console.WriteLine(e.InnerException);
                         }
 
                     }, marketIdsSplit)));

@@ -27,7 +27,7 @@ namespace Leonbets
 
         public static Regex eventsListRegex = new Regex(@"initialEvents: (?<type>{.+})");
 
-        protected override LineDTO[] GetLiveLines()
+        protected override void UpdateLiveLines()
         {
             try
             {
@@ -105,7 +105,8 @@ namespace Leonbets
 
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
-                return lines.ToArray();
+
+                ActualLines = lines.ToArray();
             }
             catch (Exception e)
             {
@@ -113,7 +114,7 @@ namespace Leonbets
                 Console.WriteLine($"ERROR {e.Message} {e.InnerException}");
             }
 
-            return new LineDTO[] { };
+
         }
         protected override void CheckDict()
         {

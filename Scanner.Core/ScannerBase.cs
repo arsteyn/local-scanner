@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,8 +7,10 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
+using BM;
 using BM.DTO;
 using NLog;
+using NLog.Fluent;
 using Scanner.Helper;
 using Scanner.Interface;
 
@@ -17,6 +20,8 @@ namespace Scanner
     {
         protected List<WebProxy> ProxyList;
 
+        protected Dictionary<long, EventUpdateObject> _linesDictionary = new Dictionary<long, EventUpdateObject>();
+
         public virtual void StartScan()
         {
             ProxyList = ProxyHelper.GetHostList();
@@ -24,7 +29,6 @@ namespace Scanner
             CheckDict();
 
             WriteLiveProxy();
-
 
             while (true)
             {
@@ -35,11 +39,7 @@ namespace Scanner
                     continue;
                 }
 
-                var result = GetLiveLines();
-
-                if (result == null || !result.Any()) continue;
-
-                ActualLines = result;
+                UpdateLiveLines();
 
                 LastUpdated = DateTime.Now;
             }
@@ -51,15 +51,21 @@ namespace Scanner
 
         protected TimeSpan LastUpdatedDiff { get; set; }
 
-        protected LineDTO[] _actualLines;
+        private LineDTO[] _actualLines;
 
         public virtual LineDTO[] ActualLines
         {
-            get => LastUpdated.AddSeconds(30) > DateTime.Now ? _actualLines : new LineDTO[] { };
+            get
+            {
+                if (_linesDictionary.Any())
+                    return _linesDictionary.Where(item => item.Value.LineDtos != null && item.Value.LineDtos.Any()).SelectMany(item => item.Value.LineDtos).ToArray();
+
+                return LastUpdated.AddSeconds(30) > DateTime.Now ? _actualLines : new LineDTO[] { };
+            }
             set => _actualLines = value;
         }
 
-        protected virtual Logger Log => LogManager.GetCurrentClassLogger();
+        public virtual Logger Log => LogManager.GetCurrentClassLogger();
 
 
         public abstract string Name { get; }
@@ -68,7 +74,7 @@ namespace Scanner
 
         protected virtual string Domain => new Uri(Host).Host;
 
-        protected abstract LineDTO[] GetLiveLines();
+        protected abstract void UpdateLiveLines();
 
         protected virtual void WriteLiveProxy()
         {
@@ -107,5 +113,39 @@ namespace Scanner
 
             foreach (var host in hostsToDelete) ProxyList.Remove(host);
         }
+    }
+
+    public class EventUpdateObject
+    {
+        public EventUpdateObject(Func<List<LineDTO>> updateAction)
+        {
+            UpdateAction = updateAction;
+
+            Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var result = UpdateAction().Select(l => l.Clone()).ToList();
+
+                        LineDtos = result;
+                    }
+                    catch (WebException e)
+                    {
+                        //LogManager.GetCurrentClassLogger().Info("Dafabet EventUpdateObject WebException");
+                    }
+                    catch (Exception e)
+                    {
+                        //LogManager.GetCurrentClassLogger().Info("Dafabet EventUpdateObject otherexception" + e.Message + e.InnerException + e.StackTrace);
+                    }
+                }
+            });
+        }
+
+        public List<LineDTO> LineDtos { get; set; }
+
+        private Func<List<LineDTO>> UpdateAction { get; set; }
+
     }
 }

@@ -36,7 +36,7 @@ namespace Favbet
         public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
 
 
-        protected override LineDTO[] GetLiveLines()
+        protected override void UpdateLiveLines()
         {
             var lines = new List<LineDTO>();
 
@@ -106,14 +106,12 @@ namespace Favbet
 
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
-                return lines.ToArray();
+                ActualLines = lines.ToArray();
             }
             catch (Exception e)
             {
                 Log.Info($"ERROR FB {e.Message} {e.StackTrace}");
             }
-
-            return new LineDTO[] { };
         }
 
         private List<LineDTO> ParseEvent(Event @event)

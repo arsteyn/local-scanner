@@ -81,14 +81,14 @@ namespace BetFair
     {
         public GetCoeffKindParams(Runner runner, MarketCatalogue marketCatalogue, double? runnerHandicap)
         {
-            this.Runner = runner;
-            this.MarketCatalogue = marketCatalogue;
-            this.Handicap = runnerHandicap;
+            Runner = runner;
+            MarketCatalogue = marketCatalogue;
+            Handicap = runnerHandicap;
 
             var teames = marketCatalogue.Event.Name.ToLower().Split(new[] { " v ", " @ " }, StringSplitOptions.RemoveEmptyEntries);
 
-            this.FirstTeam = teames[0];
-            this.SecondTeam = teames[1];
+            FirstTeam = teames[0];
+            SecondTeam = teames[1];
 
             Mapping[FirstTeam] = "1";
             Mapping[SecondTeam] = "2";

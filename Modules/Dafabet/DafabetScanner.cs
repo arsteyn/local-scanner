@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,18 +9,18 @@ using AngleSharp.Parser.Html;
 using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
+using BM.Entities;
 using BM.Web;
 using Dafabet.Models;
 using Newtonsoft.Json;
 using Scanner;
 using Scanner.Helper;
+using Match = System.Text.RegularExpressions.Match;
 
 namespace Dafabet
 {
     public class DafabetScanner : ScannerBase
     {
-        static readonly object Lock = new object();
-
         public override string Name => "Dafabet";
 
         public override string Host => "https://www.dafabet.com/";
@@ -51,17 +52,17 @@ namespace Dafabet
             "(ET)"
         };
 
-        protected override LineDTO[] GetLiveLines()
+        protected override void UpdateLiveLines()
         {
-            var lines = new List<LineDTO>();
-
             var randomProxy = ProxyList.PickRandom();
+
             var st = new Stopwatch();
 
             st.Start();
+
             try
             {
-                var matchList = new List<KeyValuePair<string, long>>();
+                var matchList = new List<long>();
 
                 var cookies = CookieDictionary[randomProxy].GetData();
 
@@ -80,77 +81,57 @@ namespace Dafabet
                         //убираем запрещенные чемпионаты
                         if (league.LeagueName.ContainsIgnoreCase(LeagueStopWords.ToArray())) continue;
 
-                        matchList.AddRange(league.matches.Where(m => m.IsLive).Select(m => new KeyValuePair<string, long>(league.SportName, m.MatchId)).ToList());
+                        matchList.AddRange(league.matches.Where(m => m.IsLive).Select(m => m.MatchId).ToList());
                     }
                 }
 
+                st.Stop();
+
                 Log.Info("Dafabet after OddsManager/Standard request " + st.Elapsed);
 
-                st.Reset();
+                var tf = new List<long>();
+                tf.AddRange(_linesDictionary.Where(lineDtose => !matchList.Contains(lineDtose.Key)).Select(l => l.Key));
 
-                st.Start();
+                //удаляем устаревшие события
+                foreach (var lineDtose in tf)
+                    _linesDictionary.Remove(lineDtose);
 
-
-                Parallel.ForEach(matchList.ToList(), match =>
+                //добавляем новые события
+                foreach (var matchId in matchList)
                 {
-                    var task = Task.Factory.StartNew(() =>
+                    if (_linesDictionary.ContainsKey(matchId)) continue;
+
+                    _linesDictionary.Add(matchId, new EventUpdateObject(() =>
                     {
-
                         var random = ProxyList.PickRandom();
-                        var retry = 0;
-                        while (retry < 3)
+                        using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
                         {
-                            try
-                            {
-                                using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
-                                {
-                                    cl.Headers["X-Requested-With"] = "XMLHttpRequest";
-                                    cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                                    cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
+                            cl.Headers["X-Requested-With"] = "XMLHttpRequest";
+                            cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                            cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                                    var response = cl.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard",
-                                        $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={match.Value}");
+                            var res = cl.UploadString(new Uri($"{Host.Replace("www", "play")}OddsManager/Standard"), $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={matchId}");
+                            var converter = new DafabetConverter();
 
-                                    var converter = new DafabetConverter();
+                            
 
-                                    var l = converter.Convert(response, Name);
-
-                                    lock (Lock) lines.AddRange(l);
-
-                                    return;
-                                }
-                            }
-                            catch (WebException)
-                            {
-                                retry++;
-                            }
-                            catch (Exception e)
-                            {
-                                Log.Info("Dafabet Parse match exception " + e.Message + e.InnerException.Message + e.StackTrace);
-                                retry = 3;
-                            }
+                            return converter.Convert(res, Name).ToList();
                         }
-                    });
+                    }));
+                }
 
-                    if (!task.Wait(10000)) Log.Info("Dafabet Task wait exception");
-                });
-
-
-                Log.Info("Dafabet after all match requests " + st.Elapsed);
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
-                return lines.ToArray();
+                //ActualLines = lines.ToArray();
 
             }
             catch (Exception e)
             {
                 Log.Info($"ERROR Dafabet {e.Message} {e.StackTrace}");
             }
-
-            return new LineDTO[] { };
         }
 
         protected override void CheckDict()

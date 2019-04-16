@@ -18361,3 +18361,1849 @@
 2019-03-12 22:50:47.1939|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 8
 2019-03-12 22:50:48.8004|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 9
 2019-03-12 22:50:56.0517|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 10
+2019-04-15 17:49:19.1058|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 17:49:19.1058|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 17:49:21.8615|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 17:49:26.6332|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 17:49:27.6594|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0005619
+2019-04-15 17:49:36.6435|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:08.9821379
+2019-04-15 17:49:36.6535|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      49:36
+2019-04-15 17:49:40.8991|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.2444014
+2019-04-15 17:49:51.4054|INFO|Scanner.ScannerBase|Dafabet Task wait exception
+2019-04-15 17:49:51.4054|INFO|Scanner.ScannerBase|Dafabet Task wait exception
+2019-04-15 17:49:51.4483|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:10.5480811
+2019-04-15 17:49:51.4483|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:14
+2019-04-15 17:49:52.9719|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5189617
+2019-04-15 17:49:52.9829|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0100985
+2019-04-15 17:49:52.9829|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 17:49:53.4150|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.4300709
+2019-04-15 17:49:53.4200|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0029804
+2019-04-15 17:49:53.4200|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 17:49:55.8453|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4215816
+2019-04-15 17:49:55.8692|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0189064
+2019-04-15 17:49:55.8692|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 17:49:58.2424|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3446806
+2019-04-15 17:49:58.2833|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0387227
+2019-04-15 17:49:58.2833|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 17:49:59.1498|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8590233
+2019-04-15 17:49:59.1597|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0093396
+2019-04-15 17:49:59.1597|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:05:24.1555|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:05:24.1555|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:05:25.2356|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:05:28.5732|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:05:31.1434|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5503684
+2019-04-15 19:08:28.3702|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:08:28.3991|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:08:30.1403|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:08:32.5112|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:08:44.6307|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:07.4281895
+2019-04-15 19:09:27.3289|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 19:09:29.0214|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 19:09:29.2956|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:09:31.9364|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:09:40.2791|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.1319280
+2019-04-15 19:11:02.6389|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:11:02.6389|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:11:03.7878|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:11:06.8843|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:11:21.0355|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0788126
+2019-04-15 19:29:08.7885|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:29:08.7885|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:29:09.7838|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:29:13.3605|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:29:18.3377|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9199430
+2019-04-15 19:29:18.3657|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0271455
+2019-04-15 19:29:18.3746|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      29:18
+2019-04-15 19:29:21.4643|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.0878401
+2019-04-15 19:29:21.4643|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0009499
+2019-04-15 19:29:21.4643|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:29:24.0057|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5375312
+2019-04-15 19:29:24.0057|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012821
+2019-04-15 19:29:24.0137|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:26.2008|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1857974
+2019-04-15 19:29:26.2008|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012614
+2019-04-15 19:29:26.2008|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:27.3376|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.1252315
+2019-04-15 19:29:27.3416|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0013708
+2019-04-15 19:29:27.3416|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:30.1396|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7795528
+2019-04-15 19:29:30.1396|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007960
+2019-04-15 19:29:30.1396|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:31.2045|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0569294
+2019-04-15 19:29:31.2045|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003096
+2019-04-15 19:29:31.2045|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:34.7644|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.5575506
+2019-04-15 19:29:34.7644|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011979
+2019-04-15 19:29:34.7644|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:29:36.8977|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1237677
+2019-04-15 19:29:36.8977|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003380
+2019-04-15 19:29:36.8977|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:38.8351|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9345489
+2019-04-15 19:29:38.8381|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011195
+2019-04-15 19:29:38.8381|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:39.9375|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0916739
+2019-04-15 19:29:39.9375|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003836
+2019-04-15 19:29:39.9375|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:42.3182|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3781382
+2019-04-15 19:29:42.3232|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014864
+2019-04-15 19:29:42.3232|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:44.1842|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8479719
+2019-04-15 19:29:44.1842|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003694
+2019-04-15 19:29:44.1842|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:46.3192|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1325537
+2019-04-15 19:29:46.3252|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0029374
+2019-04-15 19:29:46.3252|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:47.4152|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0806488
+2019-04-15 19:29:47.4192|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014455
+2019-04-15 19:29:47.4192|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:49.9224|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4901000
+2019-04-15 19:29:49.9224|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0010557
+2019-04-15 19:29:49.9324|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:52.3477|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4138962
+2019-04-15 19:29:52.3477|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0016957
+2019-04-15 19:29:52.3627|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:53.5068|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.1410448
+2019-04-15 19:29:53.5068|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007267
+2019-04-15 19:29:53.5137|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:29:55.9472|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4322593
+2019-04-15 19:29:55.9472|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003530
+2019-04-15 19:29:55.9472|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:29:57.1787|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.2277723
+2019-04-15 19:29:57.1816|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0010338
+2019-04-15 19:29:57.2016|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:01.5553|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:33:01.5553|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:33:02.8339|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:33:05.8536|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:33:07.0219|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.1534754
+2019-04-15 19:33:07.0378|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0152462
+2019-04-15 19:33:07.0378|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      33:07
+2019-04-15 19:33:10.3367|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.2959056
+2019-04-15 19:33:10.3437|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0041733
+2019-04-15 19:33:10.3597|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:33:12.2009|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8397755
+2019-04-15 19:33:12.2009|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0013040
+2019-04-15 19:33:12.2667|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:14.8669|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5971756
+2019-04-15 19:33:14.8698|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0013128
+2019-04-15 19:33:14.8698|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:16.8645|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9868323
+2019-04-15 19:33:16.8645|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0010546
+2019-04-15 19:33:16.8715|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:19.0237|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1494275
+2019-04-15 19:33:19.0266|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008759
+2019-04-15 19:33:19.0266|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:20.6477|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6148359
+2019-04-15 19:33:20.6477|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004164
+2019-04-15 19:33:20.6477|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:23.0995|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4486684
+2019-04-15 19:33:23.1035|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012395
+2019-04-15 19:33:23.1035|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:24.7433|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6268566
+2019-04-15 19:33:24.7463|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0009510
+2019-04-15 19:33:24.7463|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:26.1776|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4276950
+2019-04-15 19:33:26.1826|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0017212
+2019-04-15 19:33:26.1826|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:28.3517|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1611229
+2019-04-15 19:33:28.3547|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008347
+2019-04-15 19:33:28.3547|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:30.0861|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7226995
+2019-04-15 19:33:30.0861|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004503
+2019-04-15 19:33:30.0881|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:31.7467|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6570315
+2019-04-15 19:33:31.7467|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003646
+2019-04-15 19:33:31.7467|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:33.6356|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8868683
+2019-04-15 19:33:33.6356|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012748
+2019-04-15 19:33:33.6605|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:36.2397|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5754491
+2019-04-15 19:33:36.2397|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003471
+2019-04-15 19:33:36.2506|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:37.8732|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6213089
+2019-04-15 19:33:37.8732|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004190
+2019-04-15 19:33:37.8732|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:41.5079|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.6283744
+2019-04-15 19:33:41.5099|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007359
+2019-04-15 19:33:41.5099|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:33:43.1119|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5991163
+2019-04-15 19:33:43.1119|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003369
+2019-04-15 19:33:43.1119|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:48.8688|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.7548177
+2019-04-15 19:33:48.8698|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003449
+2019-04-15 19:33:48.8698|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:05
+2019-04-15 19:33:51.5394|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6647873
+2019-04-15 19:33:51.5424|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007256
+2019-04-15 19:33:51.5424|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:33:53.2641|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7092479
+2019-04-15 19:33:53.2641|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004711
+2019-04-15 19:33:53.2641|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:54.9664|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6930768
+2019-04-15 19:33:54.9664|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011534
+2019-04-15 19:33:55.0042|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:56.9092|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9027042
+2019-04-15 19:33:56.9092|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0009871
+2019-04-15 19:33:56.9092|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:33:58.3320|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4151226
+2019-04-15 19:33:58.3320|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007351
+2019-04-15 19:33:58.3320|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:34:00.7363|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3908368
+2019-04-15 19:34:00.7363|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007964
+2019-04-15 19:34:00.7363|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:03.5709|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8259132
+2019-04-15 19:34:03.5809|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0022788
+2019-04-15 19:34:03.5918|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:05.2222|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6293288
+2019-04-15 19:34:05.2222|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008708
+2019-04-15 19:34:05.2222|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:34:07.3168|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0886778
+2019-04-15 19:34:07.3168|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007380
+2019-04-15 19:34:07.3168|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:09.7496|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4258749
+2019-04-15 19:34:09.7496|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004915
+2019-04-15 19:34:09.7496|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:12.7265|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9726885
+2019-04-15 19:34:12.7285|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005973
+2019-04-15 19:34:12.7285|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:14.5528|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8209781
+2019-04-15 19:34:14.5528|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007643
+2019-04-15 19:34:14.5578|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:34:16.6317|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0709609
+2019-04-15 19:34:16.6317|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004084
+2019-04-15 19:34:16.6347|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:34:18.7719|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1363912
+2019-04-15 19:34:18.7928|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0059408
+2019-04-15 19:34:18.8198|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:35:42.6597|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:35:42.6597|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:35:45.0672|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:35:47.2766|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:35:49.0396|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7401046
+2019-04-15 19:35:49.0565|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0156506
+2019-04-15 19:35:49.0565|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      35:49
+2019-04-15 19:35:51.6597|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5993705
+2019-04-15 19:35:51.6597|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0038429
+2019-04-15 19:35:51.6777|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:35:52.6360|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9447167
+2019-04-15 19:35:52.6360|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003832
+2019-04-15 19:35:52.6360|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:35:54.5845|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9461385
+2019-04-15 19:35:54.5845|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012810
+2019-04-15 19:35:54.5885|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:35:56.7762|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1863637
+2019-04-15 19:35:56.7762|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014065
+2019-04-15 19:35:56.8061|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:35:59.9277|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.1117885
+2019-04-15 19:35:59.9317|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012920
+2019-04-15 19:35:59.9526|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:36:00.9510|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9932396
+2019-04-15 19:36:00.9510|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014871
+2019-04-15 19:36:00.9510|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:02.6463|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6813446
+2019-04-15 19:36:02.6463|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0010568
+2019-04-15 19:36:02.6523|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:04.8324|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1781159
+2019-04-15 19:36:04.8324|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003836
+2019-04-15 19:36:04.8324|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:06.4929|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6564418
+2019-04-15 19:36:06.4959|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012314
+2019-04-15 19:36:06.4959|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:09.8853|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3805122
+2019-04-15 19:36:09.8853|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014484
+2019-04-15 19:36:09.8853|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:36:12.1128|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2110331
+2019-04-15 19:36:12.1128|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004467
+2019-04-15 19:36:12.1128|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:14.3039|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1878863
+2019-04-15 19:36:14.3039|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003679
+2019-04-15 19:36:14.3039|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:15.2468|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9409135
+2019-04-15 19:36:15.2468|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014032
+2019-04-15 19:36:15.2687|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:36:17.5306|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2589621
+2019-04-15 19:36:17.5306|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003686
+2019-04-15 19:36:17.5306|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:19.6729|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1377222
+2019-04-15 19:36:19.6729|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005276
+2019-04-15 19:36:19.6729|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:21.8401|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1635823
+2019-04-15 19:36:21.8401|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012716
+2019-04-15 19:36:21.8401|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:22.8991|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0475219
+2019-04-15 19:36:22.9031|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0013354
+2019-04-15 19:36:22.9031|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:24.6155|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7033559
+2019-04-15 19:36:24.6155|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008347
+2019-04-15 19:36:24.6245|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:26.0868|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4614272
+2019-04-15 19:36:26.0888|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003759
+2019-04-15 19:36:26.0888|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:28.0569|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9663020
+2019-04-15 19:36:28.0569|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003840
+2019-04-15 19:36:28.0569|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:29.9557|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8962229
+2019-04-15 19:36:29.9557|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003540
+2019-04-15 19:36:29.9557|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:31.6177|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6567153
+2019-04-15 19:36:31.6197|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008062
+2019-04-15 19:36:31.6197|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:33.8967|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2733776
+2019-04-15 19:36:33.8967|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0006203
+2019-04-15 19:36:33.9007|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:36.1463|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2443974
+2019-04-15 19:36:36.1463|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004325
+2019-04-15 19:36:36.1463|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:38.4669|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3177714
+2019-04-15 19:36:38.4669|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014554
+2019-04-15 19:36:38.4819|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:40.6850|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1989344
+2019-04-15 19:36:40.6850|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0006706
+2019-04-15 19:36:40.6850|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:41.7655|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0740847
+2019-04-15 19:36:41.7655|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0012424
+2019-04-15 19:36:41.7655|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:44.0127|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2326797
+2019-04-15 19:36:44.0127|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003267
+2019-04-15 19:36:44.0127|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:45.6153|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5965724
+2019-04-15 19:36:45.6223|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0055634
+2019-04-15 19:36:45.6223|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:48.2025|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5710927
+2019-04-15 19:36:48.2025|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004025
+2019-04-15 19:36:48.2025|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:36:50.1104|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9011084
+2019-04-15 19:36:50.1104|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003668
+2019-04-15 19:36:50.1104|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:36:54.3230|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.2099708
+2019-04-15 19:36:54.3230|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004919
+2019-04-15 19:36:54.3230|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:36:56.2405|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9100122
+2019-04-15 19:36:56.2445|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011078
+2019-04-15 19:36:56.2445|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:01.1335|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.8826785
+2019-04-15 19:37:01.1335|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003446
+2019-04-15 19:37:01.1385|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:37:03.0250|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8860966
+2019-04-15 19:37:03.0269|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004102
+2019-04-15 19:37:03.0269|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:05.0278|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9976146
+2019-04-15 19:37:05.4958|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0027492
+2019-04-15 19:37:05.5407|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:07.5009|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9590571
+2019-04-15 19:37:07.5009|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003431
+2019-04-15 19:37:07.5009|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:09.6100|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1061325
+2019-04-15 19:37:09.6100|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003519
+2019-04-15 19:37:09.6100|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:11.5652|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9525801
+2019-04-15 19:37:11.5652|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007690
+2019-04-15 19:37:11.5742|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:13.8978|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3223075
+2019-04-15 19:37:13.8978|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005863
+2019-04-15 19:37:13.9117|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:16.1456|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2321488
+2019-04-15 19:37:16.1456|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004288
+2019-04-15 19:37:16.1456|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:21.3572|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.2089417
+2019-04-15 19:37:24.7652|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0040923
+2019-04-15 19:37:27.7567|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:11
+2019-04-15 19:37:38.8395|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:11.0813318
+2019-04-15 19:37:38.8395|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003668
+2019-04-15 19:37:38.8395|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:11
+2019-04-15 19:37:41.6607|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8157097
+2019-04-15 19:37:41.6607|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005342
+2019-04-15 19:37:41.6737|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:43.6552|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9808178
+2019-04-15 19:37:43.6552|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011257
+2019-04-15 19:37:43.6552|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:45.9277|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2605991
+2019-04-15 19:37:45.9396|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0033462
+2019-04-15 19:37:45.9396|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:47.9002|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9558290
+2019-04-15 19:37:47.9012|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003537
+2019-04-15 19:37:47.9012|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:49.7931|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8898604
+2019-04-15 19:37:49.7931|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003613
+2019-04-15 19:37:49.7931|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:37:51.9827|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1837983
+2019-04-15 19:37:51.9827|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007380
+2019-04-15 19:37:51.9827|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:37:56.8466|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.8581780
+2019-04-15 19:37:56.8466|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007122
+2019-04-15 19:37:56.8466|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:37:59.3573|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4964500
+2019-04-15 19:37:59.3573|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003716
+2019-04-15 19:37:59.3573|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:01.1774|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8139968
+2019-04-15 19:38:01.1774|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004062
+2019-04-15 19:38:01.1774|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:38:03.3366|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1558147
+2019-04-15 19:38:03.3366|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004565
+2019-04-15 19:38:03.3406|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:05.4611|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1187578
+2019-04-15 19:38:05.4631|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005243
+2019-04-15 19:38:05.4631|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:08.0617|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5945153
+2019-04-15 19:38:08.0617|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0005338
+2019-04-15 19:38:08.0617|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:10.5830|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5178877
+2019-04-15 19:38:10.5830|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0006947
+2019-04-15 19:38:10.5830|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:13.1795|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5907741
+2019-04-15 19:38:13.1825|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0008978
+2019-04-15 19:38:13.1825|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:14.8833|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6965653
+2019-04-15 19:38:14.8863|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0011465
+2019-04-15 19:38:14.8863|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:38:17.4426|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5479458
+2019-04-15 19:38:17.4426|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004055
+2019-04-15 19:38:17.4545|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:38:19.2241|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7671794
+2019-04-15 19:38:19.2241|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004430
+2019-04-15 19:38:19.2241|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:38:21.8297|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6030552
+2019-04-15 19:38:21.8297|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0010039
+2019-04-15 19:38:21.8377|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:41:34.9110|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 19:41:34.9110|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 19:41:36.1140|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:41:39.8393|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:41:40.7137|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8614243
+2019-04-15 19:41:40.7137|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0089906
+2019-04-15 19:41:40.7307|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      41:40
+2019-04-15 19:41:43.3059|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5740163
+2019-04-15 19:42:49.8304|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 19:42:50.6153|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 19:42:51.3793|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:42:56.8993|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:42:59.0358|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1128993
+2019-04-15 19:42:59.0458|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0087503
+2019-04-15 19:42:59.0458|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      42:59
+2019-04-15 19:43:01.9641|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9145159
+2019-04-15 19:43:01.9641|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0007756
+2019-04-15 19:43:01.9641|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:43:02.8410|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8721056
+2019-04-15 19:43:02.8410|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000878
+2019-04-15 19:43:02.8410|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:43:05.1761|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3332094
+2019-04-15 19:43:05.1761|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000970
+2019-04-15 19:43:05.1761|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:43:06.5734|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3928815
+2019-04-15 19:45:38.3889|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:45:38.3889|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:45:40.8871|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:45:42.7805|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:45:44.5944|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7870081
+2019-04-15 19:45:44.6183|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0220123
+2019-04-15 19:45:44.6323|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      45:44
+2019-04-15 19:45:48.2686|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.6343696
+2019-04-15 19:45:48.2686|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004977
+2019-04-15 19:45:48.2686|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:45:50.0955|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8229864
+2019-04-15 19:45:50.0955|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001765
+2019-04-15 19:45:50.0955|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:45:51.9575|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8560290
+2019-04-15 19:45:51.9575|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000871
+2019-04-15 19:45:51.9575|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:45:53.8278|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8666030
+2019-04-15 19:45:53.8278|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002851
+2019-04-15 19:45:53.8278|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:45:56.8403|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.0008402
+2019-04-15 19:45:56.8403|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002669
+2019-04-15 19:45:56.8562|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:45:58.6814|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8231640
+2019-04-15 19:45:58.7013|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001363
+2019-04-15 19:45:58.7013|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:46:02.2107|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.5071897
+2019-04-15 19:46:02.2136|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002866
+2019-04-15 19:46:02.2136|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:46:04.0451|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8164449
+2019-04-15 19:46:04.0451|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002716
+2019-04-15 19:46:04.0451|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:46:04.8789|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8237110
+2019-04-15 19:46:04.8789|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002089
+2019-04-15 19:46:04.8879|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:46:05.5880|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.6986993
+2019-04-15 19:46:05.5880|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000988
+2019-04-15 19:46:05.5880|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:46:06.2875|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.6963994
+2019-04-15 19:47:00.7629|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:47:00.7629|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:47:01.7852|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:47:05.1883|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:47:14.3104|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:09.0865601
+2019-04-15 19:47:14.3423|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0302346
+2019-04-15 19:47:14.3423|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      47:14
+2019-04-15 19:47:16.2087|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8570760
+2019-04-15 19:47:16.2127|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0014565
+2019-04-15 19:47:16.2127|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:18.6215|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3973225
+2019-04-15 19:47:18.6215|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002224
+2019-04-15 19:47:18.6495|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:47:20.3316|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6804136
+2019-04-15 19:47:20.3316|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001269
+2019-04-15 19:47:20.3316|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:22.1960|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8600776
+2019-04-15 19:47:22.1990|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002374
+2019-04-15 19:47:22.1990|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:23.1149|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9049502
+2019-04-15 19:47:23.1149|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001400
+2019-04-15 19:47:23.1149|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:47:25.3533|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2342394
+2019-04-15 19:47:25.3542|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000991
+2019-04-15 19:47:25.3542|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:47:26.2057|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8458284
+2019-04-15 19:47:26.2127|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0041386
+2019-04-15 19:47:26.2297|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:47:28.0295|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7958857
+2019-04-15 19:47:28.0295|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001765
+2019-04-15 19:47:28.0295|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:30.2917|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2541564
+2019-04-15 19:47:30.2917|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001174
+2019-04-15 19:47:30.2917|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:47:32.0676|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7702747
+2019-04-15 19:47:32.0676|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000846
+2019-04-15 19:47:32.0676|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:34.0473|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9774245
+2019-04-15 19:47:34.0473|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001042
+2019-04-15 19:47:34.0473|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:35.9640|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9122141
+2019-04-15 19:47:35.9640|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001509
+2019-04-15 19:47:35.9640|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:37.9872|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0170575
+2019-04-15 19:47:38.0032|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003267
+2019-04-15 19:47:38.0032|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:47:39.8387|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8015848
+2019-04-15 19:47:39.8387|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001090
+2019-04-15 19:47:39.8387|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:40.9332|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0795766
+2019-04-15 19:47:40.9332|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001177
+2019-04-15 19:47:40.9332|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:47:43.9446|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.0026088
+2019-04-15 19:50:53.5364|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 19:50:53.5364|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 19:50:54.6439|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 19:50:57.5980|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 19:50:59.0730|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4576828
+2019-04-15 19:50:59.0730|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0079535
+2019-04-15 19:50:59.0730|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      50:59
+2019-04-15 19:51:01.5298|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4449076
+2019-04-15 19:51:01.5298|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004766
+2019-04-15 19:51:01.5298|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:03.3392|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8067566
+2019-04-15 19:51:03.3392|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002454
+2019-04-15 19:51:03.3392|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:51:08.1191|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.7694546
+2019-04-15 19:51:08.1191|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001349
+2019-04-15 19:51:08.1401|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:51:10.8130|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6710068
+2019-04-15 19:51:10.8130|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001837
+2019-04-15 19:51:10.8130|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:12.3842|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5640425
+2019-04-15 19:51:12.3852|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000809
+2019-04-15 19:51:12.3852|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:51:25.4503|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 77
+2019-04-15 19:51:26.9493|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4976046
+2019-04-15 19:51:27.0261|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001104
+2019-04-15 19:51:27.3004|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:51:29.5475|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2454611
+2019-04-15 19:51:29.5475|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002224
+2019-04-15 19:51:29.5565|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:32.0182|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4594350
+2019-04-15 19:51:32.0182|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000940
+2019-04-15 19:51:32.0182|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:34.2052|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1838129
+2019-04-15 19:51:34.2052|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002290
+2019-04-15 19:51:34.2252|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:36.0485|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8215357
+2019-04-15 19:51:36.0485|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003041
+2019-04-15 19:51:36.0664|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:51:38.4100|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3416808
+2019-04-15 19:51:38.4100|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001046
+2019-04-15 19:51:38.4100|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:39.2882|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8745474
+2019-04-15 19:51:39.2882|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000856
+2019-04-15 19:51:39.2882|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:51:41.1372|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8465274
+2019-04-15 19:51:41.1372|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000860
+2019-04-15 19:51:41.1372|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:51:44.5115|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3720460
+2019-04-15 19:51:44.5115|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001863
+2019-04-15 19:51:44.5115|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:51:49.2605|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.7396123
+2019-04-15 19:51:49.2605|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000984
+2019-04-15 19:51:49.2605|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:51:51.7912|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5277988
+2019-04-15 19:51:51.7912|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002312
+2019-04-15 19:51:51.7912|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:51:52.5850|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7821452
+2019-04-15 19:51:52.5850|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000813
+2019-04-15 19:51:52.5850|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:52:04.7640|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 77
+2019-04-15 19:52:08.4151|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.6494047
+2019-04-15 19:52:08.4201|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001655
+2019-04-15 19:52:08.4490|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:52:13.5245|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.0749373
+2019-04-15 19:52:13.5255|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001024
+2019-04-15 19:52:13.5514|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:05
+2019-04-15 19:52:16.7565|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.2041539
+2019-04-15 19:52:16.7565|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0004634
+2019-04-15 19:52:16.7854|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:52:20.1815|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3957996
+2019-04-15 19:52:20.1815|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000929
+2019-04-15 19:52:20.1815|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:52:23.3355|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.1460156
+2019-04-15 19:52:23.3385|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002224
+2019-04-15 19:52:23.3614|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:52:25.1598|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7958088
+2019-04-15 19:52:25.1598|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000751
+2019-04-15 19:52:25.1598|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:52:28.6119|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.4491699
+2019-04-15 19:52:28.6119|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000846
+2019-04-15 19:52:28.6119|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:52:31.1872|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5725645
+2019-04-15 19:52:31.1872|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000736
+2019-04-15 19:52:31.1872|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:52:33.9064|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7171000
+2019-04-15 19:52:33.9064|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000765
+2019-04-15 19:52:33.9064|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:52:35.3362|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4271039
+2019-04-15 19:52:35.3362|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000871
+2019-04-15 19:52:35.3381|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:52:38.1991|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8605845
+2019-04-15 19:52:38.1991|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002279
+2019-04-15 19:52:38.1991|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:52:39.8155|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6054117
+2019-04-15 19:52:39.8155|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000740
+2019-04-15 19:52:39.8155|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:52:41.9784|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1601190
+2019-04-15 19:52:42.0004|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0180181
+2019-04-15 19:52:42.0901|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:52:43.6452|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5470805
+2019-04-15 19:52:43.6452|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002348
+2019-04-15 19:52:43.6512|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:52:45.8712|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2177668
+2019-04-15 19:52:45.8712|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000784
+2019-04-15 19:52:45.8712|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:52:51.1605|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.2853822
+2019-04-15 19:52:51.1605|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000718
+2019-04-15 19:52:51.1605|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:05
+2019-04-15 19:52:51.9562|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7934705
+2019-04-15 19:52:51.9562|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002742
+2019-04-15 19:52:52.0110|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:52:53.7523|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7314433
+2019-04-15 19:52:53.7523|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001057
+2019-04-15 19:52:53.7523|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:52:56.6069|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8516456
+2019-04-15 19:52:56.6069|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001174
+2019-04-15 19:52:56.6069|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:01.6722|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 77
+2019-04-15 19:53:04.4829|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8097597
+2019-04-15 19:53:04.4829|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000944
+2019-04-15 19:53:04.4829|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:09.8768|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.3888920
+2019-04-15 19:53:09.8768|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002786
+2019-04-15 19:53:09.8898|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:05
+2019-04-15 19:53:14.2540|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.3629802
+2019-04-15 19:53:14.2540|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002450
+2019-04-15 19:53:14.2629|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 19:53:15.8628|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5980836
+2019-04-15 19:53:15.8628|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002906
+2019-04-15 19:53:15.8768|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:17.1817|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3022013
+2019-04-15 19:53:17.1817|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002523
+2019-04-15 19:53:17.1817|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:20.2058|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.0075173
+2019-04-15 19:53:20.2058|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001881
+2019-04-15 19:53:20.2477|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:53:22.8839|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6339619
+2019-04-15 19:53:22.8849|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000754
+2019-04-15 19:53:22.8849|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:24.7758|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8880141
+2019-04-15 19:53:24.7758|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000897
+2019-04-15 19:53:24.7758|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:26.8039|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0259329
+2019-04-15 19:53:26.8069|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002687
+2019-04-15 19:53:26.8069|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:27.5997|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7763476
+2019-04-15 19:53:27.5997|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000707
+2019-04-15 19:53:27.5997|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:53:29.5313|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9300236
+2019-04-15 19:53:29.5672|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0181887
+2019-04-15 19:53:29.6400|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:32.3073|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6650725
+2019-04-15 19:53:32.3073|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002574
+2019-04-15 19:53:32.3512|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:33.2265|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8709911
+2019-04-15 19:53:33.2265|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001294
+2019-04-15 19:53:33.2295|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:00
+2019-04-15 19:53:38.2810|INFO|Scanner.ScannerBase|ERROR Dafabet Время ожидания операции истекло    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 77
+2019-04-15 19:53:40.0927|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8075042
+2019-04-15 19:53:40.1146|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0003708
+2019-04-15 19:53:40.1485|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:42.6851|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5194244
+2019-04-15 19:53:42.6851|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001196
+2019-04-15 19:53:42.6851|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:46.2643|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.5739736
+2019-04-15 19:53:46.2643|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000980
+2019-04-15 19:53:46.2643|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 19:53:48.4734|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1980675
+2019-04-15 19:53:48.4734|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0000816
+2019-04-15 19:53:48.4734|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:50.2767|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8004988
+2019-04-15 19:53:50.2767|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001083
+2019-04-15 19:53:50.3376|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:52.1292|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7839358
+2019-04-15 19:53:52.1292|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002993
+2019-04-15 19:53:52.1292|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:55.0971|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9645326
+2019-04-15 19:53:55.0971|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0001115
+2019-04-15 19:53:55.0971|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:53:56.8268|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7263831
+2019-04-15 19:53:56.8268|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002815
+2019-04-15 19:53:56.8268|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:53:59.1029|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2613124
+2019-04-15 19:53:59.1049|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0002155
+2019-04-15 19:53:59.1049|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:02
+2019-04-15 19:54:03.1713|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.0525511
+2019-04-15 19:54:27.8513|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:24.6771005
+2019-04-15 19:54:28.0049|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:28
+2019-04-15 19:54:30.4721|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6090555
+2019-04-15 19:54:30.4721|INFO|Scanner.ScannerBase|Dafabet after all match requests 00:00:00.0013667
+2019-04-15 19:54:30.5220|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 19:54:35.6294|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 77
+2019-04-15 20:12:34.7402|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 20:12:34.7402|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 20:12:34.8499|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 20:12:36.1734|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 20:12:37.2682|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 20:12:38.3229|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 20:12:38.6452|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 20:12:38.6662|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 20:12:38.6662|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 20:12:39.0591|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 20:12:39.3554|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 20:12:39.3554|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 20:12:41.3770|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 20:12:41.5516|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 20:12:41.7849|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 20:12:41.8548|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 4
+2019-04-15 20:12:41.8548|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-15 20:12:41.9744|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 3
+2019-04-15 20:12:42.3325|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 4
+2019-04-15 20:12:45.5536|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-15 20:12:46.1943|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4733867
+2019-04-15 20:12:46.2212|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      12:46
+2019-04-15 20:12:47.0789|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 5
+2019-04-15 20:12:47.0789|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-15 20:12:47.4420|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1999 | Time      12:47
+2019-04-15 20:12:48.4782|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2562675
+2019-04-15 20:12:48.4902|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines         35 | Time      00:02
+2019-04-15 20:12:50.0929|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 6
+2019-04-15 20:12:50.7023|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2108147
+2019-04-15 20:12:50.7342|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines         70 | Time      00:02
+2019-04-15 20:12:53.7146|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9778858
+2019-04-15 20:12:53.7146|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines         89 | Time      00:02
+2019-04-15 20:12:56.6313|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9148817
+2019-04-15 20:12:56.6711|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        134 | Time      00:02
+2019-04-15 20:12:57.6052|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9325709
+2019-04-15 20:12:57.6211|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        134 | Time      00:00
+2019-04-15 20:12:58.4200|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7981558
+2019-04-15 20:12:58.4888|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 7
+2019-04-15 20:12:58.5247|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        134 | Time      00:00
+2019-04-15 20:13:04.1842|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:06.5653|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:08.0383770
+2019-04-15 20:13:06.5843|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:08
+2019-04-15 20:13:08.2633|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6782901
+2019-04-15 20:13:08.3401|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:01
+2019-04-15 20:13:09.2676|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9267325
+2019-04-15 20:13:09.2676|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:00
+2019-04-15 20:13:11.4971|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2261368
+2019-04-15 20:13:11.4971|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:02
+2019-04-15 20:13:12.2252|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:12.4237|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9244514
+2019-04-15 20:13:12.4536|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:00
+2019-04-15 20:13:13.5054|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:14.6200|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:15.1656|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:16.2043|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.7502123
+2019-04-15 20:13:16.2302|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        196 | Time      00:03
+2019-04-15 20:13:17.6013|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:13:18.7468|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:19.1746|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9428732
+2019-04-15 20:13:19.1956|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        227 | Time      00:02
+2019-04-15 20:13:24.4235|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 20:13:26.0018|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:26.1285|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:26.5986|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1733081
+2019-04-15 20:13:26.5986|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        327 | Time      00:02
+2019-04-15 20:13:27.7358|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:13:27.8285|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:28.3821|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:29.4284|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8278857
+2019-04-15 20:13:29.5201|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        327 | Time      00:02
+2019-04-15 20:13:29.5810|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:34.6590|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:34.7293|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:35.7559|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:35.7838|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:35.8396|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:06.2506552
+2019-04-15 20:13:35.8626|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:40.9072|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:13:40.9919|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        394 | Time      00:06
+2019-04-15 20:13:41.2662|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:41.2921|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:41.2921|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:41.3280|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:42.0267|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0331684
+2019-04-15 20:13:42.0267|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        394 | Time      00:01
+2019-04-15 20:13:45.4406|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.4046098
+2019-04-15 20:13:45.4715|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        427 | Time      00:03
+2019-04-15 20:13:45.8840|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:45.9298|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:46.9706|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:47.5924|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:47.6797|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:47.7196|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:47.9669|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:48.1235|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:48.2163|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:48.2691|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7972204
+2019-04-15 20:13:48.2761|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        427 | Time      00:02
+2019-04-15 20:13:48.9972|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:49.3652|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:49.3782|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:49.6255|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:50.0360|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:50.3132|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:50.5586|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:50.6683|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:50.6922|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:51.2057|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:51.2137|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:13:51.2366|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:51.2366|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:52.0240|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:52.7344|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:52.7932|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:52.8361|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.5581986
+2019-04-15 20:13:52.8401|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        455 | Time      00:04
+2019-04-15 20:13:53.0308|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:53.1904|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:53.2523|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:53.3824|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:54.8207|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9792606
+2019-04-15 20:13:54.8466|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        451 | Time      00:01
+2019-04-15 20:13:55.3533|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:56.1872|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:56.2759|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:56.9322|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:57.2483|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4010294
+2019-04-15 20:13:57.2483|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        451 | Time      00:02
+2019-04-15 20:13:57.3361|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:58.8027|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:59.6889|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4339229
+2019-04-15 20:13:59.7149|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        451 | Time      00:02
+2019-04-15 20:13:59.7149|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:13:59.7857|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:00.1151|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:00.6414|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:01.1164|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:01.2446|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:01.3583|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:01.3912|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:01.6017|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.0255|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.0694|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.2295|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.2834|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.4350|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:02.4738|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:03.0347|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3184872
+2019-04-15 20:14:03.0347|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        478 | Time      00:03
+2019-04-15 20:14:03.1853|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:03.9865|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9458647
+2019-04-15 20:14:03.9865|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        478 | Time      00:00
+2019-04-15 20:14:04.0912|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:04.5101|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:06.4089|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4196430
+2019-04-15 20:14:06.4089|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        513 | Time      00:02
+2019-04-15 20:14:06.6592|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.0891|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.1270|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.3444|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.5538|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.5907|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:07.8371|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4212793
+2019-04-15 20:14:07.8381|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        513 | Time      00:01
+2019-04-15 20:14:08.2221|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.2504|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.4369|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.6434|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.6758|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.7107|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:08.7875|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:09.0428|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:09.1385|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:09.2632|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:09.4258|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:09.6432|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.0092|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.2775|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.6958|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.7489|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.7489|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:10.9169|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:11.1659|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:11.2018|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:11.2018|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3676980
+2019-04-15 20:14:11.2163|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        529 | Time      00:03
+2019-04-15 20:14:11.1659|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:11.2651|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:11.3320|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:12.1073|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.8892357
+2019-04-15 20:14:12.1073|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        536 | Time      00:00
+2019-04-15 20:14:12.8020|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:12.8898|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7754877
+2019-04-15 20:14:12.8898|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        536 | Time      00:00
+2019-04-15 20:14:13.6834|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7913393
+2019-04-15 20:14:13.6834|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        536 | Time      00:00
+2019-04-15 20:14:14.1143|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:14.9063|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:15.2434|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:15.8233|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:15.8233|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1396061
+2019-04-15 20:14:15.8233|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        550 | Time      00:02
+2019-04-15 20:14:16.3106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:16.4003|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:16.5080|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:16.8681|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:17.0386|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:17.3368|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:17.3767|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:17.5119|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:17.5657|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:18.0731|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:18.2716|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:18.9363|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.1024693
+2019-04-15 20:14:19.0405|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        561 | Time      00:03
+2019-04-15 20:14:19.1144|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:19.2136|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:19.8873|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:20.2962|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:20.4568|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:20.7042|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:20.9226|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8750379
+2019-04-15 20:14:20.9475|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        575 | Time      00:01
+2019-04-15 20:14:21.0692|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:21.2676|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:21.3020|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:21.5519|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:21.9059|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.1421|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.2937|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.3276|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:14:22.3764|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.5440|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.6008|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.6816|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:22.7968|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.0118|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.1205|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.2182|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2675742
+2019-04-15 20:14:23.2182|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        597 | Time      00:02
+2019-04-15 20:14:23.3090|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.7415|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.8103|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.8442|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:23.8881|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:24.2072|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:24.2531|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:24.4881|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:24.8312|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:25.1913|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:25.9216|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:26.2088|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9882236
+2019-04-15 20:14:26.2088|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:02
+2019-04-15 20:14:27.1188|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:27.6195|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:27.8469|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:28.1441|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9318463
+2019-04-15 20:14:28.1441|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:01
+2019-04-15 20:14:28.3615|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:28.7973|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:29.0776|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:29.2591|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:29.3798|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:30.0435|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1811 | Time      01:42
+2019-04-15 20:14:30.1233|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:30.3696|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:30.4006|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:30.4341|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:31.5286|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:31.9046|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:32.5663|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:14:32.6646|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:32.7524|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.6061520
+2019-04-15 20:14:32.7524|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:04
+2019-04-15 20:14:32.8890|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.0825|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.1683|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.4844|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.5518|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.6016|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.8725|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.9084|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:33.9174|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.0132|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.0291|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.4460|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.5991|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.8345|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:34.8345|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:35.0923|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.1691|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.2010|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.3845|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.4155|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.5052|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.6209|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.6528|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.6688|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:35.7795|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1803 | Time      00:05
+2019-04-15 20:14:36.0652|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:36.2757|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:36.5503|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:36.6112|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:36.9941|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:37.0999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:37.1517|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:37.1987|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:37.9542|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:38.1427|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:38.4200|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.6645959
+2019-04-15 20:14:38.4200|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:05
+2019-04-15 20:14:39.2582|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:39.5569|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.1327237
+2019-04-15 20:14:39.6178|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:01
+2019-04-15 20:14:39.6587|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:39.7714|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:40.5567|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:40.6659|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:40.7297|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:40.7796|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.0105|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3911603
+2019-04-15 20:14:41.0404|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        585 | Time      00:01
+2019-04-15 20:14:41.1561|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.3656|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.4000|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.5302|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.6598|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.7326|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.7586|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.7915|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.8274|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:41.8444|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1811 | Time      00:06
+2019-04-15 20:14:42.5903|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:14:42.6233|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:42.9334|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8926914
+2019-04-15 20:14:42.9334|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        577 | Time      00:01
+2019-04-15 20:14:43.0122|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:43.0531|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:43.1887|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:44.7086|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:45.1375|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:45.2173|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:45.5424|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6056422
+2019-04-15 20:14:45.5424|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        577 | Time      00:02
+2019-04-15 20:14:45.9212|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:46.2393|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:47.0666|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:47.1753|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6254858
+2019-04-15 20:14:47.1753|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        574 | Time      00:01
+2019-04-15 20:14:48.2869|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:48.5253|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:48.8544|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6725264
+2019-04-15 20:14:48.8544|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        574 | Time      00:01
+2019-04-15 20:14:49.0968|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1759 | Time      00:07
+2019-04-15 20:14:49.3471|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:49.6433|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.1368|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.0613|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.0613|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.7671|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.4031|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.4031|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.4031|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.8389|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.8389|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:52.5557|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.5007|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.3441|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.6703|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.6504|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:53.6504|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:14:53.6494|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:14:54.5410|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:54.9698|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:55.7873|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:54.9698|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:54.4141|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.4196|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.4475|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.1743|INFO|Scanner.ScannerBase|ERROR Dafabet Время ожидания операции истекло    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 20:14:56.6181|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.6181|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.6939|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.6650|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.7687|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:56.7906|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:58.3760|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6627959
+2019-04-15 20:14:58.3760|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        574 | Time      00:01
+2019-04-15 20:14:59.4577|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:59.5349|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:59.5618|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:59.5898|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:14:59.9788|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.0147|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.3681|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:02.5907|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.1467|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.0147|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.7218|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:01.4559|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:02.7746|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:02.6886|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:02.8045|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.4229845
+2019-04-15 20:15:02.6727|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:02.9740|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1748 | Time      00:13
+2019-04-15 20:15:02.9351|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        574 | Time      00:04
+2019-04-15 20:15:03.1536|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:03.1695|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:03.3022|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:03.5152|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:03.5152|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:04.1948|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:04.1988|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:04.2816|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:04.6711|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:04.7529|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:04.8915|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:04.8915|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:05.8581|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:06.1090|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.0434226
+2019-04-15 20:15:06.1090|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:03
+2019-04-15 20:15:09.3260|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.2147707
+2019-04-15 20:15:09.3260|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:03
+2019-04-15 20:15:09.7037|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:10.2089|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:11.1036|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:11.1270|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:11.7723|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4349411
+2019-04-15 20:15:11.7723|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:13.0046|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.0106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.0106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.0106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.2869|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.2869|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.2959|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.2869|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.6180|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:13.7876|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:14.4054|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6301886
+2019-04-15 20:15:14.4254|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:14.5700|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:14.8682|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:15.0836|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:15.0836|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:15.5474|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.5474|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.5474|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.6501|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.7159|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.7159|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:15.9314|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:16.0141|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:16.0810|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:16.3652|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:16.6474|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:16.9372|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:17.2586|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1516 | Time      00:14
+2019-04-15 20:15:17.2895|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:17.2975|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7246458
+2019-04-15 20:15:17.3194|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:17.3962|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:17.7323|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:17.8001|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:17.8071|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:18.1103|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:18.2419|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:19.4437|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:19.9324|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6125305
+2019-04-15 20:15:20.0361|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:20.0830|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:20.2027|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:20.7318|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:20.7737|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.5245|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4856576
+2019-04-15 20:15:22.5585|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.5585|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:22.6432|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.7011|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.7519|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.9529|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:22.9739|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:23.2682|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:23.3051|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:23.9604|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:23.9774|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:24.4945|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9218320
+2019-04-15 20:15:24.5544|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:01
+2019-04-15 20:15:24.6003|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:25.0865|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:25.1573|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:25.5513|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:25.5513|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:25.5513|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:25.8056|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:26.1153|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:26.6180|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1824 | Time      00:09
+2019-04-15 20:15:26.9277|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:26.9895|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.1844|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.6492|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.6891|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.7330|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.8103|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.8711|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:27.9120|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:28.0427|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:28.1354|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:28.7408|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:28.8834|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:29.1437|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:29.2156|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:29.2684|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:29.4903|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.9343618
+2019-04-15 20:15:29.4903|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:04
+2019-04-15 20:15:30.1597|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:30.9521|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:31.8657|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:32.3215|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.8269609
+2019-04-15 20:15:32.3524|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:32.3923|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:33.1225|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:33.7289|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:35.5217|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:35.7491|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:35.7611|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:35.7491|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:35.7491|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:35.7491|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:35.7890|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:36.0363|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.6826249
+2019-04-15 20:15:36.4782|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:36.6387|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:36.7006|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:36.7649|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:04
+2019-04-15 20:15:36.9205|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:36.9205|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.0152|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.1110|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.4720|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.4999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.4999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.4999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.5159|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.5329|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:37.5907|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:38.7870|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1842 | Time      00:12
+2019-04-15 20:15:39.7366|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9231714
+2019-04-15 20:15:39.7366|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:15:41.0058|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:41.3819|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:42.5305|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:42.5305|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:43.1110|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.3018|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.3018|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.3078|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.5676141
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2539|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.3989|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        313 | Time      00:04
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2539|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.1439|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.2599|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.5558|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.5873|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:44.9598|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:45.1505|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:45.7539|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1841 | Time      00:06
+2019-04-15 20:15:45.8218|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:45.8567|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:46.2476|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:46.2476|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:46.4740|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:48.0964|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.5875179
+2019-04-15 20:15:48.0964|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        313 | Time      00:03
+2019-04-15 20:15:49.5001|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:49.5450|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:49.5929|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:49.6268|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:49.6787|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:49.9618|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:50.0964|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:50.2829|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:50.4136|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:50.6340|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5343957
+2019-04-15 20:15:50.8310|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        313 | Time      00:02
+2019-04-15 20:15:50.8679|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:51.2251|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:51.5007|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:51.7658|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.2518|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1786 | Time      00:06
+2019-04-15 20:15:52.4263|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.5141|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.5141|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.5141|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.6936|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.8482|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9800498
+2019-04-15 20:15:52.9010|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.9010|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:52.9160|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        348 | Time      00:01
+2019-04-15 20:15:52.9160|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:53.1015|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:53.2147|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:53.2506|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:53.2755|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:55.1473|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1833672
+2019-04-15 20:15:55.1503|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        348 | Time      00:02
+2019-04-15 20:15:55.7591|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:55.9398|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:55.9917|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:56.1203|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:56.2131|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:56.2879|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:56.3089|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:15:56.4713|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:15:56.6259|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:56.8413|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.2502|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.5634|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.5983|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.6292|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.6861|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.7489|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.8027|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.8795|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:57.9533|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.0072|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.0271|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.0690|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.1678|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.2565|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.2904|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.4565|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.5094|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.5712|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.6001|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.6390|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:58.7048|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:15:59.3411|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:01.0331|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:01.4251|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:06.2734731
+2019-04-15 20:16:01.4251|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        433 | Time      00:06
+2019-04-15 20:16:01.6571|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:01.7988|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:16:02.2126|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:02.4627|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0345698
+2019-04-15 20:16:02.4637|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        433 | Time      00:01
+2019-04-15 20:16:03.7802|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:03.8171|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:04.4339|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:04.5326|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:04.8099|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:04.8485|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:05.3841|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:05.7321|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:05.8488|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:05.8997|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:05.9506|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:06.0094|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.5448527
+2019-04-15 20:16:06.0204|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:06.0204|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        478 | Time      00:03
+2019-04-15 20:16:06.0493|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:06.1012|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:06.2917|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:16:06.3126|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:16:06.4737|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:06.4877|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:16:07.1190|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:07.1768|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:07.4411|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:07.8230|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:08.4683|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4448117
+2019-04-15 20:16:08.4683|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        540 | Time      00:02
+2019-04-15 20:16:08.5687|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:09.0042|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:09.5054|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:09.9252|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:10.7690|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:10.8049|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:10.9475|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.0076|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.0704|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.0754|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6044763
+2019-04-15 20:16:11.0754|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        565 | Time      00:02
+2019-04-15 20:16:11.3056|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.3664|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.5096|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:11.9629|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.1723|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.2242|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.3010|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.3618|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.4891|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.5520|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.7265|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.8661|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:12.9010|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.0347|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.1219|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.1858|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.1997|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.4022|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.4760|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.5568|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.5767|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.6585|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:13.7363|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.0553|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.1900|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.2997|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.4493|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.5271|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.5690|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.8523|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:14.9667|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:15.8328|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:15.8688|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:16.0164|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:16.1480|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 20:16:16.3605|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:16:16.3824|INFO|Scanner.ScannerBase|Leonbets Task wait exception
+2019-04-15 20:16:16.5081|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:16:16.6656|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:16.6916|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:17.2395|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:17.9437|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1804 | Time      00:25
+2019-04-15 20:16:18.4992|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3503906
+2019-04-15 20:16:18.4992|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        596 | Time      00:02
+2019-04-15 20:16:19.5762|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:20.8500|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.3629|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.4536|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.4536|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:20.8810|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:23.6884|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.6441|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:22.8614|INFO|Scanner.ConsoleExt||     Leonbets| P     8 | Lines        885 | Time      16:22
+2019-04-15 20:16:24.7506|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:23.7134|INFO|Scanner.ConsoleExt||       Favbet| P     5 | Lines       2281 | Time      16:23
+2019-04-15 20:16:25.4388|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:25.5126|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.3629|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:25.8998|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:26.4878|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:26.5915|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:26.5915|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.6303|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:21.4536|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:28.8151|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:26.6324|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.3350|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.1831|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:28.5787|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:26.5915|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.2762|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.5664|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.2373|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:31.2486|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:27.2373|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:28.0132|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.6219|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.5242|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.5252|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.5960|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.5960|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:29.8962|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 20:16:35.2778|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:33.9788|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:34.6999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:34.6999|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.0938|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:34.4106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.0848|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:32.7396|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.0848|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6229|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.8515|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6229|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6229|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6229|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6930|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.7668|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:35.6930|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:36.2818|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:36.3028|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1735 | Time      00:18
+2019-04-15 20:16:36.5890|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:36.5890|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:36.9730|INFO|Scanner.ConsoleExt||     Leonbets| P     8 | Lines        977 | Time      00:12
+2019-04-15 20:16:38.0576|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:38.3688|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:38.6480|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:38.9702|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.1642744
+2019-04-15 20:16:38.9831|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:03
+2019-04-15 20:16:39.4767|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:39.4767|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:39.5736|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:39.6236|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:39.9264|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.9412742
+2019-04-15 20:16:39.9264|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        599 | Time      00:00
+2019-04-15 20:16:41.7106|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:42.6162|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:42.4516|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:42.4895|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:42.8256|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:42.8994|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9710978
+2019-04-15 20:16:42.4516|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:16:43.4561|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        434 | Time      00:03
+2019-04-15 20:16:45.2589|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1680 | Time      00:08
+2019-04-15 20:16:46.4153|INFO|Scanner.ConsoleExt||       Favbet| P     5 | Lines       2426 | Time      00:21
+2019-04-15 20:16:46.4432|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2796255
+2019-04-15 20:16:46.4592|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        434 | Time      00:02
+2019-04-15 20:16:47.5857|INFO|Scanner.EventUpdateObject|Dafabet EventUpdateObject WebException
+2019-04-15 20:52:29.0998|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 20:52:29.0998|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 20:52:29.2294|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 20:52:30.2538|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 20:52:30.2947|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 20:52:31.3215|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 20:52:31.4581|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 20:52:32.3981|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 20:52:32.4555|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 20:52:32.5423|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 20:52:32.6233|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 20:52:32.6233|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 20:52:32.6961|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 20:52:32.6971|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 20:52:33.1664|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 20:52:33.1664|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 20:52:33.4315|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 20:52:35.2018|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4056662
+2019-04-15 20:52:35.2188|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      52:35
+2019-04-15 20:53:03.4371|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:28.2161520
+2019-04-15 20:53:03.4500|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:28
+2019-04-15 20:53:03.5658|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines        609 | Time      53:03
+2019-04-15 20:53:07.8531|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.3988199
+2019-04-15 20:53:07.8950|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:04
+2019-04-15 20:55:42.7587|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 20:55:44.7414|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 20:55:44.9938|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 20:55:45.0337|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 20:55:45.2970|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 20:55:45.2970|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 20:55:46.7077|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 20:55:46.7785|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 20:55:46.8194|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 20:55:46.8194|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 20:55:47.6657|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 20:55:47.6727|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 20:55:47.8791|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 20:55:48.8496|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 20:55:50.4890|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 20:55:51.5486|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 20:55:52.4569|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 20:55:53.2515|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-15 20:55:53.2515|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-15 20:55:53.3692|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 4
+2019-04-15 20:55:53.4420|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-15 20:55:54.2574|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines        981 | Time      55:54
+2019-04-15 20:55:55.1380|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.8586364
+2019-04-15 20:55:55.1539|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      55:55
+2019-04-15 20:55:56.7750|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6205963
+2019-04-15 20:55:56.7770|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:01
+2019-04-15 20:55:57.1314|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 5
+2019-04-15 20:55:57.5683|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines        995 | Time      00:03
+2019-04-15 20:55:57.9344|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.1567698
+2019-04-15 20:55:57.9344|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines         18 | Time      00:01
+2019-04-15 20:56:00.7054|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7676732
+2019-04-15 20:56:00.7054|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        106 | Time      00:02
+2019-04-15 20:56:00.8421|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 6
+2019-04-15 20:56:02.4127|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.7033011
+2019-04-15 20:56:02.4287|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        131 | Time      00:01
+2019-04-15 20:56:03.4880|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0556111
+2019-04-15 20:56:03.4880|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        145 | Time      00:01
+2019-04-15 20:56:03.9857|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 7
+2019-04-15 20:56:06.8595|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3695476
+2019-04-15 20:56:06.8595|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        210 | Time      00:03
+2019-04-15 20:56:08.7989|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.9364710
+2019-04-15 20:56:08.7989|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        210 | Time      00:01
+2019-04-15 20:56:10.1378|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3362468
+2019-04-15 20:56:10.1378|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        221 | Time      00:01
+2019-04-15 20:56:11.8094|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6688976
+2019-04-15 20:56:11.8094|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        221 | Time      00:01
+2019-04-15 20:56:13.4425|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6317093
+2019-04-15 20:56:13.4425|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        243 | Time      00:01
+2019-04-15 20:56:15.1156|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1080 | Time      00:17
+2019-04-15 20:56:16.0713|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.6254089
+2019-04-15 20:56:16.0732|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:18.8578|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1056 | Time      00:03
+2019-04-15 20:56:20.2116|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:04.1374152
+2019-04-15 20:56:20.2116|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:04
+2019-04-15 20:56:21.5350|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3212802
+2019-04-15 20:56:21.5350|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:23.8979|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.3583543
+2019-04-15 20:56:23.9009|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:24.1073|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1049 | Time      00:05
+2019-04-15 20:56:25.4570|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:56:25.5158|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.6133185
+2019-04-15 20:56:25.5158|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:26.5918|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.0737762
+2019-04-15 20:56:26.5918|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:28.0096|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1025 | Time      00:03
+2019-04-15 20:56:28.8168|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2173861
+2019-04-15 20:56:28.8168|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:29.5387|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:56:30.2746|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.4539230
+2019-04-15 20:56:30.2826|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:30.8831|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.5971807
+2019-04-15 20:56:30.8831|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:00
+2019-04-15 20:56:31.8455|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1016 | Time      00:03
+2019-04-15 20:56:33.2899|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.4044012
+2019-04-15 20:56:33.2929|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:35.3124|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.0189214
+2019-04-15 20:56:35.3124|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:35.4633|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:56:35.9571|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1019 | Time      00:04
+2019-04-15 20:56:36.8943|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.5792253
+2019-04-15 20:56:36.8943|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:38.2361|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:01.3359073
+2019-04-15 20:56:38.5483|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:01
+2019-04-15 20:56:39.5640|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:56:39.7595|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1016 | Time      00:03
+2019-04-15 20:56:40.7370|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.1878264
+2019-04-15 20:56:40.7370|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines        279 | Time      00:02
+2019-04-15 20:56:43.4619|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1055 | Time      00:03
+2019-04-15 20:56:45.4672|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 20:56:45.8014|INFO|Scanner.ScannerBase|ERROR Dafabet Исключение во время запроса WebClient.    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:32:30.1064|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 21:32:30.1822|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 21:32:30.6857|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 21:32:30.7046|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 21:32:31.4724|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 21:32:32.7243|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 21:32:33.1459|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 21:32:33.3812|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 21:32:33.4461|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 21:32:33.4461|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 21:32:33.5228|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 21:32:33.5228|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 21:32:34.0342|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 2
+2019-04-15 21:32:34.2252|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 3
+2019-04-15 21:32:34.2252|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 21:32:34.4432|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 21:32:34.8655|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 4
+2019-04-15 21:32:37.2798|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-15 21:32:37.3965|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-15 21:32:37.8139|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 4
+2019-04-15 21:32:38.0922|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1932 | Time      32:38
+2019-04-15 21:32:38.3217|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-15 21:32:41.0979|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1895 | Time      00:03
+2019-04-15 21:32:41.3750|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 5
+2019-04-15 21:32:42.0157|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.5590687
+2019-04-15 21:32:42.0516|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      32:42
+2019-04-15 21:32:45.8015|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.7475254
+2019-04-15 21:32:45.8325|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 21:32:50.0572|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 6
+2019-04-15 21:33:05.3556|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 7
+2019-04-15 21:33:22.1636|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 21:33:29.7632|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:40.9488|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 21:33:46.4273|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:48.0928|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:50.2969|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:52.2587|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:52.9459|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:54.1008|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:33:55.7924|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-15 21:34:37.4733|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 21:34:40.5424|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 21:34:41.4895|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 21:34:41.4895|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 21:34:41.4955|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 21:34:42.1453|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 21:34:42.2141|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 21:34:42.2291|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 21:34:42.3795|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 1
+2019-04-15 21:34:42.3795|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 21:34:42.4323|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 2
+2019-04-15 21:34:42.4892|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 21:34:42.4892|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 21:34:42.4892|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 21:34:42.6857|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 21:34:42.6857|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 21:34:42.9318|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 21:34:43.2998|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-15 21:34:43.6942|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-15 21:34:44.0779|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-15 21:34:44.7661|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.2802170
+2019-04-15 21:34:44.7781|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      34:44
+2019-04-15 21:34:59.4880|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:14.7083012
+2019-04-15 21:34:59.5847|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:14
+2019-04-15 21:35:00.5093|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 4
+2019-04-15 21:35:01.0867|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 5
+2019-04-15 21:35:03.4225|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.8363702
+2019-04-15 21:35:03.4474|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 21:35:12.6089|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:09.1023541
+2019-04-15 21:35:12.6737|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:09
+2019-04-15 21:35:29.8738|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 6
+2019-04-15 21:35:32.5935|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 7
+2019-04-15 21:39:01.0456|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 21:39:01.2541|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-15 21:39:01.3870|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 21:39:01.6687|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 21:39:01.6687|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-15 21:39:02.3630|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-15 21:39:02.6540|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-15 21:39:03.2838|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-15 21:39:03.6325|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-15 21:39:03.6494|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-15 21:39:03.6514|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-15 21:39:03.7602|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-15 21:39:03.7602|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-15 21:39:04.0539|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-15 21:39:04.2533|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-15 21:39:04.4349|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-15 21:39:04.9504|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-15 21:39:06.7547|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-15 21:39:06.7866|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-15 21:39:07.0041|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines       1932 | Time      39:07
+2019-04-15 21:39:07.0437|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-15 21:39:07.4894|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.5240281
+2019-04-15 21:39:07.5253|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      39:07
+2019-04-15 21:39:10.8750|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.3496197
+2019-04-15 21:39:10.8750|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:03
+2019-04-15 21:39:12.3431|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 4
+2019-04-15 21:39:16.2477|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:05.3684900
+2019-04-15 21:39:16.2656|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:05
+2019-04-15 21:39:21.2613|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 5
+2019-04-15 21:39:42.9892|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 6
+2019-04-15 21:39:54.9792|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 7
+2019-04-15 21:40:04.2793|INFO|Scanner.ScannerBase|ERROR Dafabet Невозможно соединиться с удаленным сервером    в System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
+   в System.Net.WebClient.UploadString(Uri address, String method, String data)
+   в System.Net.WebClient.UploadString(String address, String data)
+   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 75
+2019-04-15 21:40:13.5517|INFO|Scanner.ScannerBase|FavBet Task wait exception
+2019-04-16 09:55:46.2215|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-16 09:55:46.2215|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-16 09:55:47.0054|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 3
+2019-04-16 09:55:48.1154|INFO|Scanner.ConsoleExt|Favbet check address http://185.80.150.152:11491/
+2019-04-16 09:55:49.5278|INFO|Scanner.ConsoleExt|Favbet check address http://185.106.92.141:13245/
+2019-04-16 09:55:49.7497|INFO|Scanner.ConsoleExt|Favbet check address http://185.194.12.78:8000/
+2019-04-16 09:55:49.8723|INFO|Scanner.ConsoleExt|Favbet check address http://176.107.184.188:8000/
+2019-04-16 09:55:50.1586|INFO|Scanner.ConsoleExt|Favbet delete address http://176.107.184.188:8000/ listToDelete 1
+2019-04-16 09:55:50.1586|INFO|Scanner.ConsoleExt|Favbet check address http://196.18.167.228:8000/
+2019-04-16 09:55:50.5346|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 4
+2019-04-16 09:55:50.7151|INFO|Scanner.ConsoleExt|Favbet check address http://91.243.60.235:19344/
+2019-04-16 09:55:50.9591|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.4039191
+2019-04-16 09:55:50.9691|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      55:50
+2019-04-16 09:55:51.3144|INFO|Scanner.ConsoleExt|Favbet check address http://185.8.63.45:1490/
+2019-04-16 09:55:51.4397|INFO|Scanner.ConsoleExt|Favbet delete address http://185.8.63.45:1490/ listToDelete 2
+2019-04-16 09:55:51.4397|INFO|Scanner.ConsoleExt|Favbet check address http://139.28.39.201:65233/
+2019-04-16 09:55:51.7617|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:00.7914203
+2019-04-16 09:56:05.6085|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 126
+2019-04-16 09:56:13.5058|INFO|Scanner.ConsoleExt|Favbet check address http://176.114.5.42:65233/
+2019-04-16 09:56:13.5347|INFO|Scanner.ConsoleExt|Favbet delete address http://139.28.39.201:65233/ listToDelete 3
+2019-04-16 09:56:13.6005|INFO|BetFair.Authorize|path C:\Projects\LocalScanner\Scanner.Webhost\Storage\LiveApp.p12
+2019-04-16 09:56:13.6823|INFO|Scanner.ConsoleExt|Favbet delete address http://176.114.5.42:65233/ listToDelete 4
+2019-04-16 09:56:13.7172|INFO|Scanner.ConsoleExt|Favbet check address http://185.135.83.189:13055/
+2019-04-16 09:56:25.6173|INFO|Scanner.ConsoleExt|Favbet delete address http://185.194.12.78:8000/ listToDelete 5
+2019-04-16 09:56:26.1784|INFO|Scanner.ConsoleExt|Favbet check address http://196.19.11.107:8000/
+2019-04-16 09:56:26.2403|INFO|Scanner.ConsoleExt|Favbet delete address http://196.18.167.228:8000/ listToDelete 6
+2019-04-16 09:56:31.2509|INFO|Scanner.ConsoleExt|Favbet check address http://103.72.153.193:8000/
+2019-04-16 09:56:31.8128|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:17.7493163
+2019-04-16 09:56:44.8231|INFO|Scanner.ConsoleExt||      Dafabet| P     8 | Lines          0 | Time      00:37
+2019-04-16 09:56:49.8243|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      56:49
+2019-04-16 09:56:52.2230|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.7098908
+2019-04-16 09:57:03.7969|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 126
+2019-04-16 09:57:03.8398|INFO|Scanner.ConsoleExt|Favbet delete address http://196.19.11.107:8000/ listToDelete 7
+2019-04-16 09:57:04.0289|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      00:14
+2019-04-16 09:57:07.6002|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:03.8010440
+2019-04-16 09:57:08.8537|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 126
+2019-04-16 09:57:08.8537|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      00:04
+2019-04-16 09:57:11.2785|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      00:02
+2019-04-16 09:57:12.0362|INFO|Scanner.ScannerBase|Dafabet after OddsManager/Standard request 00:00:02.9681877
+2019-04-16 09:57:12.4930|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      00:01
+2019-04-16 09:57:14.5454|INFO|Scanner.ConsoleExt||      Betfair| P     0 | Lines          0 | Time      00:02
+2019-04-16 09:57:15.0790|INFO|Scanner.ConsoleExt|Favbet delete address http://103.72.153.193:8000/ listToDelete 8
