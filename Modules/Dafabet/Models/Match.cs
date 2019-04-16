@@ -2,8 +2,23 @@
 
 namespace Dafabet.Models
 {
-    internal class Match
+    public class MatchDataResult
     {
+        public MatchDataResult()
+        {
+            this.leagues = new List<League>();
+        }
+
+        public List<League> leagues { get; set; }
+    }
+
+    public class Match
+    {
+        public Match()
+        {
+            this.oddset = new List<OddSet>();
+        }
+
         public string HomeName { get; set; }
 
         public string AwayName { get; set; }

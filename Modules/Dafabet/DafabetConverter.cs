@@ -12,15 +12,13 @@ namespace Dafabet
 {
     public class DafabetConverter
     {
-
-
         private List<LineDTO> _lines;
 
-        public LineDTO[] Convert(string response, string bookmakerName)
+        public LineDTO[] Convert(MatchDataResult data, string bookmakerName)
         {
             _lines = new List<LineDTO>();
 
-            var data = JsonConvert.DeserializeObject<MatchDataResult>(response);
+            //var data = JsonConvert.DeserializeObject<MatchDataResult>(response);
 
             foreach (var league in data.leagues)
             {
@@ -109,9 +107,6 @@ namespace Dafabet
                 case 1:
                 //1H HANDICAP
                 case 7:
-
-                    //Контора считает Handicap от текущего счета
-                    //if (lineTemplate.Score1 != 0 || lineTemplate.Score2 != 0) return result;
 
                     result = "HANDICAP";
 

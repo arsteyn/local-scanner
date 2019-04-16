@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -15,7 +16,6 @@ using Dafabet.Models;
 using Newtonsoft.Json;
 using Scanner;
 using Scanner.Helper;
-using Match = System.Text.RegularExpressions.Match;
 
 namespace Dafabet
 {
@@ -62,26 +62,91 @@ namespace Dafabet
 
             try
             {
-                var matchList = new List<long>();
-
+               
                 var cookies = CookieDictionary[randomProxy].GetData();
+
+                var result = new MatchDataResult();
+
+                List<Game> games = new List<Game>();
 
                 using (var client = new Extensions.WebClientEx(randomProxy, cookies))
                 {
-                    client.Headers["X-Requested-With"] = "XMLHttpRequest";
                     client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                    client.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                    var response = client.UploadString($"{Host.Replace("www", "play")}OddsManager/Standard", "FixtureType=l&SportType=1&LDisplayMode=0&Scope=MainMarket&IsParlay=false");
+                    var response = client.UploadString($"https://ismart.dafabet.com/main/GetContributor", "isParlay=false&both=false");
 
-                    var t = JsonConvert.DeserializeObject<MatchDataResult>(response);
+                    var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
 
-                    foreach (var league in t.leagues)
+                     games = contributorResult.Data.Where(d => d.M0.L > 0).ToList();
+
+                    //cookies.Add(client.ResponseCookies);
+                }
+
+             
+                foreach (var game in games)
+                {
+                    using (var client = new Extensions.WebClientEx(randomProxy, cookies))
                     {
-                        //убираем запрещенные чемпионаты
-                        if (league.LeagueName.ContainsIgnoreCase(LeagueStopWords.ToArray())) continue;
+                        client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
 
-                        matchList.AddRange(league.matches.Where(m => m.IsLive).Select(m => m.MatchId).ToList());
+                        var l  = client.UploadString($"https://ismart.dafabet.com/Odds/ShowAllOdds",$"GameId={game.GameId}&DateType=l&BetTypeClass=more");
+
+                        var t = JsonConvert.DeserializeObject<BaseDataResult<ShowAllOddData>>(l);
+
+                        foreach (var leagueKeyValuePair in t.Data.LeagueN)
+                        {
+                            //убираем запрещенные чемпионаты
+                            if (leagueKeyValuePair.Value.ContainsIgnoreCase(LeagueStopWords.ToArray())) continue;
+
+
+                            var matches = new List<Match>();
+                            var m = t.Data.NewMatch.Where(d => d.LeagueId == leagueKeyValuePair.Key).ToList();
+
+                            foreach (var match in m)
+                            {
+                                var k = new Match();
+                                k.HomeName = t.Data.TeamN.First(e => e.Key == match.TeamId1).Value;
+                                k.AwayName = t.Data.TeamN.First(y => y.Key == match.TeamId2).Value;
+                                k.IsLive = match.IsLive;
+                                k.MatchId = match.MatchId;
+                                k.MoreInfo = new MoreInfo()
+                                {
+                                    ScoreA = match.T1V,
+                                    ScoreH = match.T2V
+                                };
+
+                                var l3 = client.UploadString($"https://ismart.dafabet.com/Odds/GetMarket", $"GameId={game.GameId}&DateType=l&BetTypeClass=OU&Matchid={match.MatchId}");
+                                var t2 = JsonConvert.DeserializeObject<BaseDataResult<GetMarketData>>(l3);
+
+                                foreach (var newOdd in t2.Data.Markets.NewOdds)
+                                {
+
+                                    var oddset = new OddSet();
+                                    oddset.Bettype = newOdd.BetTypeId;
+                                    oddset.OddsId = newOdd.MarketId;
+
+                                    foreach (var selection in newOdd.Selections)
+                                    {
+                                        var sel = new Select();
+                                        sel.Price = selection.Price;
+                                        sel.Key = selection.SelId;
+                                        sel.Point = newOdd.Line;
+                                        oddset.sels.Add(sel);
+                                    }
+
+                                    k.oddset.Add(oddset);
+                                }
+
+                                matches.Add(k);
+                            }
+
+                            result.leagues.Add(new League()
+                            {
+                                LeagueName = leagueKeyValuePair.Value,
+                                matches = matches,
+                                SportName = game.Name
+                            });
+                        }
                     }
                 }
 
@@ -89,36 +154,34 @@ namespace Dafabet
 
                 Log.Info("Dafabet after OddsManager/Standard request " + st.Elapsed);
 
-                var tf = new List<long>();
-                tf.AddRange(_linesDictionary.Where(lineDtose => !matchList.Contains(lineDtose.Key)).Select(l => l.Key));
+                //var tf = new List<long>();
+                //tf.AddRange(_linesDictionary.Where(lineDtose => !matchList.Contains(lineDtose.Key)).Select(l => l.Key));
 
                 //удаляем устаревшие события
-                foreach (var lineDtose in tf)
-                    _linesDictionary.Remove(lineDtose);
+                //foreach (var lineDtose in tf)
+                //    _linesDictionary.Remove(lineDtose);
 
                 //добавляем новые события
-                foreach (var matchId in matchList)
-                {
-                    if (_linesDictionary.ContainsKey(matchId)) continue;
+                //foreach (var matchId in matchList)
+                //{
+                //    if (_linesDictionary.ContainsKey(matchId)) continue;
 
-                    _linesDictionary.Add(matchId, new EventUpdateObject(() =>
-                    {
-                        var random = ProxyList.PickRandom();
-                        using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
-                        {
-                            cl.Headers["X-Requested-With"] = "XMLHttpRequest";
-                            cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                            cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
+                //    _linesDictionary.Add(matchId, new EventUpdateObject(() =>
+                //    {
+                //        var random = ProxyList.PickRandom();
+                //        using (var cl = new Extensions.WebClientEx(random, CookieDictionary[randomProxy].GetData()))
+                //        {
+                //            cl.Headers["X-Requested-With"] = "XMLHttpRequest";
+                //            cl.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                //            cl.Headers["__VerfCode"] = cookies.GetAllCookies()["VerfCode"].Value;
 
-                            var res = cl.UploadString(new Uri($"{Host.Replace("www", "play")}OddsManager/Standard"), $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={matchId}");
-                            var converter = new DafabetConverter();
+                //            var res = cl.UploadString(new Uri($"{Host.Replace("www", "play")}OddsManager/Standard"), $"FixtureType=l&SportType=1&LDisplayMode=0&Scope=Match&IsParlay=false&MatchId={matchId}");
+                //            var converter = new DafabetConverter();
 
-                            
-
-                            return converter.Convert(res, Name).ToList();
-                        }
-                    }));
-                }
+                //            return converter.Convert(res, Name).ToList();
+                //        }
+                //    }));
+                //}
 
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
@@ -150,20 +213,54 @@ namespace Dafabet
 
                         using (var client = new GetWebClient(host, cookies))
                         {
-                            client.Headers["Referer"] = $"{Host.Replace("www", "play")}NewIndex?act=hdpou&webskintype=2";
+                            client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
 
-                            var r = client.DownloadString($"{Host.Replace("www", "play")}onebook?act=hdpou");
+                            var r = client.DownloadString($"https://m.dafabet.com");
 
                             cookies.Add(client.CookieCollection);
 
-                            var parser = new HtmlParser();
 
-                            var results = parser.Parse(r);
-
-                            var verfCode = results.QuerySelector("input[name=__RequestVerificationToken]").GetAttribute("value");
-
-                            cookies.Add(new Cookie("VerfCode", verfCode, "/", new Uri(Host).Host));
                         }
+
+                        string hash;
+                        using (var client = new PostWebClient(host, cookies))
+                        {
+                            client.Headers["Referer"] = $"https://m.dafabet.com/en/login";
+                            var requestParams = new NameValueCollection
+                            {
+                                {"username", "antmatveev81"},
+                                {"password", "dbQXhM2bB"},
+                            };
+
+                            var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/component/route/header_login/authenticate", requestParams);
+
+                            hash = r.hash;
+
+                            cookies.Add(client.CookieCollection);
+                        }
+                        string token;
+                        using (var client = new PostWebClient(host, cookies))
+                        {
+                            client.Headers["Referer"] = $"https://m.dafabet.com/en/";
+                       
+                            var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/module/route/pas_integration/updateToken?authenticated=true&hash={hash}");
+
+                            token = r.token;
+
+                            cookies.Add(client.CookieCollection);
+                        }
+
+                        using (var client = new GetWebClient(host, cookies))
+                        {
+                            client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
+
+                            var r = client.DownloadString($"https://ismart.dafabet.com/Deposit_ProcessLogin.aspx?lang=en&st={token}&homeURL=https%3A%2F%2Fm.dafabet.com%2Fen&extendSessionURL=https%3A%2F%2Fm.dafabet.com%2Fen&OType=01&oddstype=1");
+
+                            cookies.Add(client.CookieCollection);
+
+
+                        }
+                      
 
                         result.Add(cookies);
 
@@ -192,4 +289,6 @@ namespace Dafabet
         }
 
     }
+
+  
 }

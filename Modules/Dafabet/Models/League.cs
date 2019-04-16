@@ -2,9 +2,8 @@
 
 namespace Dafabet.Models
 {
-    internal class League
+    public class League
     {
-        public int SportType { get; set; }
 
         public string SportName { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Dafabet.Models
 {
-    internal class Select
+    public class Select
     {
         public string Key { get; set; }
         public decimal Price { get; set; }
