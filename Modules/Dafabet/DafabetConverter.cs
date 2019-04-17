@@ -45,7 +45,7 @@ namespace Dafabet
                         {
                             var lineTemplate3 = lineTemplate2.Clone();
 
-                            var coeffKind = GetCoeffKind(oddSet.Bettype, setSel.Key, lineTemplate);
+                            var coeffKind = GetCoeffKind(oddSet.Bettype, setSel.Key, out var hasParam);
 
                             //ProxyHelper.UpdateDafabetEvents($"SportName {league.SportName} | SportType {league.SportType} | Bettype {oddSet.Bettype} | OddsId {oddSet.OddsId} | Key Point Price {setSel.Key} {setSel.Point} {setSel.Price}");
 
@@ -53,7 +53,7 @@ namespace Dafabet
 
                             lineTemplate3.CoeffKind = coeffKind;
 
-                            lineTemplate3.CoeffParam = setSel.Point;
+                            if (hasParam) lineTemplate3.CoeffParam = coeffKind == "HANDICAP1" ? -1 * setSel.Point : setSel.Point;
 
                             decimal price;
 
@@ -97,9 +97,11 @@ namespace Dafabet
             }
         }
 
-        private static string GetCoeffKind(int betType, string betteam, LineDTO lineTemplate)
+        private static string GetCoeffKind(int betType, string betteam, out bool hasParam)
         {
-            var result = string.Empty;
+            string result;
+
+            hasParam = true;
 
             switch (betType)
             {
@@ -162,6 +164,8 @@ namespace Dafabet
                             result = betteam;
                             break;
                     }
+
+                    hasParam = false;
 
                     return result;
             }

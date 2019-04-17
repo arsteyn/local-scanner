@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace Dafabet.Models
 {
@@ -30,8 +32,8 @@ namespace Dafabet.Models
     public class ShowAllOddData
     {
         public List<NewMatch> NewMatch { get; set; }
-        public List<KeyValuePair<long, string>> TeamN { get; set; }
-        public List<KeyValuePair<long, string>> LeagueN { get; set; }
+        public JObject TeamN { get; set; }
+        public JObject LeagueN { get; set; }
     }
 
     public class NewMatch
@@ -65,7 +67,7 @@ namespace Dafabet.Models
         public int BetTypeId { get; set; }
         public decimal? Line { get; set; }
 
-        public List<Selections> Selections { get; set; }
+        public JObject Selections { get; set; }
     }
 
     public class Selections
