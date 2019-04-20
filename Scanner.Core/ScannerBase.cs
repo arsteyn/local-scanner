@@ -57,10 +57,11 @@ namespace Scanner
         {
             get
             {
-                if (_linesDictionary.Any())
-                    return _linesDictionary.Where(item => item.Value.LineDtos != null && item.Value.LineDtos.Any()).SelectMany(item => item.Value.LineDtos).ToArray();
+                if (LastUpdated.AddSeconds(30) <= DateTime.Now) return new LineDTO[] { };
 
-                return LastUpdated.AddSeconds(30) > DateTime.Now ? _actualLines : new LineDTO[] { };
+                return _linesDictionary.Any()
+                    ? _linesDictionary.Where(item => item.Value.LineDtos != null && item.Value.LineDtos.Any()/* && item.Value.LastUpdated.AddSeconds(10) >= DateTime.Now*/).SelectMany(item => item.Value.LineDtos).ToArray()
+                    : _actualLines;
             }
             set => _actualLines = value;
         }
@@ -117,19 +118,23 @@ namespace Scanner
 
     public class EventUpdateObject
     {
-        public EventUpdateObject(Func<List<LineDTO>> updateAction)
+        public EventUpdateObject(Func<List<LineDTO>> updateAction/*, CancellationTokenSource tokenSource*/)
         {
             UpdateAction = updateAction;
 
-            Task.Factory.StartNew(() =>
-            {
-                while (true)
-                {
+            //CancellationTokenSource = tokenSource;
+
+            //Task.Factory.StartNew(() =>
+            //{
+            //    while (!tokenSource.Token.IsCancellationRequested)
+            //    {
                     try
                     {
                         var result = UpdateAction().Select(l => l.Clone()).ToList();
 
                         LineDtos = result;
+
+                        //LastUpdated = DateTime.Now;
                     }
                     catch (WebException e)
                     {
@@ -139,13 +144,18 @@ namespace Scanner
                     {
                         //LogManager.GetCurrentClassLogger().Info("Dafabet EventUpdateObject otherexception" + e.Message + e.InnerException + e.StackTrace);
                     }
-                }
-            });
+            //    }
+            //    var f = 9;
+            //}, tokenSource.Token);
         }
+
+        public CancellationTokenSource CancellationTokenSource { get; set; }
 
         public List<LineDTO> LineDtos { get; set; }
 
-        private Func<List<LineDTO>> UpdateAction { get; set; }
+        private Func<List<LineDTO>> UpdateAction { get; }
+
+        //public DateTime LastUpdated { get; set; }
 
     }
 }

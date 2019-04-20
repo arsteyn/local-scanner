@@ -1,356 +1,104 @@
-2019-04-17 19:54:26.1136|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 19:54:40.1771|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 19:54:54.6465|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 25
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 19:55:10.7269|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 19:55:24.9041|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 19:55:41.3842|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 19:55:55.8960|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 19:56:09.1367|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 19:56:22.5897|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 19:56:36.5910|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 19:56:52.3812|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 19:57:09.8980|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 19:57:27.9883|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 19:57:45.6270|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 19:58:02.4357|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 19:58:17.6400|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 19:58:36.3381|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 19:58:56.6931|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 19:59:15.0361|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 19:59:35.1452|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 19:59:53.5686|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:00:11.9408|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:00:30.6354|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:00:49.1997|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:01:08.8841|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:01:27.6053|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:01:46.1670|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:02:04.8685|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:02:26.1263|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:02:44.5845|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:03:04.1025|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:03:22.4028|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:03:42.1314|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:04:02.1723|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:04:20.9689|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:04:41.6938|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:05:02.8719|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:05:21.6506|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:05:40.1385|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:05:59.5048|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:06:20.1153|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:06:38.6415|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:06:57.1510|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:07:15.6039|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:07:34.6220|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:07:53.4070|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:08:12.0118|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:08:30.5185|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:08:49.1788|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:09:08.8768|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:09:27.9760|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:09:48.1565|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:10:08.1495|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:10:27.9177|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:10:49.6595|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:11:08.6484|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:11:27.4989|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:11:46.6998|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:12:08.1789|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:12:26.5128|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:12:46.7171|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:13:05.8780|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:13:24.4421|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:13:43.7258|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:14:03.5037|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:14:22.1819|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:14:44.1227|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:15:02.8032|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:15:21.4356|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:15:42.7580|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:16:02.1667|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:16:22.9863|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:16:44.4704|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:17:04.3543|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:17:24.3903|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:17:43.1672|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:18:02.0377|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:18:21.4082|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:18:39.4042|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:18:57.0803|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:19:15.2066|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:19:33.7290|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:19:51.9035|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:20:09.9425|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:20:31.6773|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:20:49.3809|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:21:07.5166|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:21:27.2504|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:21:47.4661|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:22:05.9293|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:22:24.1039|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:22:42.2054|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:23:00.7236|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:23:19.2252|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:23:37.1696|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:23:57.0549|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:24:15.1453|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:24:33.5522|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:24:54.2119|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:25:12.6515|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:25:32.0053|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:25:50.0801|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:26:09.7579|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:26:29.5595|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:26:47.4909|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:27:05.6424|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:27:24.9421|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:27:44.8122|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:28:03.5060|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:28:23.7479|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:28:46.6529|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:29:06.4438|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:29:28.7324|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:29:48.7211|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:30:09.9800|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:30:31.8974|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:30:53.4623|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:31:15.9425|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:31:36.1439|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:31:55.9503|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:32:16.1672|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:32:36.0676|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:32:56.1956|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:33:16.0586|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:33:37.5032|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:34:00.2084|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:34:20.2797|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:34:40.4903|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:35:00.0354|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:35:20.7246|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:35:40.2677|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:36:00.1650|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:36:22.2075|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:36:44.2117|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:22
-2019-04-17 20:37:03.7136|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:37:23.0153|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:37:42.1877|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:38:03.5034|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:38:22.5282|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:38:42.0605|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:39:03.7689|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:39:24.4440|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:39:43.7351|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:40:02.7250|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:40:22.7576|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:40:42.4316|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:41:03.2520|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:41:24.4458|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:41:43.5424|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:42:03.0272|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:42:22.2700|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:42:42.7315|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:43:04.5715|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:43:26.0548|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:21
-2019-04-17 20:43:45.1612|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:44:04.7837|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:44:24.9654|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:20
-2019-04-17 20:44:44.2303|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:45:03.2508|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:45:21.7324|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:45:41.5271|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 20:45:59.6899|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:46:16.0398|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:46:34.3038|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:46:51.4603|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:47:07.4404|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:47:23.4015|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:47:40.4723|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:47:56.0333|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:48:10.9396|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:48:26.0278|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:48:40.7469|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:48:55.3743|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:49:13.2514|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:49:27.4691|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:49:43.0025|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:49:57.4892|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:50:13.5412|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:50:28.4347|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:50:43.4149|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:50:57.4125|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 20:51:11.7108|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:51:27.9155|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:51:43.4459|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:51:57.4613|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:52:12.0529|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:52:26.2012|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:52:40.2826|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:52:54.0533|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 20:53:08.6484|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:53:25.2886|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:53:39.1936|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 20:53:54.6973|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:54:09.5527|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:54:25.0085|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:54:40.4477|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:54:56.3133|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:55:10.7209|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:55:26.4243|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:55:41.2731|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:55:57.4916|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:56:13.7177|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:56:28.1802|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 20:56:42.1928|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:56:57.9012|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:57:12.5383|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 20:57:28.5212|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:57:43.9547|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:57:59.4032|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 20:58:15.4243|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:58:31.4498|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:58:49.0508|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 20:59:05.9281|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:59:22.7934|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 20:59:41.5110|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 20:59:57.8375|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:00:15.6843|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:00:33.2839|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:00:52.1781|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:01:11.3740|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:19
-2019-04-17 21:01:29.5444|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:01:46.7439|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:02:04.5791|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:02:22.4148|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:02:38.4803|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:02:56.5519|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:03:12.6973|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:03:31.5416|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:03:49.5129|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:04:06.3133|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:04:22.3136|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:04:38.1893|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:04:54.4445|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:05:12.6969|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:05:30.3147|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:05:47.0455|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:06:05.7734|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:06:24.2223|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:06:41.9377|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:06:58.7344|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:07:15.4839|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:07:33.5019|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:07:48.9362|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:08:04.7420|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:08:20.2614|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:08:37.6809|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:08:53.6997|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:09:09.4787|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:09:27.3291|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:09:42.8069|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:10:00.9556|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:18
-2019-04-17 21:10:16.4454|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:10:31.9963|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:10:48.1032|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:11:03.2642|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:11:18.7101|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:11:36.2381|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:11:52.7221|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:12:08.5299|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:12:24.2048|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:12:40.2058|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:12:58.4467|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:13:16.3285|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:13:31.9878|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:13:49.4946|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:14:06.7756|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:14:22.5103|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:14:40.2076|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:14:55.8894|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:15:12.9891|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:15:28.0665|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:15:43.9110|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:16:00.5669|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:16:17.1872|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:16:33.4468|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:16:48.7434|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:17:06.0715|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:17:21.4603|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:17:36.2110|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:17:51.4204|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:18:06.4945|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:18:20.9582|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:18:37.7200|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:18:54.5279|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:19:09.4423|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:19:23.9459|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:19:38.5760|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:19:53.4834|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:20:08.5557|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:20:22.7460|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:20:37.2482|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:20:51.6975|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:21:07.2212|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:21:22.3231|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:21:37.9537|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:21:52.0699|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:22:06.6771|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:22:20.2206|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:13
-2019-04-17 21:22:34.4467|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:22:48.7258|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:23:02.9721|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:23:17.5290|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:23:31.9531|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:23:46.3051|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:24:00.8529|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:24:15.9490|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:24:31.7429|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:24:46.0845|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:25:00.2828|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:25:16.8226|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:16
-2019-04-17 21:25:31.4570|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:25:47.2073|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:26:03.1955|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:26:18.4869|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:26:32.7319|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:14
-2019-04-17 21:26:48.6429|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:27:03.0464|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:27:18.0521|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:27:34.0679|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 32
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
-2019-04-17 21:27:51.8139|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:17
-2019-04-17 21:28:06.9576|INFO|Scanner.ConsoleExt||      Dafabet| P     1 | Lines          0 | Time      00:15
-2019-04-17 21:28:22.9717|INFO|Scanner.ScannerBase|ERROR Dafabet Ссылка на объект не указывает на экземпляр объекта.    в Dafabet.DafabetConverter.Convert(MatchDataResult data, String bookmakerName) в C:\Projects\Localscanner\Modules\Dafabet\DafabetConverter.cs:строка 25
-   в Dafabet.DafabetScanner.UpdateLiveLines() в C:\Projects\Localscanner\Modules\Dafabet\DafabetScanner.cs:строка 110
+2019-04-20 16:27:27.6678|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 1
+2019-04-20 16:27:34.8470|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 2
+2019-04-20 16:27:42.9269|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 3
+2019-04-20 16:27:44.1143|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 4
+2019-04-20 16:27:45.4487|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 5
+2019-04-20 16:27:46.6724|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 6
+2019-04-20 16:27:58.8755|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 7
+2019-04-20 16:27:59.7618|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 8
+2019-04-20 16:28:00.6688|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 9
+2019-04-20 16:28:01.6471|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 10
+2019-04-20 16:28:09.5505|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 11
+2019-04-20 16:28:10.4346|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 12
+2019-04-20 16:28:11.3439|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 13
+2019-04-20 16:28:12.2632|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 14
+2019-04-20 16:28:19.8248|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 15
+2019-04-20 16:28:22.1332|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 16
+2019-04-20 16:28:23.4834|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 17
+2019-04-20 16:28:23.6979|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 18
+2019-04-20 16:28:32.7861|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 19
+2019-04-20 16:28:33.8545|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 20
+2019-04-20 16:28:34.8606|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 21
+2019-04-20 16:28:35.8476|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 22
+2019-04-20 16:28:38.4426|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 23
+2019-04-20 16:28:40.1209|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 24
+2019-04-20 16:28:41.4633|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 25
+2019-04-20 16:28:41.7106|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 26
+2019-04-20 16:28:42.0930|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 27
+2019-04-20 16:28:44.5549|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 28
+2019-04-20 16:28:45.4361|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 29
+2019-04-20 16:28:46.3936|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 30
+2019-04-20 16:28:47.3166|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 31
+2019-04-20 16:28:50.3960|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 32
+2019-04-20 16:28:52.3858|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 33
+2019-04-20 16:28:53.5938|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 34
+2019-04-20 16:28:53.7823|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 35
+2019-04-20 16:28:53.9767|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 36
+2019-04-20 16:28:56.2193|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 37
+2019-04-20 16:28:57.1385|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 38
+2019-04-20 16:28:57.9796|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 39
+2019-04-20 16:28:58.9248|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 40
+2019-04-20 16:29:02.2878|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 41
+2019-04-20 16:29:05.0047|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 42
+2019-04-20 16:29:06.3986|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 43
+2019-04-20 16:29:06.6678|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 44
+2019-04-20 16:29:06.8503|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 45
+2019-04-20 16:29:09.8170|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 46
+2019-04-20 16:29:10.6268|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 47
+2019-04-20 16:29:11.5291|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 48
+2019-04-20 16:29:12.4773|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 49
+2019-04-20 16:29:15.5531|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 50
+2019-04-20 16:29:16.2852|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 51
+2019-04-20 16:29:17.6468|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 52
+2019-04-20 16:29:17.8692|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 53
+2019-04-20 16:29:18.0315|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 54
+2019-04-20 16:29:20.3886|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 55
+2019-04-20 16:29:21.2024|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 56
+2019-04-20 16:29:22.0867|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 57
+2019-04-20 16:29:22.9853|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 58
+2019-04-20 16:29:26.0270|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 59
+2019-04-20 16:29:28.1047|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 60
+2019-04-20 16:29:29.4024|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 61
+2019-04-20 16:29:29.5787|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 62
+2019-04-20 16:29:29.7383|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 63
+2019-04-20 16:29:32.1406|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 64
+2019-04-20 16:29:32.9848|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 65
+2019-04-20 16:29:33.8431|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 66
+2019-04-20 16:29:34.7909|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 67
+2019-04-20 16:29:37.6480|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 68
+2019-04-20 16:29:38.4076|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 69
+2019-04-20 16:29:39.7026|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 70
+2019-04-20 16:29:39.8824|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 71
+2019-04-20 16:29:40.1314|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 72
+2019-04-20 16:29:42.3467|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 73
+2019-04-20 16:29:43.1307|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 74
+2019-04-20 16:29:43.9930|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 75
+2019-04-20 16:29:44.9327|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 76
+2019-04-20 16:29:48.2846|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 77
+2019-04-20 16:29:49.5116|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 78
+2019-04-20 16:29:50.8257|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 79
+2019-04-20 16:29:51.0072|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 80
+2019-04-20 16:29:51.1628|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 81
+2019-04-20 16:29:53.4504|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.202.109.57:8000/ listToDelete 82
+2019-04-20 16:29:54.2699|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.80.150.152:11491/ listToDelete 83
+2019-04-20 16:29:55.1766|INFO|Scanner.ConsoleExt|Dafabet delete address http://91.243.60.235:19344/ listToDelete 84
+2019-04-20 16:29:56.0849|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.106.92.141:13245/ listToDelete 85
+2019-04-20 16:29:59.3761|INFO|Scanner.ConsoleExt|Dafabet delete address http://103.72.153.193:8000/ listToDelete 86
+2019-04-20 16:30:02.1312|INFO|Scanner.ConsoleExt|Dafabet delete address http://196.18.167.228:8000/ listToDelete 87
+2019-04-20 16:30:03.4274|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.107.184.188:8000/ listToDelete 88
+2019-04-20 16:30:03.6428|INFO|Scanner.ConsoleExt|Dafabet delete address http://185.8.63.45:1490/ listToDelete 89
+2019-04-20 16:30:03.8393|INFO|Scanner.ConsoleExt|Dafabet delete address http://176.114.5.42:65233/ listToDelete 90
+2019-04-20 16:30:28.9573|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:30:28.9573|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines          0 | Time      30:28
+2019-04-20 16:30:40.9157|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:30:40.9755|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        855 | Time      00:11
+2019-04-20 16:30:51.1473|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 51
+2019-04-20 16:30:51.1473|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        814 | Time      00:10
+2019-04-20 16:30:59.9007|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:30:59.9087|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        858 | Time      00:08
+2019-04-20 16:31:09.0103|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:31:09.0143|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        855 | Time      00:09
+2019-04-20 16:31:20.9764|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:31:20.9843|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        855 | Time      00:11
+2019-04-20 16:31:30.7824|INFO|Scanner.ScannerBase|Dafabet _linesDictionary count 54
+2019-04-20 16:31:30.7824|INFO|Scanner.ConsoleExt||      Dafabet| P    54 | Lines        823 | Time      00:09

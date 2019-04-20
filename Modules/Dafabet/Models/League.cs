@@ -10,7 +10,6 @@ namespace Dafabet.Models
         public string LeagueName { get; set; }
 
         public List<Match> matches { get; set; }
-
-
+        public int GameId { get; set; }
     }
 }
