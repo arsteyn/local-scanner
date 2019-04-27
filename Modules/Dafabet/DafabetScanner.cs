@@ -61,7 +61,7 @@ namespace Dafabet
         private static readonly string GET_ALL_ODS_URL = $"{BASE_URL}Odds/ShowAllOdds";
         private static readonly string GET_CONTRIBUTOR_URL = $"{BASE_URL}main/GetContributor";
 
-        //private WebProxy randomProxy;
+        readonly object _lock = new object();
 
         protected override void UpdateLiveLines()
         {
@@ -90,37 +90,17 @@ namespace Dafabet
                     games = contributorResult.Data.Where(d => d.M0.L > 0).ToList();
                 }
 
-                //Parallel.ForEach(games, game => resultWithoudOddset.leagues.AddRange(GetLeagues(game)));
-
-
-
-                foreach (var game in games)
-                {
-                    //Thread.Sleep(1000);
-                    resultWithoudOddset.leagues.AddRange(GetLeagues(game));
-                }
+                Parallel.ForEach(games, game => resultWithoudOddset.leagues.AddRange(GetLeagues(game)));
 
                 st.Stop();
 
                 var matchList = resultWithoudOddset.leagues.SelectMany(l => l.matches).Select(m => m.MatchId).ToList();
 
-                //var oldMatches = _linesDictionary.Where(eventUpdateObject => !matchList.Contains(eventUpdateObject.Key)).Select(l => l.Key).ToList();
+                var groupsCount = (int)Math.Ceiling((decimal)((decimal)matchList.Count / (decimal)ProxyList.Count));
 
-                //удаляем устаревшие события
-                //foreach (var oldMatchId in oldMatches)
-                //    _linesDictionary.Remove(oldMatchId);
+                var chunksNewMatch = splitList(matchList, groupsCount).ToList();
 
-                _linesDictionary.Clear();
-
-                var newMatches = matchList/*.Where(matchId => !_linesDictionary.ContainsKey(matchId)).ToList()*/;
-
-                var chunksNewMatch = splitList(newMatches, newMatches.Count / ProxyList.Count).ToList();
-
-                if (chunksNewMatch.Count > ProxyList.Count)
-                {
-                    chunksNewMatch[chunksNewMatch.Count - 2].AddRange(chunksNewMatch[chunksNewMatch.Count - 1]);
-                    chunksNewMatch.RemoveAt(chunksNewMatch.Count - 1);
-                }
+                var linesResult = new List<LineDTO>();
 
                 Parallel.ForEach(chunksNewMatch.Take(ProxyList.Count), newMatchListChunk =>
                 {
@@ -145,24 +125,25 @@ namespace Dafabet
                         if (newLeague.SportName != "Soccer")
                             continue;
 
-                        _linesDictionary.Add(matchId, new EventUpdateObject(() =>
-                        {
-                            var match = league.matches.First(m => m.MatchId == matchId);
+                        var match = league.matches.First(m => m.MatchId == matchId);
 
-                            match.oddset = GetOddSet(newLeague.GameId, match.MatchId, proxyForOddScrape);
+                        match.oddset = GetOddSet(newLeague.GameId, match.MatchId, proxyForOddScrape);
 
-                            newLeague.matches = new List<Match> { match };
+                        newLeague.matches = new List<Match> { match };
 
-                            res.leagues.Add(newLeague);
+                        res.leagues.Add(newLeague);
 
-                            var converter = new DafabetConverter();
+                        var converter = new DafabetConverter();
 
-                            return converter.Convert(res, Name).ToList();
-                        }));
+                        var lns = converter.Convert(res, Name).ToList();
+
+                        lock (_lock) linesResult.AddRange(lns);
                     }
                 });
 
-                Log.Info("Dafabet _linesDictionary count " + _linesDictionary.Count);
+                //Log.Info("Dafabet matchList count " + matchList.Count);
+
+                ActualLines = linesResult.ToArray();
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
@@ -305,7 +286,9 @@ namespace Dafabet
 
         protected override void CheckDict()
         {
-            var listToDelete = new List<WebProxy>();
+            var st = new Stopwatch();
+            st.Start();
+
 
             foreach (var account in _accounts)
             {
@@ -313,18 +296,19 @@ namespace Dafabet
                 {
                     if (CookieDictionary.ContainsKey(host)) continue;
 
-                    CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 10, () =>
+                    CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 15, () =>
                     {
                         try
                         {
-
                             var result = new CookieContainer();
 
-                            result.Add(Authorize(host, account.Key, account.Value));
+                            var authCookie = Authorize(host, account.Key, account.Value);
+                            result.Add(authCookie);
 
-                            using (var client = new Extensions.WebClientEx(host, result))
+                            using (var client = new PostWebClient(host, authCookie))
                             {
                                 client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
+                                client.TimeOut = 5000;
 
                                 var response = client.UploadString(GET_CONTRIBUTOR_URL, "isParlay=false&both=false");
 
@@ -335,9 +319,7 @@ namespace Dafabet
                         }
                         catch (Exception)
                         {
-                            listToDelete.Add(host);
-
-                            ConsoleExt.ConsoleWriteError($"Dafabet delete address {host.Address} listToDelete {listToDelete.Count}");
+                            ConsoleExt.ConsoleWriteError($"Dafabet delete address {host.Address} elapsed {st.Elapsed:g}");
                         }
 
                         return null;
@@ -354,18 +336,9 @@ namespace Dafabet
                 if (!CookieDictionary.ContainsKey(host)) ProxyList.Remove(host);
             }
 
-
-            var newProxy = new List<WebProxy>();
-
-            foreach (var webProxy in ProxyList)
-            {
-                newProxy.Add(webProxy);
-                newProxy.Add(webProxy);
-                newProxy.Add(webProxy);
-                newProxy.Add(webProxy);
-            }
-
-            ProxyList.AddRange(newProxy);
+            //удваиваем количество проксей, что вставить больше элементов параллелбный запрос
+            ProxyList.AddRange(ProxyList.ToList());
+            ProxyList.AddRange(ProxyList.ToList());
         }
 
 
@@ -378,7 +351,7 @@ namespace Dafabet
             {
                 client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
 
-                client.DownloadString($"https://m.dafabet.com");
+                client.TryDownloadString($"https://m.dafabet.com", 5000);
 
                 cookies.Add(client.CookieCollection);
             }
@@ -418,7 +391,7 @@ namespace Dafabet
             {
                 client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
 
-                client.DownloadString($"https://ismart.dafabet.com/Deposit_ProcessLogin.aspx?lang=en&st={token}&homeURL=https%3A%2F%2Fm.dafabet.com%2Fen&extendSessionURL=https%3A%2F%2Fm.dafabet.com%2Fen&OType=01&oddstype=1");
+                client.TryDownloadString($"https://ismart.dafabet.com/Deposit_ProcessLogin.aspx?lang=en&st={token}&homeURL=https%3A%2F%2Fm.dafabet.com%2Fen&extendSessionURL=https%3A%2F%2Fm.dafabet.com%2Fen&OType=01&oddstype=1", 5000);
 
                 cookies.Add(client.CookieCollection);
             }

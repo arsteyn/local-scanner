@@ -152,7 +152,7 @@ namespace Favbet
 
             foreach (var host in ProxyList)
             {
-                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 3, () =>
+                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 30, () =>
                 {
                     try
                     {

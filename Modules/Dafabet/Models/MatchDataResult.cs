@@ -66,6 +66,7 @@ namespace Dafabet.Models
         public long MatchId { get; set; }
         public int BetTypeId { get; set; }
         public decimal? Line { get; set; }
+        public bool Pim { get; set; }
 
         public JObject Selections { get; set; }
     }

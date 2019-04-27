@@ -122,7 +122,7 @@ namespace Leonbets
 
             foreach (var host in ProxyList)
             {
-                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 3600 * 6, () =>
+                CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 30, () =>
                     {
                         try
                         {
@@ -163,11 +163,6 @@ namespace Leonbets
 
             //проверяем работу хоста
             Parallel.ForEach(ProxyList, host => CookieDictionary[host].GetData());
-
-            //foreach (var webProxy in ProxyList)
-            //{
-            //    CookieDictionary[webProxy].GetData();
-            //}
 
             foreach (var host in listToDelete)
             {

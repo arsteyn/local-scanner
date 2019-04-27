@@ -20,8 +20,6 @@ namespace Scanner
     {
         protected List<WebProxy> ProxyList;
 
-        protected Dictionary<long, EventUpdateObject> _linesDictionary = new Dictionary<long, EventUpdateObject>();
-
         public virtual void StartScan()
         {
             ProxyList = ProxyHelper.GetHostList();
@@ -55,14 +53,7 @@ namespace Scanner
 
         public virtual LineDTO[] ActualLines
         {
-            get
-            {
-                if (LastUpdated.AddSeconds(30) <= DateTime.Now) return new LineDTO[] { };
-
-                return _linesDictionary.Any()
-                    ? _linesDictionary.Where(item => item.Value.LineDtos != null && item.Value.LineDtos.Any()/* && item.Value.LastUpdated.AddSeconds(10) >= DateTime.Now*/).SelectMany(item => item.Value.LineDtos).ToArray()
-                    : _actualLines;
-            }
+            get => LastUpdated.AddSeconds(30) <= DateTime.Now ? new LineDTO[] { } : _actualLines;
             set => _actualLines = value;
         }
 
@@ -116,46 +107,5 @@ namespace Scanner
         }
     }
 
-    public class EventUpdateObject
-    {
-        public EventUpdateObject(Func<List<LineDTO>> updateAction/*, CancellationTokenSource tokenSource*/)
-        {
-            UpdateAction = updateAction;
 
-            //CancellationTokenSource = tokenSource;
-
-            //Task.Factory.StartNew(() =>
-            //{
-            //    while (!tokenSource.Token.IsCancellationRequested)
-            //    {
-                    try
-                    {
-                        var result = UpdateAction().Select(l => l.Clone()).ToList();
-
-                        LineDtos = result;
-
-                        //LastUpdated = DateTime.Now;
-                    }
-                    catch (WebException e)
-                    {
-                        //LogManager.GetCurrentClassLogger().Info("Dafabet EventUpdateObject WebException");
-                    }
-                    catch (Exception e)
-                    {
-                        //LogManager.GetCurrentClassLogger().Info("Dafabet EventUpdateObject otherexception" + e.Message + e.InnerException + e.StackTrace);
-                    }
-            //    }
-            //    var f = 9;
-            //}, tokenSource.Token);
-        }
-
-        public CancellationTokenSource CancellationTokenSource { get; set; }
-
-        public List<LineDTO> LineDtos { get; set; }
-
-        private Func<List<LineDTO>> UpdateAction { get; }
-
-        //public DateTime LastUpdated { get; set; }
-
-    }
 }

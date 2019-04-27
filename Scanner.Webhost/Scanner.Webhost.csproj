@@ -196,6 +196,10 @@
       <Project>{1f77ebb0-0cfe-4bb5-9ddd-1ff6fe4f021a}</Project>
       <Name>Leonbets</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Pinnacle\Pinnacle.csproj">
+      <Project>{86f1173d-4c52-4e2a-ad6c-5454dc81462b}</Project>
+      <Name>Pinnacle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>
       <Name>Scanner.Core</Name>
