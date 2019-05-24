@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text.RegularExpressions;
-using Bars.EAS.Utils;
 using Bars.EAS.Utils.Extension;
 using BM;
 using BM.Core;
 using BM.DTO;
 using Newtonsoft.Json;
 using NLog;
-using S888.Models;
 using S888.Models.Line;
 
 namespace S888
@@ -80,7 +76,6 @@ namespace S888
 
                     var line = copy.Clone();
 
-
                     switch (offer.betOfferType.englishName)
                     {
                         case "Match":
@@ -135,10 +130,13 @@ namespace S888
                                 offer.criterion.englishLabel == "Handicap - Period 3" ||
                                 offer.criterion.englishLabel == "Handicap - Regular Time")
                                 line.CoeffKind = "HANDICAP" + simpleMap[outcome.englishLabel];
-                            else if (Regex.IsMatch(offer.criterion.englishLabel, "Asian Handicap \\([0-9] - [0-9]\\)"))
-                            {
-                                line.CoeffKind = "HANDICAP" + simpleMap[outcome.englishLabel];
-                            }
+
+                            //TODO:разобраться как отделить азиатские гандикапы от обычных
+                            //https://www.888sport.com/en/getting-started/betting-rules/
+                            //else if (Regex.IsMatch(offer.criterion.englishLabel, "Asian Handicap \\([0-9] - [0-9]\\)"))
+                            //{
+                            //    line.CoeffKind = "HANDICAP" + simpleMap[outcome.englishLabel];
+                            //}
                             else
                             {
                                 continue;

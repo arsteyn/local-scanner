@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using NLog;
 
 namespace Scanner
@@ -72,6 +74,31 @@ namespace Scanner
                 ResponseCookies = response.Cookies;
                 CookieContainer.Add(ResponseCookies);
             }
+        }
+    }
+
+    public static class ClientExtension
+    {
+        /// <summary>
+        /// Constructs a QueryString (string).
+        /// Consider this method to be the opposite of "System.Web.HttpUtility.ParseQueryString"
+        /// </summary>
+        public static string ConstructQueryString(NameValueCollection parameters)
+        {
+            List<string> items = new List<string>();
+
+            foreach (string name in parameters)
+                items.Add(string.Concat(name, "=", System.Web.HttpUtility.UrlEncode(parameters[name])));
+
+            return string.Join("&", items.ToArray());
+        }
+    }
+
+    public static class StringExtension
+    {
+        public static string Strip(this string s)
+        {
+            return Regex.Replace(s, @"\t|\n|\r", "");
         }
     }
 

@@ -6,3 +6,4 @@ bin
 obj
 packages
 /Scanner.Webhost/*.txt
+/Scanner.Webhost/CheckedProxy

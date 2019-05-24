@@ -22,7 +22,7 @@ namespace S888
 
         public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
 
-        protected override LineDTO[] GetLiveLines()
+        protected override void UpdateLiveLines()
         {
             var lines = new List<LineDTO>();
 
@@ -39,42 +39,35 @@ namespace S888
 
                 var events = JsonConvert.DeserializeObject<EventResult>(response).Events.Where(e => e.Event.path.All(p => !ForbiddenTournaments.Any(t => p.englishName.ContainsIgnoreCase(t)))).ToList();
 
-                var tasks = new List<Task>();
-
-                tasks.AddRange(events
-                    .AsParallel()
-                    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                    .Select(ev =>
-                    Task.Factory.StartNew(state =>
+                Parallel.ForEach(events, @event =>
+                {
+                    var task = Task.Factory.StartNew(() =>
                     {
-                        var lns = ParseEvent(ev);
+                        try
+                        {
+                            var lns = ParseEvent(@event);
 
-                        lock (Lock) lines.AddRange(lns);
+                            lock (Lock) lines.AddRange(lns);
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Info($"ERROR S888 Parse event exception {e.Message} {e.StackTrace}");
+                        }
+                    });
 
-                    }, ev)));
+                    if (!task.Wait(10000)) Log.Info("S888 Task wait exception");
+                });
 
-                try
-                {
-                    Task.WaitAll(tasks.ToArray(), 10000);
-                }
-                catch (Exception e)
-                {
-                    Log.Info("S888 Task wait all exception, line count " + lines.Count);
-                    Console.WriteLine("S888 Task wait all exception, line count " + lines.Count);
-                }
+                ActualLines = lines.ToArray();
 
                 LastUpdatedDiff = DateTime.Now - LastUpdated;
 
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
-
-                return lines.ToArray();
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
             }
             catch (Exception e)
             {
                 Log.Info($"ERROR S888 {e.Message} {e.StackTrace}");
             }
-
-            return new LineDTO[] { };
         }
 
         private List<LineDTO> ParseEvent(EventSub @event)
@@ -88,6 +81,8 @@ namespace S888
                 var lineTemplate = converter.CreateLine(@event, Host, Name);
 
                 if (lineTemplate == null) return new List<LineDTO>();
+
+                if (!lineTemplate.SportKind.EqualsIgnoreCase("Football") && !lineTemplate.SportKind.EqualsIgnoreCase("Hockey")) return new List<LineDTO>();
 
                 var eventFull = ConverterHelper.GetFullLine(@event.Event.id, random, Host);
 

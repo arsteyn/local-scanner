@@ -28,7 +28,7 @@ namespace Favbet
         public override string Name => "Favbet";
 
         //public override string Host => "https://www.favbet.com/";
-        public override string Host => "https://www.favbet.ro/";
+        public override string Host => "https://www.favbet.biz/";
         public string DomainForCookie => ".favbet.ro";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();

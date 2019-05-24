@@ -79,19 +79,27 @@ namespace Pinnacle
 
                     Parallel.ForEach(result.Sport.Periods, period =>
                     {
-                        string response;
 
-                        var converter = new PinnacleLineConverter();
+                        try
+                        {
+                            string response;
 
-                        var random = ProxyList.PickRandom();
+                            var converter = new PinnacleLineConverter();
 
-                        var cookies = CookieDictionary[randomProxy].GetData();
+                            var random = ProxyList.PickRandom();
 
-                        using (var client = new GetWebClient(random, cookies)) response = client.DownloadString(BuildUrl(sport, period.Id, buySellLevels));
+                            var cookies = CookieDictionary[randomProxy].GetData();
 
-                        var l = converter.Convert(response, Name);
+                            using (var client = new GetWebClient(random, cookies)) response = client.DownloadString(BuildUrl(sport, period.Id, buySellLevels));
 
-                        lock (_lock) lines.AddRange(l);
+                            var l = converter.Convert(response, Name);
+
+                            lock (_lock) lines.AddRange(l);
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Info($"ERROR Pinnacle inner {e.Message} {e.StackTrace} {e.InnerException}");
+                        }
                     });
                 }
 
@@ -117,7 +125,7 @@ namespace Pinnacle
             }
             catch (Exception e)
             {
-                Log.Info($"ERROR Pinnacle {e.Message} {e.StackTrace}");
+                Log.Info($"ERROR Pinnacle {e.Message} {e.StackTrace} {e.InnerException}");
             }
         }
 

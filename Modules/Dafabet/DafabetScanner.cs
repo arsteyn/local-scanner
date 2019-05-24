@@ -53,7 +53,10 @@ namespace Dafabet
             //penalty
             "(PEN)",
             //extra time
-            "(ET)"
+            "(ET)",
+            "team",
+            "advance",
+            "round"
         };
 
         private const string BASE_URL = "https://ismart.dafabet.com/";
@@ -140,8 +143,6 @@ namespace Dafabet
                         lock (_lock) linesResult.AddRange(lns);
                     }
                 });
-
-                //Log.Info("Dafabet matchList count " + matchList.Count);
 
                 ActualLines = linesResult.ToArray();
 
@@ -288,7 +289,6 @@ namespace Dafabet
         {
             var st = new Stopwatch();
             st.Start();
-
 
             foreach (var account in _accounts)
             {
