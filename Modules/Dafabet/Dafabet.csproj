@@ -67,12 +67,8 @@
   <ItemGroup>
     <Compile Include="DafabetConverter.cs" />
     <Compile Include="DafabetScanner.cs" />
-    <Compile Include="Models\League.cs" />
     <Compile Include="Models\Match.cs" />
-    <Compile Include="Models\MatchDataResult.cs" />
-    <Compile Include="Models\MoreInfo.cs" />
     <Compile Include="Models\OddSet.cs" />
-    <Compile Include="Models\Select.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +80,18 @@
     <ProjectReference Include="..\..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186E5D35-C178-4800-8FFA-52638EDFBD22}</Project>
       <Name>Scanner.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SocketIOClient\EngineIoClientDotNet.net45\EngineIoClientDotNet.net45.csproj">
+      <Project>{842d8b13-daf3-4919-80a0-03efa3c17178}</Project>
+      <Name>EngineIoClientDotNet.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SocketIOClient\Quobject.Collections.Immutable\Quobject.Collections.Immutable.csproj">
+      <Project>{024A2111-4B19-44D7-917E-8514CF632469}</Project>
+      <Name>Quobject.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SocketIOClient\SocketIoClientDotNet.net45\SocketIoClientDotNet.net45.csproj">
+      <Project>{b4c79cee-4b09-428a-bfe9-b276df4f57fa}</Project>
+      <Name>SocketIoClientDotNet.net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

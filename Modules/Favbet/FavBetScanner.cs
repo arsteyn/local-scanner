@@ -102,8 +102,6 @@ namespace Favbet
                     if (!task.Wait(10000)) Log.Info("FavBet Task wait exception");
                 });
 
-                LastUpdatedDiff = DateTime.Now - LastUpdated;
-
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 ActualLines = lines.ToArray();

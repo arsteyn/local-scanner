@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using AngleSharp.Dom;
 using Bars.EAS.Utils.Extension;
+using Bet18.Models;
 using BM;
 using BM.Core;
 using BM.DTO;
-using Newtonsoft.Json;
 using NLog;
-using OpenQA.Selenium;
 using Scanner;
 
 namespace Bet18
@@ -39,192 +39,191 @@ namespace Bet18
             "throw",
             "over",
             "under",
+            "winner",
             //penalty
             "(PEN)",
             //extra time
             "(ET)"
         };
 
-        public LineDTO[] Convert(IElement value, string bookmakerName)
+        public LineDTO[] Convert(List<Event> value, string bookmakerName)
         {
             _lines = new List<LineDTO>();
 
             if (value == null) return new LineDTO[] { };
 
-            var sport = value.ClassName.Split(' ')[1].Split('-')[1];
-
-            var leagues = value.QuerySelectorAll(".league-container");
-
-            foreach (var league in leagues)
+            foreach (var @event in value)
             {
-                var leagueTitle = league.QuerySelector(".league-title").TextContent.Strip();
+                //футбол
+                if (@event.sport_id != 1 /*|| @event.sport_id != hockey*/) continue;
+                if (LeagueStopWords.Any(w => @event.league_title.ContainsIgnoreCase(w))) continue;
+                if (@event.is_hidden) continue;
+                if (@event.event_status != "running") continue;
 
-                if (LeagueStopWords.Any(sw => leagueTitle.ContainsIgnoreCase(sw))) continue;
-
-                var events = league.QuerySelectorAll("div.event.event-container.event-container");
-
-                foreach (var ev in events)
+                var lineTemplateDto = new LineDTO
                 {
-                    var teamHome = ev.QuerySelector("span[data-pca-autoupdate='home_team']").TextContent.Strip();
-                    var teamAway = ev.QuerySelector("span[data-pca-autoupdate='away_team']").TextContent.Strip();
-                    var score1span = ev.QuerySelector("span[data-pca-autoupdate='live_score_home']");
-                    var score2span = ev.QuerySelector("span[data-pca-autoupdate='live_score_away']");
+                    Team1 = @event.home_team,
+                    Team2 = @event.away_team,
+                    Score1 = @event.live_score_home,
+                    Score2 = @event.live_score_away,
+                    SportKind = Helper.ConvertSport(@event.sport_title),
+                    BookmakerName = bookmakerName,
+                    ObjectCreateDate = DateTime.Now
+                };
 
-                    if (score1span == null || score2span == null) continue;
-
-                    var lineTemplateDto = new LineDTO
-                    {
-                        Team1 = teamHome,
-                        Team2 = teamAway,
-                        Score1 = int.Parse(score1span.TextContent.Strip()),
-                        Score2 = int.Parse(score2span.TextContent.Strip()),
-                        SportKind = Helper.ConvertSport(sport),
-                        BookmakerName = bookmakerName,
-                        ObjectCreateDate = DateTime.Now
-                    };
-
-                    ConvertBasicAsianView(lineTemplateDto, ev);
-
-                }
-
+                ConvertMarkets(lineTemplateDto, @event);
             }
+
 
             return _lines.ToArray();
         }
 
-        private void ConvertBasicAsianView(LineDTO lineTemplateDto, IElement ev)
+        private void ConvertMarkets(LineDTO lineTemplateDto, Event ev)
         {
-            var mainMarkets = ev.QuerySelectorAll(".main-market-option");
-
-            foreach (var market in mainMarkets)
+            foreach (var evMarket in ev.markets)
             {
-                var columns = market.QuerySelectorAll(".market-item-column");
-
-                foreach (var column in columns)
+                try
                 {
-                    try
+                    var market = evMarket.Value;
+
+                    //2 corners
+                    //53 yc
+                    if (market.line_entity_id != 1) continue;
+                    if (market.is_hidden || market.is_suspended) continue;
+
+                    foreach (var marketOdd in market.odds)
                     {
-                        var oddHolders = column.QuerySelectorAll("span.odd-holder");
-                        var spread = column.QuerySelectorAll("i.spread").ToList();
-                        decimal? coeffparam = null;
+                        var odd = marketOdd.Value;
 
-                        int? spreadIndex = null;
+                        if (odd.o == null) continue;
 
-                        var paramExists = spread?.FirstOrDefault(s => s.TextContent.Length > 0);
+                        var line = lineTemplateDto.Clone();
+                        line.LineData = marketOdd.Key;
 
-                        if (paramExists != null)
+                        //TODO: разобрать периоды в хоккее
+                        switch (market.game_period_id)
                         {
-                            var split = paramExists.TextContent.Split('-');
-                            coeffparam = split.Length > 1
-                                ? (decimal.Parse(split[1], CultureInfo.InvariantCulture) + decimal.Parse(split[0], CultureInfo.InvariantCulture)) / 2
-                                : decimal.Parse(split[0], CultureInfo.InvariantCulture);
-
-                            spreadIndex = spread.IndexOf(paramExists);
-                        }
-
-
-                        foreach (var oddHolder in oddHolders)
-                        {
-                            var oddId = oddHolder.GetAttribute("id");
-
-                            if (!oddId.IsNotEmpty()) continue;
-
-                            var line = lineTemplateDto.Clone();
-
-
-                            var odd = oddHolder.QuerySelector(".odd").TextContent;
-
-                            if (string.IsNullOrEmpty(odd)) continue;
-
-                            line.CoeffValue = decimal.Parse(odd, CultureInfo.InvariantCulture);
-                            line.LineData = oddId;
-
-                            if (column.ClassName.Contains("column-fh"))
+                            case 1:
                                 line.CoeffType = "1st half";
-
-                            var type = oddHolder.GetAttribute("data-pca-autoupdate");
-                            switch (type)
-                            {
-                                //Full time handicap 
-                                case "home_1_1_2_2":
-                                case "home_2_1_2_2":
-                                case "home_3_1_2_2":
-
-                                    line.CoeffKind = "HANDICAP1";
-
-                                    //TODO: ПЕРЕПРОВЕРИТЬ!!!!!!
-                                    if (spreadIndex.HasValue)
-                                        line.CoeffParam = spreadIndex == 0 ? -1 * coeffparam : coeffparam;
-
-                                    AddLine(line);
-
-                                    break;
-                                case "away_1_1_2_2":
-                                case "away_2_1_2_2":
-                                case "away_3_1_2_2":
-
-                                    line.CoeffKind = "HANDICAP2";
-
-                                    if (spreadIndex.HasValue)
-                                        line.CoeffParam = spreadIndex != 0 ? -1 * coeffparam : coeffparam;
-
-                                    AddLine(line);
-
-                                    break;
-
-                                case "over_1_1_2_3":
-                                case "over_2_1_2_3":
-                                case "over_3_1_2_3":
-                                    line.CoeffKind = "TOTALOVER";
-
-                                    if (spreadIndex.HasValue)
-                                        line.CoeffParam = coeffparam;
-
-                                    AddLine(line);
-
-                                    break;
-
-                                case "under_1_1_2_3":
-                                case "under_2_1_2_3":
-                                case "under_3_1_2_3":
-                                    line.CoeffKind = "TOTALUNDER";
-
-                                    if (spreadIndex.HasValue)
-                                        line.CoeffParam = coeffparam;
-
-                                    AddLine(line);
-
-                                    break;
-
-                                case "home_1_1_2_1":
-                                    line.CoeffKind = "1";
-
-                                    AddLine(line);
-
-                                    break;
-                                case "away_1_1_2_1":
-                                    line.CoeffKind = "2";
-
-                                    AddLine(line);
-
-                                    break;
-                                case "draw_1_1_2_1":
-                                    line.CoeffKind = "X";
-
-                                    AddLine(line);
-
-                                    break;
-                            }
+                                break;
+                            //Full time
+                            case 2:
+                                break;
+                            case 3:
+                                line.CoeffType = "2nd half";
+                                break;
+                            default:
+                                continue;
                         }
 
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Info($"ERROR parse Bet18 {ex.Message} {ex.StackTrace}");
+                        switch (market.market_key)
+                        {
+                            case "x12":
+                                switch (odd.k)
+                                {
+                                    case "away":
+                                        line.CoeffKind = "2";
+                                        break;
+                                    case "home":
+                                        line.CoeffKind = "1";
+                                        break;
+                                    case "draw":
+                                        line.CoeffKind = "X";
+                                        break;
+                                }
+
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "euro_over_under":
+                            case "over_under":
+                                switch (odd.k)
+                                {
+                                    case "over":
+                                        line.CoeffKind = "TOTALOVER";
+                                        break;
+                                    case "under":
+                                        line.CoeffKind = "TOTALUNDER";
+                                        break;
+                                }
+                                line.CoeffParam = odd.es;
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "htt":
+                                switch (odd.k)
+                                {
+                                    case "home_over":
+                                        line.CoeffKind = "ITOTALOVER1";
+                                        break;
+                                    case "home_under":
+                                        line.CoeffKind = "ITOTALUNDER1";
+                                        break;
+                                }
+                                line.CoeffParam = odd.es;
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "att":
+                                switch (odd.k)
+                                {
+                                    case "away_over":
+                                        line.CoeffKind = "ITOTALOVER2";
+                                        break;
+                                    case "away_under":
+                                        line.CoeffKind = "ITOTALUNDER2";
+                                        break;
+                                }
+                                line.CoeffParam = odd.es;
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "handicap":
+                                switch (odd.k)
+                                {
+                                    case "home":
+                                        line.CoeffKind = "HANDICAP1";
+                                        break;
+                                    case "away":
+                                        line.CoeffKind = "HANDICAP2";
+                                        break;
+                                }
+                                line.CoeffParam = odd.es;
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "double_chance":
+                                line.CoeffKind = odd.k.ToUpper();
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "odd_even":
+                                line.CoeffKind = odd.k.ToUpper();
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                            case "draw_no_bet":
+                                switch (odd.k)
+                                {
+                                    case "home":
+                                        line.CoeffKind = "W1";
+                                        break;
+                                    case "away":
+                                        line.CoeffKind = "W2";
+                                        break;
+                                }
+                                line.CoeffValue = odd.o.Value;
+                                AddLine(line);
+                                break;
+                        }
+
                     }
                 }
+                catch (Exception ex)
+                {
+                    Log.Info($"ERROR parse event Bet18 {ex.Message} {ex.StackTrace}");
+                }
             }
-
         }
 
 

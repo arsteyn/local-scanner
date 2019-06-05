@@ -48,11 +48,20 @@ namespace Scanner
             }
         }
 
+        public virtual void ConvertSocketData()
+        {
+            while (true)
+            {
+                UpdateLiveLines();
+
+                LastUpdated = DateTime.Now;
+            }
+        }
 
 
         protected DateTime LastUpdated { get; set; }
 
-        protected TimeSpan LastUpdatedDiff { get; set; }
+        protected TimeSpan LastUpdatedDiff => DateTime.Now - LastUpdated;
 
         private LineDTO[] _actualLines;
 
@@ -67,7 +76,7 @@ namespace Scanner
 
         public abstract string Name { get; }
 
-        public abstract string Host { get; }
+        public abstract string Host { get;}
 
         protected virtual string Domain => new Uri(Host).Host;
 

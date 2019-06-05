@@ -109,7 +109,7 @@ namespace BetFair
                 var coeffType = GetCoeffType(new GetCoeffKindParams(runner, marketCatalogue, runner.Handicap));
 
                 //берем меньший кэф
-                var price = runner.ExchangePrices.AvailableToBack.OrderBy(x => x.Price).FirstOrDefault(x => x.Size > 100.0);
+                var price = runner.ExchangePrices.AvailableToBack.OrderBy(x => x.Price).FirstOrDefault(x => x.Size > 200.0);
 
                 if (price != null)
                 {

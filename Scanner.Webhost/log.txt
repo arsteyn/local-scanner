@@ -1,20 +1,18 @@
-2019-05-24 19:22:37.4981|INFO|Scanner.ScannerBase|Bet188 Other 0:00:10,0104274
-2019-05-24 19:22:37.5041|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         84 | Time      00:11
-2019-05-24 19:22:39.6561|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:02,1497306
-2019-05-24 19:22:45.2473|INFO|Scanner.ScannerBase|Bet188 Other 0:00:05,5894206
-2019-05-24 19:22:45.2473|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         87 | Time      00:07
-2019-05-24 19:22:48.7176|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:03,4666275
-2019-05-24 19:22:53.9349|INFO|Scanner.ScannerBase|Bet188 Other 0:00:05,2148781
-2019-05-24 19:22:53.9349|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         87 | Time      00:08
-2019-05-24 19:22:55.7842|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:01,8483304
-2019-05-24 19:23:05.7894|INFO|Scanner.ScannerBase|Bet188 Other 0:00:10,0038403
-2019-05-24 19:23:05.8073|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         81 | Time      00:11
-2019-05-24 19:23:08.1261|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:02,3145688
-2019-05-24 19:23:14.6285|INFO|Scanner.ScannerBase|Bet188 Other 0:00:06,4991395
-2019-05-24 19:23:14.6285|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         87 | Time      00:08
-2019-05-24 19:23:16.9123|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:02,2763815
-2019-05-24 19:23:21.0881|INFO|Scanner.ScannerBase|Bet188 Other 0:00:04,1749695
-2019-05-24 19:23:21.0881|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         87 | Time      00:06
-2019-05-24 19:23:23.0046|INFO|Scanner.ScannerBase|Bet188 Firstquery 0:00:01,9079652
-2019-05-24 19:23:26.6693|INFO|Scanner.ScannerBase|Bet188 Other 0:00:03,6635486
-2019-05-24 19:23:26.6693|INFO|Scanner.ConsoleExt||       Bet188| P     8 | Lines         87 | Time      00:05
+2019-06-05 17:24:32.9984|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      24:32
+2019-06-05 17:24:34.6166|INFO|Scanner.ScannerBase|ERROR  Dafabet EVENT_DISCONNECT ["io server disconnect"]
+2019-06-05 17:24:36.0645|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:39.0674|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:40.6362|INFO|Scanner.ScannerBase|ERROR  Dafabet EVENT_DISCONNECT ["io server disconnect"]
+2019-06-05 17:24:42.0684|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:45.0704|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:46.5754|INFO|Scanner.ScannerBase|ERROR  Dafabet EVENT_DISCONNECT ["io server disconnect"]
+2019-06-05 17:24:48.0724|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:51.0740|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:52.4180|INFO|Scanner.ScannerBase|ERROR  Dafabet EVENT_DISCONNECT ["io server disconnect"]
+2019-06-05 17:24:54.0754|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:57.0774|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:24:58.3799|INFO|Scanner.ScannerBase|Dafabet EVENT_CONNECT
+2019-06-05 17:25:00.0793|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines          0 | Time      00:00
+2019-06-05 17:25:03.0823|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines        131 | Time      00:00
+2019-06-05 17:25:06.0843|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines        131 | Time      00:00
+2019-06-05 17:25:09.0873|INFO|Scanner.ConsoleExt||      Dafabet| P     0 | Lines        131 | Time      00:00

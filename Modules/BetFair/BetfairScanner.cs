@@ -43,8 +43,6 @@ namespace BetFair
                     Log.Info("BF Parse event exception " + e.InnerException);
                 }
 
-                LastUpdatedDiff = DateTime.Now - LastUpdated;
-
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
 
                 ActualLines = lines.ToArray();

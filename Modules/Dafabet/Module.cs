@@ -13,7 +13,7 @@ namespace Dafabet
         public void Init()
         {
             Scanner = new DafabetScanner();
-            new Thread(Scanner.StartScan).Start();
+            new Thread(Scanner.ConvertSocketData).Start();
         }
 
         public LineDTO[] GetLines()

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bars.EAS.Utils.Extension;
 using BM;
 using BM.Core;
 using BM.DTO;
 using Dafabet.Models;
-using Newtonsoft.Json;
-using Scanner.Helper;
 
 namespace Dafabet
 {
@@ -14,69 +11,348 @@ namespace Dafabet
     {
         private List<LineDTO> _lines;
 
-        public LineDTO[] Convert(MatchDataResult data, string bookmakerName)
+        private string GetSportnameFromType(int type)
+        {
+            switch (type)
+            {
+                case 1:
+                    return "Soccer";
+            }
+
+            return string.Empty;
+        }
+
+        public LineDTO[] Convert(List<Match> matches, string bookmakerName)
         {
             _lines = new List<LineDTO>();
 
-            //var data = JsonConvert.DeserializeObject<MatchDataResult>(response);
-
-            foreach (var league in data.leagues)
+            foreach (var match in matches)
             {
-                foreach (var match in league.matches)
+                if (match.eventstatus != "running") continue;
+
+                var lineTemplate = new LineDTO();
+
+                lineTemplate.SportKind = Helper.ConvertSport(GetSportnameFromType(match.sporttype));
+                lineTemplate.BookmakerName = bookmakerName;
+
+                lineTemplate.Team1 = match.hteamnameen;
+                lineTemplate.Team2 = match.ateamnameen;
+
+                lineTemplate.Score1 = match.livehomescore;
+                lineTemplate.Score2 = match.liveawayscore;
+
+                foreach (var oddSet in match.oddset.Values)
                 {
-                    var lineTemplate = new LineDTO();
+                    if (oddSet.oddsstatus != "running") continue;
 
-                    lineTemplate.SportKind = Helper.ConvertSport(league.SportName);
-                    lineTemplate.BookmakerName = bookmakerName;
+                    lineTemplate.CoeffType = GetCoeffType(oddSet.bettype);
 
-                    lineTemplate.Team1 = match.HomeName;
-                    lineTemplate.Team2 = match.AwayName;
+                    LineDTO line;
 
-                    lineTemplate.Score1 = match.MoreInfo.ScoreH;
-                    lineTemplate.Score2 = match.MoreInfo.ScoreA;
-
-                    foreach (var oddSet in match.oddset)
+                    switch (oddSet.bettype)
                     {
-                        var lineTemplate2 = lineTemplate.Clone();
+                        #region Handicap
 
-                        lineTemplate2.CoeffType = GetCoeffType(oddSet.Bettype);
+                        //HANDICAP
+                        case 1:
+                        //1H HANDICAP
+                        case 7:
+                        //2H Handicap //TODO:проверить параметры
+                        case 17:
+                        case 183:
 
-                        foreach (var setSel in oddSet.sels)
-                        {
-                            var lineTemplate3 = lineTemplate2.Clone();
+                            line = lineTemplate.Clone();
 
-                            var coeffKind = GetCoeffKind(oddSet.Bettype, setSel.Key, out var hasParam);
+                            var point = oddSet.hdp1 != 0m ? oddSet.hdp1 : -1m * oddSet.hdp2;
 
-                            //ProxyHelper.UpdateDafabetEvents($"SportName {league.SportName} | SportType {league.SportType} | Bettype {oddSet.Bettype} | OddsId {oddSet.OddsId} | Key Point Price {setSel.Key} {setSel.Point} {setSel.Price}");
+                            line.CoeffKind = "HANDICAP1";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds1a);
+                            line.CoeffParam = -1 * point;
+                            line.LineObject = $"{oddSet.oddsid}|h|{oddSet.bettype}|{oddSet.odds1a}";
 
-                            if (coeffKind.IsEmpty()) continue;
+                            AddLine(line.Clone());
 
-                            lineTemplate3.CoeffKind = coeffKind;
 
-                            if (hasParam) lineTemplate3.CoeffParam = coeffKind == "HANDICAP1" ? -1 * setSel.Point : setSel.Point;
+                            line = lineTemplate.Clone();
 
-                            decimal price;
+                            line.CoeffKind = "HANDICAP2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds2a);
+                            line.CoeffParam = point;
+                            line.LineObject = $"{oddSet.oddsid}|a|{oddSet.bettype}|{oddSet.odds2a}";
 
-                            if (setSel.Price > 0 && setSel.Price <= 1)
-                                price = setSel.Price + 1m;
-                            else if (setSel.Price >= -1 && setSel.Price < 0)
-                                price = -1m / setSel.Price + 1m;
-                            else
-                                price = /*-1m**/ setSel.Price;
+                            AddLine(line.Clone());
 
-                            lineTemplate3.CoeffValue = decimal.Round(price, 2, MidpointRounding.AwayFromZero);
+                            continue;
+                      
+                            
 
-                            lineTemplate3.LineObject = $"{oddSet.OddsId}|{setSel.Key}|{oddSet.Bettype}|{setSel.Price}";
+                        #endregion
 
-                            lineTemplate3.UpdateName();
+                        //TODO
+                        #region Individual Over/Under
 
-                            AddLine(lineTemplate3);
-                        }
+                        //Home Team Over/Under
+                        case 401:
+                        case 461:
+                        //Away Team Over/Under
+                        case 402:
+                        case 462:
+                        //1H Home Team Over/Under
+                        case 403:
+                        case 463:
+                        //1H Away Team Over/Under
+                        case 464:
+
+                            //TODO
+
+                            continue;
+
+                        #endregion
+
+                        #region Over/Under
+
+                        //FT OVER/UNDER
+                        case 3:
+                        //1H OVER/UNDER
+                        case 8:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "TOTALOVER";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds1a);
+                            line.CoeffParam = oddSet.hdp1;
+                            line.LineObject = $"{oddSet.oddsid}|h|{oddSet.bettype}|{oddSet.odds1a}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "TOTALUNDER";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds2a);
+                            line.CoeffParam = oddSet.hdp1;
+                            line.LineObject = $"{oddSet.oddsid}|a|{oddSet.bettype}|{oddSet.odds2a}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+                        //2H OVER/UNDER
+                        case 18:
+                        case 178:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "TOTALOVER";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds1a);
+                            line.CoeffParam = oddSet.hdp1;
+                            line.LineObject = $"{oddSet.oddsid}|o|{oddSet.bettype}|{oddSet.odds1a}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "TOTALUNDER";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds2a);
+                            line.CoeffParam = oddSet.hdp1;
+                            line.LineObject = $"{oddSet.oddsid}|u|{oddSet.bettype}|{oddSet.odds2a}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+
+                        #endregion
+
+                        #region 1X2
+
+                        //1X2
+                        case 5:
+                        //1H 1X2
+                        case 15:
+                        //2H 1X2
+                        case 430:
+                        case 177:
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "1";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.com1);
+                            line.LineObject = $"{oddSet.oddsid}|1|{oddSet.bettype}|{oddSet.com1}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "X";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.comx);
+                            line.LineObject = $"{oddSet.oddsid}|x|{oddSet.bettype}|{oddSet.comx}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.com2);
+                            line.LineObject = $"{oddSet.oddsid}|2|{oddSet.bettype}|{oddSet.com2}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+
+                        #endregion
+
+                        #region Draw No Bet
+
+                        //Draw no bet
+                        case 25:
+                        //1H Draw No Bet
+                        case 411:
+                        //2H Draw No Bet
+                        case 432:
+                        case 185:
+                        case 191:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "W1";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds1a);
+                            line.LineObject = $"{oddSet.oddsid}|h|{oddSet.bettype}|{oddSet.odds1a}";
+
+                            line.UpdateName();
+
+                            AddLine(line.Clone());
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "W2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.odds2a);
+                            line.LineObject = $"{oddSet.oddsid}|a|{oddSet.bettype}|{oddSet.odds2a}";
+
+                            line.UpdateName();
+
+                            AddLine(line.Clone());
+
+                            continue;
+
+                        #endregion
+
+                        #region Double chance
+
+                        //Double chance
+                        case 24:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "1X";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.com1);
+                            line.LineObject = $"{oddSet.oddsid}|1x|{oddSet.bettype}|{oddSet.com1}";
+
+                            line.UpdateName();
+
+                            AddLine(line.Clone());
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "12";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.comx);
+                            line.LineObject = $"{oddSet.oddsid}|12|{oddSet.bettype}|{oddSet.comx}";
+
+                            line.UpdateName();
+
+                            AddLine(line.Clone());
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "X2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.com2);
+                            line.LineObject = $"{oddSet.oddsid}|2x|{oddSet.bettype}|{oddSet.com2}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+                        //1H Double chance
+                        case 410:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "1X";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs10);
+                            line.LineObject = $"{oddSet.oddsid}|1x|{oddSet.bettype}|{oddSet.cs10}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "X2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs20);
+                            line.LineObject = $"{oddSet.oddsid}|2x|{oddSet.bettype}|{oddSet.cs20}";
+
+                            AddLine(line.Clone());
+
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "12";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs00);
+                            line.LineObject = $"{oddSet.oddsid}|12|{oddSet.bettype}|{oddSet.cs00}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+                        //2H Double chance
+                        case 186:
+                        case 431:
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "1X";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs10);
+                            line.LineObject = $"{oddSet.oddsid}|hd|{oddSet.bettype}|{oddSet.cs10}";
+
+                            AddLine(line.Clone());
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "X2";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs00);
+                            line.LineObject = $"{oddSet.oddsid}|da|{oddSet.bettype}|{oddSet.cs00}";
+
+                            AddLine(line.Clone());
+
+                            line = lineTemplate.Clone();
+
+                            line.CoeffKind = "12";
+                            line.CoeffValue = ConvertToDecimalOdds(oddSet.cs20);
+                            line.LineObject = $"{oddSet.oddsid}|ha|{oddSet.bettype}|{oddSet.cs20}";
+
+                            AddLine(line.Clone());
+
+                            continue;
+
+                        #endregion
                     }
+
                 }
             }
 
+
             return _lines.ToArray();
+        }
+
+        private decimal ConvertToDecimalOdds(decimal my)
+        {
+            decimal price;
+
+            if (my > 0 && my <= 1)
+                price = my + 1m;
+            else if (my >= -1 && my < 0)
+                price = -1m / my + 1m;
+            else
+                price = my;
+
+            return decimal.Round(price, 2, MidpointRounding.AwayFromZero); ;
         }
 
         private string GetCoeffType(int betType)
@@ -87,90 +363,25 @@ namespace Dafabet
                 case 8:
                 case 12:
                 case 15:
+                case 191:
                 case 410:
+                case 411:
                     return "1st half";
-                case 431:
+                case 17:
+                case 18:
+                case 177:
+                case 178:
+                case 183:
+                case 185:
+                case 186:
                 case 428:
+                case 430:
+                case 431:
+                case 432:
                     return "2nd half";
                 default:
                     return null;
             }
-        }
-
-        private static string GetCoeffKind(int betType, string betteam, out bool hasParam)
-        {
-            string result;
-
-            hasParam = true;
-
-            switch (betType)
-            {
-                //HANDICAP
-                case 1:
-                //1H HANDICAP
-                case 7:
-
-                    result = "HANDICAP";
-
-                    if (betteam == "h")
-                        result += "1";
-                    else if (betteam == "a")
-                        result += "2";
-                    else
-                        return string.Empty;
-
-                    return result;
-
-
-                //OVER/UNDER
-                case 3:
-                //1H OVER/UNDER
-                case 8:
-                    result = "TOTAL";
-
-                    if (betteam == "h")
-                        result += "OVER";
-                    else if (betteam == "a")
-                        result += "UNDER";
-                    else
-                        return string.Empty;
-
-                    return result;
-
-                //1X2
-                case 5:
-                //1H 1X2
-                case 15:
-
-                //1H Double chance
-                case 410:
-                //2H Double chance
-                case 431:
-                //Double chance
-                case 24:
-
-                    switch (betteam)
-                    {
-                        case "hd":
-                            result = "1x";
-                            break;
-                        case "ha":
-                            result = "12";
-                            break;
-                        case "da":
-                            result = "x2";
-                            break;
-                        default:
-                            result = betteam;
-                            break;
-                    }
-
-                    hasParam = false;
-
-                    return result;
-            }
-
-            return string.Empty;
         }
 
         private void AddLine(LineDTO lineDto)

@@ -1,5 +1,8 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using BM.DTO;
+using Newtonsoft.Json;
+using NLog;
 using Scanner.Interface;
 
 namespace Bet18
@@ -12,8 +15,17 @@ namespace Bet18
 
         public void Init()
         {
-            Scanner = new Bet18Scanner();
-            new Thread(Scanner.StartScan).Start();
+            try
+            {
+                Scanner = new Bet18Scanner();
+            
+
+                new Thread(Scanner.ConvertSocketData).Start();
+            }
+            catch (Exception e)
+            {
+                LogManager.GetCurrentClassLogger().Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+            }
         }
 
         public LineDTO[] GetLines()

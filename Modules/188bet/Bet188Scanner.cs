@@ -133,8 +133,6 @@ namespace Bet188
 
                 ActualLines = lines.ToArray();
 
-                LastUpdatedDiff = DateTime.Now - LastUpdated;
-
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
             }
             catch (Exception e)

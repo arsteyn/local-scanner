@@ -1,161 +1,408 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
-using System.Threading.Tasks;
-using AngleSharp.Parser.Html;
+using Bars.EAS.Utils.Extension;
+using Bet18.Models;
+using BM;
 using BM.DTO;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Quobject.Collections.Immutable;
+using Quobject.EngineIoClientDotNet.Client.Transports;
+using Quobject.SocketIoClientDotNet.Client;
 using Scanner;
 
 namespace Bet18
 {
-    public class Bet18Scanner : ScannerBase, IDisposable
+    public class Bet18Scanner : ScannerBase
     {
-        readonly object _lock = new object();
+        readonly object _sync = new object();
+
+        private Socket _socket;
+        private readonly Dictionary<string, string> _rooms;
+
+        private readonly ConcurrentDictionary<long, Event> _events;
+
 
         public override string Name => "Bet18";
 
-        public sealed override string Host => "https://www.18bet.com/";
-
-        private readonly ChromeDriver _driver;
+        public sealed override string Host => "https://stream.89pin.net:3001";
 
         public Bet18Scanner()
         {
-            var chromeOptions = new ChromeOptions();
-            var chromeDriverService = ChromeDriverService.CreateDefaultService();
+            _rooms = new Dictionary<string, string>();
+            _events = new ConcurrentDictionary<long, Event>();
+            _subscribedMarkets = new List<string>();
 
-            //Create a new proxy object
-            var proxy = new Proxy();
-            proxy.Kind = ProxyKind.Manual;
-            proxy.IsAutoDetect = false;
-            //Set the http proxy value, host and port.
-            proxy.HttpProxy = proxy.SslProxy = "196.18.167.228:8000";
-            //Set the proxy to the Chrome options
-            chromeOptions.Proxy = proxy;
+            InitConnection();
 
-            chromeOptions.AddArgument("ignore-certificate-errors");
-
-            //TODO: при каждом перезапуске создается фоновый процесс!!!!!!
-            chromeOptions.AddArguments(new List<string>
+            var tm = new TimerCallback(a =>
             {
-                    "--silent-launch",
-                    "--no-startup-window",
-                    "no-sandbox",
-                    "headless"
+                GetToken();
+
+                _socket.Emit("refresh", _token);
+
+                Log.Info($"Bet18 refresh token {_token} {_exp}");
+
             });
 
-            _driver = new ChromeDriver(chromeDriverService, chromeOptions, TimeSpan.FromSeconds(180));
+            _refreshTokenTimer = new Timer(tm, null, _exp * 1000, _exp * 1000);
 
-            _driver.Navigate().GoToUrl(Host + "en/sport/live");
+            var tm2 = new TimerCallback(state => SubscribeAllMarkets());
 
-            new Thread(AdditionalOutcomeButtonClicker).Start();
-
+            _subscribeAllMarketsTimer = new Timer(tm2, null, 10 * 1000, 10 * 1000);
         }
 
-        private void AdditionalOutcomeButtonClicker()
+        Timer _refreshTokenTimer;
+        Timer _subscribeAllMarketsTimer;
+        List<string> _subscribedMarkets;
+        private string _token;
+        private int _exp;
+
+        private void InitConnection()
         {
-            while (true)
-            {
-                try
-                {
-                    var leagues = _driver.FindElementsByClassName("league-container");
-
-                    foreach (var league in leagues)
-                    {
-                        var inner = league.FindElement(By.CssSelector("div.league-content.collapse"));
-
-                        if (inner != null && !inner.GetAttribute("class").Contains("show"))
-                        {
-                            ScrollElementToBecomeVisible(_driver, league);
-                            league.Click();
-                        }
-
-
-                        //var events = league.FindElements(By.CssSelector("div.event.event-container.event-container"));
-                        //if (events == null) continue;
-
-                        //foreach (var @event in events)
-                        //{
-                        //    var marketCounter = @event.FindElement(By.CssSelector("div.market-counter"));
-                        //    var detailWrapper = @event.FindElement(By.CssSelector("div.event-all-markets-wrapper"));
-
-                        //    if (marketCounter == null || detailWrapper == null || detailWrapper.GetAttribute("class").Contains("visible")) continue;
-
-                        //    ScrollElementToBecomeVisible(_driver, marketCounter);
-                        //    marketCounter.Click();
-                        //}
-                    }
-
-
-                }
-                catch (Exception exception) { }
-            }
-        }
-
-        public static void ScrollElementToBecomeVisible(IWebDriver driver, IWebElement element)
-        {
-            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
-            jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", element);
-        }
-
-        ~Bet18Scanner()
-        {
-            Dispose(false);
-        }
-
-        protected override void UpdateLiveLines()
-        {
-            var lines = new List<LineDTO>();
-
             try
             {
-                var pageSource = _driver.PageSource;
+                GetToken();
 
-                var htmlParser = new HtmlParser();
-
-                var document = htmlParser.Parse(pageSource);
-
-                var sportContainers = document.QuerySelectorAll("div.game-mode-container.mode-live>.game-mode-content>.sport-container");
-
-                foreach (var sportContainer in sportContainers)
+                var options = new IO.Options
                 {
-                    var converter = new Bet18LineConverter();
+                    QueryString = $"token={_token}",
+                    AutoConnect = true,
+                    ForceNew = true,
+                    Reconnection = true,
+                    ReconnectionDelay = 1000,
+                    ReconnectionDelayMax = 5000,
+                    ReconnectionAttempts = int.MaxValue,
+                    Transports = ImmutableList<string>.Empty/*.Add(Polling.NAME)*/.Add(WebSocket.NAME)
+                };
 
-                    var l = converter.Convert(sportContainer, Name);
+                _socket = IO.Socket(Host, options);
 
-                    lock (_lock) lines.AddRange(l);
-                }
-
-                LastUpdatedDiff = DateTime.Now - LastUpdated;
-
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
-
-                ActualLines = lines.ToArray();
+                SubscribeOnEvents();
             }
             catch (Exception e)
             {
-                Log.Info($"ERROR Bet18 {e.Message} {e.StackTrace}");
+                Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+            }
+        }
+
+        private void GetToken()
+        {
+            try
+            {
+                using (var wc = new WebClient())
+                {
+                    wc.Headers["x-requested-with"] = "XMLHttpRequest";
+
+                    var a = wc.UploadString("https://www.18bet.co/en/auth/operation/getOddsToken", "system_data%5Bcurrent_url%5D=https%3A%2F%2Fwww.18bet.co%2Fen%2Fsport%2Flive&method=getLcToken");
+
+                    _token = JsonConvert.DeserializeObject<dynamic>(a).token;
+
+                    _exp = JsonConvert.DeserializeObject<dynamic>(a).exp;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+            }
+        }
+
+        private void SubscribeOnEvents()
+        {
+            _socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                try
+                {
+                    Log.Info($"Bet18 EVENT_CONNECT");
+
+                    if (_rooms.ContainsKey("updateOdds")) return;
+
+                    //Log.Info($"Bet18 updateOdds");
+
+                    dynamic obj = new JObject();
+
+                    obj.event_state = "live";
+                    obj.index = 3;
+                    obj.init = 1;
+                    obj.is_main_gp = 1;
+                    obj.is_main_mt = 1;
+                    obj.locale = "en_EN";
+                    obj.odds_format = "decimal";
+                    obj.type = "odds";
+
+                    _socket.Emit("subscribe", obj, "updateOdds");
+
+                    //_rooms.Add("updateOdds", string.Empty);
+                }
+                catch (Exception e)
+                {
+                    Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+                }
+            });
+
+            _socket.On("room", o =>
+            {
+                try
+                {
+                    //Log.Info($"Bet18 room");
+
+                    var r = o as object[];
+                    var roomId = r[0].ToString();
+                    var roomName = r[1].ToString();
+
+                    if (_rooms.ContainsKey(roomName))
+                        _rooms[roomName] = roomId;
+                    else
+                        _rooms.Add(roomName, roomId);
+                }
+                catch (Exception e)
+                {
+                    Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+                }
+            });
+
+            _socket.On("initial", o =>
+            {
+                //Log.Info($"Bet18 initial");
+
+                lock (_sync) ConvertData(o);
+
+            });
+
+            _socket.On("changes", o =>
+            {
+                lock (_sync) ConvertData(o);
+            });
+
+            _socket.On("initial_chunk", o =>
+            {
+                //Log.Info($"Bet18 initial_chunk");
+
+                lock (_sync) ConvertData(o);
+            });
+
+            _socket.On("initial_chunk_end", (data) =>
+            {
+                //Log.Info($"Bet18 initial_chunk_end");
+            });
+
+
+            _socket.On(Socket.EVENT_DISCONNECT, (data) =>
+            {
+
+                try
+                {
+                    lock (_sync) _rooms.Clear();
+                    lock (_sync) _events.Clear();
+                    lock (_sync) _subscribedMarkets.Clear();
+
+                    _socket.Off();
+                    _socket.Close();
+
+                    Log.Info($"ERROR Bet18 EVENT_DISCONNECT {JsonConvert.SerializeObject(data)}");
+                    InitConnection();
+                }
+                catch (Exception e)
+                {
+                    Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+                }
+
+
+            });
+
+            _socket.On(Socket.EVENT_RECONNECT, (attemptNumber) =>
+            {
+                Log.Info($"ERROR Bet18 EVENT_RECONNECT {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+
+            _socket.On(Socket.EVENT_RECONNECTING, (attemptNumber) =>
+            {
+                Log.Info($"ERROR Bet18 EVENT_RECONNECTING {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+
+            _socket.On(Socket.EVENT_RECONNECT_ATTEMPT, (attemptNumber) =>
+            {
+                Log.Info($"ERROR Bet18 EVENT_RECONNECT_ATTEMPT {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+
+            _socket.On(Socket.EVENT_ERROR, (data) =>
+            {
+                Log.Info($"ERROR Bet18 EVENT_ERROR {JsonConvert.SerializeObject(data)}");
+            });
+        }
+
+        private void SubscribeAllMarkets()
+        {
+            var eventsList = _events.Values.Select(e => e.event_id.ToString()).ToList();
+
+            if (eventsList.All(evId => _subscribedMarkets.Contains(evId))) return;
+
+            if (_rooms.ContainsKey("getEventMarkets"))
+            {
+                _socket.Emit("unsubscribe", _rooms["getEventMarkets"]);
+                _rooms.Remove("getEventMarkets");
             }
 
 
+            dynamic obj = new JObject();
+
+            obj.event_id = JToken.FromObject(eventsList);
+            obj.init = 1;
+            obj.locale = "en_EN";
+            obj.odds_format = "decimal";
+            obj.type = "odds";
+
+            _socket.Emit("subscribe", obj, "getEventMarkets");
+
+            //Log.Info($"Bet18 SubscribeAllMarkets");
+
+            _subscribedMarkets = eventsList;
         }
 
-        private void ReleaseUnmanagedResources() { }
-
-        private void Dispose(bool disposing)
+        private void ConvertData(object data)
         {
-            ReleaseUnmanagedResources();
+            try
+            {
+                var r = data as object[];
+                var e = r[1] as JArray;
 
-            _driver?.Close();
-            _driver?.Quit();
+                foreach (var obj in e)
+                {
+                    var type = obj[0].ToObject<string>();
+
+                    //event
+                    switch (type)
+                    {
+                        //new event
+                        case "i":
+                            {
+                                var id = obj[1].ToObject<long>();
+                                var ev = obj[2].ToObject<Event>();
+
+                                _events.GetOrAdd(id, ev);
+
+                                break;
+                            }
+                        //remove event
+                        case "r":
+                            var eventId = obj[1].ToObject<long>();
+
+                            _events.TryRemove(eventId, out var _);
+
+                            break;
+                        case "im":
+                            {
+                                var id = obj[1].ToObject<long>();
+                                var market = obj[2].ToObject<Market>();
+
+                                _events.TryGetValue(market.event_id, out var @event);
+
+                                if (@event == null) continue;
+
+                                if (!@event.markets.ContainsKey(id))
+                                    @event.markets.Add(id, market);
+                                else
+                                    @event.markets[id] = market;
+                                break;
+                            }
+                        case "u":
+                            {
+                                var evId = obj[1].ToObject<long>();
+                                var eventToUpdate = obj[2].ToObject<EventUpdate>();
+
+                                _events.TryGetValue(evId, out var @event);
+
+                                if (@event == null) continue;
+
+                                @event.all_markets = eventToUpdate.all_markets ?? @event.all_markets;
+                                @event.live_score_home = eventToUpdate.live_score_home ?? @event.live_score_home;
+                                @event.live_score_away = eventToUpdate.live_score_away ?? @event.live_score_away;
+                                @event.is_hidden = eventToUpdate.is_hidden ?? @event.is_hidden;
+                                @event.event_status = eventToUpdate.event_status != null && eventToUpdate.event_status.IsNotEmpty() ? eventToUpdate.event_status : @event.event_status;
+                                break;
+                            }
+                        case "rm":
+                            {
+                                var marketId = obj[1].ToObject<long>();
+                                var evId = obj[2].ToObject<long>();
+
+                                _events.TryGetValue(evId, out var @event);
+
+                                if (@event?.markets.ContainsKey(marketId) == true)
+                                    @event.markets.Remove(marketId);
+
+                                break;
+                            }
+                        case "um":
+                            {
+                                var marketId = obj[1].ToObject<long>();
+                                var marketToUpdate = obj[2].ToObject<MarketUpdate>();
+
+                                _events.TryGetValue(marketToUpdate.event_id, out var @event);
+
+                                Market market = null;
+
+                                @event?.markets.TryGetValue(marketId, out market);
+
+                                if (market == null) continue;
+
+                                market.is_hidden = marketToUpdate.is_hidden ?? market.is_hidden;
+                                market.is_suspended = marketToUpdate.is_suspended ?? market.is_suspended;
+
+                                foreach (var odd in marketToUpdate.odds)
+                                {
+                                    if (market.odds.ContainsKey(odd.Key))
+                                        market.odds[odd.Key] = odd.Value;
+                                    else
+                                        market.odds.Add(odd.Key, odd.Value);
+                                }
+                                break;
+                            }
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+            }
         }
 
-        public void Dispose()
+        private DateTime? _showLog;
+
+        protected override void UpdateLiveLines()
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            try
+            {
+                var scanner = new Bet18LineConverter();
+
+                string serializedString;
+
+                lock (_sync) serializedString = JsonConvert.SerializeObject(_events.Values);
+
+                var copy = JsonConvert.DeserializeObject<List<Event>>(serializedString);
+
+                var lines = scanner.Convert(copy, Name);
+
+                if (_showLog == null || (DateTime.Now - _showLog).Value.Seconds > 1)
+                {
+                    ConsoleExt.ConsoleWrite(Name, 0, lines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                    _showLog = DateTime.Now;
+                }
+
+                ActualLines = lines.ToArray();
+
+            }
+            catch (Exception e)
+            {
+                Log.Info($"ERROR {Name} {e.Message} {e.StackTrace}");
+            }
         }
+
     }
+
 }

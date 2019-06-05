@@ -139,9 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckedProxy\Favbet.txt" />
-    <Content Include="chromedriver.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Proxy\ip.txt" />
     <Content Include="Web.config">
@@ -167,9 +164,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="kill_chromedriver.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -186,9 +180,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\188bet\188Bet.csproj">
-      <Project>{74a5b2aa-7937-41f3-b3fc-c6e51e98ac9f}</Project>
-      <Name>188Bet</Name>
+    <ProjectReference Include="..\Modules\18bet\Bet18.csproj">
+      <Project>{b16f4ec2-24c3-4ab9-9800-b2a56e051303}</Project>
+      <Name>Bet18</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\888sport\888sport.csproj">
+      <Project>{a73695e2-114c-4fcf-b7cf-bf27d5a89d4f}</Project>
+      <Name>888sport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\BetFair\BetFair.csproj">
+      <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
+      <Name>BetFair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Dafabet\Dafabet.csproj">
+      <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
+      <Name>Dafabet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Favbet\Favbet.csproj">
+      <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
+      <Name>Favbet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Pinnacle\Pinnacle.csproj">
+      <Project>{86f1173d-4c52-4e2a-ad6c-5454dc81462b}</Project>
+      <Name>Pinnacle</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>

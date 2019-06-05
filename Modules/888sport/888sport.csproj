@@ -126,10 +126,6 @@
       <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
       <Name>BetFair</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Dafabet\Dafabet.csproj">
-      <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
-      <Name>Dafabet</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Favbet\Favbet.csproj">
       <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
       <Name>Favbet</Name>

@@ -2,33 +2,27 @@
 
 namespace Dafabet.Models
 {
-    public class MatchDataResult
-    {
-        public MatchDataResult()
-        {
-            this.leagues = new List<League>();
-        }
-
-        public List<League> leagues { get; set; }
-    }
-
     public class Match
     {
         public Match()
         {
-            this.oddset = new List<OddSet>();
+            this.oddset = new Dictionary<long, OddSet>();
         }
 
-        public string HomeName { get; set; }
+        public string leagueid { get; set; }
+        public string leaguenameen { get; set; }
+        public int sporttype { get; set; }
+        public string eventstatus { get; set; }
+        public long homeid { get; set; }
+        public string hteamnameen { get; set; }
+        public long awayid { get; set; }
+        public string ateamnameen { get; set; }
+        public long matchid { get; set; }
+        public int livehomescore { get; set; }
+        public int liveawayscore { get; set; }
+        public int mc { get; set; }
 
-        public string AwayName { get; set; }
+        public Dictionary<long, OddSet> oddset { get; set; }
 
-        public long MatchId { get; set; }
-
-        public bool IsLive { get; set; }
-
-        public MoreInfo MoreInfo { get; set; }
-
-        public List<OddSet> oddset { get; set; }
     }
 }

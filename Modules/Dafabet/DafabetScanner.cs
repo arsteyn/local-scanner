@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.IO;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
-using AngleSharp.Parser.Html;
+using Bars.EAS.Utils;
 using Bars.EAS.Utils.Extension;
-using BM.Core;
-using BM.DTO;
-using BM.Entities;
 using BM.Web;
 using Dafabet.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Quobject.Collections.Immutable;
+using Quobject.EngineIoClientDotNet.Client.Transports;
+using Quobject.SocketIoClientDotNet.Client;
 using Scanner;
-using Scanner.Helper;
-using Extensions = Scanner.Extensions;
 
 namespace Dafabet
 {
     public class DafabetScanner : ScannerBase
     {
+        readonly object _sync = new object();
+
+        private Socket _socket;
+
+        private ConcurrentDictionary<long, Match> _matches;
+
         public override string Name => "Dafabet";
 
-        public override string Host => "https://www.dafabet.com/";
+        public override string Host => $"https://{_host}/";
 
-        public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
+        private string _host;
+
         public static readonly string[] LeagueStopWords = {
             "fantasy",
             "corner",
@@ -56,368 +57,457 @@ namespace Dafabet
             "(ET)",
             "team",
             "advance",
-            "round"
+            "round",
+            "winner"
         };
 
-        private const string BASE_URL = "https://ismart.dafabet.com/";
-        private static readonly string GET_MARKETS_URL = $"{BASE_URL}Odds/GetMarket";
-        private static readonly string GET_ALL_ODS_URL = $"{BASE_URL}Odds/ShowAllOdds";
-        private static readonly string GET_CONTRIBUTOR_URL = $"{BASE_URL}main/GetContributor";
-
-        readonly object _lock = new object();
-
-        protected override void UpdateLiveLines()
+        public DafabetScanner()
         {
-            var st = new Stopwatch();
+            _matches = new ConcurrentDictionary<long, Match>();
+            _subscribedMarkets = new List<long>();
 
-            st.Start();
-
-            try
-            {
-                var randomProxy = ProxyList.PickRandom();
-
-                var cookies = CookieDictionary[randomProxy].GetData();
-
-                var resultWithoudOddset = new MatchDataResult();
-
-                List<Game> games;
-
-                using (var client = new Extensions.WebClientEx(randomProxy, cookies))
-                {
-                    client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-
-                    var response = client.UploadString(GET_CONTRIBUTOR_URL, "isParlay=false&both=false");
-
-                    var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
-
-                    games = contributorResult.Data.Where(d => d.M0.L > 0).ToList();
-                }
-
-                Parallel.ForEach(games, game => resultWithoudOddset.leagues.AddRange(GetLeagues(game)));
-
-                st.Stop();
-
-                var matchList = resultWithoudOddset.leagues.SelectMany(l => l.matches).Select(m => m.MatchId).ToList();
-
-                var groupsCount = (int)Math.Ceiling((decimal)((decimal)matchList.Count / (decimal)ProxyList.Count));
-
-                var chunksNewMatch = splitList(matchList, groupsCount).ToList();
-
-                var linesResult = new List<LineDTO>();
-
-                Parallel.ForEach(chunksNewMatch.Take(ProxyList.Count), newMatchListChunk =>
-                {
-                    var i = chunksNewMatch.FindIndex(a => a == newMatchListChunk);
-                    var proxyForOddScrape = ProxyList[i];
-
-                    //добавляем новые события
-                    foreach (var matchId in newMatchListChunk)
-                    {
-                        var res = new MatchDataResult();
-
-                        var id = matchId;
-                        var league = resultWithoudOddset.leagues.First(l => l.matches.Any(m => m.MatchId == id));
-
-                        var newLeague = new League
-                        {
-                            LeagueName = league.LeagueName,
-                            SportName = league.SportName,
-                            GameId = league.GameId
-                        };
-
-                        if (newLeague.SportName != "Soccer")
-                            continue;
-
-                        var match = league.matches.First(m => m.MatchId == matchId);
-
-                        match.oddset = GetOddSet(newLeague.GameId, match.MatchId, proxyForOddScrape);
-
-                        newLeague.matches = new List<Match> { match };
-
-                        res.leagues.Add(newLeague);
-
-                        var converter = new DafabetConverter();
-
-                        var lns = converter.Convert(res, Name).ToList();
-
-                        lock (_lock) linesResult.AddRange(lns);
-                    }
-                });
-
-                ActualLines = linesResult.ToArray();
-
-                LastUpdatedDiff = DateTime.Now - LastUpdated;
-
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
-
-            }
-            catch (Exception e)
-            {
-                Log.Info($"ERROR Dafabet {e.Message} {e.StackTrace}");
-            }
+            InitConnection();
         }
 
-        public static IEnumerable<List<T>> splitList<T>(List<T> locations, int nSize = 30)
+        Timer _subscribeAllMarketsTimer;
+        private string _token;
+        private string _id;
+        private int _exp;
+
+        private void InitConnection()
         {
-            for (int i = 0; i < locations.Count; i += nSize)
+            GetToken();
+
+            var gid = Guid.NewGuid().ToString("N").Substring(0, 16);
+            var options = new IO.Options
             {
-                yield return locations.GetRange(i, Math.Min(nSize, locations.Count - i));
-            }
+                QueryString = $"token={_token}&rid={new Random().Next(0, 2)}&id={_id}&gid={gid}",
+                AutoConnect = true,
+                ForceNew = true,
+                Transports = ImmutableList<string>.Empty/*.Add(Polling.NAME)*/.Add(WebSocket.NAME),
+                Reconnection = true,
+                ReconnectionDelay = 1000,
+                ReconnectionDelayMax = 5000,
+                ReconnectionAttempts = int.MaxValue
+            };
+
+            _socket = IO.Socket(Host, options);
+
+            SubscribeOnEvents();
+
+            //var tm2 = new TimerCallback(state => SubscribeAllMarkets());
+
+            //_subscribeAllMarketsTimer = new Timer(tm2, null, 10 * 1000, 10 * 1000);
         }
 
-        private List<League> GetLeagues(Game game)
-        {
-            var leagueList = new List<League>();
+        List<long> _subscribedMarkets;
 
-            try
-            {
-                var randomProxy = ProxyList.PickRandom();
+        //private void SubscribeAllMarkets()
+        //{
+        //    var ids = _matches.Values.Where(m => m.mc > 0).Select(m => m.matchid).ToList();
 
-                var cookies = CookieDictionary[randomProxy].GetData();
-
-                using (var client = new Extensions.WebClientEx(randomProxy, cookies))
-                {
-                    client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-
-                    var l = client.UploadString(GET_ALL_ODS_URL, $"GameId={game.GameId}&DateType=l&BetTypeClass=OU");
-
-                    var t = JsonConvert.DeserializeObject<BaseDataResult<ShowAllOddData>>(l);
-
-                    foreach (var league in t.Data.LeagueN)
-                    {
-                        //убираем запрещенные чемпионаты
-                        if (league.Value.ToString().ContainsIgnoreCase(LeagueStopWords.ToArray())) continue;
-
-                        leagueList.Add(new League
-                        {
-                            LeagueName = league.Value.ToString(),
-                            matches = GetMatches(league, t.Data),
-                            SportName = game.Name,
-                            GameId = game.GameId
-                        });
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Info($"ERROR Dafabet GetLeagues {e.Message}");
-            }
-
-            return leagueList;
-        }
-
-        private List<Match> GetMatches(KeyValuePair<string, JToken> league, ShowAllOddData oddData)
-        {
-            var matches = new List<Match>();
-            try
-            {
-                var matchList = oddData.NewMatch.Where(d => d.IsLive && d.LeagueId == long.Parse(league.Key)).ToList();
-
-                matches.AddRange(matchList.Select(match => new Match
-                {
-                    HomeName = oddData.TeamN[match.TeamId1.ToString()].ToString(),
-                    AwayName = oddData.TeamN[match.TeamId2.ToString()].ToString(),
-                    IsLive = match.IsLive,
-                    MatchId = match.MatchId,
-                    MoreInfo = new MoreInfo
-                    {
-                        ScoreH = match.T1V,
-                        ScoreA = match.T2V
-                    }
-                }));
-            }
-            catch (Exception e)
-            {
-                Log.Info($"ERROR Dafabet GetMatches {e.Message}");
-            }
-
-            return matches;
-        }
-
-        private List<OddSet> GetOddSet(int gameId, long matchId, WebProxy randomProxy)
-        {
-            var listOdds = new List<OddSet>();
-
-            try
-            {
-                var cookies = CookieDictionary[randomProxy].GetData();
-
-                using (var client = new Extensions.WebClientEx(randomProxy, cookies))
-                {
-                    client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                    client.Headers["Accept"] = "application/json, text/javascript, */*; q=0.01";
-
-                    var response = client.UploadString(GET_MARKETS_URL, $"GameId={gameId}&DateType=l&BetTypeClass=OU&Matchid={matchId}");
-
-                    var marketsResult = JsonConvert.DeserializeObject<BaseDataResult<Markets>>(response);
-
-                    if (marketsResult.Data.NewOdds.IsNull()) return listOdds;
-
-                    foreach (var newOdd in marketsResult.Data.NewOdds)
-                    {
-                        var oddset = new OddSet
-                        {
-                            Bettype = newOdd.BetTypeId,
-                            OddsId = newOdd.MarketId
-                        };
-
-                        foreach (var selection in newOdd.Selections)
-                        {
-                            var sel = new Select
-                            {
-                                Price = decimal.Parse(selection.Value["Price"].ToString()),
-                                Key = selection.Value["SelId"].ToString(),
-                                Point = newOdd.Line
-                            };
-
-                            oddset.sels.Add(sel);
-                        }
-
-                        listOdds.Add(oddset);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Info($"ERROR Dafabet GetOddSet {e.Message}");
-            }
-
-            return listOdds;
-        }
-
-        protected override void CheckDict()
-        {
-            var st = new Stopwatch();
-            st.Start();
-
-            foreach (var account in _accounts)
-            {
-                foreach (var host in ProxyList)
-                {
-                    if (CookieDictionary.ContainsKey(host)) continue;
-
-                    CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 15, () =>
-                    {
-                        try
-                        {
-                            var result = new CookieContainer();
-
-                            var authCookie = Authorize(host, account.Key, account.Value);
-                            result.Add(authCookie);
-
-                            using (var client = new PostWebClient(host, authCookie))
-                            {
-                                client.Headers["Content-Type"] = "application/x-www-form-urlencoded";
-                                client.TimeOut = 5000;
-
-                                var response = client.UploadString(GET_CONTRIBUTOR_URL, "isParlay=false&both=false");
-
-                                JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
-                            }
-
-                            return result;
-                        }
-                        catch (Exception)
-                        {
-                            ConsoleExt.ConsoleWriteError($"Dafabet delete address {host.Address} elapsed {st.Elapsed:g}");
-                        }
-
-                        return null;
-                    }));
-
-                    if (CookieDictionary[host].GetData() != null) break;
-
-                    CookieDictionary.Remove(host);
-                }
-            }
-
-            foreach (var host in ProxyList.OrderBy(p => Guid.NewGuid()))
-            {
-                if (!CookieDictionary.ContainsKey(host)) ProxyList.Remove(host);
-            }
-
-            //удваиваем количество проксей, что вставить больше элементов параллелбный запрос
-            ProxyList.AddRange(ProxyList.ToList());
-            ProxyList.AddRange(ProxyList.ToList());
-        }
+        //    if (!ids.Any() || ids.All(evId => _subscribedMarkets.Contains(evId))) return;
 
 
+        //    //var cs = new List<string> { "c" + c };
 
-        private CookieCollection Authorize(WebProxy host, string login, string password)
+        //    //dynamic off = JToken.FromObject(cs); ;
+        //    //_socket.Emit("unsubscribe", off);
+
+
+        //    foreach (var id in ids)
+        //    {
+        //        var objects = new List<SubscribeObject>();
+
+        //        var o = new SubscribeObject
+        //        {
+        //            id = "c" + c++,
+        //            rev = 0,
+        //            condition = new ConditionMatch()
+        //            {
+        //                marketid = "L",
+        //                sorting = "n",
+        //                more = 1,
+        //                matchid = id,
+        //                timestamp = 0
+        //            }
+        //        };
+
+        //        objects.Add(o);
+
+        //        dynamic obj = JToken.FromObject(objects); ;
+
+        //        _socket.Emit("subscribe", "odds", obj);
+
+        //        Log.Info($"{Name} SubscribeAllMarkets {id}");
+        //    }
+
+
+        //    _subscribedMarkets = ids;
+        //}
+
+        private void GetToken()
         {
             var cookies = new CookieCollection();
 
-            using (var client = new GetWebClient(host, cookies))
+            var refferer = "https://prices.sportdafa.net/NewIndex?lang=en&iseuro=0&webskintype=3&act=hdpou&otype=4";
+            string location;
+            string gid;
+
+            using (var client = new GetWebClient())
             {
-                client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
-
-                client.TryDownloadString($"https://m.dafabet.com", 5000);
-
+                client.Referer = refferer;
+                client.DownloadData("https://prices.sportdafa.net/vender.aspx?lang=en&iseuro=0&webskintype=3&act=hdpou&otype=4");
                 cookies.Add(client.CookieCollection);
             }
 
-            string hash;
-
-            using (var client = new PostWebClient(host, cookies))
+            using (var client = new GetWebClient(cookies))
             {
-                client.Headers["Referer"] = $"https://m.dafabet.com/en/login";
-                var requestParams = new NameValueCollection
-                {
-                    {"username", login},
-                    {"password", password},
-                };
-
-                var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/component/route/header_login/authenticate", requestParams);
-
-                hash = r.hash;
-
+                client.Referer = refferer;
+                gid = client.DownloadResult<dynamic>("https://prices.sportdafa.net/NewIndex/GetAppConfig").GUID;
                 cookies.Add(client.CookieCollection);
             }
 
-            string token;
-
-            using (var client = new PostWebClient(host, cookies))
+            using (var client = new GetWebClient(cookies))
             {
-                client.Headers["Referer"] = $"https://m.dafabet.com/en/";
+                client.Referer = refferer;
+                client.DownloadData($"https://prices.sportdafa.net/EntryIndex/OpenSports?lang=en&iseuro=0&act=hdpou&otype=4&webskintype=3&gid={gid}");
+                location = client.ResponseHeaders["Location"];
+            }
 
-                var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/module/route/pas_integration/updateToken?authenticated=true&hash={hash}");
-
-                token = r.token;
-
+            using (var client = new GetWebClient(cookies))
+            {
+                client.Referer = refferer;
+                client.DownloadData(location);
                 cookies.Add(client.CookieCollection);
             }
 
-            using (var client = new GetWebClient(host, cookies))
+            using (var client = new GetWebClient(cookies))
             {
-                client.Headers["Referer"] = $"https://m.dafabet.com/en/login?product=sports";
-
-                client.TryDownloadString($"https://ismart.dafabet.com/Deposit_ProcessLogin.aspx?lang=en&st={token}&homeURL=https%3A%2F%2Fm.dafabet.com%2Fen&extendSessionURL=https%3A%2F%2Fm.dafabet.com%2Fen&OType=01&oddstype=1", 5000);
-
-                cookies.Add(client.CookieCollection);
+                client.Referer = refferer;
+                var ss = client.DownloadString("https://fbw.sportdafa.net/Sports/1/?mode=m0&market=L");
+                _token = ss.RegexStringValue("\"tk\":\"(?<value>.*?)\"");
+                _host = ss.RegexStringValue("p: \"(?<value>.*?)\"");
+                _id = ss.RegexStringValue("id = \"(?<value>.*?)\"");
             }
-
-            return cookies;
         }
 
-        readonly Dictionary<string, string> _accounts = new Dictionary<string, string>()
+        private int c = 0;
+        private void SubscribeOnEvents()
         {
-            { "antmatveev81", "dbQXhM2bB"},
-            { "graudinagnt0", "sPDg52wQ"},
-            { "renshar82", "2T1E5f0t"},
-            { "romvitov82", "u56ENHy3"},
-            { "inatmn93", "sPDg54wQ"},
-            { "lexvasilev79", "72YxfB8f"},
-            { "sergejromas97", "N903uKgk"},
-            { "egoralikin998", "d4NAZ2D5"},
-            { "dmitijkilin99", "CXaasW5h"},
-            { "alexeyalex585", "73bR8u7q"},
-            { "chelakdilsh", "fkjHfJ8"},
-            { "vzakiev24", "4zSsrzsR"},
-            { "nabokova85", "3zSsrzsR"},
-            { "alivnov86", "8x65U442"},
-        };
+            _socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                try
+                {
+                    Log.Info($"{Name} EVENT_CONNECT");
+
+                    var objects = new List<SubscribeObject>();
+
+                    var o = new SubscribeObject
+                    {
+                        id = "c" + c++,
+                        rev = 0,
+                        condition = new Condition
+                        {
+                            marketid = "L",
+                            sorting = "n",
+                            sporttype = 1 //Football
+                        }
+                    };
+
+                    objects.Add(o);
+
+                    dynamic obj = JToken.FromObject(objects); ;
+
+                    _socket.Emit("subscribe", "odds", obj);
+                }
+                catch (Exception e)
+                {
+                    Log.Info($"ERROR {Name} Exception {JsonConvert.SerializeObject(e)}");
+                }
+            });
+
+            _socket.On("r", (data) =>
+            {
+                //Log.Info($" {Name} EVENT r");
+
+                var s = data as object[];
+                var f = s[0] as JArray;
+
+                lock (_sync) InitMatchList(f[2]);
+            });
+
+            _socket.On("p", (data) =>
+            {
+                //Log.Info($" {Name} EVENT p");
+
+                var s = data as object[];
+                var f = s[0] as JArray;
+
+                lock (_sync) UpdateMatchList(f[1]);
+
+            });
+
+            _socket.On(Socket.EVENT_DISCONNECT, (data) =>
+            {
+                Log.Info($"ERROR  {Name} EVENT_DISCONNECT {JsonConvert.SerializeObject(data)}");
+
+                lock (_sync) _matches.Clear();
+                //lock (_sync) _subscribedMarkets.Clear();
+
+                _socket.Off();
+                _socket.Close();
+
+                InitConnection();
+            });
+
+            _socket.On(Socket.EVENT_ERROR, (data) =>
+            {
+                Log.Info($"ERROR  {Name} EVENT_ERROR ");
+            });
+
+            _socket.On(Socket.EVENT_RECONNECT, (attemptNumber) =>
+            {
+                Log.Info($"ERROR {Name} EVENT_RECONNECT {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+
+            _socket.On(Socket.EVENT_RECONNECTING, (attemptNumber) =>
+            {
+                Log.Info($"ERROR {Name} EVENT_RECONNECTING {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+
+            _socket.On(Socket.EVENT_RECONNECT_ATTEMPT, (attemptNumber) =>
+            {
+                Log.Info($"ERROR {Name} EVENT_RECONNECT_ATTEMPT {JsonConvert.SerializeObject(attemptNumber)}");
+            });
+        }
+
+
+        private void UpdateMatchList(object data)
+        {
+            var e = data as JArray;
+
+            foreach (var obj in e)
+            {
+                var type = obj["type"].ToString();
+                switch (type)
+                {
+
+                    case "do":
+
+                        //Log.Info($"{Name} EVENT do");
+
+                        var oddsid = obj["oddsid"].ToLong();
+
+                        var match = _matches.Values.FirstOrDefault(m => m.oddset.ContainsKey(oddsid));
+
+                        if (match != null)
+                        {
+                            //Log.Info($"{Name} match.oddset.Remove {match.oddset.Count} {oddsid} {match.oddset[oddsid].bettype}");
+                            match.oddset.Remove(oddsid);
+                            //Log.Info($"{Name} match.oddset.Remove {_matches[match.matchid].oddset.Count}");
+                        }
+
+                        break;
+
+                    case "dm":
+                        //Log.Info($"{Name} EVENT dm");
+
+                        var matchid = obj["matchid"].ToLong();
+
+                        _matches.TryRemove(matchid, out _);
+
+                        break;
+                    case "m":
+                        try
+                        {
+                            //update match
+                            var mt = obj.ToObject<JObject>();
+
+                            if (_matches.TryGetValue(mt["matchid"].ToLong(), out var ma))
+                            {
+                                if (mt["liveawayscore"] != null) ma.liveawayscore = mt["liveawayscore"].ToInt();
+                                if (mt["livehomescore"] != null) ma.livehomescore = mt["livehomescore"].ToInt();
+                                if (mt["eventstatus"] != null) ma.eventstatus = mt["eventstatus"].ToString();
+                            }
+                            else
+                            {
+                                var m = obj.ToObject<Match>();
+
+                                if (m == null) continue;
+
+                                if (LeagueStopWords.Any(w => m.leaguenameen.ContainsIgnoreCase(w))) break;
+
+                                _matches.GetOrAdd(m.matchid, m);
+                            }
+                        }
+                        catch (Exception exception)
+                        {
+                            Log.Info($"{Name} update match ERROR {JsonConvert.SerializeObject(exception)}");
+                        }
+                        break;
+
+                    case "o":
+
+                        try
+                        {
+                            var oddsets = _matches.Values.SelectMany(m => m.oddset).ToDictionary(m => m.Key, pair => pair.Value);
+
+                            var o = obj.ToObject<JObject>();
+
+                            if (oddsets.TryGetValue(o["oddsid"].ToLong(), out var oddSet))
+                            {
+                                if (obj["odds1a"] != null) oddSet.odds1a = obj["odds1a"].ToDecimal();
+                                if (obj["odds2a"] != null) oddSet.odds2a = obj["odds2a"].ToDecimal();
+
+                                if (obj["oddsstatus"] != null) oddSet.oddsstatus = obj["oddsstatus"].ToString();
+
+                                if (obj["com1"] != null) oddSet.com1 = obj["com1"].ToDecimal();
+                                if (obj["com2"] != null) oddSet.com2 = obj["com2"].ToDecimal();
+                                if (obj["comx"] != null) oddSet.comx = obj["comx"].ToDecimal();
+
+                                if (obj["hdp1"] != null) oddSet.hdp1 = obj["hdp1"].ToDecimal();
+                                if (obj["hdp2"] != null) oddSet.hdp2 = obj["hdp2"].ToDecimal();
+
+                                if (obj["cs00"] != null) oddSet.cs00 = obj["cs00"].ToDecimal();
+                                if (obj["cs10"] != null) oddSet.cs10 = obj["cs10"].ToDecimal();
+                                if (obj["cs20"] != null) oddSet.cs20 = obj["cs20"].ToDecimal();
+                            }
+                            else
+                            {
+                                var o1 = obj.ToObject<OddSet>();
+
+                                if (o1 == null) continue;
+
+                                if (_matches.ContainsKey(o1.matchid))
+                                    _matches[o1.matchid].oddset.Add(o1.oddsid, o1);
+                            }
+                        }
+                        catch (Exception exception)
+                        {
+                            Log.Info($"{Name} update oddset ERROR {JsonConvert.SerializeObject(exception)}");
+                        }
+
+                        break;
+                }
+            }
+        }
+
+        public static bool IsPropertyExist(dynamic settings, string name)
+        {
+            if (settings is ExpandoObject)
+                return ((IDictionary<string, object>)settings).ContainsKey(name);
+
+            return settings.GetType().GetProperty(name) != null;
+        }
+
+        private void InitMatchList(object data)
+        {
+            var e = data as JArray;
+
+            foreach (var obj in e)
+            {
+                var type = obj["type"].ToString();
+
+                switch (type)
+                {
+                    case "reset":
+
+                        ///TODO: ???????????????
+                        //_matches.Clear();
+
+                        break;
+
+                    //new match
+                    case "m":
+
+                        var m = obj.ToObject<Match>();
+
+                        if (m == null) continue;
+
+                        if (LeagueStopWords.Any(w => m.leaguenameen.ContainsIgnoreCase(w))) continue;
+
+                        _matches.GetOrAdd(m.matchid, m);
+                        //Log.Info($"{Name} _matches.GetOrAdd {m.matchid}");
+
+                        break;
+
+                    //new oddset
+                    case "o":
+
+                        var o = obj.ToObject<OddSet>();
+
+                        if (o == null) continue;
+
+                        //if (o.enable != 1) continue;
+
+                        if (_matches.ContainsKey(o.matchid) && !_matches[o.matchid].oddset.ContainsKey(o.oddsid))
+                            //Log.Info($"{Name} new oddset {o.oddsid} {o.bettype}");
+                            _matches[o.matchid].oddset.Add(o.oddsid, o);
+
+                        break;
+                }
+            }
+        }
+
+        private DateTime? _showLog;
+
+        protected override void UpdateLiveLines()
+        {
+            try
+            {
+                var scanner = new DafabetConverter();
+
+                string serializedMatches;
+                lock (_sync) serializedMatches = JsonConvert.SerializeObject(_matches.Values);
+                var copy = JsonConvert.DeserializeObject<List<Match>>(serializedMatches);
+
+                var lines = scanner.Convert(copy, Name);
+
+
+                if (_showLog == null || (DateTime.Now - _showLog).Value.Seconds > 2)
+                {
+                    //ConsoleExt.ConsoleWrite(Name, 0, _matches.Values.SelectMany(m => m.oddset).Count(), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+
+                    ConsoleExt.ConsoleWrite(Name, 0, lines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                    _showLog = DateTime.Now;
+                }
+
+                ActualLines = lines.ToArray();
+            }
+            catch (Exception e)
+            {
+                Log.Info($"ERROR {Name} {e.Message} {e.StackTrace}");
+            }
+        }
 
     }
 
+    internal class SubscribeObject
+    {
+        public string id { get; set; }
+        public int rev { get; set; }
+        public ICondition condition { get; set; }
+    }
 
+    internal class Condition : ICondition
+    {
+        public string marketid { get; set; }
+        public string sorting { get; set; }
+        public int sporttype { get; set; }
+
+    }
+
+    internal class ConditionMatch : ICondition
+    {
+        public string marketid { get; set; }
+        public string sorting { get; set; }
+        public int more { get; set; }
+        public long matchid { get; set; }
+        public int timestamp { get; set; }
+    }
+
+    internal interface ICondition
+    {
+    }
 }
