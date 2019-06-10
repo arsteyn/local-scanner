@@ -20,7 +20,50 @@ namespace S888
 
         public override string Host => "https://eu-offering.kambicdn.org/";
 
-        public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
+        public static readonly List<string> ForbiddenTournaments = new List<string> {
+            "fantasy",
+            "corner",
+            "specific",
+            "statistics",
+            "cross",
+            "goalpost",
+            "fouls",
+            "offside",
+            "shot",
+            "booking",
+            "penalty",
+            "special",
+            "goal",
+            "kick",
+            "offside",
+            "throw",
+            "over",
+            "under",
+            //penalty
+            "(PEN)",
+            //extra time
+            "(ET)",
+            "team",
+            "advance",
+            "round",
+            "winner" };
+
+        private int _i;
+        private readonly object _incrementLock = new object();
+        public int I
+        {
+            get
+            {
+                lock (_incrementLock)
+                {
+                    _i++;
+
+                    if (_i >= ProxyList.Count) _i = 0;
+
+                    return _i;
+                }
+            }
+        }
 
         protected override void UpdateLiveLines()
         {
@@ -39,8 +82,11 @@ namespace S888
 
                 var events = JsonConvert.DeserializeObject<EventResult>(response).Events.Where(e => e.Event.path.All(p => !ForbiddenTournaments.Any(t => p.englishName.ContainsIgnoreCase(t)))).ToList();
 
-                Parallel.ForEach(events, @event =>
+                var tasks = new Task[events.Count];
+
+                for (var index = 0; index < events.Count; index++)
                 {
+                    var @event = events[index];
                     var task = Task.Factory.StartNew(() =>
                     {
                         try
@@ -51,12 +97,14 @@ namespace S888
                         }
                         catch (Exception e)
                         {
-                            Log.Info($"ERROR S888 Parse event exception {e.Message} {e.StackTrace}");
+                            Log.Info($"ERROR {Name} Parse event exception {e.Message} {e.StackTrace}");
                         }
                     });
 
-                    if (!task.Wait(10000)) Log.Info("S888 Task wait exception");
-                });
+                    tasks[index] = task;
+                }
+
+                Task.WaitAll(tasks, 10000);
 
                 ActualLines = lines.ToArray();
 
@@ -70,8 +118,6 @@ namespace S888
 
         private List<LineDTO> ParseEvent(EventSub @event)
         {
-            var random = ProxyList.PickRandom();
-
             try
             {
                 var converter = new S888LineConverter();
@@ -82,7 +128,7 @@ namespace S888
 
                 if (!lineTemplate.SportKind.EqualsIgnoreCase("Football") && !lineTemplate.SportKind.EqualsIgnoreCase("Hockey")) return new List<LineDTO>();
 
-                var eventFull = ConverterHelper.GetFullLine(@event.Event.id, random, Host);
+                var eventFull = ConverterHelper.GetFullLine(@event.Event.id, ProxyList[I], Host);
 
                 if (eventFull == null) return new List<LineDTO>();
 

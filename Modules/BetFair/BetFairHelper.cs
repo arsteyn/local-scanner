@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Bars.EAS;
 using Bars.EAS.Utils.Extension;
 using BetFair.Enums;
@@ -11,6 +13,7 @@ using BM;
 using BM.Core;
 using BM.DTO;
 using BM.Entities;
+using BM.Web;
 using BM.Web.Interfaces;
 using Newtonsoft.Json;
 using NLog;
@@ -111,31 +114,29 @@ namespace BetFair
                 //берем меньший кэф
                 var price = runner.ExchangePrices.AvailableToBack.OrderBy(x => x.Price).FirstOrDefault(x => x.Size > 200.0);
 
-                if (price != null)
+                if (price == null) continue;
+
+                var line = new LineDTO
                 {
-                    var line = new LineDTO
-                    {
-                        CoeffParam = сoeffParam,
-                        CoeffKind = coeffKind,
-                        CoeffValue = (decimal)price.Price,
-                        CoeffType = coeffType
-                    };
+                    CoeffParam = сoeffParam,
+                    CoeffKind = coeffKind,
+                    CoeffValue = (decimal)price.Price,
+                    CoeffType = coeffType
+                };
 
+                line.SerializeObject(new LineInfo
+                {
+                    Size = price.Size,
+                    MarketId = marketBook.MarketId,
+                    SelectionId = runner.SelectionId,
+                    Handicap = runner.Handicap
+                });
 
-                    line.SerializeObject(new LineInfo
-                    {
-                        Size = price.Size,
-                        MarketId = marketBook.MarketId,
-                        SelectionId = runner.SelectionId,
-                        Handicap = runner.Handicap
-                    });
+                //line.LineData = string.Join(",", runner.ExchangePrices.AvailableToLay.Where(x => x.Size > 10.0).Select(f => (decimal)f.Price));
 
-                    //line.LineData = string.Join(",", runner.ExchangePrices.AvailableToLay.Where(x => x.Size > 10.0).Select(f => (decimal)f.Price));
-
-                    action(line);
-                    line.UpdateName();
-                    lines.Add(line);
-                }
+                action(line);
+                line.UpdateName();
+                lines.Add(line);
             }
 
             return lines;
@@ -210,8 +211,8 @@ namespace BetFair
             return null;/* runnerDescription.RunnerName + marketCatalogue.MarketName;*/
         }
 
-
-        public static List<LineDTO> Convert(List<MarketCatalogue> list, SportsAPING aping, string bookmaker)
+        private static readonly object Lock = new object();
+        public static List<LineDTO> Convert(List<MarketCatalogue> list, SportsAPING aping, string bookmaker, ConcurrentDictionary<string, ScoreResult> scoreResults)
         {
             var lines = new List<LineDTO>();
 
@@ -221,11 +222,20 @@ namespace BetFair
 
             var marketBooks = aping.ListMarketBook(marketIds.ToList(), priceProjection, null, MatchProjection.ROLLED_UP_BY_PRICE, "USD");
 
-            foreach (var marketBook in marketBooks.Where(x => x.Status == MarketStatus.OPEN))
+            //foreach (var marketBook in marketBooks.Where(x => x.Status == MarketStatus.OPEN))
+            //{
+
+            var openMarkets = marketBooks.Where(x => x.Status == MarketStatus.OPEN);
+
+            Parallel.ForEach(openMarkets, marketBook =>
             {
                 var market = list.FirstOrDefault(x => x.MarketId == marketBook.MarketId);
 
-                lines.AddRange(Convert(market, marketBook, x =>
+                if (market == null) return;
+
+                if (!scoreResults.ContainsKey(market.Event.Id)) scoreResults.GetOrAdd(market.Event.Id, GetScoreResult(market.Event.Id));
+
+                var l = Convert(market, marketBook, x =>
                 {
                     x.BookmakerName = bookmaker;
                     x.SportKind = Helper.ConvertSport(market.EventType.Name);
@@ -238,12 +248,48 @@ namespace BetFair
                     x.Team1 = teams.First();
                     x.Team2 = teams.Last();
 
-                    x.EventDate = market.MarketStartTime;
-                }));
+                    x.Score1 = scoreResults[market.Event.Id].score.home.score;
+                    x.Score2 = scoreResults[market.Event.Id].score.away.score;
 
-            }
+                    x.EventDate = market.MarketStartTime;
+                });
+
+                lock (Lock) lines.AddRange(l);
+            });
+
+
+            //}
 
             return lines;
         }
+
+
+
+
+        public static ScoreResult GetScoreResult(string eventId)
+        {
+            ScoreResult scoreresult;
+
+            using (var wc = new GetWebClient())
+                scoreresult = wc.DownloadResult<ScoreResult>($"https://ips.betfair.com/inplayservice/v1/eventTimeline?alt=json&eventId={eventId}&locale=en_GB&productType=EXCHANGE&regionCode=UK");
+
+            return scoreresult;
+        }
+    }
+
+    public class ScoreResult
+    {
+        public ScoreContainer score { get; set; }
+    }
+
+    public class ScoreContainer
+    {
+        public Score home { get; set; }
+        public Score away { get; set; }
+    }
+
+    public class Score
+    {
+        public int score { get; set; }
     }
 }

@@ -5,8 +5,6 @@ using BM;
 using BM.Core;
 using BM.DTO;
 using Dafabet.Models;
-using Newtonsoft.Json;
-using Scanner.Helper;
 
 namespace Dafabet
 {
@@ -17,8 +15,6 @@ namespace Dafabet
         public LineDTO[] Convert(MatchDataResult data, string bookmakerName)
         {
             _lines = new List<LineDTO>();
-
-            //var data = JsonConvert.DeserializeObject<MatchDataResult>(response);
 
             foreach (var league in data.leagues)
             {
@@ -55,20 +51,9 @@ namespace Dafabet
 
                             if (hasParam) lineTemplate3.CoeffParam = coeffKind == "HANDICAP1" ? -1 * setSel.Point : setSel.Point;
 
-                            decimal price;
-
-                            if (setSel.Price > 0 && setSel.Price <= 1)
-                                price = setSel.Price + 1m;
-                            else if (setSel.Price >= -1 && setSel.Price < 0)
-                                price = -1m / setSel.Price + 1m;
-                            else
-                                price = /*-1m**/ setSel.Price;
-
-                            lineTemplate3.CoeffValue = decimal.Round(price, 2, MidpointRounding.AwayFromZero);
+                            lineTemplate3.CoeffValue = ConvertToDecimalOdds(setSel.Price);
 
                             lineTemplate3.LineObject = $"{oddSet.OddsId}|{setSel.Key}|{oddSet.Bettype}|{setSel.Price}";
-
-                            lineTemplate3.UpdateName();
 
                             AddLine(lineTemplate3);
                         }
@@ -87,10 +72,21 @@ namespace Dafabet
                 case 8:
                 case 12:
                 case 15:
+                case 191:
                 case 410:
+                case 411:
                     return "1st half";
-                case 431:
+                case 17:
+                case 18:
+                case 177:
+                case 178:
+                case 183:
+                case 185:
+                case 186:
                 case 428:
+                case 430:
+                case 431:
+                case 432:
                     return "2nd half";
                 default:
                     return null;
@@ -99,52 +95,86 @@ namespace Dafabet
 
         private static string GetCoeffKind(int betType, string betteam, out bool hasParam)
         {
-            string result;
-
-            hasParam = true;
-
+            hasParam = false;
             switch (betType)
             {
+                #region Handicap
+
                 //HANDICAP
                 case 1:
                 //1H HANDICAP
                 case 7:
+                //2H Handicap //TODO:проверить параметры
+                case 17:
+                case 183:
+                    hasParam = true;
+                    switch (betteam)
+                    {
+                        case "h":
+                            return "HANDICAP1";
+                        case "a":
+                            return "HANDICAP2";
+                        default:
+                            return string.Empty;
+                    }
 
-                    result = "HANDICAP";
+                #endregion
 
-                    if (betteam == "h")
-                        result += "1";
-                    else if (betteam == "a")
-                        result += "2";
-                    else
-                        return string.Empty;
+                #region Over/Under
 
-                    return result;
-
-
-                //OVER/UNDER
+                //FT OVER/UNDER
                 case 3:
                 //1H OVER/UNDER
                 case 8:
-                    result = "TOTAL";
+                //2H OVER/UNDER
+                case 18:
+                case 178:
+                    hasParam = true;
+                    switch (betteam)
+                    {
+                        case "h":
+                        case "o":
+                            return "TOTALOVER";
+                        case "a":
+                        case "u":
+                            return "TOTALUNDER";
+                        default:
+                            return string.Empty;
+                    }
 
-                    if (betteam == "h")
-                        result += "OVER";
-                    else if (betteam == "a")
-                        result += "UNDER";
-                    else
-                        return string.Empty;
+                #endregion
 
-                    return result;
+                #region 1X2
 
                 //1X2
                 case 5:
                 //1H 1X2
                 case 15:
+                //2H 1X2
+                case 430:
+                case 177:
+
+                    switch (betteam)
+                    {
+                        case "1":
+                            return "1";
+                        case "x":
+                            return "x";
+                        case "2":
+                            return "2";
+                        default:
+                            return string.Empty;
+                    }
+                  
+
+                #endregion
+
+                #region Double chance
 
                 //1H Double chance
                 case 410:
                 //2H Double chance
+                case 186:
                 case 431:
                 //Double chance
                 case 24:
@@ -152,25 +182,59 @@ namespace Dafabet
                     switch (betteam)
                     {
                         case "hd":
-                            result = "1x";
-                            break;
+                        case "1x":
+                            return "1x";
                         case "ha":
-                            result = "12";
-                            break;
+                        case "12":
+                            return "12";
                         case "da":
-                            result = "x2";
-                            break;
+                        case "2x":
+                            return "x2";
                         default:
-                            result = betteam;
-                            break;
+                            return string.Empty;
                     }
 
-                    hasParam = false;
+                #endregion
 
-                    return result;
+                #region Draw No Bet
+
+                //Draw no bet
+                case 25:
+                //1H Draw No Bet
+                case 411:
+                //2H Draw No Bet
+                case 432:
+                case 185:
+                case 191:
+
+                    switch (betteam)
+                    {
+                        case "h":
+                            return "W1";
+                        case "a":
+                            return "W2";
+                        default:
+                            return string.Empty;
+                    }
+
+                    #endregion
             }
 
             return string.Empty;
+        }
+
+        private decimal ConvertToDecimalOdds(decimal my)
+        {
+            decimal price;
+
+            if (my > 0 && my <= 1)
+                price = my + 1m;
+            else if (my >= -1 && my < 0)
+                price = -1m / my + 1m;
+            else
+                price = my;
+
+            return decimal.Round(price, 2, MidpointRounding.AwayFromZero); ;
         }
 
         private void AddLine(LineDTO lineDto)

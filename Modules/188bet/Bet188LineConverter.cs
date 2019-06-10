@@ -52,20 +52,24 @@ namespace Bet188
 
             if (e.hide) return localLines;
 
-            Convert1x2(template, e.o);
+
+            Convert1x2(template, e.o, e.k);
 
             return localLines;
         }
 
-        private void Convert1x2(LineDTO template, o o)
+        /// <param name="k">EventId</param>
+        private void Convert1x2(LineDTO template, o o, string k)
         {
             LineDTO line;
+         
+
             if (o._1x2 != null)
             {
                 line = template.Clone();
                 line.CoeffKind = "1";
                 line.CoeffValue = o._1x2.v[1].ToDecimal();
-                line.LineData = o._1x2.v[0].ToDecimal();
+                line.LineData = k + ";" + o._1x2.v[0].Substring(1); //; handicap
 
                 line.UpdateName();
                 localLines.Add(line);
@@ -73,7 +77,7 @@ namespace Bet188
                 line = template.Clone();
                 line.CoeffKind = "2";
                 line.CoeffValue = o._1x2.v[3].ToDecimal();
-                line.LineData = o._1x2.v[2].ToDecimal();
+                line.LineData = k + ";" + o._1x2.v[2].Substring(1);
 
                 line.UpdateName();
                 localLines.Add(line);
@@ -81,7 +85,7 @@ namespace Bet188
                 line = template.Clone();
                 line.CoeffKind = "X";
                 line.CoeffValue = o._1x2.v[5].ToDecimal();
-                line.LineData = o._1x2.v[4].ToDecimal();
+                line.LineData = k + ";" + o._1x2.v[4].Substring(1);
 
                 line.UpdateName();
                 localLines.Add(line);
@@ -92,7 +96,7 @@ namespace Bet188
                 line = template.Clone();
                 line.CoeffKind = "1";
                 line.CoeffValue = o._1x21st.v[1].ToDecimal();
-                line.LineData = o._1x21st.v[0].ToDecimal();
+                line.LineData = k + ";" + o._1x21st.v[0].Substring(1);
                 line.CoeffType = "1st half";
 
                 line.UpdateName();
@@ -101,7 +105,7 @@ namespace Bet188
                 line = template.Clone();
                 line.CoeffKind = "2";
                 line.CoeffValue = o._1x21st.v[3].ToDecimal();
-                line.LineData = o._1x21st.v[2].ToDecimal();
+                line.LineData = k + ";" + o._1x21st.v[2].Substring(1);
                 line.CoeffType = "1st half";
 
                 line.UpdateName();
@@ -110,7 +114,7 @@ namespace Bet188
                 line = template.Clone();
                 line.CoeffKind = "X";
                 line.CoeffValue = o._1x21st.v[5].ToDecimal();
-                line.LineData = o._1x21st.v[4].ToDecimal();
+                line.LineData = k + ";" + o._1x21st.v[4].Substring(1);
                 line.CoeffType = "1st half";
 
                 line.UpdateName();

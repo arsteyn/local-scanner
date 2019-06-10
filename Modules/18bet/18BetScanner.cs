@@ -6,8 +6,6 @@ using System.Net;
 using System.Threading;
 using Bars.EAS.Utils.Extension;
 using Bet18.Models;
-using BM;
-using BM.DTO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Quobject.Collections.Immutable;

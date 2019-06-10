@@ -28,6 +28,23 @@ namespace Dafabet
     {
         public override string Name => "Dafabet";
 
+        private int _i;
+        private readonly object _incrementLock = new object();
+        public int I
+        {
+            get
+            {
+                lock (_incrementLock)
+                {
+                    _i++;
+
+                    if (_i >= ProxyList.Count) _i = 0;
+
+                    return _i;
+                }
+            }
+        }
+
         public override string Host => "https://www.dafabet.com/";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
@@ -56,7 +73,8 @@ namespace Dafabet
             "(ET)",
             "team",
             "advance",
-            "round"
+            "round",
+            "winner"
         };
 
         private const string BASE_URL = "https://ismart.dafabet.com/";
@@ -68,10 +86,6 @@ namespace Dafabet
 
         protected override void UpdateLiveLines()
         {
-            var st = new Stopwatch();
-
-            st.Start();
-
             try
             {
                 var randomProxy = ProxyList.PickRandom();
@@ -95,56 +109,61 @@ namespace Dafabet
 
                 Parallel.ForEach(games, game => resultWithoudOddset.leagues.AddRange(GetLeagues(game)));
 
-                st.Stop();
-
                 var matchList = resultWithoudOddset.leagues.SelectMany(l => l.matches).Select(m => m.MatchId).ToList();
 
-                var groupsCount = (int)Math.Ceiling((decimal)((decimal)matchList.Count / (decimal)ProxyList.Count));
+                var lines = new List<LineDTO>();
 
-                var chunksNewMatch = splitList(matchList, groupsCount).ToList();
+                var tasks = new Task[matchList.Count];
 
-                var linesResult = new List<LineDTO>();
-
-                Parallel.ForEach(chunksNewMatch.Take(ProxyList.Count), newMatchListChunk =>
+                for (var index = 0; index < matchList.Count; index++)
                 {
-                    var i = chunksNewMatch.FindIndex(a => a == newMatchListChunk);
-                    var proxyForOddScrape = ProxyList[i];
+                    var matchId = matchList[index];
 
-                    //добавляем новые события
-                    foreach (var matchId in newMatchListChunk)
-                    {
-                        var res = new MatchDataResult();
-
-                        var id = matchId;
-                        var league = resultWithoudOddset.leagues.First(l => l.matches.Any(m => m.MatchId == id));
-
-                        var newLeague = new League
+                    var task = Task.Factory.StartNew(() =>
                         {
-                            LeagueName = league.LeagueName,
-                            SportName = league.SportName,
-                            GameId = league.GameId
-                        };
+                            try
+                            {
+                                var res = new MatchDataResult();
 
-                        if (newLeague.SportName != "Soccer")
-                            continue;
+                                var id = matchId;
+                                var league =
+                                    resultWithoudOddset.leagues.First(l => l.matches.Any(m => m.MatchId == id));
 
-                        var match = league.matches.First(m => m.MatchId == matchId);
+                                var newLeague = new League
+                                {
+                                    LeagueName = league.LeagueName,
+                                    SportName = league.SportName,
+                                    GameId = league.GameId
+                                };
 
-                        match.oddset = GetOddSet(newLeague.GameId, match.MatchId, proxyForOddScrape);
+                                if (newLeague.SportName != "Soccer") return;
 
-                        newLeague.matches = new List<Match> { match };
+                                var match = league.matches.First(m => m.MatchId == matchId);
 
-                        res.leagues.Add(newLeague);
+                                match.oddset = GetOddSet(newLeague.GameId, match.MatchId, ProxyList[I]);
 
-                        var converter = new DafabetConverter();
+                                newLeague.matches = new List<Match> { match };
 
-                        var lns = converter.Convert(res, Name).ToList();
+                                res.leagues.Add(newLeague);
 
-                        lock (_lock) linesResult.AddRange(lns);
-                    }
-                });
+                                var converter = new DafabetConverter();
 
-                ActualLines = linesResult.ToArray();
+                                var lns = converter.Convert(res, Name).ToList();
+
+                                lock (_lock) lines.AddRange(lns);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Info($"ERROR {Name} Parse event exception {e.Message} {e.StackTrace}");
+                            }
+                        });
+
+                    tasks[index] = task;
+                }
+
+                Task.WaitAll(tasks, 10000);
+
+                ActualLines = lines.ToArray();
 
                 ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
             }
@@ -334,11 +353,9 @@ namespace Dafabet
             }
 
             //удваиваем количество проксей, что вставить больше элементов параллелбный запрос
-            ProxyList.AddRange(ProxyList.ToList());
-            ProxyList.AddRange(ProxyList.ToList());
+            //ProxyList.AddRange(ProxyList.ToList());
+            //ProxyList.AddRange(ProxyList.ToList());
         }
-
-
 
         private CookieCollection Authorize(WebProxy host, string login, string password)
         {
@@ -412,7 +429,12 @@ namespace Dafabet
             { "vzakiev24", "4zSsrzsR"},
             { "nabokova85", "3zSsrzsR"},
             { "alivnov86", "8x65U442"},
+            { "alivnov87", "8x65U442"},
+            { "alexeyalex84", "73bR8u7q"},
+            { "romvitov84", "u56ENHy3"},
+            { "egoralikin98", "d4NAZ2D5"},
         };
+
 
     }
 

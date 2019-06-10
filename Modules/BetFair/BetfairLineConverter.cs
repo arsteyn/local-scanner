@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using BetFairApi;
@@ -9,7 +10,6 @@ namespace BetFair
 {
     public class BetFairLineConverter : ILineConverter
     {
-      
         private const double TotalMatched = 10000;
         
         public static string[] Matches = {
@@ -20,6 +20,13 @@ namespace BetFair
             "MATCH_ODDS",
             "DRAW_NO_BET",
         };
+
+        private static ConcurrentDictionary<string, ScoreResult> scoreResults;
+
+        public BetFairLineConverter()
+        {
+            scoreResults = new ConcurrentDictionary<string, ScoreResult>();
+        }
 
         public LineDTO[] Convert(string response, string bookmaker)
         {
@@ -71,7 +78,7 @@ namespace BetFair
                 .Where(x => x.Event.Name.Contains(" v ") || x.Event.Name.Contains(" @ "))
                 .GroupBy(x => new { EventTypeName = x.EventType.Name, EventName = x.Event.Name });
 
-            lines.AddRange(BetFairHelper.Convert(marketCataloguesGroups.SelectMany(m => m).ToList(), aping, bookmaker));
+            lines.AddRange(BetFairHelper.Convert(marketCataloguesGroups.SelectMany(m => m).ToList(), aping, bookmaker, scoreResults));
 
             return lines.ToArray();
         }

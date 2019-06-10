@@ -4,6 +4,8 @@ using BM;
 using BM.Core;
 using BM.DTO;
 using Dafabet.Models;
+using Newtonsoft.Json;
+using NLog.Fluent;
 
 namespace Dafabet
 {
@@ -83,8 +85,8 @@ namespace Dafabet
                             AddLine(line.Clone());
 
                             continue;
-                      
-                            
+
+
 
                         #endregion
 
@@ -331,7 +333,7 @@ namespace Dafabet
 
                             continue;
 
-                        #endregion
+                            #endregion
                     }
 
                 }

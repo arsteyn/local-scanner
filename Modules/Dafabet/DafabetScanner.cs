@@ -334,9 +334,15 @@ namespace Dafabet
                             {
                                 var m = obj.ToObject<Match>();
 
-                                if (m == null) continue;
+                                if (m == null ) continue;
 
                                 if (LeagueStopWords.Any(w => m.leaguenameen.ContainsIgnoreCase(w))) break;
+
+                                if (string.IsNullOrEmpty(m.hteamnameen) || string.IsNullOrEmpty(m.ateamnameen))
+                                {
+                                    Log.Info($"Dafabet ERROR initmatch empty team {JsonConvert.SerializeObject(obj)}");
+                                    continue;
+                                }
 
                                 _matches.GetOrAdd(m.matchid, m);
                             }
@@ -421,14 +427,30 @@ namespace Dafabet
                     //new match
                     case "m":
 
-                        var m = obj.ToObject<Match>();
+                        var mt = obj.ToObject<JObject>();
 
-                        if (m == null) continue;
+                        if (_matches.TryGetValue(mt["matchid"].ToLong(), out var ma))
+                        {
+                            if (mt["liveawayscore"] != null) ma.liveawayscore = mt["liveawayscore"].ToInt();
+                            if (mt["livehomescore"] != null) ma.livehomescore = mt["livehomescore"].ToInt();
+                            if (mt["eventstatus"] != null) ma.eventstatus = mt["eventstatus"].ToString();
+                        }
+                        else
+                        {
+                            var m = obj.ToObject<Match>();
 
-                        if (LeagueStopWords.Any(w => m.leaguenameen.ContainsIgnoreCase(w))) continue;
+                            if (m == null) continue;
 
-                        _matches.GetOrAdd(m.matchid, m);
-                        //Log.Info($"{Name} _matches.GetOrAdd {m.matchid}");
+                            if (LeagueStopWords.Any(w => m.leaguenameen.ContainsIgnoreCase(w))) break;
+
+                            if (string.IsNullOrEmpty(m.hteamnameen) || string.IsNullOrEmpty(m.ateamnameen))
+                            {
+                                Log.Info($"Dafabet ERROR initmatch empty team {JsonConvert.SerializeObject(obj)}");
+                                continue;
+                            }
+
+                            _matches.GetOrAdd(m.matchid, m);
+                        }
 
                         break;
 

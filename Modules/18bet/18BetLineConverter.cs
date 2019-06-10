@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using AngleSharp.Dom;
 using Bars.EAS.Utils.Extension;
 using Bet18.Models;
 using BM;
 using BM.Core;
 using BM.DTO;
 using NLog;
-using Scanner;
 
 namespace Bet18
 {
@@ -130,6 +126,7 @@ namespace Bet18
                                     case "draw":
                                         line.CoeffKind = "X";
                                         break;
+                                    default: continue;
                                 }
 
                                 line.CoeffValue = odd.o.Value;
@@ -145,12 +142,15 @@ namespace Bet18
                                     case "under":
                                         line.CoeffKind = "TOTALUNDER";
                                         break;
+                                    default: continue;
                                 }
                                 line.CoeffParam = odd.es;
                                 line.CoeffValue = odd.o.Value;
                                 AddLine(line);
                                 break;
                             case "htt":
+
+
                                 switch (odd.k)
                                 {
                                     case "home_over":
@@ -159,10 +159,12 @@ namespace Bet18
                                     case "home_under":
                                         line.CoeffKind = "ITOTALUNDER1";
                                         break;
+                                    default: continue;
                                 }
                                 line.CoeffParam = odd.es;
                                 line.CoeffValue = odd.o.Value;
                                 AddLine(line);
+
                                 break;
                             case "att":
                                 switch (odd.k)
@@ -173,6 +175,7 @@ namespace Bet18
                                     case "away_under":
                                         line.CoeffKind = "ITOTALUNDER2";
                                         break;
+                                    default: continue;
                                 }
                                 line.CoeffParam = odd.es;
                                 line.CoeffValue = odd.o.Value;
@@ -187,6 +190,7 @@ namespace Bet18
                                     case "away":
                                         line.CoeffKind = "HANDICAP2";
                                         break;
+                                    default: continue;
                                 }
                                 line.CoeffParam = odd.es;
                                 line.CoeffValue = odd.o.Value;
@@ -211,6 +215,7 @@ namespace Bet18
                                     case "away":
                                         line.CoeffKind = "W2";
                                         break;
+                                    default: continue;
                                 }
                                 line.CoeffValue = odd.o.Value;
                                 AddLine(line);
@@ -225,7 +230,6 @@ namespace Bet18
                 }
             }
         }
-
 
         private void AddLine(LineDTO lineDto)
         {

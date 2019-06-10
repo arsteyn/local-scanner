@@ -192,7 +192,7 @@
       <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
       <Name>BetFair</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules\Dafabet\Dafabet.csproj">
+    <ProjectReference Include="..\Modules\Dafabet_old\Dafabet.csproj">
       <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
       <Name>Dafabet</Name>
     </ProjectReference>

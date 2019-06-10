@@ -227,7 +227,7 @@ namespace S888
                     line.CoeffType = ConverterHelper.GetPeriod(offer.criterion.englishLabel);
 
                     line.CoeffValue = Math.Round(outcome.odds / 1000m, 2);
-                    line.LineData = outcome.odds + ";" + outcome.id;
+                    line.LineData = $"{outcome.odds};{outcome.id};{offer.id};{offer.eventId}";
                     line.LineObject = "| Outcome | " + JsonConvert.SerializeObject(outcome) + " | Offer | " + JsonConvert.SerializeObject(offer);
                     line.UpdateName();
                     localLines.Add(line);
