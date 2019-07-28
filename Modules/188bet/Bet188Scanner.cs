@@ -27,7 +27,32 @@ namespace Bet188
         private string _allInPlay = "/en-gb/sports/all/in-play";
         public static string servicePoint = "en-gb/Service/CentralService?GetData";
 
-        public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
+       
+        public static readonly string[] ForbiddenTournaments = {
+            "fantasy",
+            "corner",
+            "specific",
+            "statistics",
+            "crossbar",
+            "goalpost",
+            "fouls",
+            "offsides",
+            "shot",
+            "booking",
+            "penalty",
+            "special",
+            "goal",
+            "kick",
+            "offside",
+            "throw",
+            "over",
+            "under",
+            "winner",
+            //penalty
+            "(PEN)",
+            //extra time
+            "(ET)"
+        };
 
         protected override void UpdateLiveLines()
         {
@@ -64,7 +89,6 @@ namespace Bet188
                         {"oPageNo","0"},
                         {"LiveCenterEventId","0"},
                         {"LiveCenterSportId","0"},
-
                     };
 
                     response = wc.UploadString($"{Host}{servicePoint}", ClientExtension.ConstructQueryString(q));
@@ -72,7 +96,7 @@ namespace Bet188
 
                 var result = JsonConvert.DeserializeObject<CentralServiceResult>(response);
 
-                Log.Info($"{Name} Firstquery {st.Elapsed.ToString("g")}");
+                //Log.Info($"{Name} Firstquery {st.Elapsed:g}");
 
                 st.Restart();
 
@@ -127,7 +151,7 @@ namespace Bet188
 
                 Task.WaitAll(tasks, 10000);
 
-                Log.Info($"{Name} Other {st.Elapsed:g}");
+                //Log.Info($"{Name} Other {st.Elapsed:g}");
 
                 st.Stop();
 

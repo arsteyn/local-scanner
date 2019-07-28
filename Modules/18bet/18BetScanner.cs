@@ -24,7 +24,6 @@ namespace Bet18
 
         private readonly ConcurrentDictionary<long, Event> _events;
 
-
         public override string Name => "Bet18";
 
         public sealed override string Host => "https://stream.89pin.net:3001";
@@ -49,12 +48,15 @@ namespace Bet18
 
             _refreshTokenTimer = new Timer(tm, null, _exp * 1000, _exp * 1000);
 
-            var tm2 = new TimerCallback(state => SubscribeAllMarkets());
 
-            _subscribeAllMarketsTimer = new Timer(tm2, null, 10 * 1000, 10 * 1000);
+            _subscribeAllMarketsTimer = new Timer(s => SubscribeAllMarkets(), null, 10 * 1000, 10 * 1000);
+
+            //переподключаемся каждые 10 минут
+            _subscribeAllMarketsTimer = new Timer(s => Reconnect(), null, 60 * 1000 * 10, 60 * 1000 * 10);
         }
 
         Timer _refreshTokenTimer;
+        Timer _reconnectTimer;
         Timer _subscribeAllMarketsTimer;
         List<string> _subscribedMarkets;
         private string _token;
@@ -191,25 +193,9 @@ namespace Bet18
 
             _socket.On(Socket.EVENT_DISCONNECT, (data) =>
             {
+                Log.Info($"ERROR Bet18 EVENT_DISCONNECT {JsonConvert.SerializeObject(data)}");
 
-                try
-                {
-                    lock (_sync) _rooms.Clear();
-                    lock (_sync) _events.Clear();
-                    lock (_sync) _subscribedMarkets.Clear();
-
-                    _socket.Off();
-                    _socket.Close();
-
-                    Log.Info($"ERROR Bet18 EVENT_DISCONNECT {JsonConvert.SerializeObject(data)}");
-                    InitConnection();
-                }
-                catch (Exception e)
-                {
-                    Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
-                }
-
-
+                Reconnect();
             });
 
             _socket.On(Socket.EVENT_RECONNECT, (attemptNumber) =>
@@ -231,6 +217,26 @@ namespace Bet18
             {
                 Log.Info($"ERROR Bet18 EVENT_ERROR {JsonConvert.SerializeObject(data)}");
             });
+        }
+
+        private void Reconnect()
+        {
+            try
+            {
+                lock (_sync) _rooms.Clear();
+                lock (_sync) _events.Clear();
+                lock (_sync) _subscribedMarkets.Clear();
+
+                _socket.Off();
+                _socket.Close();
+
+              
+                InitConnection();
+            }
+            catch (Exception e)
+            {
+                Log.Info($"ERROR Bet18 Exception {JsonConvert.SerializeObject(e)}");
+            }
         }
 
         private void SubscribeAllMarkets()

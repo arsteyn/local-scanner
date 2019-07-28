@@ -104,8 +104,7 @@ namespace BetFair
 
             foreach (var runner in marketBook.Runners)
             {
-                decimal? сoeffParam;
-                var coeffKind = GetCoeffKind(new GetCoeffKindParams(runner, marketCatalogue, runner.Handicap), out сoeffParam);
+                var coeffKind = GetCoeffKind(new GetCoeffKindParams(runner, marketCatalogue, runner.Handicap), out var сoeffParam);
 
                 if (string.IsNullOrEmpty(coeffKind)) continue;
 
@@ -222,8 +221,6 @@ namespace BetFair
 
             var marketBooks = aping.ListMarketBook(marketIds.ToList(), priceProjection, null, MatchProjection.ROLLED_UP_BY_PRICE, "USD");
 
-            //foreach (var marketBook in marketBooks.Where(x => x.Status == MarketStatus.OPEN))
-            //{
 
             var openMarkets = marketBooks.Where(x => x.Status == MarketStatus.OPEN);
 
@@ -234,6 +231,8 @@ namespace BetFair
                 if (market == null) return;
 
                 if (!scoreResults.ContainsKey(market.Event.Id)) scoreResults.GetOrAdd(market.Event.Id, GetScoreResult(market.Event.Id));
+
+                if (scoreResults[market.Event.Id].score == null) return;
 
                 var l = Convert(market, marketBook, x =>
                 {
@@ -257,14 +256,8 @@ namespace BetFair
                 lock (Lock) lines.AddRange(l);
             });
 
-
-            //}
-
             return lines;
         }
-
-
-
 
         public static ScoreResult GetScoreResult(string eventId)
         {

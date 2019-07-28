@@ -37,26 +37,40 @@ namespace Bet188.Models
         /// event id
         /// </summary>
         public string k { get; set; }
+
         /// <summary>
-        /// event markets container
+        /// markets container
         /// </summary>
         public o o { get; set; }
+        /// <summary>
+        /// markets container
+        /// </summary>
+        [JsonProperty(PropertyName = "n-o")]
+        public List<n_o> n_o { get; set; }
 
-        //TODO: здесь double chance
-        //[JsonProperty(PropertyName = "n-o")]
-        //public List<n_o> n_o { get; set; }
+        /// <summary>
+        /// markets container
+        /// </summary>
+        public List<cel> cel { get; set; }
     }
 
-    //public class n_o
-    //{
-    //    /// <summary>
-    //    /// name
-    //    /// </summary>
-    //    public string n { get; set; }
+    public class cel
+    {
+        public o o { get; set; }
 
-    //    public List<o> Type { get; set; }
+        public List<n_o> n_o { get; set; }
+    }
 
-    //}
+    public class n_o
+    {
+        /// <summary>
+        /// name
+        /// </summary>
+        public string n { get; set; }
+
+        public List<List<string>> o { get; set; }
+
+    }
 
     public class o
     {
@@ -76,6 +90,7 @@ namespace Bet188.Models
         public oItem _1x21st { get; set; }
         public oItem tg { get; set; }
         public oItem tg1st { get; set; }
+        public string n { get; set; }
      
     }
 
