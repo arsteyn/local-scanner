@@ -10,8 +10,8 @@ C:\Projects\LocalScanner\BetFairApi\obj\Debug\BetFairApi.pdb
 C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll.config
 C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.dll
 C:\Projects\Bars.EAS\src\Bars.EAS\modules\BetFairApi.pdb
-C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csprojAssemblyReference.cache
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csproj.CoreCompileInputs.cache
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csproj.CopyComplete
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.dll
 C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.pdb
+C:\Projects\Localscanner\Modules\BetFairApi\obj\Debug\BetFairApi.csprojAssemblyReference.cache

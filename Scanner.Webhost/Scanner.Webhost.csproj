@@ -180,17 +180,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\18bet\Bet18.csproj">
-      <Project>{b16f4ec2-24c3-4ab9-9800-b2a56e051303}</Project>
-      <Name>Bet18</Name>
+    <ProjectReference Include="..\Modules\Partypoker\Partypoker.csproj">
+      <Project>{e46f7403-78f9-4d23-9741-f3ae86335c76}</Project>
+      <Name>Partypoker</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>
       <Name>Scanner.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SocketIOClient\EngineIoClientDotNet.net45\EngineIoClientDotNet.net45.csproj">
-      <Project>{842d8b13-daf3-4919-80a0-03efa3c17178}</Project>
-      <Name>EngineIoClientDotNet.net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

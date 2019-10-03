@@ -30,10 +30,13 @@ namespace Scanner
 
             while (true)
             {
-                if (!ProxyList.Any() && Name != "Betfair" && Name != "Bet365")
+                if (!ProxyList.Any())
                 {
                     Log.Info($"ERROR {Name} no proxy");
+
                     Thread.Sleep(10000);
+
+                    ProxyList = ProxyHelper.GetHostList();
 
                     CheckDict();
 

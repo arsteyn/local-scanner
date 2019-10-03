@@ -394,7 +394,7 @@ namespace Dafabet
             {
                 client.Headers["Referer"] = $"https://m.dafabet.com/en/";
 
-                var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/module/route/pas_integration/updateToken?authenticated=true&hash={hash}");
+                var r = client.Post<dynamic>($"https://m.dafabet.com/en/api/plugins/module/route/pas_integration/updateToken?authenticated=true&hash={hash}", (string) null);
 
                 token = r.token;
 

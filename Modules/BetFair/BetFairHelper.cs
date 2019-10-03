@@ -25,77 +25,9 @@ namespace BetFair
     {
         static Logger Log => LogManager.GetCurrentClassLogger();
 
-        public static AccountAPING GetAccountAPING(BmUser bmUser, ICookieProvider provider)
-        {
-            return GetAccountAPING(provider.GetCookies(bmUser.Id));
-        }
-
-        public static AccountAPING GetAccountAPING(CookieCollection collection)
-        {
-            var apiKey = GetAuthField(collection, AuthField.ApiKey);
-
-            return apiKey == null ? null : new AccountAPING(apiKey);
-        }
-
-        public static SportsAPING GetSportsAPING(BmUser bmUser, ICookieProvider provider, bool buying = false)
-        {
-            return GetSportsAPING(provider.GetCookies(bmUser.Id), buying);
-        }
-
-        public static SportsAPING GetSportsAPING(CookieCollection collection, bool buying = false)
-        {
-            var appKey = GetAuthField(collection, buying ? AuthField.Customer : AuthField.Developer);
-            var token = GetAuthField(collection, AuthField.Token);
-
-            return new SportsAPING(appKey, token);
-        }
-
         public static string GetAuthField(CookieCollection collection, AuthField authField)
         {
             return collection.GetValue(authField.ToString());
-        }
-
-        internal static bool FindMarket(SportsAPING aping, LineInfo lineInfo, LineDTO line, out string message)
-        {
-            var priceProjection = new PriceProjection();
-            priceProjection.PriceData = new List<PriceData> { PriceData.EX_ALL_OFFERS, PriceData.EX_BEST_OFFERS };
-
-            var markets = aping.ListMarketBook(new List<string> { lineInfo.MarketId }, priceProjection, null, null, "USD");
-
-            var market = markets.FirstOrDefault();
-
-            if (market == null)
-            {
-                message = "Не найдена ставка. market == null";
-                return false;
-            }
-
-            if (market.Status != MarketStatus.OPEN)
-            {
-                message = $"Рынок закрыт. Статус {market.Status}";
-                return false;
-            }
-
-            var runner = market.Runners.FirstOrDefault(x => x.SelectionId == lineInfo.SelectionId);
-
-            if (runner == null)
-            {
-                message = "Не найдена ставка. runner == null";
-                return false;
-            }
-
-            foreach (var priceSize in runner.ExchangePrices.AvailableToBack)
-            {
-                if ((decimal)priceSize.Price > line.CoeffValue && (decimal)priceSize.Size > line.Price)
-                {
-                    line.CoeffValue = (decimal)priceSize.Price;
-                    message = $"Price = {priceSize.Price}. Size = {priceSize.Size}";
-                    return true;
-                }
-            }
-
-            message = "";
-            return false;
         }
 
         public static IList<LineDTO> Convert(MarketCatalogue marketCatalogue, MarketBook marketBook, Action<LineDTO> action)
@@ -221,7 +153,6 @@ namespace BetFair
 
             var marketBooks = aping.ListMarketBook(marketIds.ToList(), priceProjection, null, MatchProjection.ROLLED_UP_BY_PRICE, "USD");
 
-
             var openMarkets = marketBooks.Where(x => x.Status == MarketStatus.OPEN);
 
             Parallel.ForEach(openMarkets, marketBook =>
@@ -230,9 +161,9 @@ namespace BetFair
 
                 if (market == null) return;
 
-                if (!scoreResults.ContainsKey(market.Event.Id)) scoreResults.GetOrAdd(market.Event.Id, GetScoreResult(market.Event.Id));
+                if (!scoreResults.ContainsKey(market.Event.Id)) scoreResults.GetOrAdd(market.Event.Id, GetScoreResult(market.Event.Id, aping.Proxy));
 
-                if (scoreResults[market.Event.Id].score == null) return;
+                if (scoreResults[market.Event.Id] == null || scoreResults[market.Event.Id].score == null) return;
 
                 var l = Convert(market, marketBook, x =>
                 {
@@ -259,14 +190,21 @@ namespace BetFair
             return lines;
         }
 
-        public static ScoreResult GetScoreResult(string eventId)
+        public static ScoreResult GetScoreResult(string eventId, WebProxy proxy)
         {
-            ScoreResult scoreresult;
+            try
+            {
+                ScoreResult scoreresult;
 
-            using (var wc = new GetWebClient())
-                scoreresult = wc.DownloadResult<ScoreResult>($"https://ips.betfair.com/inplayservice/v1/eventTimeline?alt=json&eventId={eventId}&locale=en_GB&productType=EXCHANGE&regionCode=UK");
+                using (var wc = new GetWebClient(proxy))
+                    scoreresult = wc.DownloadResult<ScoreResult>($"https://ips.betfair.com/inplayservice/v1/eventTimeline?alt=json&eventId={eventId}&locale=en_GB&productType=EXCHANGE&regionCode=UK");
 
-            return scoreresult;
+                return scoreresult;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 
