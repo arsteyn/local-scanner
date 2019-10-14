@@ -24,11 +24,11 @@ namespace Scanner.Webhost.Controllers
         private static HttpResponseMessage GetResponse(LineDTO[] lines)
         {
             var json = JsonConvert.SerializeObject(lines);
-            var compressed = Lz4.CompressString(json);
+            //var compressed = Lz4.CompressString(json);
 
             return new HttpResponseMessage
             {
-                Content = new StringContent(compressed, Encoding.UTF8, "text/html")
+                Content = new StringContent(json, Encoding.UTF8, "text/html")
             };
         }
 

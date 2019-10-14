@@ -2,14 +2,13 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using BetFairApi;
 using BM.DTO;
 using BM.Interfaces;
 
 namespace BetFair
 {
-    public class BetFairLineConverter
+    public class BetFairLineConverter : ILineConverter
     {
         private const double TotalMatched = 10000;
         
@@ -29,14 +28,14 @@ namespace BetFair
             scoreResults = new ConcurrentDictionary<string, ScoreResult>();
         }
 
-        public LineDTO[] Convert(string response, string bookmaker, WebProxy proxy)
+        public LineDTO[] Convert(string response, string bookmaker)
         {
             var token = response.Split('|')[0];
             var appKey = response.Split('|')[1];
 
             var lines = new List<LineDTO>();
 
-            var aping = new SportsAPING(appKey, token, proxy);
+            var aping = new SportsAPING(appKey, token);
 
             var marketProjection = new List<MarketProjection>
             {
@@ -51,9 +50,7 @@ namespace BetFair
                 EventTypeIds = new[]
                 {
                     "1", //Footbal
-                    "7524", //Ice hockey
-                    
-                    //"2" //Tennis - очень узкая роспись
+                    "7524" //Ice hockey
                     //"7522",
                     //"468328",
                     //"998917"

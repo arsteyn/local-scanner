@@ -1,7 +1,4 @@
-﻿using System.Net;
-using Newtonsoft.Json;
-
-namespace BetFairApi
+﻿namespace BetFairApi
 {
     using System;
     using System.Collections.Generic;
@@ -16,32 +13,28 @@ namespace BetFairApi
 
         public const string url = "https://api.betfair.com/exchange/account/json-rpc/v1/";
 
-        public static readonly string GET_DEVELOPER_APP_KEYS = $"{service}/{version}/getDeveloperAppKeys";
+        public static readonly string GET_DEVELOPER_APP_KEYS = string.Format("{0}/{1}/getDeveloperAppKeys", service, version);
 
-        public static readonly string GET_ACCOUNT_FUNDS = $"{service}/{version}/getAccountFunds";
+        public static readonly string GET_ACCOUNT_FUNDS = string.Format("{0}/{1}/getAccountFunds", service, version);
 
-
-
-        public AccountAPING(string appKey, WebProxy proxy)
-            : base(appKey, proxy)
+        public AccountAPING(string appKey)
+            : base(appKey)
         {
         }
 
         /// <summary>
         /// Получение сессии
         /// </summary>
-        /// <param name="bmUserGetWebProxy"></param>
         /// <param name="authParams"></param>
         /// <returns>Session Token (ssoid)</returns>
         public string GetSession(AuthParams authParams)
         {
-            using (var wc = this.PostBetWebClient(this.ApiKey))
+            using (var wc = this.GetBetWebClient(this.ApiKey))
             {
                 if (authParams.UseCertificate && authParams.Certificate != null)
                 {
                     wc.BeforeRequest = x => x.ClientCertificates.Add(authParams.Certificate);
                 }
-
 
                 var values = new NameValueCollection
                 {
@@ -49,9 +42,8 @@ namespace BetFairApi
                     { "password", authParams.Password }
                 };
 
-                var r = wc.Post("https://identitysso-cert.betfair.com/api/certlogin", values);
 
-                var request = JsonConvert.DeserializeObject<LoginResult>(r);
+                var request = wc.Post<LoginResult>("https://identitysso-cert.betfair.com/api/certlogin", values);
 
                 if (request.LoginStatus == "SUCCESS")
                 {
@@ -65,12 +57,11 @@ namespace BetFairApi
         /// <summary>
         /// Получить ключи приложений разработчика
         /// </summary>
-        /// <param name="bmUserGetWebProxy"></param>
         /// <param name="token">Session Token (ssoid)</param>
         /// <returns></returns>
         public List<DeveloperApp> GetDeveloperAppKeys(string token)
         {
-            token.IfNull(x => throw new ArgumentException("token"));
+            token.IfNull(x => { throw new ArgumentException("token"); });
 
             var param = new JsonRequest
             {
@@ -78,22 +69,17 @@ namespace BetFairApi
                 Method = GET_DEVELOPER_APP_KEYS
             };
 
-            using (var wc = this.PostBetWebClient(null, token))
+            using (var wc = this.GetBetWebClient(null, token))
             {
-                var r = wc.Post(url, param);
-
-                var response = JsonConvert.DeserializeObject<JsonResponse<List<DeveloperApp>>>(r);
-
+                var response = wc.Post<JsonResponse<List<DeveloperApp>>>(url, param);
                 return response.Result;
             }
         }
 
-
-
         public AccountFundsResponse GetAccountFunds(string token, string appKey)
         {
-            token.IfNull(x => throw new ArgumentException("token"));
-            appKey.IfNull(x => throw new ArgumentException("appKey"));
+            token.IfNull(x => { throw new ArgumentException("token"); });
+            appKey.IfNull(x => { throw new ArgumentException("appKey"); });
 
             var param = new JsonRequest
             {
@@ -101,12 +87,9 @@ namespace BetFairApi
                 Method = GET_ACCOUNT_FUNDS
             };
 
-            using (var wc = PostBetWebClient(appKey, token))
+            using (var wc = this.GetBetWebClient(appKey, token))
             {
-                var r = wc.Post(url, param);
-
-                var response = JsonConvert.DeserializeObject<JsonResponse<AccountFundsResponse>>(r);
-
+                var response = wc.Post<JsonResponse<AccountFundsResponse>>(url, param);
                 return response.Result;
             }
         }

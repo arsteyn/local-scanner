@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -17,11 +16,11 @@ namespace BetFair
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        public static CookieCollection DoAuthorize(WebProxy proxy)
+        public static CookieCollection DoAuthorize()
         {
             var cookieCollection = new CookieCollection();
 
-            var aping = new AccountAPING(BetFairData.ApiKey, proxy);
+            var aping = new AccountAPING(BetFairData.ApiKey);
 
             //var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 

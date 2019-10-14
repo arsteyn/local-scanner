@@ -4,7 +4,7 @@ using Scanner.Interface;
 
 namespace S888
 {
-    public class FavbetModule : IModule
+    public class S888Module : IModule
     {
         private IScanner Scanner { get; set; }
 

@@ -34,7 +34,7 @@ namespace Partypoker
 
                 var randHost = ProxyList.PickRandom();
 
-                List<long> events = new List<long>();
+                var events = new List<long>();
 
                 string pushAccessId;
 
@@ -44,6 +44,7 @@ namespace Partypoker
                     pushAccessId = s.RegexStringValue("\"pushAccessId\":\"(?<value>.*?)\"");
                 }
 
+                //Football
                 using (var webClient = new GetWebClient(randHost))
                 {
                     var f = webClient.DownloadString(
@@ -62,7 +63,29 @@ namespace Partypoker
 
                     var x = JsonConvert.DeserializeObject<FixturesResponse>(f);
 
-                    events = x.fixtures.Select(g => g.id).ToList();
+                    events.AddRange(x.fixtures.Select(g => g.id));
+                }
+
+                //Ice hockey
+                using (var webClient = new GetWebClient(randHost))
+                {
+                    var f = webClient.DownloadString(
+                        "https://cds-api.partypoker.com/bettingoffer/fixtures?" +
+                        $"x-bwin-accessid={pushAccessId}&" +
+                        "lang=en&" +
+                        "country=RU&" +
+                        "userCountry=RU&" +
+                        "state=Live&" +
+                        "take=9999&" +
+                        "offerMapping=Filtered&" +
+                        "offerCategories=Gridable&" +
+                        "sortBy=StartDate&" +
+                        "sportIds=12"
+                    );
+
+                    var x = JsonConvert.DeserializeObject<FixturesResponse>(f);
+
+                    events.AddRange(x.fixtures.Select(g => g.id));
                 }
 
                 Parallel.ForEach(events, @event =>
@@ -83,7 +106,7 @@ namespace Partypoker
                                                                  $"offerMapping=All&" +
                                                                  $"scoreboardMode=Full&" +
                                                                  $"fixtureIds={@event}&" +
-                                                                 $"state=Latest"
+                                                                 $"state=Live"
                                 );
 
                                 var converter = new PartypokerLineConverter();

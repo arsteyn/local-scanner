@@ -1,6 +1,5 @@
 ﻿
 using System.Diagnostics;
-using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -13,8 +12,8 @@ namespace BetFairApi
 
     public class SportsAPING : APING
     {
-        public SportsAPING(string appKey, string token, WebProxy proxy)
-            : base(appKey, proxy)
+        public SportsAPING(string appKey, string token)
+            : base(appKey)
         {
             this.Token = token;
         }
@@ -238,13 +237,11 @@ namespace BetFairApi
 
         public T Invoke<T>(JsonRequest request)
         {
-            using (var wc = PostBetWebClient(this.ApiKey, this.Token))
+            using (var wc = this.GetBetWebClient(this.ApiKey, this.Token))
             {
-                var r = wc.Post(URL, request);
-
-                var response = JsonConvert.DeserializeObject<JsonResponse<T>>(r);
-
-                return response.Result;
+                var response = wc.Post(URL, request);
+                var r = JsonConvert.DeserializeObject<JsonResponse<T>>(response);
+                return r.Result;
             }
         }
 

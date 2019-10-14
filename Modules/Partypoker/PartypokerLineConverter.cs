@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Linq;
+using System.Threading.Tasks;
 using Bars.EAS.Utils;
 using Bars.EAS.Utils.Extension;
 using BM;
@@ -56,8 +55,10 @@ namespace Partypoker
                 {$"{fvr.fixture.participants[0].name.value} or {fvr.fixture.participants[0].name.value}", "12"}
             };
 
-            foreach (var game in fvr.fixture.games)
-                ConvertGame(game);
+            Parallel.ForEach(fvr.fixture.games, game =>
+            {
+                ConvertGame(fvr.fixture, game);
+            });
 
             return Lines.ToArray();
         }
@@ -67,20 +68,42 @@ namespace Partypoker
 
         static object _lock = new object();
 
-        private void ConvertGame(Game game)
+        private void ConvertGame(Fixture fvrFixture, Game game)
         {
-            lock (_lock)
-            {
-                var lines = File.ReadLines(@"C:\temp\names.txt").ToList();
+            //lock (_lock)
+            //{
+            //    var lines = File.ReadLines(@"C:\temp\names.txt").ToList();
 
-                if (lines.All(l => l != "case \"" + game.name.value.ToLower() + "\":"))
-                {
-                    //добавляем линию
-                    lines.Add("case \"" + game.name.value.ToLower() + "\":");
-                }
+            //    if (lines.All(l => l != $"case \"{game.name.value.ToLower()}\":"))
+            //    {
+            //        //рынок
+            //        //добавляем линию
+            //        lines.Add($"case \"{game.name.value.ToLower()}\":");
+            //    }
 
-                File.WriteAllLines(@"C:\temp\names.txt", lines);
-            }
+            //    lines.Sort();
+
+            //    File.WriteAllLines(@"C:\temp\names.txt", lines);
+
+
+            //    foreach (var gameResult in game.results)
+            //    {
+            //        var resulta = File.ReadLines(@"C:\temp\results.txt").ToList();
+
+
+            //        if (resulta.All(l => l != "case \"" + gameResult.name.value.ToLower() + "\":" + JsonConvert.SerializeObject(gameResult).ToString()))
+            //        {
+            //            //рынок
+            //            //добавляем линию
+            //            resulta.Add("case \"" + game.name.value.ToLower() + "\":" + JsonConvert.SerializeObject(gameResult));
+            //        }
+
+            //        resulta.Sort();
+
+            //        File.WriteAllLines(@"C:\temp\results.txt", resulta);
+            //    }
+
+            //}
 
 
             if (!game.visibility.EqualsIgnoreCase("visible")) return;
@@ -89,194 +112,154 @@ namespace Partypoker
             {
 
                 case "match result":
-                case "match winner":
-                //case "who will win the 1st period?":
-                //case "who will win the 2nd period?":
-                //case "who will win the 3rd period?":
+                case "double chance":
+                case "half time double chance":
+                case "half time result":
 
                 case "double chance (regular time)":
                 case "double chance 1st period":
                 case "double chance 2nd period":
                 case "double chance 3rd period":
-                case "half time double chance":
 
-                case "money line":
-                case "moneyline":
-
-                case "1st half money line":
-                case "2nd half money line":
-
-                case "1st quarter moneyline":
-                case "2nd quarter moneyline":
-                case "3rd quarter moneyline":
-                case "4th quarter moneyline":
-
-                    ConvertMainBets(game);
+                    ConvertMainBets(fvrFixture, game);
                     break;
 
-                //case "total goals - over/under":
-                //case "total goals o/u - 1st half":
-                //case "total goals o/u - 2nd half":
-                ////case "totals (regular time)":
-                //case "totals":
-                //case "1st half totals":
-                //case "2nd half totals":
+                case "draw no bet":
+
+                    ConvertDnb(fvrFixture, game);
+
+                    break;
+
+                case "total goals - over/under":
+                case "total goals o/u - 1st half":
+                case "total goals o/u - 2nd half":
+                case "totals (regular time)":
+                case "totals":
+                case "1st half totals":
+                case "2nd half totals":
 
                 //case "1st quarter totals (only points scored in this quarter)":
                 //case "2nd quarter totals (only points scored in this quarter)":
                 //case "3rd quarter totals (only points scored in this quarter)":
                 //case "4th quarter totals (only points scored in this quarter)":
-                //case "1st period totals":
-                //case "2nd period totals":
-                //case "3rd period totals":
+                case "1st period totals":
+                case "2nd period totals":
+                case "3rd period totals":
 
-                //    ConvertTotal(game.Results, game);
-                //    break;
+                    ConvertTotal(fvrFixture, game);
+                    break;
 
-                //case "total goals o/u - team 1":
-                //case "how many goals will team 1 score in 1st period?":
-                //case "how many goals will team 1 score in 2nd period?":
-                //case "how many goals will team 1 score in 3rd period?":
-                //case "how many goals will team 1 score? (regular time)":
+                case "total goals o/u - team 1":
 
-                //    ConvertIndividualTotal(game.Results, game, 1);
-                //    break;
+                    ConvertIndividualTotal(fvrFixture, game, 1);
+                    break;
+                case "total goals o/u - team 2":
 
-                //case "total goals o/u - team 2":
-                //case "how many goals will team 2 score in 1st period?":
-                //case "how many goals will team 2 score in 2nd period?":
-                //case "how many goals will team 2 score in 3rd period?":
-                //case "how many goals will team 2 score? (regular time)":
+                    ConvertIndividualTotal(fvrFixture, game, 2);
+                    break;
 
-                //    ConvertIndividualTotal(game.Results, game, 2);
-                //    break;
-
-                //case "handicap (regular time)":
-                //case "handicap":
-
-                //case "1st quarter handicap (points scored in this quarter only)":
-                //case "2nd quarter handicap (points scored in this quarter only)":
-                //case "3rd quarter handicap (points scored in this quarter only)":
-                //case "4th quarter handicap (points scored in this quarter only)":
-
-                //case "1st half handicap":
-                //case "2nd half handicap":
-
-                ////case "3 way handicap (regular time)":
-                ////case "3 way handicap (regular time) -1/+1":
-                ////case "3 way handicap (regular time) -2/+2":
-                ////case "3 way handicap (regular time) -3/+3":
-                ////case "3 way handicap (regular time) -4/+4":
-                ////case "3 way handicap (regular time) -5/+5":
-                ////case "3 way handicap (regular time) -6/+6":
-                ////case "3 way handicap (regular time) -7/+7":
-
-                //case "1st period - 3 way handicap (only goals scored in this period) -1/+1":
-                //case "2nd period - 3 way handicap (only goals scored in this period) -1/+1":
-                //case "3rd period - 3 way handicap (only goals scored in this period) -1/+1":
-                //case "4th period - 3 way handicap (only goals scored in this period) -1/+1":
-
-                //    ConvertHandicap(game.Results, game);
-                //    break;
+                    //Handicap только европейские
 
             }
         }
 
-        //private void ConvertHandicap(Game game)
-        //{
-        //    foreach (var result in game.results)
-        //    {
-        //        if (!result.Visible) continue;
-
-        //        var line = _lineTemplate.Clone();
-
-        //        line.CoeffValue = result.odds;
-
-        //        if (result.Name.ContainsIgnoreCase(line.Team1))
-        //            line.CoeffKind = "HANDICAP1";
-        //        else if (result.Name.ContainsIgnoreCase(line.Team2))
-        //            line.CoeffKind = "HANDICAP2";
-        //        else
-        //            continue;
-
-        //        line.CoeffParam = decimal.Parse(result.Name.Split(' ').Last().Replace(",", "."), CultureInfo.InvariantCulture);
-
-        //        line.CoeffType = GetCoeffType(market);
-
-        //        line.LineObject = result.Self;
-
-        //        AddLine(line);
-        //    }
-        //}
-
-        //private static void ConvertTotal(Game game)
-        //{
-        //    foreach (var result in results)
-        //    {
-        //        if (!result.Visible) continue;
-
-        //        if (!result.Name.ContainsIgnoreCase("over", "under")) continue;
-
-        //        var line = _lineTemplate.Clone();
-
-        //        line.CoeffValue = result.Odds;
-
-        //        line.CoeffKind = "TOTAL" + result.Name.Split(' ')[0].ToUpper();
-
-        //        line.CoeffParam = decimal.Parse(result.Name.Split(' ').Last().Replace(",", "."), CultureInfo.InvariantCulture);
-
-        //        line.CoeffType = GetCoeffType(market);
-
-        //        line.LineObject = result.Self;
-
-        //        AddLine(line);
-        //    }
-        //}
-
-        //private static void ConvertIndividualTotal(List<Result> results, Market market, int teamNumber)
-        //{
-        //    foreach (var result in results)
-        //    {
-        //        if (!result.Visible) continue;
-
-        //        if (!result.Name.ContainsIgnoreCase("over", "under")) continue;
-
-        //        var line = _lineTemplate.Clone();
-
-        //        line.CoeffValue = result.Odds;
-
-        //        line.CoeffKind = "ITOTAL" + result.Name.Split(' ')[0].ToUpper() + teamNumber;
-
-        //        line.CoeffParam = decimal.Parse(result.Name.Split(' ').Last().Replace(",", "."), CultureInfo.InvariantCulture);
-
-        //        line.CoeffType = GetCoeffType(market);
-
-        //        line.LineObject = result.Self;
-
-        //        AddLine(line);
-        //    }
-        //}
-
-        private void ConvertMainBets(Game game)
+        private void ConvertTotal(Fixture fvrFixture, Game game)
         {
-            foreach (var result in game.results)
+            Parallel.ForEach(game.results, result =>
             {
-                if (!result.visibility.EqualsIgnoreCase("visible")) continue;
+                if (!result.visibility.EqualsIgnoreCase("visible")) return;
 
                 var line = _lineTemplate.Clone();
 
                 line.CoeffValue = result.odds;
 
-                if (!_simpleMap.ContainsKey(result.name.value)) continue;
+                line.CoeffKind = "TOTAL" + result.name.value.Split(' ')[0].ToUpper();
+
+                line.CoeffParam = decimal.Parse(result.name.value.Split(' ')[1].Replace(",", "."), CultureInfo.InvariantCulture);
+
+                line.CoeffType = GetCoeffType(game);
+
+                line.LineObject = fvrFixture.id + "|" + game.id + "|" + result.id;
+
+                line.LineData = new BuyBetData(fvrFixture, game,result);
+
+                AddLine(line);
+            });
+        }
+
+        private void ConvertIndividualTotal(Fixture fvrFixture, Game game, int teamNumber)
+        {
+
+            Parallel.ForEach(game.results, result =>
+            {
+                if (!result.visibility.EqualsIgnoreCase("visible")) return;
+
+                var line = _lineTemplate.Clone();
+
+                line.CoeffValue = result.odds;
+
+                line.CoeffKind = "ITOTAL" + result.name.value.Split(' ')[0].ToUpper() + teamNumber;
+
+                line.CoeffParam = decimal.Parse(result.name.value.Split(' ')[1].Replace(",", "."), CultureInfo.InvariantCulture);
+
+                line.CoeffType = GetCoeffType(game);
+
+                line.LineObject = fvrFixture.id + "|" + game.id + "|" + result.id;
+
+                line.LineData = new BuyBetData(fvrFixture, game, result);
+
+                AddLine(line);
+            });
+
+        }
+
+        private void ConvertMainBets(Fixture fvrFixture, Game game)
+        {
+            Parallel.ForEach(game.results, result =>
+            {
+                if (!result.visibility.EqualsIgnoreCase("visible")) return;
+
+                var line = _lineTemplate.Clone();
+
+                line.CoeffValue = result.odds;
+
+                if (!_simpleMap.ContainsKey(result.name.value)) return;
 
                 line.CoeffType = GetCoeffType(game);
 
                 line.CoeffKind = _simpleMap[result.name.value];
 
-                line.LineObject = JsonConvert.SerializeObject(result);
+                line.LineObject = fvrFixture.id + "|" + game.id + "|" + result.id;
+
+                line.LineData = new BuyBetData(fvrFixture, game, result);
 
                 AddLine(line);
-            }
+            });
+        }
+
+        private void ConvertDnb(Fixture fvrFixture, Game game)
+        {
+            Parallel.ForEach(game.results, result =>
+            {
+                if (!result.visibility.EqualsIgnoreCase("visible")) return;
+
+                var line = _lineTemplate.Clone();
+
+                line.CoeffValue = result.odds;
+
+                if (!_simpleMap.ContainsKey(result.name.value)) return;
+
+                line.CoeffType = GetCoeffType(game);
+
+                line.CoeffKind = "W" + _simpleMap[result.name.value];
+
+                line.LineObject = fvrFixture.id + "|" + game.id + "|" + result.id;
+
+                line.LineData = new BuyBetData(fvrFixture, game, result);
+
+                AddLine(line);
+            });
+
         }
 
         private static string GetCoeffType(Game game)
@@ -297,12 +280,13 @@ namespace Partypoker
             return result;
         }
 
-
         private void AddLine(LineDTO lineDto)
         {
             lineDto.UpdateName();
-            Lines.Add(lineDto);
+            lock (_lock) Lines.Add(lineDto);
         }
+
+        
     }
 }
 

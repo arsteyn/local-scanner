@@ -88,178 +88,178 @@ namespace Bet365
 
         private void ConvertMainMarkets(LineDTO lineTemplateDto, IElement ev, MarketType marketType)
         {
-            var columns = ev.QuerySelectorAll("div.ipo-MainMarketRenderer");
+        //    var columns = ev.QuerySelectorAll("div.ipo-MainMarketRenderer");
 
-            for (int i = 0; i < columns.Length; i++)
-            {
-                var rows = columns[i].QuerySelectorAll("div.gl-ParticipantCentered:not(.gl-ParticipantCentered_Suspended)");
+        //    for (int i = 0; i < columns.Length; i++)
+        //    {
+        //        var rows = columns[i].QuerySelectorAll("div.gl-ParticipantCentered:not(.gl-ParticipantCentered_Suspended)");
 
-                for (int j = 0; j < rows.Length; j++)
-                {
-                    var line = lineTemplateDto.Clone();
-                    switch (i)
-                    {
+        //        for (int j = 0; j < rows.Length; j++)
+        //        {
+        //            var line = lineTemplateDto.Clone();
+        //            switch (i)
+        //            {
 
 
-                        //1X2
-                        case 0 when marketType == MarketType.MainMarkets:
-                            switch (j)
-                            {
-                                case 0:
-                                    line.CoeffKind = "1";
+        //                //1X2
+        //                case 0 when marketType == MarketType.MainMarkets:
+        //                    switch (j)
+        //                    {
+        //                        case 0:
+        //                            line.CoeffKind = "1";
 
-                                    ///непонятно где брать id исхода
-                            }
-                            continue;
+        //                            ///непонятно где брать id исхода
+        //                    }
+        //                    continue;
                         
                             
                             
-                            //Asian handicap
-                        case 1 when marketType == MarketType.FullTimeAsians:
-                            continue;
-                        //Match goals (match total)
-                        case 2 when marketType == MarketType.MainMarkets:
+        //                    //Asian handicap
+        //                case 1 when marketType == MarketType.FullTimeAsians:
+        //                    continue;
+        //                //Match goals (match total)
+        //                case 2 when marketType == MarketType.MainMarkets:
 
-                            continue;
+        //                    continue;
 
-                    }
-                }
+        //            }
+        //        }
 
-            }
-
-
-            foreach (var column in columns)
-            {
-                try
-                {
-                    var oddHolders = column.QuerySelectorAll("a");
-                    var spread = column.QuerySelectorAll("i.spread").ToList();
-                    decimal? coeffparam = null;
-
-                    int? spreadIndex = null;
-
-                    var paramExists = spread?.FirstOrDefault(s => s.TextContent.Length > 0);
-
-                    if (paramExists != null)
-                    {
-                        var split = paramExists.TextContent.Split('-');
-                        coeffparam = split.Length > 1
-                            ? (decimal.Parse(split[1], CultureInfo.InvariantCulture) + decimal.Parse(split[0], CultureInfo.InvariantCulture)) / 2
-                            : decimal.Parse(split[0], CultureInfo.InvariantCulture);
-
-                        spreadIndex = spread.IndexOf(paramExists);
-                    }
+        //    }
 
 
-                    foreach (var a in oddHolders)
-                    {
-                        var oddId = a.GetAttribute("id");
+        //    foreach (var column in columns)
+        //    {
+        //        try
+        //        {
+        //            var oddHolders = column.QuerySelectorAll("a");
+        //            var spread = column.QuerySelectorAll("i.spread").ToList();
+        //            decimal? coeffparam = null;
 
-                        if (!oddId.IsNotEmpty()) continue;
+        //            int? spreadIndex = null;
 
-                        var line = lineTemplateDto.Clone();
+        //            var paramExists = spread?.FirstOrDefault(s => s.TextContent.Length > 0);
+
+        //            if (paramExists != null)
+        //            {
+        //                var split = paramExists.TextContent.Split('-');
+        //                coeffparam = split.Length > 1
+        //                    ? (decimal.Parse(split[1], CultureInfo.InvariantCulture) + decimal.Parse(split[0], CultureInfo.InvariantCulture)) / 2
+        //                    : decimal.Parse(split[0], CultureInfo.InvariantCulture);
+
+        //                spreadIndex = spread.IndexOf(paramExists);
+        //            }
 
 
-                        var odd = a.QuerySelector(".odd").TextContent;
+        //            foreach (var a in oddHolders)
+        //            {
+        //                var oddId = a.GetAttribute("id");
 
-                        if (string.IsNullOrEmpty(odd)) continue;
+        //                if (!oddId.IsNotEmpty()) continue;
 
-                        line.CoeffValue = decimal.Parse(odd, CultureInfo.InvariantCulture);
-                        line.LineData = oddId;
+        //                var line = lineTemplateDto.Clone();
 
-                        if (column.ClassName.Contains("column-fh"))
-                            line.CoeffType = "1st half";
 
-                        var type = a.GetAttribute("data-pca-autoupdate");
-                        switch (type)
-                        {
-                            //Full time handicap 
-                            case "home_1_1_2_2":
-                            case "home_2_1_2_2":
-                            case "home_3_1_2_2":
+        //                var odd = a.QuerySelector(".odd").TextContent;
 
-                                line.CoeffKind = "HANDICAP1";
+        //                if (string.IsNullOrEmpty(odd)) continue;
 
-                                //TODO: ПЕРЕПРОВЕРИТЬ!!!!!!
-                                if (spreadIndex.HasValue)
-                                    line.CoeffParam = spreadIndex == 0 ? -1 * coeffparam : coeffparam;
+        //                line.CoeffValue = decimal.Parse(odd, CultureInfo.InvariantCulture);
+        //                line.LineData = oddId;
 
-                                AddLine(line);
+        //                if (column.ClassName.Contains("column-fh"))
+        //                    line.CoeffType = "1st half";
 
-                                break;
-                            case "away_1_1_2_2":
-                            case "away_2_1_2_2":
-                            case "away_3_1_2_2":
+        //                var type = a.GetAttribute("data-pca-autoupdate");
+        //                switch (type)
+        //                {
+        //                    //Full time handicap 
+        //                    case "home_1_1_2_2":
+        //                    case "home_2_1_2_2":
+        //                    case "home_3_1_2_2":
 
-                                line.CoeffKind = "HANDICAP2";
+        //                        line.CoeffKind = "HANDICAP1";
 
-                                if (spreadIndex.HasValue)
-                                    line.CoeffParam = spreadIndex != 0 ? -1 * coeffparam : coeffparam;
+        //                        //TODO: ПЕРЕПРОВЕРИТЬ!!!!!!
+        //                        if (spreadIndex.HasValue)
+        //                            line.CoeffParam = spreadIndex == 0 ? -1 * coeffparam : coeffparam;
 
-                                AddLine(line);
+        //                        AddLine(line);
 
-                                break;
+        //                        break;
+        //                    case "away_1_1_2_2":
+        //                    case "away_2_1_2_2":
+        //                    case "away_3_1_2_2":
 
-                            case "over_1_1_2_3":
-                            case "over_2_1_2_3":
-                            case "over_3_1_2_3":
-                                line.CoeffKind = "TOTALOVER";
+        //                        line.CoeffKind = "HANDICAP2";
 
-                                if (spreadIndex.HasValue)
-                                    line.CoeffParam = coeffparam;
+        //                        if (spreadIndex.HasValue)
+        //                            line.CoeffParam = spreadIndex != 0 ? -1 * coeffparam : coeffparam;
 
-                                AddLine(line);
+        //                        AddLine(line);
 
-                                break;
+        //                        break;
 
-                            case "under_1_1_2_3":
-                            case "under_2_1_2_3":
-                            case "under_3_1_2_3":
-                                line.CoeffKind = "TOTALUNDER";
+        //                    case "over_1_1_2_3":
+        //                    case "over_2_1_2_3":
+        //                    case "over_3_1_2_3":
+        //                        line.CoeffKind = "TOTALOVER";
 
-                                if (spreadIndex.HasValue)
-                                    line.CoeffParam = coeffparam;
+        //                        if (spreadIndex.HasValue)
+        //                            line.CoeffParam = coeffparam;
 
-                                AddLine(line);
+        //                        AddLine(line);
 
-                                break;
+        //                        break;
 
-                            case "home_1_1_2_1":
-                                line.CoeffKind = "1";
+        //                    case "under_1_1_2_3":
+        //                    case "under_2_1_2_3":
+        //                    case "under_3_1_2_3":
+        //                        line.CoeffKind = "TOTALUNDER";
 
-                                AddLine(line);
+        //                        if (spreadIndex.HasValue)
+        //                            line.CoeffParam = coeffparam;
 
-                                break;
-                            case "away_1_1_2_1":
-                                line.CoeffKind = "2";
+        //                        AddLine(line);
 
-                                AddLine(line);
+        //                        break;
 
-                                break;
-                            case "draw_1_1_2_1":
-                                line.CoeffKind = "X";
+        //                    case "home_1_1_2_1":
+        //                        line.CoeffKind = "1";
 
-                                AddLine(line);
+        //                        AddLine(line);
 
-                                break;
-                        }
-                    }
+        //                        break;
+        //                    case "away_1_1_2_1":
+        //                        line.CoeffKind = "2";
 
-                }
-                catch (Exception ex)
-                {
-                    Log.Info($"ERROR parse Bet18 {ex.Message} {ex.StackTrace}");
-                }
-            }
-        }
+        //                        AddLine(line);
+
+        //                        break;
+        //                    case "draw_1_1_2_1":
+        //                        line.CoeffKind = "X";
+
+        //                        AddLine(line);
+
+        //                        break;
+        //                }
+        //            }
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Log.Info($"ERROR parse Bet18 {ex.Message} {ex.StackTrace}");
+        //        }
+        //    }
+        //}
 
     }
 
 
     private void AddLine(LineDTO lineDto)
     {
-        lineDto.UpdateName();
-        _lines.Add(lineDto);
+        //lineDto.UpdateName();
+        //_lines.Add(lineDto);
     }
 }
 

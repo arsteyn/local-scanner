@@ -22,6 +22,8 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -180,9 +182,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Modules\BetFair\BetFair.csproj">
+      <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
+      <Name>BetFair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Dafabet_old\Dafabet.csproj">
+      <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
+      <Name>Dafabet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Favbet\Favbet.csproj">
+      <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
+      <Name>Favbet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\Partypoker\Partypoker.csproj">
       <Project>{e46f7403-78f9-4d23-9741-f3ae86335c76}</Project>
       <Name>Partypoker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Pinnacle\Pinnacle.csproj">
+      <Project>{86f1173d-4c52-4e2a-ad6c-5454dc81462b}</Project>
+      <Name>Pinnacle</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>
@@ -215,6 +233,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.77.0.3865.4000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.77.0.3865.4000\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.77.0.3865.4000\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.77.0.3865.4000\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

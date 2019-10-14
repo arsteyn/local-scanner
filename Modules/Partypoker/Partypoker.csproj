@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonClasses\BuyBetDate.cs" />
     <Compile Include="JsonClasses\FixtureViewResponce.cs" />
     <Compile Include="PartypokerLineConverter.cs" />
     <Compile Include="JsonClasses\FixturesResponse.cs" />

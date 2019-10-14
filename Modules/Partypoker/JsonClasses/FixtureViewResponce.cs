@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Security.AccessControl;
 
@@ -22,6 +23,34 @@ namespace Partypoker.JsonClasses
 
         public Sport sport { get; set; }
 
+        public Region region { get; set; }
+
+        public DateTime startDate { get; set; }
+
+        //public string cutOffDate { get; set; }
+
+        public Competition competition { get; set; }
+
+        public Name name { get; set; }
+
+    }
+
+    public class Competition : Region
+    {
+        public long parentLeagueId { get; set; }
+    }
+
+    public class Region
+    {
+        public int sportId { get; set; }
+
+        public string type { get; set; }
+
+        public int id { get; set; }
+
+        public int parentId { get; set; }
+
+        public Name name { get; set; }
     }
 
     public class Sport
@@ -44,7 +73,7 @@ namespace Partypoker.JsonClasses
 
     public class Result
     {
-        public string id { get; set; }
+        public long id { get; set; }
         public decimal odds { get; set; }
         public Name name { get; set; }
         public Name sourceName { get; set; }
@@ -68,5 +97,6 @@ namespace Partypoker.JsonClasses
     public class Name
     {
         public string value { get; set; }
+        public string sign { get; set; }
     }
 }
