@@ -194,6 +194,10 @@
       <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
       <Name>Favbet</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Fonbet\Fonbet.csproj">
+      <Project>{4c8f0e81-f7fb-4fe3-b53a-6555d9c3b863}</Project>
+      <Name>Fonbet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\Partypoker\Partypoker.csproj">
       <Project>{e46f7403-78f9-4d23-9741-f3ae86335c76}</Project>
       <Name>Partypoker</Name>
