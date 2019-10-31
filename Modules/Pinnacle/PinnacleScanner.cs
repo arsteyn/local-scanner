@@ -72,8 +72,9 @@ namespace Pinnacle
                     //Get periods and levels
                     RequestResult result;
 
-                    using (var client = new GetWebClient(randomProxy, cookie))
+                    using (var client = new GetWebClient(randomProxy, cookie)){
                         result = client.DownloadResult<RequestResult>(url);
+                    }
 
                     var buySellLevels = result.Sport.Markets.First(m => m.MarketName.ContainsIgnoreCase("live")).GamesContainers.ToDictionary(gameContainer => gameContainer.Value.LeagueId.ToString(), gameContainer => 3);
 

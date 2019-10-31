@@ -5,6 +5,7 @@ using BM.Core;
 using BM.Web;
 using FonBet.SerializedClasses;
 using Scanner;
+using Utf8Json;
 
 namespace Fonbet
 {
@@ -31,7 +32,12 @@ namespace Fonbet
 
                 using (var wc = new GetWebClient(ProxyList.PickRandom()))
                 {
-                    data = wc.DownloadResult<LiveData>(url);
+                    //data = wc.DownloadResult<LiveData>(url);
+
+                    var d = wc.DownloadString(url);
+
+                    data = JsonSerializer.Deserialize<LiveData>(d);
+
                 }
 
                 var converter = new FonbetLineConverter();

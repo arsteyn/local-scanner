@@ -21,6 +21,7 @@ using Newtonsoft.Json.Linq;
 using Scanner;
 using Scanner.Helper;
 using Extensions = Scanner.Extensions;
+using JsonSerializer = Utf8Json.JsonSerializer;
 
 namespace Dafabet
 {
@@ -86,7 +87,9 @@ namespace Dafabet
 
                     var response = client.UploadString(GET_CONTRIBUTOR_URL, "isParlay=false&both=false");
 
-                    var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
+                    //var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
+                    var contributorResult =  JsonSerializer.Deserialize<BaseDataResult<List<Game>>>(response);
+
 
                     games = contributorResult.Data.Where(d => d.M0.L > 0).ToList();
                 }
@@ -182,6 +185,7 @@ namespace Dafabet
                     var l = client.UploadString(GET_ALL_ODS_URL, $"GameId={game.GameId}&DateType=l&BetTypeClass=OU");
 
                     var t = JsonConvert.DeserializeObject<BaseDataResult<ShowAllOddData>>(l);
+                    //var t = JsonSerializer.Des<BaseDataResult<ShowAllOddData>>(l);
 
                     foreach (var league in t.Data.LeagueN)
                     {

@@ -5,8 +5,7 @@ using System.Text;
 using System.Web.Http;
 using Bars.EAS.Utils.Extension;
 using BM.DTO;
-using Jil;
-using Newtonsoft.Json;
+using Utf8Json;
 
 namespace Scanner.Webhost.Controllers
 {
@@ -24,7 +23,9 @@ namespace Scanner.Webhost.Controllers
         private static HttpResponseMessage GetResponse(LineDTO[] lines)
         {
             //var json = JSON.Serialize(lines, new Options(includeInherited: true));
-            var json = JsonConvert.SerializeObject(lines);
+            //var json = JsonConvert.SerializeObject(lines);
+            
+            var json = JsonSerializer.ToJsonString(lines);
 
             return new HttpResponseMessage
             {
