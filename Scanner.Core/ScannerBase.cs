@@ -18,6 +18,23 @@ namespace Scanner
 {
     public abstract class ScannerBase : IScanner
     {
+        private int _i;
+        private readonly object _incrementLock = new object();
+        public int I
+        {
+            get
+            {
+                lock (_incrementLock)
+                {
+                    _i++;
+
+                    if (_i >= ProxyList.Count) _i = 0;
+
+                    return _i;
+                }
+            }
+        }
+
         protected List<WebProxy> ProxyList;
 
         public virtual void StartScan()

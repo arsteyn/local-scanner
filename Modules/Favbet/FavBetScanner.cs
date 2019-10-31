@@ -1,30 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
-using BM.Entities;
 using BM.Web;
-using Extreme.Net;
+using Favbet;
 using Favbet.Models.Line;
-using mevoronin.RuCaptchaNETClient;
 using Newtonsoft.Json;
 using Scanner;
 using Scanner.Helper;
 
-namespace Favbet
+namespace LocalScanner.Modules.Favbet
 {
     public class FavBetScanner : ScannerBase
     {
-        static readonly object Lock = new object();
-
         public override string Name => "Favbet";
 
         //public override string Host => "https://www.favbet.com/";
@@ -35,6 +27,7 @@ namespace Favbet
 
         public static readonly List<string> ForbiddenTournaments = new List<string> { "statistics", "cross", "goal", "shot", "offside", "corner", "foul" };
 
+        object _lock = new object();
 
         protected override void UpdateLiveLines()
         {
@@ -42,15 +35,24 @@ namespace Favbet
 
             try
             {
-                var randomProxy = ProxyList.PickRandom();
+                var randomProxy = ProxyList[I];
 
                 string response;
 
                 var cookies = CookieDictionary[randomProxy].GetData().GetAllCookies();
 
-                using (var wc = new PostWebClient(randomProxy, cookies))
+                try
                 {
-                    response = wc.UploadString($"{Host}frontend_api/events_short/", "{\"service_id\":1,\"lang\":\"en\"}");
+                    using (var wc = new PostWebClient(randomProxy, cookies))
+                    {
+                        response = wc.UploadString($"{Host}frontend_api/events_short/", "{\"service_id\":1,\"lang\":\"en\"}");
+                    }
+                }
+                catch (WebException e)
+                {
+                    //ConsoleExt.ConsoleWriteError($"{Name} Get event WebException {e.Message}");
+
+                    return;
                 }
 
                 var sportids = JsonConvert.DeserializeObject<EventsShort>(response).Events.Select(e => e.sport_id).Distinct().ToList();
@@ -61,7 +63,7 @@ namespace Favbet
                 {
                     try
                     {
-                        var random = ProxyList.PickRandom();
+                        var random = ProxyList[I];
                         var cook = CookieDictionary[random].GetData().GetAllCookies();
 
                         using (var wc = new PostWebClient(random, cook))
@@ -69,52 +71,56 @@ namespace Favbet
                             response = wc.UploadString($"{Host}frontend_api/events/", $"{{\"service_id\":1,\"lang\":\"en\",\"sport_id\":{sportId}}}");
                             var e = JsonConvert.DeserializeObject<EventsShort>(response).Events;
 
-                            lock (Lock) events.AddRange(e);
+                            lock (_lock) events.AddRange(e);
                         }
+                    }
+                    catch (WebException e)
+                    {
+                        //ConsoleExt.ConsoleWriteError($"{Name} Get event WebException {e.Message}");
                     }
                     catch (Exception e)
                     {
-                        Log.Info("Get event exception");
+                        ConsoleExt.ConsoleWriteError($"{Name} Get event exception {e.Message}");
                     }
                 });
 
 
                 Parallel.ForEach(events, @event =>
                 {
-                    var task = Task.Factory.StartNew(() =>
+                    try
                     {
-                        try
-                        {
-                            //убираем запрещенные чемпионаты
-                            if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
-                            if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                        //убираем запрещенные чемпионаты
+                        if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                        if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
 
-                            var lns = ParseEvent(@event);
+                        var lns = ParseEvent(@event);
 
-                            lock (Lock) lines.AddRange(lns);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Info($"ERROR FavBet Parse event exception {e.Message} {e.StackTrace}");
-                        }
-                    });
+                        lock (_lock) lines.AddRange(lns);
+                    }
+                    catch (WebException e)
+                    {
+                        //ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message}");
+                    }
+                    catch (Exception e)
+                    {
+                        ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message} {e.StackTrace}");
+                    }
 
-                    if (!task.Wait(10000)) Log.Info("FavBet Task wait exception");
                 });
 
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
-
                 ActualLines = lines.ToArray();
+
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
             }
             catch (Exception e)
             {
-                Log.Info($"ERROR FB {e.Message} {e.StackTrace}");
+                ConsoleExt.ConsoleWriteError($"ERROR FB {e.Message} {e.StackTrace}");
             }
         }
 
         private List<LineDTO> ParseEvent(Event @event)
         {
-            var random = ProxyList.PickRandom();
+            var random = ProxyList[I];
 
             var c = CookieDictionary[random].GetData();
 
@@ -132,12 +138,12 @@ namespace Favbet
             }
             catch (WebException e)
             {
-                Log.Info("Favbet WebException " + JsonConvert.SerializeObject(e));
-                ParseEvent(@event);
+                //ConsoleExt.ConsoleWriteError($"{Name} WebException { e.Message}");
+                //ParseEvent(@event);
             }
             catch (Exception e)
             {
-                Log.Info("FB Parse event exception " + JsonConvert.SerializeObject(e) + JsonConvert.SerializeObject(c.GetAllCookies()));
+                ConsoleExt.ConsoleWriteError($"{Name} Parse event exception " + JsonConvert.SerializeObject(e) + JsonConvert.SerializeObject(c.GetAllCookies()));
             }
 
             return new List<LineDTO>();
@@ -158,26 +164,29 @@ namespace Favbet
 
                         ConsoleExt.ConsoleWriteError($"Favbet check address {host.Address}");
 
-                        cc.Add(PassCloudFlare(host));
+                        //cc.Add(PassCloudFlare(host));
 
-                        using (var wc = new Extensions.WebClientEx(host, cc))
+                        using (var wc = new PostWebClient(host))
                         {
 
                             wc.Headers["User-Agent"] = GetWebClient.DefaultUserAgent;
 
-                            wc.DownloadString(Host + "en/live/");
+                            var query = $"{{\"jsonrpc\":\"2.0\",\"method\":\"frontend/sport/get\",\"params\":{{}},\"id\":0}}";
 
-                            //var d = wc.ResponseHeaders["Set-Cookie"];
+                            wc.UploadString($"{Host}frontend_api2/", query);
 
-                            //foreach (var match in d.Split(',').Select(singleCookie => Regex.Match(singleCookie, "(.+?)=(.+?);")).Where(match => match.Captures.Count != 0))
+                            //foreach (var market in t.Result)
                             //{
-                            //    var name = match.Groups[1].ToString();
-                            //    var value = match.Groups[2].ToString();
-                            //    if (name == "PHPSESSID") cc.Add(new Cookie(name, value) { Domain = ProxyHelper.GetDomain(Host) });
+                            //    foreach (var outcome in market.outcomes)
+                            //    {
+                            //        ProxyHelper.UpdateFavbetEvents(market.market_name + " | " + market.result_type_name + " | " + outcome.outcome_name + " | " +outcome.outcome_param);
+                            //    }
                             //}
 
                             cc.Add(wc.CookieContainer.GetAllCookies());
+
                         }
+
 
                         return cc;
                     }
@@ -193,11 +202,6 @@ namespace Favbet
 
             var tasks = ProxyList.AsParallel().Select(host => Task.Factory.StartNew(state => CookieDictionary[host].GetData(), host)).ToArray();
 
-            //foreach (var host in ProxyList)
-            //{
-            //    CookieDictionary[host].GetData();
-            //}
-
             Task.WaitAll(tasks);
 
             foreach (var host in listToDelete)
@@ -205,78 +209,6 @@ namespace Favbet
                 CookieDictionary.Remove(host);
                 ProxyList.Remove(host);
             }
-        }
-
-        private CookieCollection PassCloudFlare(WebProxy proxy)
-        {
-            var cookieCollection = new CookieCollection();
-
-            #region Cloudflare wait 5 sec
-
-            var cookies = CloudFlareNet.CloudFlareNet.GetCloudflareCookies(Host + "en/live/", GetWebClient.DefaultUserAgent, new HttpProxyClient(proxy.Address.Host, proxy.Address.Port, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Credentials.GetCredential(proxy.Address, "").Password));
-
-            if (cookies != null && cookies.Any())
-            {
-                foreach (var cookie in cookies)
-                {
-                    cookieCollection.Add(new Cookie(cookie.Key, cookie.Value, "/", DomainForCookie));
-                }
-            }
-            else
-                //ReCaptcha
-                cookieCollection = CloudflareRecaptcha(proxy);
-
-            return cookieCollection;
-
-            #endregion
-        }
-
-        private CookieCollection CloudflareRecaptcha(WebProxy proxy)
-        {
-            var cookieCollection = new CookieCollection();
-
-            string responseText;
-
-            using (var webClient = new GetWebClient(proxy, cookieCollection))
-            {
-                try
-                {
-                    responseText = webClient.DownloadString(Host + "en/live/");
-                    cookieCollection.Add(webClient.CookieCollection);
-                }
-                catch (WebException ex)
-                {
-                    var response = (HttpWebResponse)ex.Response;
-
-                    var encoding = Encoding.ASCII;
-                    using (var reader = new StreamReader(response.GetResponseStream(), encoding)) responseText = reader.ReadToEnd();
-
-                    cookieCollection.Add(response.Cookies);
-                }
-            }
-
-            if (!string.IsNullOrEmpty(responseText) && responseText.ContainsIgnoreCase("sport"))
-                return cookieCollection;
-
-            var ray = Regex.Match(responseText, "data-ray=\"(.+?)\"").Groups[1].Value;
-            var sitekey = Regex.Match(responseText, "data-sitekey=\"(.+?)\"").Groups[1].Value;
-            var stoken = Regex.Match(responseText, "data-stoken=\"(.+?)\"").Groups[1].Value;
-
-            Log.Info($"FavBet RECAPTCHA Start {sitekey} {stoken}");
-
-            var captchaResponse = RuCaptchaHelper.GetCaptchaResult(sitekey, stoken, Host, proxy.Credentials.GetCredential(proxy.Address, "").UserName, proxy.Address.Host, proxy.Credentials.GetCredential(proxy.Address, "").Password, proxy.Address.Port);
-
-            Log.Info($"FavBet RECAPTCHA Result {captchaResponse}");
-
-            if (captchaResponse.Contains("ERROR")) throw new Exception("Error on ReCaptcha resolve");
-
-            using (var webClient = new GetWebClient(proxy, cookieCollection))
-            {
-                webClient.DownloadData($"{Host}cdn-cgi/l/chk_captcha?id={ray}&g-recaptcha-response={captchaResponse}");
-                cookieCollection.Add(webClient.CookieCollection);
-            }
-
-            return cookieCollection;
         }
     }
 }

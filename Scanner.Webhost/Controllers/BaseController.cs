@@ -5,7 +5,6 @@ using System.Text;
 using System.Web.Http;
 using Bars.EAS.Utils.Extension;
 using BM.DTO;
-using Lz4Net;
 using Newtonsoft.Json;
 
 namespace Scanner.Webhost.Controllers
