@@ -7,13 +7,12 @@ using Bars.EAS.Utils.Extension;
 using BM.Core;
 using BM.DTO;
 using BM.Web;
-using Favbet;
 using Favbet.Models.Line;
 using Newtonsoft.Json;
 using Scanner;
 using Scanner.Helper;
 
-namespace LocalScanner.Modules.Favbet
+namespace Favbet
 {
     public class FavBetScanner : ScannerBase
     {
@@ -85,28 +84,38 @@ namespace LocalScanner.Modules.Favbet
                 });
 
 
-                Parallel.ForEach(events, @event =>
+                var tasks = new Task[events.Count];
+
+                for (var i = 0; i < events.Count; i++)
                 {
-                    try
-                    {
-                        //убираем запрещенные чемпионаты
-                        if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
-                        if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                    var @event = events[i];
 
-                        var lns = ParseEvent(@event);
-
-                        lock (_lock) lines.AddRange(lns);
-                    }
-                    catch (WebException e)
+                    var task = Task.Factory.StartNew(() =>
                     {
-                        //ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message}");
-                    }
-                    catch (Exception e)
-                    {
-                        ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message} {e.StackTrace}");
-                    }
+                        try
+                        {
+                            //убираем запрещенные чемпионаты
+                            if (@event.tournament_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
+                            if (@event.event_name.ContainsIgnoreCase(ForbiddenTournaments.ToArray())) return;
 
-                });
+                            var lns = ParseEvent(@event);
+
+                            lock (_lock) lines.AddRange(lns);
+                        }
+                        catch (WebException e)
+                        {
+                            //ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message}");
+                        }
+                        catch (Exception e)
+                        {
+                            ConsoleExt.ConsoleWriteError($"{Name} Parse event exception {e.Message} {e.StackTrace}");
+                        }
+                    });
+
+                    tasks[i] = task;
+                }
+
+                Task.WaitAll(tasks,10000);
 
                 ActualLines = lines.ToArray();
 
@@ -143,7 +152,7 @@ namespace LocalScanner.Modules.Favbet
             }
             catch (Exception e)
             {
-                ConsoleExt.ConsoleWriteError($"{Name} Parse event exception " + JsonConvert.SerializeObject(e) + JsonConvert.SerializeObject(c.GetAllCookies()));
+                ConsoleExt.ConsoleWriteError($"{Name} Parse event exception " + JsonConvert.SerializeObject(e));
             }
 
             return new List<LineDTO>();

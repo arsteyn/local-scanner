@@ -28,26 +28,10 @@ namespace Dafabet
     {
         public override string Name => "Dafabet";
 
-        private int _i;
-        private readonly object _incrementLock = new object();
-        public int I
-        {
-            get
-            {
-                lock (_incrementLock)
-                {
-                    _i++;
-
-                    if (_i >= ProxyList.Count) _i = 0;
-
-                    return _i;
-                }
-            }
-        }
-
         public override string Host => "https://www.dafabet.com/";
 
         public static Dictionary<WebProxy, CachedArray<CookieContainer>> CookieDictionary = new Dictionary<WebProxy, CachedArray<CookieContainer>>();
+
         public static readonly string[] LeagueStopWords = {
             "fantasy",
             "corner",
@@ -88,7 +72,7 @@ namespace Dafabet
         {
             try
             {
-                var randomProxy = ProxyList.PickRandom();
+                var randomProxy = ProxyList[I];
 
                 var cookies = CookieDictionary[randomProxy].GetData();
 
@@ -187,7 +171,7 @@ namespace Dafabet
 
             try
             {
-                var randomProxy = ProxyList.PickRandom();
+                var randomProxy = ProxyList[I];
 
                 var cookies = CookieDictionary[randomProxy].GetData();
 
@@ -301,15 +285,17 @@ namespace Dafabet
             return listOdds;
         }
 
-        protected override void CheckDict()
+     protected override void CheckDict()
         {
             var st = new Stopwatch();
             st.Start();
 
             foreach (var account in _accounts)
             {
-                foreach (var host in ProxyList)
+                for (int i = ProxyList.Count - 1; i >= 0; i--)
                 {
+                    var host = ProxyList[i];
+
                     if (CookieDictionary.ContainsKey(host)) continue;
 
                     CookieDictionary.Add(host, new CachedArray<CookieContainer>(1000 * 60 * 15, () =>
@@ -333,9 +319,9 @@ namespace Dafabet
 
                             return result;
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-                            ConsoleExt.ConsoleWriteError($"Dafabet delete address {host.Address} elapsed {st.Elapsed:g}");
+                            ConsoleExt.ConsoleWriteError($"{Name} delete address {host.Address} elapsed {st.Elapsed:g}");
                         }
 
                         return null;
@@ -344,6 +330,8 @@ namespace Dafabet
                     if (CookieDictionary[host].GetData() != null) break;
 
                     CookieDictionary.Remove(host);
+
+                    ProxyList.RemoveAt(i);
                 }
             }
 

@@ -147,8 +147,10 @@ namespace Pinnacle
         {
             foreach (var account in _accounts)
             {
-                foreach (var host in ProxyList)
+                for (int i = ProxyList.Count - 1; i >= 0; i--)
                 {
+                    var host = ProxyList[i];
+
                     if (CookieDictionary.ContainsKey(host)) continue;
 
                     CookieDictionary.Add(host, new CachedArray<CookieCollection>(1000 * 60 * 15, () =>
@@ -168,6 +170,8 @@ namespace Pinnacle
                     if (CookieDictionary[host].GetData() != null) break;
 
                     CookieDictionary.Remove(host);
+
+                    ProxyList.RemoveAt(i);
                 }
             }
 

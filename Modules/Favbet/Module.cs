@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using BM.DTO;
-using LocalScanner.Modules.Favbet;
 using Scanner.Interface;
 
 namespace Favbet

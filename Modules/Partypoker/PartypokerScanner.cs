@@ -88,8 +88,11 @@ namespace Partypoker
                     events.AddRange(x.fixtures.Select(g => g.id));
                 }
 
-                Parallel.ForEach(events, @event =>
+                var tasks = new Task[events.Count];
+
+                for (var i = 0; i < events.Count; i++)
                 {
+                    var @event = events[i];
                     var task = Task.Factory.StartNew(() =>
                     {
                         var proxy = ProxyList.PickRandom();
@@ -114,19 +117,25 @@ namespace Partypoker
 
                                 lock (Lock) lines.AddRange(res);
                             }
+                            catch (WebException e)
+                            {
+                                //ConsoleExt.ConsoleWriteError($"{Name} WebException {e.Message}");
+                            }
                             catch (Exception e)
                             {
-                                Log.Info("Partypoker error" + e.Message + e.InnerException + proxy);
+                                ConsoleExt.ConsoleWriteError($"{Name} error {e.Message}");
                             }
                         }
                     });
 
-                    if (!task.Wait(10000)) Log.Info("Partypoker Task wait exception");
-                });
+                    tasks[i] = task;
+                }
 
-                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, lines.Count(c => c != null), new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
+                Task.WaitAll(tasks, 10000);
 
                 ActualLines = lines.ToArray();
+
+                ConsoleExt.ConsoleWrite(Name, ProxyList.Count, ActualLines.Length, new DateTime(LastUpdatedDiff.Ticks).ToString("mm:ss"));
             }
             catch (Exception e)
             {

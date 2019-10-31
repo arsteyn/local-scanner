@@ -7,6 +7,8 @@ using BM;
 using BM.Core;
 using BM.DTO;
 using FonBet.SerializedClasses;
+using Jil;
+using Newtonsoft.Json;
 
 namespace Fonbet
 {
@@ -62,7 +64,6 @@ namespace Fonbet
 
                 Parallel.ForEach(factors, factor =>
                 {
-
                     var line = new LineDTO
                     {
                         SportKind = Helper.ConvertSport(sport.name),
