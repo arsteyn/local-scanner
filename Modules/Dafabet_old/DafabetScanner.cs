@@ -87,8 +87,8 @@ namespace Dafabet
 
                     var response = client.UploadString(GET_CONTRIBUTOR_URL, "isParlay=false&both=false");
 
-                    //var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
-                    var contributorResult =  JsonSerializer.Deserialize<BaseDataResult<List<Game>>>(response);
+                    var contributorResult = JsonConvert.DeserializeObject<BaseDataResult<List<Game>>>(response);
+                    //var contributorResult =  JsonSerializer.Deserialize<BaseDataResult<List<Game>>>(response);
 
 
                     games = contributorResult.Data.Where(d => d.M0.L > 0).ToList();

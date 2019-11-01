@@ -32,11 +32,11 @@ namespace Fonbet
 
                 using (var wc = new GetWebClient(ProxyList.PickRandom()))
                 {
-                    //data = wc.DownloadResult<LiveData>(url);
+                    data = wc.DownloadResult<LiveData>(url);
 
-                    var d = wc.DownloadString(url);
+                    //var d = wc.DownloadString(url);
 
-                    data = JsonSerializer.Deserialize<LiveData>(d);
+                    //data = JsonSerializer.Deserialize<LiveData>(d);
 
                 }
 
