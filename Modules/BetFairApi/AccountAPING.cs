@@ -15,12 +15,7 @@
 
         public static readonly string GET_DEVELOPER_APP_KEYS = string.Format("{0}/{1}/getDeveloperAppKeys", service, version);
 
-        public static readonly string GET_ACCOUNT_FUNDS = string.Format("{0}/{1}/getAccountFunds", service, version);
-
-        public AccountAPING(string appKey)
-            : base(appKey)
-        {
-        }
+        public AccountAPING(string appKey) : base(appKey){}
 
         /// <summary>
         /// Получение сессии
@@ -72,24 +67,6 @@
             using (var wc = this.GetBetWebClient(null, token))
             {
                 var response = wc.Post<JsonResponse<List<DeveloperApp>>>(url, param);
-                return response.Result;
-            }
-        }
-
-        public AccountFundsResponse GetAccountFunds(string token, string appKey)
-        {
-            token.IfNull(x => { throw new ArgumentException("token"); });
-            appKey.IfNull(x => { throw new ArgumentException("appKey"); });
-
-            var param = new JsonRequest
-            {
-                Id = "1",
-                Method = GET_ACCOUNT_FUNDS
-            };
-
-            using (var wc = this.GetBetWebClient(appKey, token))
-            {
-                var response = wc.Post<JsonResponse<AccountFundsResponse>>(url, param);
                 return response.Result;
             }
         }

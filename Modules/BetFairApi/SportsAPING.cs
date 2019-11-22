@@ -31,65 +31,9 @@ namespace BetFairApi
             return $"{SERVICE}/{VERSION}/{method}";
         }
 
-        public static readonly string LIST_EVENT_TYPES = BuildUrl("listEventTypes");
-        public static readonly string LIST_EVENTS = BuildUrl("listEvents");
         public static readonly string LIST_MARKET_TYPES = BuildUrl("listMarketTypes");
         public static readonly string LIST_MARKET_BOOK = BuildUrl("listMarketBook");
-        public static readonly string PLACE_ORDERS = BuildUrl("placeOrders");
 
-        public static readonly string LIST_CURRENT_ORDERS = BuildUrl("listCurrentOrders");
-        public static readonly string CANCEL_ORDERS = BuildUrl("cancelOrders");
-
-
-
-        /// <summary>
-        /// Виды спорта
-        /// </summary>
-        /// <param name="filter"></param>
-        /// <returns></returns>
-        public IList<EventTypeResult> ListEventTypes(MarketFilter filter)
-        {
-            filter.IfNull(x => { throw new ArgumentException("filter"); });
-
-            var param = new JsonRequest
-            {
-                Id = 1,
-                Method = LIST_EVENT_TYPES,
-                Params = new { filter }
-            };
-
-            return Invoke<IList<EventTypeResult>>(param);
-        }
-
-        /// <summary>
-        /// События
-        /// </summary>
-        /// <param name="filter"></param>
-        /// <returns></returns>
-        public IList<EventResult> ListEvents(MarketFilter filter)
-        {
-            filter.IfNull(x => { throw new ArgumentException("filter"); });
-
-            var request = new JsonRequest
-            {
-                Id = 1,
-                Method = LIST_EVENTS,
-                Params = new { filter }
-            };
-
-            return Invoke<IList<EventResult>>(request);
-        }
-
-        /// <summary>
-        /// Виды ставок
-        /// </summary>
-        /// <param name="filter"></param>
-        /// <param name="maxResults"></param>
-        /// <returns></returns>
-        public IList<MarketCatalogue> ListMarketCatalogue(MarketFilter filter, int maxResults)
-        {
-            return ListMarketCatalogue(filter, null, null, maxResults);
-        }
 
         /// <summary>
         /// Виды ставок
@@ -181,59 +125,6 @@ namespace BetFairApi
             return result;
         }
 
-        public PlaceExecutionReport PlaceOrders(string marketId, List<PlaceInstruction> instructions, string customerRef = null)
-        {
-            marketId.IfNull(x => { throw new ArgumentException("marketId"); });
-            instructions.IfNull(x => { throw new ArgumentException("instructions"); });
-
-            var request = new JsonRequest
-            {
-                Id = 1,
-                Method = PLACE_ORDERS,
-                Params = new { marketId, instructions, customerRef }
-            };
-
-            return Invoke<PlaceExecutionReport>(request);
-        }
-
-        public CurrentOrderSummaryReport ListCurrentOrders()
-        {
-            var request = new JsonRequest
-            {
-                Id = 1,
-                Method = LIST_CURRENT_ORDERS,
-                Params = new
-                {
-                    orderBy = OrderBy.BY_MATCH_TIME,
-                    orderProjection = OrderProjection.EXECUTION_COMPLETE
-                }
-            };
-
-            return Invoke<CurrentOrderSummaryReport>(request);
-        }
-
-
-        public CancelExecutionReport CancelOrder(string marketId, string betid, double? reduceSize = null)
-        {
-            var request = new JsonRequest
-            {
-                Id = 1,
-                Method = CANCEL_ORDERS,
-                Params = new
-                {
-                    marketId,
-                    instructions = new List<CancelInstruction>
-                    {
-                        new CancelInstruction {
-                            BetId = betid,
-                            SizeReduction = reduceSize
-                        }
-                    }
-                }
-            };
-
-            return Invoke<CancelExecutionReport>(request);
-        }
 
         public T Invoke<T>(JsonRequest request)
         {

@@ -192,6 +192,10 @@
       <Project>{9d0ac616-8337-4883-95c9-4d92eaad3356}</Project>
       <Name>BetFair</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Dafabet_old\Dafabet.csproj">
+      <Project>{770b8cf0-6710-4c8e-8f41-4bdaf982bcf0}</Project>
+      <Name>Dafabet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\Favbet\Favbet.csproj">
       <Project>{fd5a733e-e78d-4786-b3aa-e6257be30fa6}</Project>
       <Name>Favbet</Name>
@@ -199,6 +203,10 @@
     <ProjectReference Include="..\Modules\Fonbet\Fonbet.csproj">
       <Project>{4c8f0e81-f7fb-4fe3-b53a-6555d9c3b863}</Project>
       <Name>Fonbet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Pinnacle\Pinnacle.csproj">
+      <Project>{86f1173d-4c52-4e2a-ad6c-5454dc81462b}</Project>
+      <Name>Pinnacle</Name>
     </ProjectReference>
     <ProjectReference Include="..\Scanner.Core\Scanner.Core.csproj">
       <Project>{186e5d35-c178-4800-8ffa-52638edfbd22}</Project>

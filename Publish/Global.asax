@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Scanner.Webhost.ScannerApi" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="LocalScanner.Webhost.ScannerApi" Language="C#" %>

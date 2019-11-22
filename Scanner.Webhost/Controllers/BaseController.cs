@@ -26,6 +26,7 @@ namespace Scanner.Webhost.Controllers
             //var json = JsonConvert.SerializeObject(lines);
             
             var json = JsonSerializer.ToJsonString(lines);
+           
 
             return new HttpResponseMessage
             {

@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="AccountAPING.cs" />
     <Compile Include="AccountAPING\DeveloperApp.cs" />
-    <Compile Include="AccountAPING\AccountFundsResponse.cs" />
     <Compile Include="Extention.cs" />
     <Compile Include="SportsAPING\APINGException.cs" />
     <Compile Include="SportsAPING\BetStatus.cs" />
