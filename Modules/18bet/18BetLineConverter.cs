@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using AngleSharp.Dom;
 using Bars.EAS.Utils.Extension;
 using Bet18.Models;
 using BM;
 using BM.Core;
 using BM.DTO;
 using NLog;
-using Scanner;
 
 namespace Bet18
 {

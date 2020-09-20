@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63c6ed45-59c1-4421-95e4-231b2247b575" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Modules/18bet/18BetLineConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/18bet/18BetLineConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Publish/CheckedProxy/Favbet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Publish/CheckedProxy/Favbet.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Publish/Global.asax" beforeDir="false" afterPath="$PROJECT_DIR$/Publish/Global.asax" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Publish/Proxy/ip.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Publish/Proxy/ip.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Publish/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/Publish/Web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Publish/packages.config" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WHhT6UT8kAQGzHp4MssDlQBZfp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.4" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Scanner.SelfHosted" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Scanner.SelfHosted/Scanner.SelfHosted.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63c6ed45-59c1-4421-95e4-231b2247b575" name="Default Changelist" comment="" />
+      <created>1578812435988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578812435988</updated>
+      <workItem from="1578812476079" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+</project>

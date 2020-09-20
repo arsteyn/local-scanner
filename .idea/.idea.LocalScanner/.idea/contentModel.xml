@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Projects\Bars.EAS\src\Bars.EAS\Modules" t="ExcludeRecursive" />
+    <e p="C:\Projects\Livescanner\RuCaptchaClient" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="CaptchaCharTypeEnum.cs" t="Include" />
+      <e p="CaptchaConfig.cs" t="Include" />
+      <e p="CaptchaLanguageEnum.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+      </e>
+      <e p="RuCaptchaClient.cs" t="Include" />
+      <e p="RuCaptchaClient.csproj" t="IncludeRecursive" />
+      <e p="RuCaptchaException.cs" t="Include" />
+      <e p="RuCaptchaHelper.cs" t="Include" />
+    </e>
+    <e p="C:\Projects\Localscanner" t="IncludeFlat">
+      <e p=".nuget" t="Include">
+        <e p="packages.config" t="Include" />
+      </e>
+      <e p="LocalScanner.sln" t="IncludeFlat" />
+      <e p="Modules" t="Include">
+        <e p="188bet" t="IncludeRecursive">
+          <e p="188Bet.csproj" t="IncludeRecursive" />
+          <e p="app.config" t="Include" />
+          <e p="Bet188LineConverter.cs" t="Include" />
+          <e p="Bet188Scanner.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ConverterHelper.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="CentralServiceResult.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="18bet" t="IncludeRecursive">
+          <e p="18BetHelper.cs" t="Include" />
+          <e p="18BetLineConverter.cs" t="Include" />
+          <e p="18BetScanner.cs" t="Include" />
+          <e p="app.config" t="Include" />
+          <e p="Bet18.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Models" t="Include">
+            <e p="Event.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="888sport" t="IncludeRecursive">
+          <e p="888sport.csproj" t="IncludeRecursive" />
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ConverterHelper.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="Line" t="Include">
+              <e p="Bet.cs" t="Include" />
+              <e p="BetGroup.cs" t="Include" />
+              <e p="BetOffer.cs" t="Include" />
+              <e p="Event.cs" t="Include" />
+              <e p="EventResult.cs" t="Include" />
+              <e p="GameId.cs" t="Include" />
+              <e p="HeaderSection.cs" t="Include" />
+              <e p="Market.cs" t="Include" />
+              <e p="Odds.cs" t="Include" />
+              <e p="Outcome.cs" t="Include" />
+              <e p="Path.cs" t="Include" />
+              <e p="Section.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+              <e p="Tournament.cs" t="Include" />
+            </e>
+            <e p="StoreBet.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="S888LineConverter.cs" t="Include" />
+          <e p="S888Scanner.cs" t="Include" />
+        </e>
+        <e p="Bet365" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="Bet365.csproj" t="IncludeRecursive" />
+          <e p="Bet365LineConverter.cs" t="Include" />
+          <e p="Bet365Scanner.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Extensions" t="Include">
+            <e p="WebDriverExtensions.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include" />
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="BetFair" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="Authorize.cs" t="Include" />
+          <e p="BetFair.csproj" t="IncludeRecursive" />
+          <e p="BetFairHelper.cs" t="Include" />
+          <e p="BetfairLineConverter.cs" t="Include" />
+          <e p="BetfairScanner.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config" t="Include">
+            <e p="BetFairData.cs" t="Include" />
+          </e>
+          <e p="Enums" t="Include">
+            <e p="AuthField.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="BetFairApi" t="IncludeRecursive">
+          <e p="AccountAPING" t="Include">
+            <e p="AccountFundsResponse.cs" t="Include" />
+            <e p="DeveloperApp.cs" t="Include" />
+            <e p="DeveloperAppVersion.cs" t="Include" />
+          </e>
+          <e p="AccountAPING.cs" t="Include" />
+          <e p="APING.cs" t="Include" />
+          <e p="app.config" t="Include" />
+          <e p="BetFairApi.csproj" t="IncludeRecursive" />
+          <e p="Extention.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="SportsAPING" t="Include">
+            <e p="APINGException.cs" t="Include" />
+            <e p="BetStatus.cs" t="Include" />
+            <e p="CancelExecutionReport.cs" t="Include" />
+            <e p="CancelInstruction.cs" t="Include" />
+            <e p="CancelInstructionReport.cs" t="Include" />
+            <e p="ClearedOrderSummary.cs" t="Include" />
+            <e p="ClearedOrderSummaryReport.cs" t="Include" />
+            <e p="Competition.cs" t="Include" />
+            <e p="CompetitionResult.cs" t="Include" />
+            <e p="CurrentOrderSummary.cs" t="Include" />
+            <e p="CurrentOrderSummaryReport.cs" t="Include" />
+            <e p="Event.cs" t="Include" />
+            <e p="EventResult.cs" t="Include" />
+            <e p="EventType.cs" t="Include" />
+            <e p="EventTypeResult.cs" t="Include" />
+            <e p="ExBestOffersOverrides.cs" t="Include" />
+            <e p="Exception.cs" t="Include" />
+            <e p="ExchangePrices.cs" t="Include" />
+            <e p="ExecutionReportErrorCode.cs" t="Include" />
+            <e p="ExecutionReportStatus.cs" t="Include" />
+            <e p="InstructionReportErrorCode.cs" t="Include" />
+            <e p="InstructionReportStatus.cs" t="Include" />
+            <e p="ItemDescription.cs" t="Include" />
+            <e p="LimitOnCloseOrder.cs" t="Include" />
+            <e p="LimitOrder.cs" t="Include" />
+            <e p="LoginResult.cs" t="Include" />
+            <e p="MarketBettingType.cs" t="Include" />
+            <e p="MarketBook.cs" t="Include" />
+            <e p="MarketCatalogue.cs" t="Include" />
+            <e p="MarketDescription.cs" t="Include" />
+            <e p="MarketFilter.cs" t="Include" />
+            <e p="MarketOnCloseOrder.cs" t="Include" />
+            <e p="MarketProjection.cs" t="Include" />
+            <e p="MarketSort.cs" t="Include" />
+            <e p="MarketStatus.cs" t="Include" />
+            <e p="MarketTypeResult.cs" t="Include" />
+            <e p="Match.cs" t="Include" />
+            <e p="MatchProjection.cs" t="Include" />
+            <e p="Order.cs" t="Include" />
+            <e p="OrderBy.cs" t="Include" />
+            <e p="OrderProjection.cs" t="Include" />
+            <e p="OrderStatus.cs" t="Include" />
+            <e p="OrderType.cs" t="Include" />
+            <e p="PersistenceType.cs" t="Include" />
+            <e p="PlaceExecutionReport.cs" t="Include" />
+            <e p="PlaceInstruction.cs" t="Include" />
+            <e p="PlaceInstructionReport.cs" t="Include" />
+            <e p="PriceData.cs" t="Include" />
+            <e p="PriceProjection.cs" t="Include" />
+            <e p="PriceSize.cs" t="Include" />
+            <e p="RollUpModel.cs" t="Include" />
+            <e p="Runner.cs" t="Include" />
+            <e p="RunnerDescription.cs" t="Include" />
+            <e p="RunnerStatus.cs" t="Include" />
+            <e p="Side.cs" t="Include" />
+            <e p="StartingPrices.cs" t="Include" />
+            <e p="TimeRange.cs" t="Include" />
+          </e>
+          <e p="SportsAPING.cs" t="Include" />
+          <e p="Web" t="Include">
+            <e p="AuthParams.cs" t="Include" />
+            <e p="JsonRequest.cs" t="Include" />
+            <e p="JsonResponse.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Bwin" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Bwin.csproj" t="IncludeRecursive" />
+          <e p="BwinLineConverter.cs" t="Include" />
+          <e p="BwinScanner.cs" t="Include" />
+          <e p="JsonClasses" t="Include">
+            <e p="Counter.cs" t="Include" />
+            <e p="Event.cs" t="Include" />
+            <e p="EventsResponce.cs" t="Include" />
+            <e p="League.cs" t="Include" />
+            <e p="Market.cs" t="Include" />
+            <e p="Score.cs" t="Include" />
+            <e p="Scoreboard.cs" t="Include" />
+            <e p="Sport.cs" t="Include" />
+            <e p="Team.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Dafabet" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Dafabet.csproj" t="IncludeRecursive" />
+          <e p="DafabetConverter.cs" t="Include" />
+          <e p="DafabetScanner.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="Match.cs" t="Include" />
+            <e p="OddSet.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Favbet" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ConverterHelper.cs" t="Include" />
+          <e p="Favbet.csproj" t="IncludeRecursive" />
+          <e p="FavBetLineConverter.cs" t="Include" />
+          <e p="FavBetScanner.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="Line" t="Include">
+              <e p="Bet.cs" t="Include" />
+              <e p="BetGroup.cs" t="Include" />
+              <e p="Event.cs" t="Include" />
+              <e p="EventsShort.cs" t="Include" />
+              <e p="GameId.cs" t="Include" />
+              <e p="HeaderSection.cs" t="Include" />
+              <e p="Market.cs" t="Include" />
+              <e p="Odds.cs" t="Include" />
+              <e p="Outcome.cs" t="Include" />
+              <e p="Section.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+              <e p="Tournament.cs" t="Include" />
+            </e>
+            <e p="StoreBet.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Leonbets" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="JsonClasses" t="Include">
+            <e p="Event.cs" t="Include" />
+            <e p="Odd.cs" t="Include" />
+            <e p="Runner.cs" t="Include" />
+          </e>
+          <e p="Leonbets.csproj" t="IncludeRecursive" />
+          <e p="LeonBetsLineConverter.cs" t="Include" />
+          <e p="LeonBetsScanner.cs" t="Include" />
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="LigaStavok" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Class1.cs" t="Include" />
+          <e p="LigaStavok.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Parimatch" t="IncludeRecursive">
+          <e p="AdditionalClasses" t="Include">
+            <e p="LinesInfo.cs" t="Include" />
+            <e p="TempData.cs" t="Include" />
+          </e>
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ConverterHelper.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="BetBlock.cs" t="Include" />
+            <e p="Event.cs" t="Include" />
+            <e p="Outcome.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Parimatch.csproj" t="IncludeRecursive" />
+          <e p="ParimatchLineConverter.cs" t="Include" />
+          <e p="ParimatchScanner.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Pinnacle" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="JsonClasses" t="Include">
+            <e p="BetSlip.cs" t="Include" />
+            <e p="Error.cs" t="Include" />
+            <e p="EventLine.cs" t="Include" />
+            <e p="GameLine.cs" t="Include" />
+            <e p="GamesContainer.cs" t="Include" />
+            <e p="LinesRequest.cs" t="Include" />
+            <e p="Market.cs" t="Include" />
+            <e p="Notification.cs" t="Include" />
+            <e p="PendingTicket.cs" t="Include" />
+            <e p="Period.cs" t="Include" />
+            <e p="RequestResult.cs" t="Include" />
+            <e p="Sport.cs" t="Include" />
+            <e p="TicketItem.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Pinnacle.csproj" t="IncludeRecursive" />
+          <e p="PinnacleLineConverter.cs" t="Include" />
+          <e p="PinnacleScanner.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Sbobet" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Models" t="Include">
+            <e p="BuyParams.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="SbHelper.cs" t="Include" />
+          <e p="Sbobet.csproj" t="IncludeRecursive" />
+          <e p="SbobetConverter.cs" t="Include" />
+          <e p="SbobetScanner.cs" t="Include" />
+        </e>
+        <e p="WilliamHill" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ConverterHelper.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="SlipData.cs" t="Include" />
+          </e>
+          <e p="Module.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="SerializableClasses" t="Include">
+            <e p="BaseElement.cs" t="Include" />
+            <e p="BIR.cs" t="Include" />
+            <e p="Event.cs" t="Include" />
+            <e p="EventScores.cs" t="Include" />
+            <e p="EventState.cs" t="Include" />
+            <e p="HcapInfo.cs" t="Include" />
+            <e p="Market.cs" t="Include" />
+            <e p="Price.cs" t="Include" />
+            <e p="Selection.cs" t="Include" />
+          </e>
+          <e p="WilliamHill.csproj" t="IncludeRecursive" />
+          <e p="WilliamHillLineConverter.cs" t="Include" />
+          <e p="WilliamHillScanner.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Scanner.Core" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Extensions.cs" t="Include" />
+        <e p="Helper" t="Include">
+          <e p="ModuleHelper.cs" t="Include" />
+          <e p="ProxyHelper.cs" t="Include" />
+        </e>
+        <e p="Interface" t="Include">
+          <e p="IModule.cs" t="Include" />
+          <e p="IScanner.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Scanner.Core.csproj" t="IncludeRecursive" />
+        <e p="ScannerBase.cs" t="Include" />
+      </e>
+      <e p="Scanner.SelfHosted" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="HomeController.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="app.manifest" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Scanner.SelfHosted.csproj" t="IncludeRecursive" />
+        <e p="ScannerApiSelfHost.cs" t="Include" />
+        <e p="Startup.cs" t="Include" />
+        <e p="x64" t="Include">
+          <e p="lz4X64.dll" t="Include" />
+        </e>
+        <e p="x86" t="Include">
+          <e p="lz4X86.dll" t="Include" />
+        </e>
+      </e>
+      <e p="Scanner.Webhost" t="IncludeRecursive">
+        <e p="App_Start" t="Include">
+          <e p="WebApiConfig.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CheckedProxy" t="Include">
+          <e p="Favbet.txt" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="BaseController.cs" t="Include" />
+        </e>
+        <e p="Global.asax" t="Include" />
+        <e p="Global.asax.cs" t="Include" />
+        <e p="NLog.config" t="Include" />
+        <e p="NLog.xsd" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="Folder.pubxml" t="Include" />
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Proxy" t="Include">
+          <e p="ip.txt" t="Include" />
+        </e>
+        <e p="Scanner.Webhost.csproj" t="IncludeRecursive" />
+        <e p="Storage" t="Include">
+          <e p="LiveApp.p12" t="Include" />
+        </e>
+        <e p="Web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+        <e p="x64" t="Include">
+          <e p="lz4X64.dll" t="Include" />
+        </e>
+        <e p="x86" t="Include">
+          <e p="lz4X86.dll" t="Include" />
+        </e>
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.mono\Client" t="Include">
+        <e p="EngineIOException.cs" t="Include" />
+        <e p="HandshakeData.cs" t="Include" />
+        <e p="Socket.cs" t="Include" />
+        <e p="Transport.cs" t="Include" />
+        <e p="Transports" t="Include">
+          <e p="Polling.cs" t="Include" />
+          <e p="PollingXHR.cs" t="Include" />
+          <e p="WebSocket.cs" t="Include" />
+        </e>
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.mono\ComponentEmitter" t="Include">
+        <e p="Emitter.cs" t="Include" />
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.mono\Modules" t="Include">
+        <e p="Global.cs" t="Include" />
+        <e p="LogManager.cs" t="Include" />
+        <e p="ParseQS.cs" t="Include" />
+        <e p="ServerCertificate.cs" t="Include" />
+        <e p="UTF8.cs" t="Include" />
+        <e p="UTF8Exception.cs" t="Include" />
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.mono\Parser" t="Include">
+        <e p="Buffer.cs" t="Include" />
+        <e p="ByteBuffer.cs" t="Include" />
+        <e p="IDecodePayloadCallback.cs" t="Include" />
+        <e p="IEncodeCallback.cs" t="Include" />
+        <e p="Packet.cs" t="Include" />
+        <e p="Parser.cs" t="Include" />
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.mono\Thread" t="Include">
+        <e p="EasyTimer.cs" t="Include" />
+      </e>
+      <e p="SocketIOClient\EngineIoClientDotNet.net45" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EngineIoClientDotNet.net45.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="SocketIOClient\Quobject.Collections.Immutable" t="IncludeRecursive">
+        <e p="AvlNode.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IImmutableDictionary.cs" t="Include" />
+        <e p="IImmutableList.cs" t="Include" />
+        <e p="IImmutableQueue.cs" t="Include" />
+        <e p="IImmutableSet.cs" t="Include" />
+        <e p="IImmutableStack.cs" t="Include" />
+        <e p="ImmutableDictionary.cs" t="Include" />
+        <e p="ImmutableList.cs" t="Include" />
+        <e p="ImmutableQueue.cs" t="Include" />
+        <e p="ImmutableStack.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Quobject.Collections.Immutable.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="SocketIOClient\SocketIoClientDotNet.net45" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="AckImpl.cs" t="Include" />
+          <e p="IAck.cs" t="Include" />
+          <e p="IO.cs" t="Include" />
+          <e p="Manager.cs" t="Include" />
+          <e p="On.cs" t="Include" />
+          <e p="Socket.cs" t="Include" />
+          <e p="SocketIOException.cs" t="Include" />
+          <e p="Url.cs" t="Include" />
+        </e>
+        <e p="Modules" t="Include">
+          <e p="HasBinaryData.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Parser" t="Include">
+          <e p="Binary.cs" t="Include" />
+          <e p="Packet.cs" t="Include" />
+          <e p="Parser.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SocketIoClientDotNet.net45.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="Utils" t="Include">
+        <e p="CloudFlareNet" t="IncludeRecursive">
+          <e p="app.config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ChallengeSolution.cs" t="Include" />
+          <e p="ChallengeSolver.cs" t="Include" />
+          <e p="CloudFlareNet.cs" t="Include" />
+          <e p="CloudFlareNet.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="SocketIOClient" t="Include" />
+      </e>
+    </e>
+    <e p="C:\Users\Test\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Test\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_LocalScanner.-16425421.00" t="ExcludeRecursive" />
+  </component>
+</project>
